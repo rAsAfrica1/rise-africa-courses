@@ -1,0 +1,103 @@
+<!DOCTYPE html><html><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aquaculture - Module 3</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif; line-height:1.6; background:linear-gradient(135deg,#0288d1 0%,#03a9f4 100%); min-height:100vh; padding:20px; }
+.container { max-width:1200px; margin:0 auto; background:#fff; border-radius:12px; box-shadow:0 10px 40px rgba(0,0,0,0.3); }
+.header { background:linear-gradient(135deg,#0288d1 0%,#03a9f4 100%); color:#fff; padding:40px 20px; text-align:center; }
+.content { padding:40px; }
+.section { margin:30px 0; padding:25px; background:#f5f5f5; border-left:5px solid #0288d1; border-radius:8px; }
+.objectives ul { list-style:none; padding-left:20px; }
+.objectives li:before { content:"✓ "; color:#0288d1; font-weight:bold; }
+.video-container { margin:15px 0; padding:15px; background:#fff; border-radius:6px; }
+iframe { width:100%; max-width:500px; height:300px; border-radius:6px; }
+table { width:100%; border-collapse:collapse; margin:20px 0; }
+th, td { padding:12px; text-align:left; border-bottom:1px solid #ddd; }
+th { background:#0288d1; color:#fff; }
+.implementation ol { padding-left:30px; }
+.implementation li { margin:10px 0; }
+.quiz { background:#b3e5fc; padding:20px; border-radius:8px; }
+.quiz-question { margin:15px 0; padding:10px; background:#fff; border-radius:6px; }
+.capstone { background:#e1f5fe; padding:20px; border-radius:8px; }
+.progress-bar { width:100%; height:30px; background:#ddd; border-radius:6px; overflow:hidden; margin:20px 0; }
+.progress-fill { height:100%; background:linear-gradient(90deg,#0288d1,#03a9f4); display:flex; align-items:center; justify-content:center; color:#fff; font-weight:bold; }
+@media (max-width:768px) { .content { padding:20px; } table { font-size:12px; } }
+</style></head><body>
+<div class="container">
+<div class="header"><h1>🐠 Aquaculture: Fish & Aquatic Plants</h1><p>Module 3: Water Quality Management</p></div>
+<div class="content">
+<div class="section">
+<div class="objectives"><h3>📚 Learning Objectives</h3>
+<ul><li>Understand aquaculture systems and benefits</li><li>Design effective fish ponds and tanks</li><li>Select appropriate fish species and plants</li><li>Manage water quality and temperature</li><li>Implement sustainable feeding programs</li><li>Create profitable aquaculture business</li></ul></div>
+</div>
+<div class="section"><h2>📹 Educational Videos</h2>
+<div class="video-container"><iframe src="https://www.youtube.com/embed/xLKXKGHGJYo"></iframe><p>Aquaculture Basics</p></div>
+<div class="video-container"><iframe src="https://www.youtube.com/embed/4vDHDsX3r0Y"></iframe><p>Pond Construction</p></div>
+<div class="video-container"><iframe src="https://www.youtube.com/embed/hqEiVqNdlpQ"></iframe><p>Water Quality Management</p></div>
+<div class="video-container"><iframe src="https://www.youtube.com/embed/EGF-kW1Zntg"></iframe><p>Fish Breeding</p></div>
+<div class="video-container"><iframe src="https://www.youtube.com/embed/I8Xq3z9Ky-Q"></iframe><p>Aquatic Plant Cultivation</p></div>
+</div>
+<div class="section"><h2>📊 Aquaculture Species Comparison</h2>
+<table><tr><th>Species</th><th>Growth Rate</th><th>Water Temp</th><th>Harvest Time</th></tr>
+<tr><td>Tilapia</td><td>Fast</td><td>25-35°C</td><td>5-6 months</td></tr>
+<tr><td>Catfish</td><td>Moderate</td><td>20-30°C</td><td>8-10 months</td></tr>
+<tr><td>Carp</td><td>Slow-Moderate</td><td>15-28°C</td><td>12-18 months</td></tr>
+<tr><td>Trout</td><td>Moderate</td><td>10-20°C</td><td>12-15 months</td></tr>
+<tr><td>Water Lettuce</td><td>Fast</td><td>20-28°C</td><td>Ongoing</td></tr>
+</table></div>
+<div class="section">
+<div class="implementation"><h3>🛠️ Implementation Steps</h3>
+<ol><li><strong>Site Selection:</strong> Choose location with water and sunlight</li>
+<li><strong>Pond Construction:</strong> Dig and line pond (at least 1.5m deep)</li>
+<li><strong>Water Preparation:</strong> Fill and test water quality</li>
+<li><strong>Stock Selection:</strong> Select 500-1000 fingerlings per 1000m²</li>
+<li><strong>Feeding Program:</strong> Establish daily feeding schedule</li>
+<li><strong>Monitoring:</strong> Test water daily, track fish growth</li></ol>
+</div>
+</div>
+<div class="section">
+<div class="quiz"><h3>🎓 Knowledge Check - Module 3</h3>
+<div class="quiz-question"><p><strong>Q1: What is the ideal water temperature for tilapia?</strong></p>
+<label><input type="radio" name="q1"> 15-20°C</label><br>
+<label><input type="radio" name="q1"> 25-35°C</label><br>
+<label><input type="radio" name="q1"> 35-40°C</label></div>
+<div class="quiz-question"><p><strong>Q2: Minimum pond depth recommended?</strong></p>
+<label><input type="radio" name="q2"> 0.5 meters</label><br>
+<label><input type="radio" name="q2"> 1.0 meters</label><br>
+<label><input type="radio" name="q2"> 1.5 meters</label></div>
+<div class="quiz-question"><p><strong>Q3: How many fingerlings per 1000m²?</strong></p>
+<label><input type="radio" name="q3"> 100-200</label><br>
+<label><input type="radio" name="q3"> 500-1000</label><br>
+<label><input type="radio" name="q3"> 2000-3000</label></div>
+<button onclick="checkAnswers()">Check Answers</button>
+<div id="feedback"></div>
+</div>
+</div>
+<div class="section">
+<div class="capstone"><h3>🏆 Capstone Project: Build Working Fish Farm</h3>
+<p><strong>Phase 1:</strong> Survey 3 successful aquaculture farmers<br>
+<strong>Phase 2:</strong> Design pond system (1000-2000m²)<br>
+<strong>Phase 3:</strong> Construct pond with proper lining<br>
+<strong>Phase 4:</strong> Test and prepare water<br>
+<strong>Phase 5:</strong> Stock with 500 fingerlings<br>
+<strong>Phase 6:</strong> Implement 6-month production cycle<br>
+<strong>Phase 7:</strong> Harvest and market fish<br>
+<strong>Phase 8:</strong> Calculate ROI and plan expansion</p>
+</div>
+</div>
+<div class="section">
+<div class="progress-bar"><div class="progress-fill" style="width:51%;">51%</div></div>
+</div>
+</div>
+</div>
+<script>
+function checkAnswers() {
+  let correct = 0;
+  if (document.querySelector('input[name="q1"]:checked')?.parentElement.textContent.includes('25-35')) correct++;
+  if (document.querySelector('input[name="q2"]:checked')?.parentElement.textContent.includes('1.5')) correct++;
+  if (document.querySelector('input[name="q3"]:checked')?.parentElement.textContent.includes('500-1000')) correct++;
+  document.getElementById('feedback').innerHTML = `<p style="color:${correct===3?'green':'red'}">Score: ${correct}/3 - ${correct===3?'Excellent! Ready to farm fish.':'Review and try again.'}</p>`;
+}
+</script>
+</body></html>

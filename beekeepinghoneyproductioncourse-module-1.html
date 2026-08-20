@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beekeeping & Honey Production Module 1: Introduction & Basics</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #cc8800 0%, #daa520 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #cc8800 0%, #daa520 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .section:last-of-type {
+            border-bottom: none;
+        }
+
+        h2 {
+            color: #cc8800;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            border-left: 5px solid #daa520;
+            padding-left: 15px;
+        }
+
+        h3 {
+            color: #daa520;
+            font-size: 1.3em;
+            margin-top: 20px;
+            margin-bottom: 15px;
+        }
+
+        .video-container {
+            background: #f9f9f9;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 25px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            border-radius: 6px;
+            display: block;
+        }
+
+        .video-title {
+            color: #cc8800;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background: #daa520;
+            color: white;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        tr:hover {
+            background: #fff8dc;
+        }
+
+        .implementation-step {
+            background: #fff8dc;
+            border-left: 4px solid #daa520;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .step-number {
+            color: #cc8800;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .step-title {
+            color: #333;
+            font-weight: bold;
+            font-size: 1.05em;
+            margin: 10px 0;
+        }
+
+        .step-content {
+            color: #555;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .quiz-section {
+            background: #e8f4f8;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+        .quiz-title {
+            color: #cc8800;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .quiz-question {
+            background: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 6px;
+            border-left: 4px solid #daa520;
+        }
+
+        .quiz-question-text {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.05em;
+        }
+
+        .quiz-option {
+            margin: 10px 0;
+        }
+
+        .quiz-option label {
+            cursor: pointer;
+            display: block;
+            padding: 10px;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        .quiz-option label:hover {
+            background: #f0f0f0;
+        }
+
+        .quiz-option input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .feedback {
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: 4px;
+            display: none;
+        }
+
+        .feedback.correct {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            display: block;
+        }
+
+        .feedback.incorrect {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+            display: block;
+        }
+
+        button {
+            background: linear-gradient(135deg, #cc8800 0%, #daa520 100%);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-top: 15px;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .project-section {
+            background: #e8f4f8;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 30px 0;
+            border: 2px solid #daa520;
+        }
+
+        .project-title {
+            color: #cc8800;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .deliverable {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border-left: 3px solid #daa520;
+        }
+
+        .progress-bar {
+            background: #f0f0f0;
+            border-radius: 10px;
+            height: 25px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            background: linear-gradient(90deg, #cc8800 0%, #daa520 100%);
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.9em;
+            transition: width 0.3s ease;
+        }
+
+        .checklist {
+            list-style: none;
+        }
+
+        .checklist li {
+            padding: 10px;
+            margin: 5px 0;
+            background: #f9f9f9;
+            border-radius: 4px;
+            border-left: 3px solid #daa520;
+        }
+
+        .checklist input[type="checkbox"] {
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .learning-objectives {
+            background: #fffacd;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #daa520;
+        }
+
+        .learning-objectives h3 {
+            color: #cc8800;
+            margin-top: 0;
+        }
+
+        .learning-objectives ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .learning-objectives li {
+            padding: 8px 0;
+            border-bottom: 1px solid #d0d0d0;
+        }
+
+        .learning-objectives li:last-child {
+            border-bottom: none;
+        }
+
+        .learning-objectives li:before {
+            content: "✓ ";
+            color: #cc8800;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.6em;
+            }
+
+            iframe {
+                height: 250px;
+            }
+
+            table {
+                font-size: 0.9em;
+            }
+
+            th, td {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🐝 Module 1: Introduction & Basics</h1>
+            <p>Beekeeping & Honey Production Course - Rise Africa Skills</p>
+        </div>
+
+        <div class="content">
+            <!-- Learning Objectives -->
+            <div class="learning-objectives">
+                <h3>📚 Learning Objectives</h3>
+                <ul>
+                    <li>Understand bee biology and honey bee life cycles</li>
+                    <li>Learn benefits and challenges of beekeeping in Africa</li>
+                    <li>Explore sustainable beekeeping practices</li>
+                    <li>Understand bee behaviors and colony structure</li>
+                    <li>Plan for your first beekeeping operation</li>
+                    <li>Create a comprehensive beekeeping business plan</li>
+                </ul>
+            </div>
+
+            <!-- Progress Bar -->
+            <div>
+                <p style="font-weight: bold; color: #cc8800;">Your Progress</p>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill" style="width: 0%">0%</div>
+                </div>
+            </div>
+
+            <!-- Videos Section -->
+            <div class="section">
+                <h2>🎥 Learning Videos</h2>
+                <p>Watch these 5 videos to understand beekeeping fundamentals. Pause frequently and take notes.</p>
+
+                <div class="video-container">
+                    <div class="video-title">Video 1: Introduction to Beekeeping & Bee Biology</div>
+                    <iframe src="https://www.youtube.com/embed/I4qN7EcFd9w" allowfullscreen></iframe>
+                </div>
+
+                <div class="video-container">
+                    <div class="video-title">Video 2: Types of Bees & Honey Bee Species in Africa</div>
+                    <iframe src="https://www.youtube.com/embed/qmxqU1CuXqE" allowfullscreen></iframe>
+                </div>
+
+                <div class="video-container">
+                    <div class="video-title">Video 3: Benefits & Challenges of Beekeeping</div>
+                    <iframe src="https://www.youtube.com/embed/xKOCrP2XLMo" allowfullscreen></iframe>
+                </div>
+
+                <div class="video-container">
+                    <div class="video-title">Video 4: Bee Colony Structure & Bee Behavior</div>
+                    <iframe src="https://www.youtube.com/embed/aEzWP5-_ELM" allowfullscreen></iframe>
+                </div>
+
+                <div class="video-container">
+                    <div class="video-title">Video 5: Starting Your First Beehive - Overview</div>
+                    <iframe src="https://www.youtube.com/embed/aMjdBDI9-t8" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <!-- Bee Species Table -->
+            <div class="section">
+                <h2>🐝 Bee Species Found in Africa</h2>
+                <p>Understanding different bee species helps you choose the right bees for your region:</p>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Species</th>
+                                <th>Distribution</th>
+                                <th>Honey Production</th>
+                                <th>Temperament</th>
+                                <th>Best For</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Apis mellifera scutellata</strong> (African Honey Bee)</td>
+                                <td>Southern/Central Africa</td>
+                                <td>High (60-100 kg/year)</td>
+                                <td>Defensive, aggressive</td>
+                                <td>Experienced beekeepers</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Apis mellifera adansonii</strong> (West African Bee)</td>
+                                <td>West Africa</td>
+                                <td>Moderate (40-60 kg/year)</td>
+                                <td>Docile, gentle</td>
+                                <td>Beginners, small operations</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Apis mellifera monticola</strong> (Mountain Bee)</td>
+                                <td>East African highlands</td>
+                                <td>Moderate (50-80 kg/year)</td>
+                                <td>Calm, manageable</td>
+                                <td>Highland regions</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Stingless Bees (Trigona/Melipona)</strong></td>
+                                <td>All tropical Africa</td>
+                                <td>Low (5-20 kg/year)</td>
+                                <td>Very gentle, no sting</td>
+                                <td>Beginners, no protective gear</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Benefits & Challenges -->
+            <div class="section">
+                <h2>✅ Benefits vs. Challenges</h2>
+
+                <h3>Benefits of Beekeeping:</h3>
+                <table style="width: 100%; border-collapse: collapse;">
+                    <tr>
+                        <td style="padding: 12px; border: 1px solid #ddd;"><strong>💰 Honey Production</strong> - High-value product; $8-20/kg market price</td>
+                    </tr>
+                    <tr style="background: #f9f9f9;">
+                        <td style="padding: 12px; border: 1px solid #ddd;"><strong>🌼 Pollination</strong> - Increase crop yields; free pollination for other farms</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 12px; border: 1px solid #ddd;"><strong>🕯️ Byproducts</strong> - Beeswax, propolis, bee pollen; premium prices</td>
+                    </tr>
+                    <tr style="background: #f9f9f9;">
+                        <td style="padding: 12px; border: 1px solid #ddd;"><strong>🔄 Sustainability</strong> - Low input costs; minimal labor after startup</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 12px; border: 1px solid #ddd;"><strong>🌍 Environment</strong> - Support biodiversity; combat colony collapse</td>
+                    </tr>
+                </table>
+
+                <h3 style="margin-top: 30px;">Challenges of Beekeeping:</h3>
+                <table style="width: 100%; border-collapse: collapse;">
+                    <tr>
+                        <td style="padding: 12px; border: 1px solid #ddd;"><strong>⚠️ Bee Stings</strong> - Risk of injury; allergies; fear management</td>
+                    </tr>
+                    <tr style="background: #f9f9f9;">
+                        <td style="padding: 12px; border: 1px solid #ddd;"><strong>🦟 Pests & Diseases</strong> - Varroa mites, wax moths, foulbrood, African Savanah Fly</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 12px; border: 1px solid #ddd;"><strong>📍 Seasonal Variation</strong> - Honey flow depends on flowering; varies by region/year</td>
+                    </tr>
+                    <tr style="background: #f9f9f9;">
+                        <td style="padding: 12px; border: 1px solid #ddd;"><strong>🏠 Hive Absconding</strong> - Bees may abandon hive due to stress, disease, or poor conditions</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 12px; border: 1px solid #ddd;"><strong>💼 Market Access</strong> - Finding buyers; competition from imported honey; certification</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Implementation Steps -->
+            <div class="section">
+                <h2>⚙️ Implementation Steps</h2>
+
+                <div class="implementation-step">
+                    <div class="step-number">STEP 1: Research Beekeeping in Your Region</div>
+                    <div class="step-title">Assess local conditions and existing beekeeping practices</div>
+                    <div class="step-content">
+                        <strong>What to do:</strong>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Contact local agricultural extension office</li>
+                            <li>Ask about climate suitability for beekeeping</li>
+                            <li>Interview 3+ local beekeepers about their experience</li>
+                            <li>Research flowering seasons and bee forage availability</li>
+                            <li>Document pests and diseases common in your area</li>
+                            <li>Learn about local bee species and supplier availability</li>
+                        </ul>
+                        <p style="margin-top: 15px;"><strong>Expected output:</strong> Notes from 3 interviews + climate/forage research</p>
+                        <p><strong>Time needed:</strong> 3-4 hours</p>
+                    </div>
+                </div>
+
+                <div class="implementation-step">
+                    <div class="step-number">STEP 2: Assess Your Property & Environment</div>
+                    <div class="step-title">Evaluate your land for beekeeping suitability</div>
+                    <div class="step-content">
+                        <strong>What to do:</strong>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Walk your property and identify potential hive locations</li>
+                            <li>Check for water sources (bees need water year-round)</li>
+                            <li>Survey flowering plants and trees (bee forage)</li>
+                            <li>Assess shade and wind exposure</li>
+                            <li>Map distance to neighbors (bee flight path safety)</li>
+                            <li>Document soil type and drainage (for future expansion)</li>
+                        </ul>
+                        <p style="margin-top: 15px;"><strong>Expected output:</strong> Property assessment with photos and map showing hive locations</p>
+                        <p><strong>Time needed:</strong> 2-3 hours</p>
+                    </div>
+                </div>
+
+                <div class="implementation-step">
+                    <div class="step-number">STEP 3: Calculate Startup Costs</div>
+                    <div class="step-title">Budget for hives, equipment, and bee colonies</div>
+                    <div class="step-content">
+                        <strong>What to do:</strong>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Research hive types and costs (Top-bar, Langstroth, traditional)</li>
+                            <li>Get quotes for 3-5 hives and associated equipment</li>
+                            <li>Research bee colony costs (nucleus colony or package)</li>
+                            <li>Calculate protective gear costs (veil, gloves, suit)</li>
+                            <li>Budget for tools (smoker, hive tool, brush, feeder)</li>
+                            <li>Add contingency (15-20%) for unexpected costs</li>
+                        </ul>
+                        <p style="margin-top: 15px;"><strong>Expected output:</strong> Detailed startup budget spreadsheet</p>
+                        <p><strong>Time needed:</strong> 2-3 hours</p>
+                    </div>
+                </div>
+
+                <div class="implementation-step">
+                    <div class="step-number">STEP 4: Identify Bee Species & Source</div>
+                    <div class="step-title">Choose appropriate bees and find reliable suppliers</div>
+                    <div class="step-content">
+                        <strong>What to do:</strong>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Decide on bee species for your region (local vs. imported)</li>
+                            <li>Research docility vs. productivity trade-offs</li>
+                            <li>Find 2-3 reputable bee suppliers in your country</li>
+                            <li>Get quotes for nucleus colonies (preferred for beginners)</li>
+                            <li>Ask about disease-free certification</li>
+                            <li>Plan timing (order bees 6-8 weeks before intended arrival)</li>
+                        </ul>
+                        <p style="margin-top: 15px;"><strong>Expected output:</strong> Bee species choice documented + supplier contact list</p>
+                        <p><strong>Time needed:</strong> 2-3 hours</p>
+                    </div>
+                </div>
+
+                <div class="implementation-step">
+                    <div class="step-number">STEP 5: Plan Bee Forage & Resources</div>
+                    <div class="step-title">Ensure adequate flowering plants and water year-round</div>
+                    <div class="step-content">
+                        <strong>What to do:</strong>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Identify native flowering plants in your area (by season)</li>
+                            <li>Research bee-friendly plants to plant or protect</li>
+                            <li>Locate water sources (pond, stream, or shallow dish)</li>
+                            <li>Plan for dry season forage (cover crops or irrigation)</li>
+                            <li>Map flowering calendar year-round</li>
+                            <li>Consider planting bee-friendly trees/shrubs</li>
+                        </ul>
+                        <p style="margin-top: 15px;"><strong>Expected output:</strong> Bee forage calendar and water source plan</p>
+                        <p><strong>Time needed:</strong> 2-3 hours</p>
+                    </div>
+                </div>
+
+                <div class="implementation-step">
+                    <div class="step-number">STEP 6: Create Implementation Timeline</div>
+                    <div class="step-title">Plan when to start and what to expect</div>
+                    <div class="step-content">
+                        <strong>What to do:</strong>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Identify best season to start beekeeping (main nectar flow)</li>
+                            <li>Create month-by-month setup timeline (3-6 months pre-hive)</li>
+                            <li>Plan when to order bees and equipment</li>
+                            <li>Set dates for colony arrival and first management actions</li>
+                            <li>Project first honey harvest (8-12 months after start)</li>
+                            <li>Plan for annual learning curve and expansion</li>
+                        </ul>
+                        <p style="margin-top: 15px;"><strong>Expected output:</strong> 12-month implementation timeline</p>
+                        <p><strong>Time needed:</strong> 2-3 hours</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Knowledge Check Quiz -->
+            <div class="section">
+                <div class="quiz-section">
+                    <div class="quiz-title">✓ Knowledge Check Quiz</div>
+                    <p>Answer these 3 questions to verify your understanding. You need 2/3 (66%) to pass.</p>
+
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">Question 1: Which African bee species produces the most honey?</div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q1" value="a"> (A) Apis mellifera adansonii (West African)</label>
+                        </div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q1" value="b"> (B) Apis mellifera scutellata (African honey bee)</label>
+                        </div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q1" value="c"> (C) Stingless bees (Trigona)</label>
+                        </div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q1" value="d"> (D) All produce equally</label>
+                        </div>
+                        <div class="feedback" id="q1-feedback"></div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">Question 2: What is the main disadvantage of African honey bees?</div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q2" value="a"> (A) Low honey production</label>
+                        </div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q2" value="b"> (B) Defensive and aggressive temperament</label>
+                        </div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q2" value="c"> (C) Require expensive imported equipment</label>
+                        </div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q2" value="d"> (D) Cannot survive in African climate</label>
+                        </div>
+                        <div class="feedback" id="q2-feedback"></div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">Question 3: Why do bees need water?</div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q3" value="a"> (A) Only to drink during hot days</label>
+                        </div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q3" value="b"> (B) To dilute honey and regulate hive temperature</label>
+                        </div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q3" value="c"> (C) To make beeswax</label>
+                        </div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q3" value="d"> (D) Water has no real purpose in beekeeping</label>
+                        </div>
+                        <div class="feedback" id="q3-feedback"></div>
+                    </div>
+
+                    <button onclick="submitQuiz()">Submit Quiz</button>
+                    <div id="quiz-result" style="margin-top: 20px; font-weight: bold; font-size: 1.1em;"></div>
+                </div>
+            </div>
+
+            <!-- Real-World Project -->
+            <div class="section">
+                <div class="project-section">
+                    <div class="project-title">🎯 Real-World Project: Beekeeping Business Plan Foundation</div>
+                    <p>Create the foundation for your beekeeping operation based on your region's specific conditions.</p>
+
+                    <h3>Project Deliverables (Submit as PDF or Word):</h3>
+
+                    <div class="deliverable">
+                        <strong>1. Local Beekeeping Assessment</strong>
+                        <p>Summary of interviews with 3+ local beekeepers; local practices, yields, challenges</p>
+                    </div>
+
+                    <div class="deliverable">
+                        <strong>2. Property Evaluation Report</strong>
+                        <p>Assessment of your land: hive location map, forage survey, water sources, neighbor proximity</p>
+                    </div>
+
+                    <div class="deliverable">
+                        <strong>3. Bee Species Selection Justification</strong>
+                        <p>Why you chose specific bee species for your region; productivity vs. temperament analysis</p>
+                    </div>
+
+                    <div class="deliverable">
+                        <strong>4. Startup Budget</strong>
+                        <p>Detailed breakdown: hives, bees, equipment, protective gear, tools, contingency</p>
+                    </div>
+
+                    <div class="deliverable">
+                        <strong>5. Bee Forage Calendar</strong>
+                        <p>Monthly flowering plants available year-round; water source identification</p>
+                    </div>
+
+                    <div class="deliverable">
+                        <strong>6. Implementation Timeline</strong>
+                        <p>Month-by-month plan from now until first honey harvest; key milestones</p>
+                    </div>
+
+                    <div class="deliverable">
+                        <strong>7. Supplier Contact List</strong>
+                        <p>3-5 bee and equipment suppliers with quotes and delivery information</p>
+                    </div>
+
+                    <div class="deliverable">
+                        <strong>8. Risk Assessment</strong>
+                        <p>Identified risks (pests, disease, swarming, absconding) and initial mitigation strategies</p>
+                    </div>
+
+                    <p style="margin-top: 20px;"><strong>Total length:</strong> 8-12 pages with photos, maps, and supporting documents</p>
+                    <p><strong>Grading criteria:</strong></p>
+                    <ul style="margin-left: 20px;">
+                        <li><strong>Completeness (20%):</strong> All 8 deliverables included</li>
+                        <li><strong>Realism (20%):</strong> Plan is feasible in your local context</li>
+                        <li><strong>Research (20%):</strong> Evidence of thorough local investigation</li>
+                        <li><strong>Accuracy (20%):</strong> Budgets and timelines realistic</li>
+                        <li><strong>Detail (20%):</strong> Specific to your region; considers local factors</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Success Criteria -->
+            <div class="section">
+                <h2>✅ Module Success Criteria</h2>
+                <ul class="checklist">
+                    <li><input type="checkbox"> Watched all 5 videos about beekeeping basics</li>
+                    <li><input type="checkbox"> Completed all 6 implementation steps on your property</li>
+                    <li><input type="checkbox"> Scored 2/3 (66%) or higher on knowledge check quiz</li>
+                    <li><input type="checkbox"> Submitted all 8 project deliverables</li>
+                    <li><input type="checkbox"> Identified suitable bee species for your region</li>
+                    <li><input type="checkbox"> Created realistic startup budget</li>
+                    <li><input type="checkbox"> Planned bee forage and water resources</li>
+                </ul>
+            </div>
+
+            <!-- Next Steps -->
+            <div class="section" style="background: #fffacd; padding: 20px; border-radius: 8px;">
+                <h2 style="margin-top: 0;">🚀 Ready for the Next Module?</h2>
+                <p>Once you've completed this module and submitted your foundation plan, you're ready for:</p>
+                <p style="font-size: 1.1em; font-weight: bold; color: #cc8800;">🏠 Module 2: Hive Types & Equipment Design</p>
+                <p>You'll learn to build or select the right hives for your operation.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function submitQuiz() {
+            let score = 0;
+            const answers = {
+                q1: 'b',
+                q2: 'b',
+                q3: 'b'
+            };
+
+            const feedback = {
+                q1: {
+                    correct: 'Correct! African honey bees (scutellata) produce 60-100 kg/year - highest production but very defensive.',
+                    incorrect: 'Incorrect. African honey bees produce the most honey (60-100 kg/year). This is why they\'re popular despite aggressive behavior.'
+                },
+                q2: {
+                    correct: 'Correct! African honey bees are highly defensive and aggressive, requiring experienced management and protective gear.',
+                    incorrect: 'Incorrect. The main disadvantage is their aggressive, defensive temperament. They\'re protective but dangerous to handle.'
+                },
+                q3: {
+                    correct: 'Correct! Bees need water year-round to dilute honey for larvae food, regulate hive temperature, and dissolve sugar in nectar.',
+                    incorrect: 'Incorrect. Bees need water for multiple essential functions: food prep, temperature control, and larval rearing.'
+                }
+            };
+
+            for (let i = 1; i <= 3; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                const feedbackDiv = document.getElementById(`q${i}-feedback`);
+
+                if (!selected) {
+                    feedbackDiv.textContent = 'Please select an answer.';
+                    feedbackDiv.className = 'feedback incorrect';
+                    feedbackDiv.style.display = 'block';
+                } else {
+                    const isCorrect = selected.value === answers[`q${i}`];
+                    if (isCorrect) {
+                        score++;
+                        feedbackDiv.textContent = feedback[`q${i}`].correct;
+                        feedbackDiv.className = 'feedback correct';
+                    } else {
+                        feedbackDiv.textContent = feedback[`q${i}`].incorrect;
+                        feedbackDiv.className = 'feedback incorrect';
+                    }
+                    feedbackDiv.style.display = 'block';
+                }
+            }
+
+            const resultDiv = document.getElementById('quiz-result');
+            const percentage = Math.round((score / 3) * 100);
+            resultDiv.textContent = `Score: ${score}/3 (${percentage}%) - ${percentage >= 66 ? '✓ PASS' : '✗ Please review and try again'}`;
+            resultDiv.style.color = percentage >= 66 ? '#155724' : '#721c24';
+
+            localStorage.setItem('beekeeping-module1-quiz-score', score);
+            updateProgress();
+        }
+
+        function updateProgress() {
+            let completed = 0;
+            if (localStorage.getItem('beekeeping-module1-quiz-score')) completed++;
+
+            const progressPercent = (completed / 7) * 100;
+            document.getElementById('progressFill').style.width = progressPercent + '%';
+            document.getElementById('progressFill').textContent = Math.round(progressPercent) + '%';
+
+            localStorage.setItem('beekeeping-module1-progress', progressPercent);
+        }
+
+        window.addEventListener('load', updateProgress);
+    </script>
+</body>
+</html>

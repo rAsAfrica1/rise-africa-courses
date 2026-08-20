@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beekeeping Module 2: Hive Types & Equipment Design</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background: linear-gradient(135deg, #cc8800 0%, #daa520 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 900px; margin: 0 auto; background: white; border-radius: 10px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); overflow: hidden; }
+        .header { background: linear-gradient(135deg, #cc8800 0%, #daa520 100%); color: white; padding: 40px 30px; text-align: center; }
+        .header h1 { font-size: 2.2em; margin-bottom: 10px; }
+        .header p { font-size: 1.1em; opacity: 0.95; }
+        .content { padding: 30px; }
+        .section { margin-bottom: 40px; padding-bottom: 30px; border-bottom: 2px solid #f0f0f0; }
+        .section:last-of-type { border-bottom: none; }
+        h2 { color: #cc8800; font-size: 1.8em; margin-bottom: 20px; border-left: 5px solid #daa520; padding-left: 15px; }
+        h3 { color: #daa520; font-size: 1.3em; margin-top: 20px; margin-bottom: 15px; }
+        .video-container { background: #f9f9f9; border: 2px solid #e0e0e0; border-radius: 8px; padding: 15px; margin-bottom: 25px; }
+        iframe { width: 100%; height: 400px; border: none; border-radius: 6px; display: block; }
+        .video-title { color: #cc8800; font-weight: bold; margin-bottom: 10px; font-size: 1.1em; }
+        .table-container { overflow-x: auto; margin: 20px 0; }
+        table { width: 100%; border-collapse: collapse; background: white; }
+        th, td { padding: 15px; text-align: left; border: 1px solid #ddd; }
+        th { background: #daa520; color: white; font-weight: bold; }
+        tr:nth-child(even) { background: #f9f9f9; }
+        tr:hover { background: #fff8dc; }
+        .implementation-step { background: #fff8dc; border-left: 4px solid #daa520; padding: 20px; margin: 20px 0; border-radius: 4px; }
+        .step-number { color: #cc8800; font-weight: bold; font-size: 1.1em; }
+        .step-title { color: #333; font-weight: bold; font-size: 1.05em; margin: 10px 0; }
+        .step-content { color: #555; font-size: 0.95em; line-height: 1.6; }
+        .quiz-section { background: #e8f4f8; padding: 25px; border-radius: 8px; margin: 30px 0; }
+        .quiz-title { color: #cc8800; font-size: 1.5em; margin-bottom: 20px; font-weight: bold; }
+        .quiz-question { background: white; padding: 20px; margin: 15px 0; border-radius: 6px; border-left: 4px solid #daa520; }
+        .quiz-question-text { font-weight: bold; color: #333; margin-bottom: 15px; font-size: 1.05em; }
+        .quiz-option { margin: 10px 0; }
+        .quiz-option label { cursor: pointer; display: block; padding: 10px; border-radius: 4px; transition: background 0.2s; }
+        .quiz-option label:hover { background: #f0f0f0; }
+        .quiz-option input[type="radio"] { margin-right: 10px; }
+        .feedback { margin-top: 15px; padding: 15px; border-radius: 4px; display: none; }
+        .feedback.correct { background: #d4edda; border: 1px solid #c3e6cb; color: #155724; display: block; }
+        .feedback.incorrect { background: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; display: block; }
+        button { background: linear-gradient(135deg, #cc8800 0%, #daa520 100%); color: white; padding: 12px 30px; border: none; border-radius: 6px; font-size: 1.1em; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; margin-top: 15px; }
+        button:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        .project-section { background: #e8f4f8; padding: 25px; border-radius: 8px; margin: 30px 0; border: 2px solid #daa520; }
+        .project-title { color: #cc8800; font-size: 1.5em; margin-bottom: 15px; font-weight: bold; }
+        .deliverable { background: white; padding: 15px; margin: 10px 0; border-radius: 4px; border-left: 3px solid #daa520; }
+        .progress-bar { background: #f0f0f0; border-radius: 10px; height: 25px; margin: 20px 0; overflow: hidden; }
+        .progress-fill { background: linear-gradient(90deg, #cc8800 0%, #daa520 100%); height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 0.9em; transition: width 0.3s ease; }
+        .checklist { list-style: none; }
+        .checklist li { padding: 10px; margin: 5px 0; background: #f9f9f9; border-radius: 4px; border-left: 3px solid #daa520; }
+        .checklist input[type="checkbox"] { margin-right: 10px; cursor: pointer; }
+        .learning-objectives { background: #fffacd; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #daa520; }
+        .learning-objectives h3 { color: #cc8800; margin-top: 0; }
+        .learning-objectives ul { list-style: none; padding: 0; }
+        .learning-objectives li { padding: 8px 0; border-bottom: 1px solid #d0d0d0; }
+        .learning-objectives li:last-child { border-bottom: none; }
+        .learning-objectives li:before { content: "✓ "; color: #cc8800; font-weight: bold; margin-right: 8px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏠 Module 2: Hive Types & Equipment Design</h1>
+            <p>Beekeeping & Honey Production Course - Rise Africa Skills</p>
+        </div>
+        <div class="content">
+            <div class="learning-objectives">
+                <h3>📚 Learning Objectives</h3>
+                <ul>
+                    <li>Understand different hive types and their advantages/disadvantages</li>
+                    <li>Learn to build or select appropriate hives for your region</li>
+                    <li>Understand essential beekeeping equipment</li>
+                    <li>Design cost-effective, sustainable hive setups</li>
+                    <li>Plan for hive placement and apiary layout</li>
+                    <li>Estimate equipment and construction costs</li>
+                </ul>
+            </div>
+            <div>
+                <p style="font-weight: bold; color: #cc8800;">Your Progress</p>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill" style="width: 0%">0%</div>
+                </div>
+            </div>
+            <div class="section">
+                <h2>🎥 Learning Videos</h2>
+                <p>Watch these 5 videos about hive types and beekeeping equipment.</p>
+                <div class="video-container">
+                    <div class="video-title">Video 1: Introduction to Different Hive Types</div>
+                    <iframe src="https://www.youtube.com/embed/eJPFvGBPzXE" allowfullscreen></iframe>
+                </div>
+                <div class="video-container">
+                    <div class="video-title">Video 2: Langstroth Hive - Design & Management</div>
+                    <iframe src="https://www.youtube.com/embed/i_lh3mATLDI" allowfullscreen></iframe>
+                </div>
+                <div class="video-container">
+                    <div class="video-title">Video 3: Top-Bar Hives & Low-Cost Alternatives</div>
+                    <iframe src="https://www.youtube.com/embed/vu3ov3MMTQ4" allowfullscreen></iframe>
+                </div>
+                <div class="video-container">
+                    <div class="video-title">Video 4: Building Hives From Local Materials</div>
+                    <iframe src="https://www.youtube.com/embed/L6eCVflI0dI" allowfullscreen></iframe>
+                </div>
+                <div class="video-container">
+                    <div class="video-title">Video 5: Essential Beekeeping Tools & Equipment</div>
+                    <iframe src="https://www.youtube.com/embed/DvNlVVFVPRk" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="section">
+                <h2>🏠 Hive Types Comparison</h2>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Hive Type</th>
+                                <th>Cost</th>
+                                <th>Honey Yield</th>
+                                <th>Ease of Use</th>
+                                <th>Best For</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Langstroth (Modern)</strong></td>
+                                <td>$50-150</td>
+                                <td>40-60 kg/year</td>
+                                <td>Moderate</td>
+                                <td>Commercial, experienced beekeepers</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Top-Bar Hive</strong></td>
+                                <td>$30-80</td>
+                                <td>20-40 kg/year</td>
+                                <td>Easy</td>
+                                <td>Beginners, sustainable farming</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Traditional/Natural</strong></td>
+                                <td>$5-20</td>
+                                <td>10-20 kg/year</td>
+                                <td>Easy</td>
+                                <td>Very beginners, survival beekeeping</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Stingless Bee Box</strong></td>
+                                <td>$15-40</td>
+                                <td>5-15 kg/year</td>
+                                <td>Very Easy</td>
+                                <td>Beginners, no protective gear needed</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="section">
+                <h2>⚙️ Implementation Steps</h2>
+                <div class="implementation-step">
+                    <div class="step-number">STEP 1: Select Hive Type</div>
+                    <div class="step-title">Choose appropriate hive design for your operation</div>
+                    <div class="step-content">
+                        <strong>What to do:</strong>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Research 3-4 hive types suitable for your region</li>
+                            <li>Consider: cost, honey yield, ease of management, local availability</li>
+                            <li>Interview local beekeepers about their hive choice</li>
+                            <li>Evaluate sustainability of each option</li>
+                            <li>Make final hive type decision based on your resources</li>
+                        </ul>
+                        <p style="margin-top: 15px;"><strong>Expected output:</strong> Documented hive type selection with justification</p>
+                        <p><strong>Time needed:</strong> 2-3 hours</p>
+                    </div>
+                </div>
+                <div class="implementation-step">
+                    <div class="step-number">STEP 2: Design Hive Layout</div>
+                    <div class="step-title">Plan placement and spacing of hives</div>
+                    <div class="step-content">
+                        <strong>What to do:</strong>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Sketch your apiary layout on paper</li>
+                            <li>Plan hive spacing (minimum 1-2 meters between hives)</li>
+                            <li>Consider sun exposure (morning sun preferred)</li>
+                            <li>Plan for expansion (leave room for more hives)</li>
+                            <li>Identify workspace area for honey extraction</li>
+                            <li>Plan drainage and water management</li>
+                        </ul>
+                        <p style="margin-top: 15px;"><strong>Expected output:</strong> Apiary layout diagram with hive positions and facilities</p>
+                        <p><strong>Time needed:</strong> 2-3 hours</p>
+                    </div>
+                </div>
+                <div class="implementation-step">
+                    <div class="step-number">STEP 3: List Construction Materials</div>
+                    <div class="step-title">Identify all materials needed to build hives</div>
+                    <div class="step-content">
+                        <strong>What to do:</strong>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Determine if buying pre-made or building hives yourself</li>
+                            <li>Research local material sources (wood, cement, bamboo)</li>
+                            <li>Create detailed materials list by hive component</li>
+                            <li>Include: box material, frames, hardware, paint, tools</li>
+                            <li>Get quotes from 3+ suppliers</li>
+                            <li>Calculate cost per hive</li>
+                        </ul>
+                        <p style="margin-top: 15px;"><strong>Expected output:</strong> Materials list with quantities and supplier quotes</p>
+                        <p><strong>Time needed:</strong> 3-4 hours</p>
+                    </div>
+                </div>
+                <div class="implementation-step">
+                    <div class="step-number">STEP 4: Source Equipment</div>
+                    <div class="step-title">Find and cost essential tools and equipment</div>
+                    <div class="step-content">
+                        <strong>What to do:</strong>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>List essential tools: smoker, hive tool, bee brush, feeder</li>
+                            <li>Research safety equipment: veil, gloves, suit, boots</li>
+                            <li>Find local suppliers or import options</li>
+                            <li>Get quotes for complete equipment set</li>
+                            <li>Decide: DIY alternatives vs. commercial equipment</li>
+                            <li>Create equipment budget</li>
+                        </ul>
+                        <p style="margin-top: 15px;"><strong>Expected output:</strong> Equipment list with costs and supplier info</p>
+                        <p><strong>Time needed:</strong> 2-3 hours</p>
+                    </div>
+                </div>
+                <div class="implementation-step">
+                    <div class="step-number">STEP 5: Plan Honey Extraction Setup</div>
+                    <div class="step-title">Design workspace for honey harvesting</div>
+                    <div class="step-content">
+                        <strong>What to do:</strong>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Research honey extraction methods (manual, centrifuge, pressing)</li>
+                            <li>Identify equipment needs by extraction method</li>
+                            <li>Plan workspace location and layout</li>
+                            <li>Design storage for honey and equipment</li>
+                            <li>Plan for hygiene and food safety</li>
+                            <li>Get quotes for extractors and processing equipment</li>
+                        </ul>
+                        <p style="margin-top: 15px;"><strong>Expected output:</strong> Honey extraction facility plan with equipment costs</p>
+                        <p><strong>Time needed:</strong> 2-3 hours</p>
+                    </div>
+                </div>
+                <div class="implementation-step">
+                    <div class="step-number">STEP 6: Create Equipment Budget</div>
+                    <div class="step-title">Calculate total investment for hives, tools, and equipment</div>
+                    <div class="step-content">
+                        <strong>What to do:</strong>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Sum up all costs: hive construction/purchase, tools, safety gear</li>
+                            <li>Add honey extraction equipment</li>
+                            <li>Include storage and workspace setup</li>
+                            <li>Calculate cost per hive (hive + equipment + workspace allocation)</li>
+                            <li>Add 15-20% contingency for unexpected costs</li>
+                            <li>Create equipment budget spreadsheet</li>
+                        </ul>
+                        <p style="margin-top: 15px;"><strong>Expected output:</strong> Complete equipment budget with cost breakdown</p>
+                        <p><strong>Time needed:</strong> 2-3 hours</p>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="quiz-section">
+                    <div class="quiz-title">✓ Knowledge Check Quiz</div>
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">Question 1: What is the typical honey yield for a Langstroth hive?</div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q1" value="a"> (A) 10-20 kg/year</label>
+                        </div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q1" value="b"> (B) 40-60 kg/year</label>
+                        </div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q1" value="c"> (C) 100+ kg/year</label>
+                        </div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q1" value="d"> (D) Varies too much to estimate</label>
+                        </div>
+                        <div class="feedback" id="q1-feedback"></div>
+                    </div>
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">Question 2: Which hive type is best for beginners?</div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q2" value="a"> (A) Langstroth (requires expertise)</label>
+                        </div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q2" value="b"> (B) Top-Bar Hive (easier management)</label>
+                        </div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q2" value="c"> (C) Commercial (very complex)</label>
+                        </div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q2" value="d"> (D) Doesn't matter - all the same</label>
+                        </div>
+                        <div class="feedback" id="q2-feedback"></div>
+                    </div>
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">Question 3: What is the minimum recommended spacing between hives?</div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q3" value="a"> (A) 10-20 cm apart</label>
+                        </div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q3" value="b"> (B) 50-75 cm apart</label>
+                        </div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q3" value="c"> (C) 1-2 meters apart</label>
+                        </div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q3" value="d"> (D) 5+ meters apart</label>
+                        </div>
+                        <div class="feedback" id="q3-feedback"></div>
+                    </div>
+                    <button onclick="submitQuiz()">Submit Quiz</button>
+                    <div id="quiz-result" style="margin-top: 20px; font-weight: bold; font-size: 1.1em;"></div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="project-section">
+                    <div class="project-title">🎯 Real-World Project: Hive Design & Equipment Plan</div>
+                    <h3>Project Deliverables:</h3>
+                    <div class="deliverable"><strong>1. Hive Type Selection Document</strong> - Justification for hive choice with comparison to alternatives</div>
+                    <div class="deliverable"><strong>2. Apiary Layout Design</strong> - Scale drawing showing hive positions, workspace, water sources</div>
+                    <div class="deliverable"><strong>3. Hive Construction Specifications</strong> - Dimensions, materials, assembly drawings</div>
+                    <div class="deliverable"><strong>4. Equipment & Tools List</strong> - All items needed with quantities and costs</div>
+                    <div class="deliverable"><strong>5. Honey Extraction Facility Plan</strong> - Layout and equipment for processing honey</div>
+                    <div class="deliverable"><strong>6. Supplier Contact List</strong> - 3-5 suppliers with quotes and delivery terms</div>
+                    <div class="deliverable"><strong>7. Complete Equipment Budget</strong> - Total costs broken down by category</div>
+                    <div class="deliverable"><strong>8. Implementation Timeline</strong> - Month-by-month plan for construction and setup</div>
+                    <p style="margin-top: 20px;"><strong>Total length:</strong> 10-14 pages with drawings and photos</p>
+                </div>
+            </div>
+            <div class="section">
+                <h2>✅ Module Success Criteria</h2>
+                <ul class="checklist">
+                    <li><input type="checkbox"> Watched all 5 videos about hive types</li>
+                    <li><input type="checkbox"> Completed all 6 implementation steps</li>
+                    <li><input type="checkbox"> Scored 2/3 (66%) or higher on quiz</li>
+                    <li><input type="checkbox"> Submitted all 8 project deliverables</li>
+                    <li><input type="checkbox"> Selected appropriate hive type for your region</li>
+                    <li><input type="checkbox"> Created realistic equipment budget</li>
+                    <li><input type="checkbox"> Designed practical apiary layout</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        function submitQuiz() {
+            let score = 0;
+            const answers = { q1: 'b', q2: 'b', q3: 'c' };
+            const feedback = {
+                q1: { correct: 'Correct! Langstroth hives produce 40-60 kg/year under good conditions.', incorrect: 'Incorrect. Langstroth hives produce 40-60 kg/year - the commercial standard.' },
+                q2: { correct: 'Correct! Top-Bar Hives are easier for beginners with simpler management.', incorrect: 'Incorrect. Top-Bar Hives are best for beginners - simpler and more sustainable.' },
+                q3: { correct: 'Correct! Hives need 1-2 meters spacing to reduce drifting and fighting.', incorrect: 'Incorrect. Proper spacing (1-2 meters) prevents bee drift and aggression.' }
+            };
+            for (let i = 1; i <= 3; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                const feedbackDiv = document.getElementById(`q${i}-feedback`);
+                if (!selected) {
+                    feedbackDiv.textContent = 'Please select an answer.';
+                    feedbackDiv.className = 'feedback incorrect';
+                } else {
+                    const isCorrect = selected.value === answers[`q${i}`];
+                    score += isCorrect ? 1 : 0;
+                    feedbackDiv.textContent = isCorrect ? feedback[`q${i}`].correct : feedback[`q${i}`].incorrect;
+                    feedbackDiv.className = isCorrect ? 'feedback correct' : 'feedback incorrect';
+                }
+                feedbackDiv.style.display = 'block';
+            }
+            const percentage = Math.round((score / 3) * 100);
+            document.getElementById('quiz-result').textContent = `Score: ${score}/3 (${percentage}%) - ${percentage >= 66 ? '✓ PASS' : '✗ Try again'}`;
+            document.getElementById('quiz-result').style.color = percentage >= 66 ? '#155724' : '#721c24';
+            localStorage.setItem('beekeeping-module2-quiz', score);
+        }
+    </script>
+</body>
+</html>

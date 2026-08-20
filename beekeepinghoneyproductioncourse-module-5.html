@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beekeeping Module 5: Colony Management & Reproduction</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background: linear-gradient(135deg, #cc8800 0%, #daa520 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 900px; margin: 0 auto; background: white; border-radius: 10px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); overflow: hidden; }
+        .header { background: linear-gradient(135deg, #cc8800 0%, #daa520 100%); color: white; padding: 40px 30px; text-align: center; }
+        .header h1 { font-size: 2.2em; margin-bottom: 10px; }
+        .header p { font-size: 1.1em; opacity: 0.95; }
+        .content { padding: 30px; }
+        .section { margin-bottom: 40px; padding-bottom: 30px; border-bottom: 2px solid #f0f0f0; }
+        .section:last-of-type { border-bottom: none; }
+        h2 { color: #cc8800; font-size: 1.8em; margin-bottom: 20px; border-left: 5px solid #daa520; padding-left: 15px; }
+        h3 { color: #daa520; font-size: 1.3em; margin-top: 20px; margin-bottom: 15px; }
+        .video-container { background: #f9f9f9; border: 2px solid #e0e0e0; border-radius: 8px; padding: 15px; margin-bottom: 25px; }
+        iframe { width: 100%; height: 400px; border: none; border-radius: 6px; display: block; }
+        .video-title { color: #cc8800; font-weight: bold; margin-bottom: 10px; font-size: 1.1em; }
+        .table-container { overflow-x: auto; margin: 20px 0; }
+        table { width: 100%; border-collapse: collapse; background: white; }
+        th, td { padding: 15px; text-align: left; border: 1px solid #ddd; }
+        th { background: #daa520; color: white; font-weight: bold; }
+        tr:nth-child(even) { background: #f9f9f9; }
+        tr:hover { background: #fff8dc; }
+        .implementation-step { background: #fff8dc; border-left: 4px solid #daa520; padding: 20px; margin: 20px 0; border-radius: 4px; }
+        .step-number { color: #cc8800; font-weight: bold; font-size: 1.1em; }
+        .step-title { color: #333; font-weight: bold; font-size: 1.05em; margin: 10px 0; }
+        .step-content { color: #555; font-size: 0.95em; line-height: 1.6; }
+        .quiz-section { background: #e8f4f8; padding: 25px; border-radius: 8px; margin: 30px 0; }
+        .quiz-title { color: #cc8800; font-size: 1.5em; margin-bottom: 20px; font-weight: bold; }
+        .quiz-question { background: white; padding: 20px; margin: 15px 0; border-radius: 6px; border-left: 4px solid #daa520; }
+        .quiz-question-text { font-weight: bold; color: #333; margin-bottom: 15px; font-size: 1.05em; }
+        .quiz-option { margin: 10px 0; }
+        .quiz-option label { cursor: pointer; display: block; padding: 10px; border-radius: 4px; transition: background 0.2s; }
+        .quiz-option label:hover { background: #f0f0f0; }
+        .quiz-option input[type="radio"] { margin-right: 10px; }
+        .feedback { margin-top: 15px; padding: 15px; border-radius: 4px; display: none; }
+        .feedback.correct { background: #d4edda; border: 1px solid #c3e6cb; color: #155724; display: block; }
+        .feedback.incorrect { background: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; display: block; }
+        button { background: linear-gradient(135deg, #cc8800 0%, #daa520 100%); color: white; padding: 12px 30px; border: none; border-radius: 6px; font-size: 1.1em; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; margin-top: 15px; }
+        button:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        .project-section { background: #e8f4f8; padding: 25px; border-radius: 8px; margin: 30px 0; border: 2px solid #daa520; }
+        .project-title { color: #cc8800; font-size: 1.5em; margin-bottom: 15px; font-weight: bold; }
+        .deliverable { background: white; padding: 15px; margin: 10px 0; border-radius: 4px; border-left: 3px solid #daa520; }
+        .progress-bar { background: #f0f0f0; border-radius: 10px; height: 25px; margin: 20px 0; overflow: hidden; }
+        .progress-fill { background: linear-gradient(90deg, #cc8800 0%, #daa520 100%); height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 0.9em; transition: width 0.3s ease; }
+        .checklist { list-style: none; }
+        .checklist li { padding: 10px; margin: 5px 0; background: #f9f9f9; border-radius: 4px; border-left: 3px solid #daa520; }
+        .checklist input[type="checkbox"] { margin-right: 10px; cursor: pointer; }
+        .learning-objectives { background: #fffacd; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #daa520; }
+        .learning-objectives h3 { color: #cc8800; margin-top: 0; }
+        .learning-objectives ul { list-style: none; padding: 0; }
+        .learning-objectives li { padding: 8px 0; border-bottom: 1px solid #d0d0d0; }
+        .learning-objectives li:last-child { border-bottom: none; }
+        .learning-objectives li:before { content: "✓ "; color: #cc8800; font-weight: bold; margin-right: 8px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>👑 Module 5: Colony Management & Reproduction</h1>
+            <p>Beekeeping & Honey Production Course - Rise Africa Skills</p>
+        </div>
+        <div class="content">
+            <div class="learning-objectives">
+                <h3>📚 Learning Objectives</h3>
+                <ul>
+                    <li>Understand bee colony seasonal cycles and life stages</li>
+                    <li>Recognize swarm preparation signs and manage swarming behavior</li>
+                    <li>Understand queen bee biology and replace failing queens</li>
+                    <li>Build colony strength for maximum productivity</li>
+                    <li>Manage hive growth and population dynamics</li>
+                    <li>Perform splits and create new colonies for expansion</li>
+                </ul>
+            </div>
+            <div>
+                <p style="font-weight: bold; color: #cc8800;">Your Progress</p>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill" style="width: 0%">0%</div>
+                </div>
+            </div>
+            <div class="section">
+                <h2>🎥 Learning Videos</h2>
+                <p>Watch these 5 videos about colony management, queen biology, and reproduction strategies.</p>
+                <div class="video-container">
+                    <div class="video-title">Video 1: Bee Colony Seasonal Cycles & Life Stages</div>
+                    <iframe src="https://www.youtube.com/embed/FiPGI5cpKNQ" allowfullscreen></iframe>
+                </div>
+                <div class="video-container">
+                    <div class="video-title">Video 2: Swarm Management & Prevention</div>
+                    <iframe src="https://www.youtube.com/embed/kV3lMHaJ01M" allowfullscreen></iframe>
+                </div>
+                <div class="video-container">
+                    <div class="video-title">Video 3: Queen Bee Biology & Replacement</div>
+                    <iframe src="https://www.youtube.com/embed/eWBK8JqwjE0" allowfullscreen></iframe>
+                </div>
+                <div class="video-container">
+                    <div class="video-title">Video 4: Building Colony Strength</div>
+                    <iframe src="https://www.youtube.com/embed/rNS05lXlnEo" allowfullscreen></iframe>
+                </div>
+                <div class="video-container">
+                    <div class="video-title">Video 5: Creating New Colonies Through Splits</div>
+                    <iframe src="https://www.youtube.com/embed/5uflQaJl7dU" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="section">
+                <h2>📊 Colony Strength Management & Seasonal Timeline</h2>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Season</th>
+                                <th>Colony Focus</th>
+                                <th>Key Tasks</th>
+                                <th>Expected Population</th>
+                                <th>Honey Potential</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Spring (Warming)</td>
+                                <td>Build strength</td>
+                                <td>Check health, feed if needed, add brood comb, manage pests</td>
+                                <td>20,000-40,000 bees</td>
+                                <td>Poor (growth phase)</td>
+                            </tr>
+                            <tr>
+                                <td>Early Summer</td>
+                                <td>Prepare for nectar flow</td>
+                                <td>Expand hive space, manage swarming, ensure foraging bees</td>
+                                <td>40,000-60,000 bees</td>
+                                <td>Moderate (building)</td>
+                            </tr>
+                            <tr>
+                                <td>Peak Summer</td>
+                                <td>Maximum production</td>
+                                <td>Add supers for honey, light inspections only, monitor flow</td>
+                                <td>60,000-80,000 bees</td>
+                                <td>Excellent (peak flow)</td>
+                            </tr>
+                            <tr>
+                                <td>Late Summer/Fall</td>
+                                <td>Prepare for winter</td>
+                                <td>Stop hive expansion, treat for pests, ensure food stores, requeen if needed</td>
+                                <td>40,000-60,000 bees</td>
+                                <td>Declining</td>
+                            </tr>
+                            <tr>
+                                <td>Winter</td>
+                                <td>Survival</td>
+                                <td>Minimal disturbance, monitor weather, check stores, no feeding until spring</td>
+                                <td>10,000-20,000 bees</td>
+                                <td>None</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="section">
+                <h2>📋 6 Implementation Steps</h2>
+                <div class="implementation-step">
+                    <div class="step-number">Step 1: Understand Your Local Seasonal Cycle</div>
+                    <div class="step-title">Map the bee season in your region</div>
+                    <div class="step-content">
+                        Work with local beekeepers to understand your region's specific seasons: when do bees become active? When does the main nectar flow occur? When do colonies prepare for dormancy? When is swarming season? Create a 12-month calendar showing: bee activity level each month, major nectar flows, typical temperature ranges, and rainfall patterns. Note which months are critical for colony management decisions.
+                    </div>
+                </div>
+                <div class="implementation-step">
+                    <div class="step-number">Step 2: Develop Colony Strength Monitoring</div>
+                    <div class="step-title">Track colony population and health status</div>
+                    <div class="step-content">
+                        During inspections, assess and record: frame coverage (how many frames are fully covered with bees), brood pattern (continuous vs. spotty indicating health), food stores (frames of honey/pollen), and overall population strength (1-5 scale). Note which colonies are building strength quickly vs. slowly. This data helps you identify struggling colonies early and make feeding/treatment decisions. Track trends over time.
+                    </div>
+                </div>
+                <div class="implementation-step">
+                    <div class="step-number">Step 3: Learn Swarm Signs & Prevention</div>
+                    <div class="step-title">Recognize and manage natural swarming impulse</div>
+                    <div class="step-content">
+                        Study swarm indicators: queen cells being built, bees clustering on outside of hive, reduced foraging activity, and decreased egg laying. When you find queen cells, you have limited time to act. Strategies to prevent unwanted swarming: provide adequate hive space (add empty combs early), maintain young/productive queens (requeue old queens), ensure good ventilation, and reduce overcrowding. Understand that some beekeepers manage swarms as natural increase, while others prevent swarming to maximize honey production.
+                    </div>
+                </div>
+                <div class="implementation-step">
+                    <div class="step-number">Step 4: Master Queen Identification & Replacement</div>
+                    <div class="step-title">Find and replace queens when necessary</div>
+                    <div class="step-content">
+                        Learn to identify the queen (larger body, longer abdomen, different behavior than workers). Understand queen lifespan (typically 3-5 years, declining productivity after 2-3 years). Know signs of failing queen: spotty brood pattern, lack of eggs, low population growth. Develop strategy for queen replacement: buy purchased queens, request queen cells from strong colonies, or raise your own if advanced. Plan for replacement timing (before season ends) and have backup plan if new queen fails.
+                    </div>
+                </div>
+                <div class="implementation-step">
+                    <div class="step-number">Step 5: Create Split Procedures</div>
+                    <div class="step-title">Develop protocol for creating new colonies</div>
+                    <div class="step-content">
+                        If expanding your apiary, design a splitting strategy that matches your regional season. Simple splits: divide strong colony between two hives (one gets queen, one makes new queen from eggs). Nucleus splits: create smaller units to build up over time. Grafting splits: use for controlled queen rearing and more splits. Document the timing for your region (usually spring when strong colonies are available), equipment needed, and success rates expected. Calculate costs and benefits of expansion vs. swarm losses.
+                    </div>
+                </div>
+                <div class="implementation-step">
+                    <div class="step-number">Step 6: Plan Seasonal Management Calendar</div>
+                    <div class="step-title">Create detailed action plan for entire year</div>
+                    <div class="step-content">
+                        Based on all the above knowledge, create your personal 12-month management calendar. For each month, list: inspection frequency and focus (brood/food/pests/strength), anticipated tasks (feeding, space expansion, queen evaluation, pest treatment), management decisions to make (split? requeen? harvest honey?), and colony preparation actions. Print this calendar and review it with experienced local beekeepers to ensure accuracy for your specific location and circumstances.
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="quiz-section">
+                    <div class="quiz-title">🎯 Module Quiz</div>
+                    <p>Test your understanding of colony management and reproduction:</p>
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">1. What is the typical lifespan of a productive queen bee?</div>
+                        <div class="quiz-option">
+                            <label>
+                                <input type="radio" name="q1" value="a"> 1-2 years
+                            </label>
+                        </div>
+                        <div class="quiz-option">
+                            <label>
+                                <input type="radio" name="q1" value="b"> 3-5 years, with peak productivity in first 2-3 years
+                            </label>
+                        </div>
+                        <div class="quiz-option">
+                            <label>
+                                <input type="radio" name="q1" value="c"> 10+ years
+                            </label>
+                        </div>
+                        <button onclick="checkAnswer('q1', 'b', 'Correct! Queens typically live 3-5 years, but their productivity peaks in the first 2-3 years. After that, egg-laying slows and brood pattern becomes spotty.')">Check Answer</button>
+                        <div class="feedback" id="q1-feedback"></div>
+                    </div>
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">2. What is the main indicator that a colony is preparing to swarm?</div>
+                        <div class="quiz-option">
+                            <label>
+                                <input type="radio" name="q2" value="a"> Increased egg laying by the queen
+                            </label>
+                        </div>
+                        <div class="quiz-option">
+                            <label>
+                                <input type="radio" name="q2" value="b"> Construction of multiple queen cells and reduced foraging activity
+                            </label>
+                        </div>
+                        <div class="quiz-option">
+                            <label>
+                                <input type="radio" name="q2" value="c"> Reduced honey production
+                            </label>
+                        </div>
+                        <button onclick="checkAnswer('q2', 'b', 'Correct! Queen cell construction indicates swarm preparation. Bees also reduce foraging activity as they prepare to leave and divide their labor.')">Check Answer</button>
+                        <div class="feedback" id="q2-feedback"></div>
+                    </div>
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">3. During which season should colonies reach maximum population for honey production?</div>
+                        <div class="quiz-option">
+                            <label>
+                                <input type="radio" name="q3" value="a"> Spring
+                            </label>
+                        </div>
+                        <div class="quiz-option">
+                            <label>
+                                <input type="radio" name="q3" value="b"> Peak summer (when nectar flow is strongest)
+                            </label>
+                        </div>
+                        <div class="quiz-option">
+                            <label>
+                                <input type="radio" name="q3" value="c"> Fall
+                            </label>
+                        </div>
+                        <button onclick="checkAnswer('q3', 'b', 'Correct! Peak summer, when nectar flows are strongest, is when colonies should have maximum population (60,000-80,000 bees) to capitalize on available forage.')">Check Answer</button>
+                        <div class="feedback" id="q3-feedback"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="project-section">
+                    <div class="project-title">🚀 Real-World Project: Annual Colony Management Plan</div>
+                    <p style="margin-bottom: 20px;">Develop a comprehensive annual colony management strategy for maximum productivity and sustainability.</p>
+                    <div class="deliverable">
+                        <strong>Part 1: Regional Seasonal Timeline</strong>
+                        <p>Create a detailed 12-month seasonal calendar specific to your region showing: bee activity levels month-by-month, major nectar flow periods (dates and expected duration), typical temperatures and rainfall, swarm season timing, and key decision dates. Interview 3-5 local beekeepers about their experience and cross-reference with agricultural extension information to ensure accuracy.</p>
+                    </div>
+                    <div class="deliverable">
+                        <strong>Part 2: Colony Strength Targets</strong>
+                        <p>Based on your climate and season, define population targets for each month: weak season (minimum viable population), building season (target growth rate), peak season (maximum foraging bees), and preparation phase (transition to winter). Create visual graphs showing ideal population curve vs. actual trends. Explain how you'll manipulate conditions (feeding, hive space, queens) to achieve targets.</p>
+                    </div>
+                    <div class="deliverable">
+                        <strong>Part 3: Swarm Management Strategy</strong>
+                        <p>Decide: will you prevent swarming to maximize honey, allow some natural swarming for expansion, or manage swarms actively? Document your approach including: how you'll monitor for swarm signs (inspection frequency, specific indicators), what prevention/management actions you'll take if you see queen cells, timeline for decision-making, and handling procedures. Include backup plans for unexpected swarming.</p>
+                    </div>
+                    <div class="deliverable">
+                        <strong>Part 4: Queen Management Plan</strong>
+                        <p>Develop your queen replacement strategy: when will you requeen (annually, every 2 years, when failing)? Where will you source queens (purchase, local breeder, raise your own)? What costs are involved? How will you identify failing queens? Create a requeening schedule for your colony count, and plan for backup queens in case of loss. Document success rates you expect and contingency plans.</p>
+                    </div>
+                    <div class="deliverable">
+                        <strong>Part 5: Expansion/Splitting Schedule</strong>
+                        <p>If you plan to expand your apiary, create a 3-5 year expansion plan showing: starting number of colonies, target number in year 1/2/3, expansion method (splits, purchases, swarm captures), timing of each split, equipment needs, and labor requirements. Calculate costs and expected revenue for each year. Show how expansion aligns with your forage availability and management capacity.</p>
+                    </div>
+                    <div class="deliverable">
+                        <strong>Part 6: Inspection & Monitoring Schedule</strong>
+                        <p>Create detailed inspection schedule for each season: frequency (weekly, bi-weekly, monthly), what to check for in each season (brood for spring, space needs for summer, stores for fall, survival checks in winter), time required per inspection, and specific management decisions to make at each inspection. Design a record-keeping form or template to standardize data collection.</p>
+                    </div>
+                    <div class="deliverable">
+                        <strong>Part 7: Monthly Action Checklist</strong>
+                        <p>Create a month-by-month checklist of management actions. For each month include: inspection tasks, feeding decisions, space management (adding/removing combs or boxes), pest monitoring and treatment, weather preparations, communication with local beekeepers, and equipment maintenance. This becomes your operational guide for the year.</p>
+                    </div>
+                    <div class="deliverable">
+                        <strong>Part 8: 5-Year Business Growth Strategy</strong>
+                        <p>Integrate all colony management decisions into your 5-year business plan. Show: projected colony count growth, expected honey/bee product production by year, labor and equipment investments, revenue projections, reinvestment of profits into expansion, and contingency plans for disease or market changes. Explain how your management decisions drive both honey production and hive expansion.</p>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 30px; padding: 20px; background: #f0f0f0; border-radius: 8px; text-align: center;">
+                <p style="color: #cc8800; font-weight: bold; margin-bottom: 10px;">Module 5 Complete!</p>
+                <p>You're nearly a master beekeeper! Time for the final module: Record Keeping & Economics - the CAPSTONE project!</p>
+                <button onclick="alert('Fantastic! You\'re ready for Module 6, the final capstone.')">Final Module</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function checkAnswer(questionId, correctAnswer, feedback) {
+            const selected = document.querySelector(`input[name="${questionId}"]:checked`);
+            const feedbackDiv = document.getElementById(`${questionId}-feedback`);
+            if (!selected) {
+                alert('Please select an answer first!');
+                return;
+            }
+            if (selected.value === correctAnswer) {
+                feedbackDiv.className = 'feedback correct';
+                feedbackDiv.textContent = '✓ ' + feedback;
+                updateProgress();
+            } else {
+                feedbackDiv.className = 'feedback incorrect';
+                feedbackDiv.textContent = '✗ Incorrect. ' + feedback;
+            }
+        }
+        function updateProgress() {
+            const totalQuestions = 3;
+            const answered = document.querySelectorAll('.feedback.correct').length;
+            const percent = Math.round((answered / totalQuestions) * 100);
+            document.getElementById('progressFill').style.width = percent + '%';
+            document.getElementById('progressFill').textContent = percent + '%';
+        }
+    </script>
+</body>
+</html>

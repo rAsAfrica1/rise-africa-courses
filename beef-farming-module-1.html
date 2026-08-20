@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beef Farming - Module 1: Introduction & Basics</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background: #f9f9f9; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .header { background: linear-gradient(135deg, #5c2e2e 0%, #8b4444 100%); color: white; padding: 30px; border-radius: 10px; margin-bottom: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .header p { font-size: 1.2em; opacity: 0.9; }
+        .content { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .section { margin-bottom: 40px; }
+        .section h2 { color: #5c2e2e; font-size: 1.8em; margin-bottom: 20px; border-bottom: 3px solid #8b4444; padding-bottom: 10px; }
+        .learning-objectives { background: #f5e6e6; padding: 20px; border-left: 5px solid #8b4444; margin-bottom: 20px; border-radius: 5px; }
+        .learning-objectives ul { list-style-position: inside; }
+        .learning-objectives li { margin-bottom: 8px; }
+        .video-container { background: #f5f5f5; padding: 15px; margin-bottom: 15px; border-radius: 5px; border-left: 4px solid #8b4444; }
+        .video-container h3 { color: #5c2e2e; margin-bottom: 10px; }
+        iframe { width: 100%; height: 400px; border-radius: 5px; border: none; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.9em; }
+        th { background: #5c2e2e; color: white; padding: 12px; text-align: left; }
+        td { padding: 10px; border-bottom: 1px solid #ddd; }
+        tr:hover { background: #f5f5f5; }
+        .implementation-step { background: #fafafa; padding: 15px; margin-bottom: 15px; border-radius: 5px; border-left: 4px solid #8b4444; }
+        .implementation-step h3 { color: #5c2e2e; margin-bottom: 8px; }
+        .implementation-step p { line-height: 1.8; font-size: 0.95em; }
+        .quiz-section { background: #fff3e0; padding: 20px; border-radius: 5px; border: 2px solid #8b4444; }
+        .quiz-section h3 { color: #5c2e2e; margin-bottom: 20px; }
+        .quiz-question { margin-bottom: 20px; background: white; padding: 15px; border-radius: 5px; }
+        .quiz-question p { font-weight: bold; margin-bottom: 10px; }
+        .quiz-option { margin-left: 20px; margin-bottom: 8px; }
+        .quiz-option input[type="radio"] { margin-right: 8px; }
+        .feedback { margin-top: 10px; padding: 10px; border-radius: 5px; display: none; }
+        .feedback.show { display: block; }
+        .feedback.correct { background: #d4edda; color: #155724; border-left: 4px solid #8b4444; }
+        .feedback.incorrect { background: #f8d7da; color: #721c24; border-left: 4px solid #721c24; }
+        .project-section { background: #f5e6e6; padding: 20px; border-radius: 5px; border: 2px solid #8b4444; }
+        .project-section h2 { color: #5c2e2e; }
+        .project-item { background: white; padding: 15px; margin: 15px 0; border-radius: 5px; border-left: 4px solid #8b4444; }
+        .project-item h4 { color: #5c2e2e; margin-bottom: 8px; font-size: 0.95em; }
+        .progress-bar { background: #e0e0e0; height: 10px; border-radius: 5px; overflow: hidden; margin-bottom: 20px; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, #5c2e2e, #8b4444); width: 0%; transition: width 0.3s; }
+        .next-module { margin-top: 30px; padding: 20px; background: #f5e6e6; border-radius: 5px; text-align: center; }
+        .next-module a { display: inline-block; background: #5c2e2e; color: white; padding: 12px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; }
+        .next-module a:hover { background: #8b4444; }
+        @media (max-width: 768px) { .header h1 { font-size: 1.8em; } iframe { height: 300px; } table { font-size: 0.85em; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🐂 Beef Farming</h1>
+            <p>Module 1: Introduction & Basics</p>
+        </div>
+
+        <div class="content">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+
+            <div class="section">
+                <div class="learning-objectives">
+                    <h2>📚 Learning Objectives</h2>
+                    <ul>
+                        <li>Understand beef production economics and profitability in African context</li>
+                        <li>Know cattle breeds suitable for different African regions</li>
+                        <li>Calculate startup costs for small-scale to commercial beef production</li>
+                        <li>Evaluate feed systems (grazing vs. feedlot vs. mixed)</li>
+                        <li>Understand market dynamics and pricing strategies</li>
+                        <li>Plan pathway from hobby to commercial beef operation</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🎥 Learning Videos</h2>
+                <div class="video-container">
+                    <h3>1. Beef Farming in Africa: Market & Opportunities</h3>
+                    <iframe src="https://www.youtube.com/embed/WZ9t9QS0aeE?rel=0" allowfullscreen></iframe>
+                </div>
+                <div class="video-container">
+                    <h3>2. African Cattle Breeds: Choosing for Your Region</h3>
+                    <iframe src="https://www.youtube.com/embed/v4iKFqQNqW0?rel=0" allowfullscreen></iframe>
+                </div>
+                <div class="video-container">
+                    <h3>3. Feed Management: Pasture, Hay, Silage & Concentrate</h3>
+                    <iframe src="https://www.youtube.com/embed/PJQ1LZ5Q4pE?rel=0" allowfullscreen></iframe>
+                </div>
+                <div class="video-container">
+                    <h3>4. Cattle Health & Breeding for Profit</h3>
+                    <iframe src="https://www.youtube.com/embed/q-xOSaKu-aY?rel=0" allowfullscreen></iframe>
+                </div>
+                <div class="video-container">
+                    <h3>5. Beef Business: From Subsistence to Commercial Farming</h3>
+                    <iframe src="https://www.youtube.com/embed/xnExu3F8OQE?rel=0" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>📊 African Beef Cattle Breeds & Economics</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Breed</th>
+                            <th>Climate</th>
+                            <th>Adult Weight</th>
+                            <th>Growth Rate</th>
+                            <th>Market Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Zebu (Indigenous)</td>
+                            <td>Hot/Dry adapted</td>
+                            <td>400-600 kg</td>
+                            <td>Slow (3-4 yr to market)</td>
+                            <td>$600-1,000/animal</td>
+                        </tr>
+                        <tr>
+                            <td>Brahman</td>
+                            <td>Hot climate</td>
+                            <td>600-900 kg</td>
+                            <td>Medium (3-4 yr)</td>
+                            <td>$1,000-1,500</td>
+                        </tr>
+                        <tr>
+                            <td>Simmental x Local</td>
+                            <td>Mixed</td>
+                            <td>500-700 kg</td>
+                            <td>Fast (2-3 yr to market)</td>
+                            <td>$1,500-2,000</td>
+                        </tr>
+                        <tr>
+                            <td>Friesian (Dairy cross)</td>
+                            <td>Cool/mixed</td>
+                            <td>600-800 kg</td>
+                            <td>Fast (2-3 yr)</td>
+                            <td>$1,200-1,800</td>
+                        </tr>
+                        <tr>
+                            <td>Angus/Hereford</td>
+                            <td>Temperate</td>
+                            <td>700-1,000 kg</td>
+                            <td>Fast (2-3 yr)</td>
+                            <td>$2,000-3,000 (premium beef)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h2>📋 6 Implementation Steps</h2>
+
+                <div class="implementation-step">
+                    <h3>Step 1: Understand Beef Farming Economics</h3>
+                    <p><strong>Basic model (1 animal, 3-year cycle):</strong> Buy young animal $300-500 → Feed costs $200-400/year × 3 years = $600-1,200 total cost → Sell at market $1,200-2,000+ profit. Scale: 10 animals = $12,000-20,000 revenue cycle. Challenge: long capital tie-up (3 years before return). Advantage: land utilization (grazing land unsuitable for crops), recurring asset (females produce calves).</p>
+                    <p><strong>Action:</strong> Assess your land resources: how many hectares available? Can you graze 5, 10, 20 cattle? This determines herd size.</p>
+                </div>
+
+                <div class="implementation-step">
+                    <h3>Step 2: Select Appropriate Breed for Your Region</h3>
+                    <p><strong>Key factors:</strong> Climate (hot → Zebu, Brahman; cool → Friesian, Angus), market demand (premium beef vs. basic meat), your skill level (indigenous breeds easier, crosses more complex), available feed. Start with local/adapted breeds (low input, high survival). Upgrade genetics gradually (crossbreeding with improved males).</p>
+                    <p><strong>Action:</strong> Research what breeds thrive in your specific region/climate. Talk to 5-10 existing cattle farmers about their choices and performance.</p>
+                </div>
+
+                <div class="implementation-step">
+                    <h3>Step 3: Assess Land & Feed Resources</h3>
+                    <p><strong>Land requirement:</strong> 1-2 hectares per animal for grazing (varies by rainfall/vegetation). Poor land (1 hectare/animal) vs. excellent grazing (0.5 hectare/animal). Alternative: feedlot (confined, fed purchased feed) requires less land but higher input costs. Strategy: Grazing when feed available, supplement with hay/purchased feed in dry season. Critical: dry-season feed security = difference between thriving herd and failing investment.</p>
+                    <p><strong>Action:</strong> Inventory your feed resources: pasture availability, hay production capacity, access to grain/concentrates. Plan 3 seasons ahead (do you have dry-season feed?).</p>
+                </div>
+
+                <div class="implementation-step">
+                    <h3>Step 4: Calculate Detailed Startup Costs</h3>
+                    <p><strong>For 5-animal herd:</strong> Land preparation/fencing $500-1,000, animals (5 × $300-500) $1,500-2,500, shelter/handling facilities $300-500, initial feed supply $200-400, vaccines/healthcare supplies $100-200. Total: $2,600-4,600. Expected revenue: 3 years later, 5 animals @ $1,500 avg = $7,500 gross (minus ongoing feed = $5,000+ net profit).</p>
+                    <p><strong>Action:</strong> Get local quotes: animal prices, feed costs, fencing, shelter materials. Calculate YOUR specific startup cost and timeline to profitability.</p>
+                </div>
+
+                <div class="implementation-step">
+                    <h3>Step 5: Develop Feed Strategy</h3>
+                    <p><strong>Year-round feeding plan:</strong> Rainy season (grass abundant, minimal cost) vs. Dry season (hay, concentrates needed, costs high). Smart strategy: Make/store hay during rainy season (cost $50-100/ton) for dry-season use. Feed budget: 1 animal costs $200-400/year grazing, $400-800/year if intensively fed. Profit depends on minimizing feed costs while maintaining growth.</p>
+                    <p><strong>Action:</strong> Design your feeding calendar: what feed source for each month? When purchase feed? When make hay? This is critical to profitability.</p>
+                </div>
+
+                <div class="implementation-step">
+                    <h3>Step 6: Plan Market Access & Scaling</h3>
+                    <p><strong>Markets:</strong> Direct butcher sales ($1.50-2.50/kg meat = highest margin), wholesaler/trader ($1.00-1.50/kg, large volume), live animal market (variable pricing). 1 animal fattened 3 years produces 250-350 kg meat (400-500 kg live weight). 10 animals = 2,500-3,500 kg meat/year = $3,750-8,750 annual revenue potential. Scaling: Keep female calves to expand herd (doubles size every 3-4 years).</p>
+                    <p><strong>Action:</strong> Identify 3-5 potential beef buyers/markets. Confirm price per kg meat or per live animal. Understand seasonal price variations. Plan genetics strategy: which animals to keep for breeding?</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="quiz-section">
+                    <h3>🎯 Module 1 Quiz</h3>
+                    <div class="quiz-question">
+                        <p>1. What is the typical beef production timeline and profit per animal?</p>
+                        <div class="quiz-option">
+                            <input type="radio" name="q1" value="a" id="q1a">
+                            <label for="q1a">a) 6 months, quick profits like chickens</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q1" value="b" id="q1b">
+                            <label for="q1b">b) 3-4 years cycle, $700-1,500 profit per animal</label>
+                        </div>
+                        <button onclick="checkAnswer('q1', 'b', 'Correct! Beef is long-term investment but high value. Long capital tie-up balanced by large returns.')">Check Answer</button>
+                        <div id="feedback-q1" class="feedback"></div>
+                    </div>
+                    <div class="quiz-question">
+                        <p>2. Which breed is best adapted to hot African climates?</p>
+                        <div class="quiz-option">
+                            <input type="radio" name="q2" value="a" id="q2a">
+                            <label for="q2a">a) Zebu and Brahman (heat-adapted, efficient feed use)</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q2" value="b" id="q2b">
+                            <label for="q2b">b) Friesian and Angus (need cooler temperatures)</label>
+                        </div>
+                        <button onclick="checkAnswer('q2', 'a', 'Correct! Indigenous and heat-adapted breeds survive/thrive in African heat with lower input.')">Check Answer</button>
+                        <div id="feedback-q2" class="feedback"></div>
+                    </div>
+                    <div class="quiz-question">
+                        <p>3. What is major challenge in beef farming profitability?</p>
+                        <div class="quiz-option">
+                            <input type="radio" name="q3" value="a" id="q3a">
+                            <label for="q3a">a) Dry-season feed costs and availability</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q3" value="b" id="q3b">
+                            <label for="q3b">b) Animals don't gain weight without veterinary help</label>
+                        </div>
+                        <button onclick="checkAnswer('q3', 'a', 'Correct! Securing feed year-round (especially dry season) is #1 profitability factor.')">Check Answer</button>
+                        <div id="feedback-q3" class="feedback"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="project-section">
+                    <h2>🚀 Real-World Project: Beef Farming Business Plan</h2>
+                    <div class="project-item">
+                        <h4>Part 1: Land & Resources Assessment</h4>
+                        <p>Evaluate available land: pasture quality, water availability, dry-season feed sources. Calculate herd carrying capacity (how many animals can you feed year-round?).</p>
+                    </div>
+                    <div class="project-item">
+                        <h4>Part 2: Startup Budget</h4>
+                        <p>Get quotes for: animals, fencing, shelter, initial feed. Detail your startup investment for desired herd size (5, 10, or 20 animals).</p>
+                    </div>
+                    <div class="project-item">
+                        <h4>Part 3-8: Complete business plan</h4>
+                        <p>Breed selection, feeding strategy (3-year calendar), market research, revenue projections, financing plan, risk management, scaling strategy.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="next-module">
+                <p>Ready to continue? Move to Module 2: Cattle Breeds & Selection</p>
+                <a href="beef-farming-module-2.html">→ Next Module</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswer(questionId, correctAnswer, feedback) {
+            const selected = document.querySelector(`input[name="${questionId}"]:checked`);
+            const feedbackEl = document.getElementById(`feedback-${questionId}`);
+            if (!selected) { alert('Please select an answer'); return; }
+            if (selected.value === correctAnswer) {
+                feedbackEl.className = 'feedback show correct';
+                feedbackEl.textContent = '✓ ' + feedback;
+            } else {
+                feedbackEl.className = 'feedback show incorrect';
+                feedbackEl.textContent = '✗ Incorrect. ' + feedback;
+            }
+            updateProgress();
+        }
+        function updateProgress() {
+            const answered = document.querySelectorAll('input[type="radio"]:checked').length;
+            const progress = (answered / 3) * 100;
+            document.getElementById('progressFill').style.width = progress + '%';
+            localStorage.setItem('beef-m1-progress', progress);
+        }
+        window.addEventListener('load', () => {
+            const saved = localStorage.getItem('beef-m1-progress');
+            if (saved) document.getElementById('progressFill').style.width = saved + '%';
+        });
+    </script>
+</body>
+</html>

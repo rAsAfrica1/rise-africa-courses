@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beekeeping Module 6: Record Keeping & Economics CAPSTONE</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background: linear-gradient(135deg, #cc8800 0%, #daa520 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 900px; margin: 0 auto; background: white; border-radius: 10px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); overflow: hidden; }
+        .header { background: linear-gradient(135deg, #cc8800 0%, #daa520 100%); color: white; padding: 40px 30px; text-align: center; }
+        .header h1 { font-size: 2.2em; margin-bottom: 10px; }
+        .header p { font-size: 1.1em; opacity: 0.95; }
+        .content { padding: 30px; }
+        .section { margin-bottom: 40px; padding-bottom: 30px; border-bottom: 2px solid #f0f0f0; }
+        .section:last-of-type { border-bottom: none; }
+        h2 { color: #cc8800; font-size: 1.8em; margin-bottom: 20px; border-left: 5px solid #daa520; padding-left: 15px; }
+        h3 { color: #daa520; font-size: 1.3em; margin-top: 20px; margin-bottom: 15px; }
+        .video-container { background: #f9f9f9; border: 2px solid #e0e0e0; border-radius: 8px; padding: 15px; margin-bottom: 25px; }
+        iframe { width: 100%; height: 400px; border: none; border-radius: 6px; display: block; }
+        .video-title { color: #cc8800; font-weight: bold; margin-bottom: 10px; font-size: 1.1em; }
+        .table-container { overflow-x: auto; margin: 20px 0; }
+        table { width: 100%; border-collapse: collapse; background: white; }
+        th, td { padding: 15px; text-align: left; border: 1px solid #ddd; }
+        th { background: #daa520; color: white; font-weight: bold; }
+        tr:nth-child(even) { background: #f9f9f9; }
+        tr:hover { background: #fff8dc; }
+        .implementation-step { background: #fff8dc; border-left: 4px solid #daa520; padding: 20px; margin: 20px 0; border-radius: 4px; }
+        .step-number { color: #cc8800; font-weight: bold; font-size: 1.1em; }
+        .step-title { color: #333; font-weight: bold; font-size: 1.05em; margin: 10px 0; }
+        .step-content { color: #555; font-size: 0.95em; line-height: 1.6; }
+        .quiz-section { background: #e8f4f8; padding: 25px; border-radius: 8px; margin: 30px 0; }
+        .quiz-title { color: #cc8800; font-size: 1.5em; margin-bottom: 20px; font-weight: bold; }
+        .quiz-question { background: white; padding: 20px; margin: 15px 0; border-radius: 6px; border-left: 4px solid #daa520; }
+        .quiz-question-text { font-weight: bold; color: #333; margin-bottom: 15px; font-size: 1.05em; }
+        .quiz-option { margin: 10px 0; }
+        .quiz-option label { cursor: pointer; display: block; padding: 10px; border-radius: 4px; transition: background 0.2s; }
+        .quiz-option label:hover { background: #f0f0f0; }
+        .quiz-option input[type="radio"] { margin-right: 10px; }
+        .feedback { margin-top: 15px; padding: 15px; border-radius: 4px; display: none; }
+        .feedback.correct { background: #d4edda; border: 1px solid #c3e6cb; color: #155724; display: block; }
+        .feedback.incorrect { background: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; display: block; }
+        button { background: linear-gradient(135deg, #cc8800 0%, #daa520 100%); color: white; padding: 12px 30px; border: none; border-radius: 6px; font-size: 1.1em; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; margin-top: 15px; }
+        button:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        .project-section { background: #e8f4f8; padding: 25px; border-radius: 8px; margin: 30px 0; border: 2px solid #daa520; }
+        .project-title { color: #cc8800; font-size: 1.5em; margin-bottom: 15px; font-weight: bold; }
+        .deliverable { background: white; padding: 15px; margin: 10px 0; border-radius: 4px; border-left: 3px solid #daa520; }
+        .progress-bar { background: #f0f0f0; border-radius: 10px; height: 25px; margin: 20px 0; overflow: hidden; }
+        .progress-fill { background: linear-gradient(90deg, #cc8800 0%, #daa520 100%); height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 0.9em; transition: width 0.3s ease; }
+        .checklist { list-style: none; }
+        .checklist li { padding: 10px; margin: 5px 0; background: #f9f9f9; border-radius: 4px; border-left: 3px solid #daa520; }
+        .checklist input[type="checkbox"] { margin-right: 10px; cursor: pointer; }
+        .learning-objectives { background: #fffacd; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #daa520; }
+        .learning-objectives h3 { color: #cc8800; margin-top: 0; }
+        .learning-objectives ul { list-style: none; padding: 0; }
+        .learning-objectives li { padding: 8px 0; border-bottom: 1px solid #d0d0d0; }
+        .learning-objectives li:last-child { border-bottom: none; }
+        .learning-objectives li:before { content: "✓ "; color: #cc8800; font-weight: bold; margin-right: 8px; }
+        .highlight { background: #fff3cd; padding: 15px; border-radius: 6px; border-left: 4px solid #daa520; margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>💰 Module 6: Record Keeping & Economics CAPSTONE</h1>
+            <p>Beekeeping & Honey Production Course - Rise Africa Skills</p>
+        </div>
+        <div class="content">
+            <div class="learning-objectives">
+                <h3>📚 Learning Objectives</h3>
+                <ul>
+                    <li>Establish comprehensive record-keeping systems for tracking colony data</li>
+                    <li>Monitor and measure production metrics (honey yield, bee products)</li>
+                    <li>Calculate complete beekeeping operation costs</li>
+                    <li>Analyze profitability and return on investment</li>
+                    <li>Develop financial projections for 3-5 year business planning</li>
+                    <li>Create comprehensive business plan that synthesizes all 5 modules</li>
+                </ul>
+            </div>
+            <div>
+                <p style="font-weight: bold; color: #cc8800;">Your Progress</p>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill" style="width: 0%">0%</div>
+                </div>
+            </div>
+            <div class="section">
+                <h2>🎥 Learning Videos</h2>
+                <p>Watch these 5 videos about beekeeping economics, record keeping, and business planning.</p>
+                <div class="video-container">
+                    <div class="video-title">Video 1: Record Keeping Systems for Beekeepers</div>
+                    <iframe src="https://www.youtube.com/embed/9SEFt4PjhpE" allowfullscreen></iframe>
+                </div>
+                <div class="video-container">
+                    <div class="video-title">Video 2: Measuring Honey Production & Bee Products</div>
+                    <iframe src="https://www.youtube.com/embed/pVYQD9DfQz8" allowfullscreen></iframe>
+                </div>
+                <div class="video-container">
+                    <div class="video-title">Video 3: Beekeeping Business Costs Analysis</div>
+                    <iframe src="https://www.youtube.com/embed/WCsYfPjKBp8" allowfullscreen></iframe>
+                </div>
+                <div class="video-container">
+                    <div class="video-title">Video 4: Profitability & ROI Calculation</div>
+                    <iframe src="https://www.youtube.com/embed/p7zDXuD-Oqo" allowfullscreen></iframe>
+                </div>
+                <div class="video-container">
+                    <div class="video-title">Video 5: Business Planning for Sustainable Beekeeping</div>
+                    <iframe src="https://www.youtube.com/embed/x5X8p32Pu0I" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="section">
+                <h2>📊 Typical Beekeeping Economics (African Context)</h2>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Expense Category</th>
+                                <th>Initial Investment</th>
+                                <th>Annual Cost/Colony</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Hive & Equipment Setup</td>
+                                <td>$50-150 per hive</td>
+                                <td>$5-10 (maintenance)</td>
+                                <td>Langstroth $100-150; Top-bar $30-80</td>
+                            </tr>
+                            <tr>
+                                <td>Bee Package/Swarm</td>
+                                <td>$20-50 per colony</td>
+                                <td>$0 (if natural expansion)</td>
+                                <td>or capture wild swarms</td>
+                            </tr>
+                            <tr>
+                                <td>Protective Equipment</td>
+                                <td>$30-50</td>
+                                <td>$2-5 (replacement)</td>
+                                <td>Shared across colonies</td>
+                            </tr>
+                            <tr>
+                                <td>Medications & Treatments</td>
+                                <td>$10-20</td>
+                                <td>$5-15 per colony</td>
+                                <td>Varies by region/disease pressure</td>
+                            </tr>
+                            <tr>
+                                <td>Supplemental Feed</td>
+                                <td>$0 (initial)</td>
+                                <td>$10-30 (dry season)</td>
+                                <td>Only if forage gaps exist</td>
+                            </tr>
+                            <tr>
+                                <td>Tools & Supplies</td>
+                                <td>$20-40</td>
+                                <td>$3-5</td>
+                                <td>Smoker, hive tool, etc.</td>
+                            </tr>
+                            <tr>
+                                <td>Extraction & Processing</td>
+                                <td>$100-500</td>
+                                <td>$2-5 (maintenance)</td>
+                                <td>Can be shared; depends on scale</td>
+                            </tr>
+                            <tr>
+                                <td>Labor (Owner)</td>
+                                <td>-</td>
+                                <td>40-60 hours/year minimum</td>
+                                <td>5-10 hours per colony</td>
+                            </tr>
+                            <tr>
+                                <td style="background: #daa520; color: white;"><strong>TOTAL STARTUP</strong></td>
+                                <td style="background: #daa520; color: white;"><strong>$230-450/colony</strong></td>
+                                <td style="background: #daa520; color: white;"><strong>$27-80/colony/year</strong></td>
+                                <td style="background: #daa520; color: white;"><strong>Varies by scale</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="highlight">
+                    <strong>Expected Revenue (African Market):</strong><br>
+                    • Honey: $8-20/kg wholesale (60-80kg/year strong colony)<br>
+                    • Beeswax: $3-8/kg (2-4kg/year)<br>
+                    • Propolis: $15-25/kg (0.5-1kg/year)<br>
+                    • Queen bees: $20-50 each (2-3/year)<br>
+                    <strong>Expected Annual Revenue/Colony: $500-1,500 (varies by market)</strong>
+                </div>
+            </div>
+            <div class="section">
+                <h2>📋 6 Implementation Steps</h2>
+                <div class="implementation-step">
+                    <div class="step-number">Step 1: Design Record-Keeping System</div>
+                    <div class="step-title">Choose paper or digital method for data collection</div>
+                    <div class="step-content">
+                        Decide: paper notebook (simple, reliable) or digital (spreadsheet, app). Create templates for: hive inspection form (date, brood pattern, food stores, pest activity, treatment applied, colony strength rating), production log (honey harvest date/weight, beeswax collected, propolis harvested), expense log (cost, date, category, supplier), and labor tracking (hours worked, tasks completed). Ensure forms are easy to use during inspections. Test your system with one colony before scaling up. Digital systems allow easier analysis; paper is more portable to the field.
+                    </div>
+                </div>
+                <div class="implementation-step">
+                    <div class="step-number">Step 2: Establish Production Tracking</div>
+                    <div class="step-title">Measure honey and bee product yields accurately</div>
+                    <div class="step-content">
+                        Invest in a simple kitchen scale (5-10kg capacity) to weigh honey harvested from each colony and harvest date. Record beeswax weight separately. If producing propolis or selling queens, track those separately. Document harvest method and timing (spring/summer/fall). Track which colonies produce most (compare genetics, location, management). After first season, compare actual vs. expected yields by colony. Identify underperforming colonies for management changes next year. Calculate yield per bee-frame and per colony for benchmarking.
+                    </div>
+                </div>
+                <div class="implementation-step">
+                    <div class="step-number">Step 3: Track All Expenses</div>
+                    <div class="step-title">Document every cost related to beekeeping</div>
+                    <div class="step-content">
+                        Categorize expenses: equipment, bee packages/queens, feed, medications, tools, harvest equipment, marketing/sales, and labor. Keep receipts for all purchases. Record date, amount, supplier, and what was purchased. At year-end, total expenses by category. Calculate cost per colony (total ÷ number of colonies). Identify largest cost drivers. Compare startup costs vs. ongoing maintenance costs. For labor, estimate hours spent and calculate opportunity cost at local wage rates. This data reveals where you can reduce costs and shows profitability.
+                    </div>
+                </div>
+                <div class="implementation-step">
+                    <div class="step-number">Step 4: Calculate Profitability Metrics</div>
+                    <div class="step-title">Understand financial performance of your operation</div>
+                    <div class="step-content">
+                        Calculate: gross revenue (total honey + products sold), total expenses, net profit (revenue - expenses), profit margin (net profit ÷ revenue × 100), and return on investment (net profit ÷ initial investment × 100). Compare these metrics year-over-year to track business growth. Calculate per-colony profitability to identify whether specific colonies pay for themselves. Most beekeeping businesses take 2-3 years to break even, then become increasingly profitable. If your margins are too low, identify whether it's low production (management) or high costs (suppliers).
+                    </div>
+                </div>
+                <div class="implementation-step">
+                    <div class="step-number">Step 5: Project Future Scenarios</div>
+                    <div class="step-title">Use data to forecast 3-5 year performance</div>
+                    <div class="step-content">
+                        Based on Year 1 actual data, create projections: assume realistic production increases (better management, more colonies), estimate cost changes (equipment depreciation, inflation), and forecast revenue growth. Model different scenarios: conservative (production stays flat), moderate (gradual improvement), aggressive (expansion with new colonies). Show breakeven point and when business becomes profitable. Test scenarios with different selling prices, production levels, and expansion rates. This helps you make informed decisions about reinvestment and expansion.
+                    </div>
+                </div>
+                <div class="implementation-step">
+                    <div class="step-number">Step 6: Create Master Business Plan</div>
+                    <div class="step-title">Synthesize all modules into comprehensive strategy document</div>
+                    <div class="step-content">
+                        Document: business vision (short/long-term goals), operational strategy (from Module 5 - how you'll manage colonies), production targets (from Module 3 - forage/nutrition), risk management (from Module 4 - disease control), initial and ongoing costs (Module 6 - economics), and 5-year financial projections (growth, profitability, reinvestment). Include tables, graphs, and projections that show how all pieces fit together. Explain how your management decisions directly impact honey production and profitability. Use this plan for: personal reference, bank loans (if needed), investor pitch, or business registration.
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="quiz-section">
+                    <div class="quiz-title">🎯 Module Quiz</div>
+                    <p>Test your understanding of beekeeping economics and business planning:</p>
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">1. What is the typical startup cost for a single bee colony in an African context?</div>
+                        <div class="quiz-option">
+                            <label>
+                                <input type="radio" name="q1" value="a"> $30-50
+                            </label>
+                        </div>
+                        <div class="quiz-option">
+                            <label>
+                                <input type="radio" name="q1" value="b"> $230-450 (including hive, equipment, bees)
+                            </label>
+                        </div>
+                        <div class="quiz-option">
+                            <label>
+                                <input type="radio" name="q1" value="c"> $1,000+
+                            </label>
+                        </div>
+                        <button onclick="checkAnswer('q1', 'b', 'Correct! Startup cost includes hive ($50-150), bee package ($20-50), protective equipment, tools, and first-year feed/treatments (~$230-450 total per colony).')">Check Answer</button>
+                        <div class="feedback" id="q1-feedback"></div>
+                    </div>
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">2. How many years does it typically take for a beekeeping business to break even (recover initial investment)?</div>
+                        <div class="quiz-option">
+                            <label>
+                                <input type="radio" name="q2" value="a"> First year (very profitable immediately)
+                            </label>
+                        </div>
+                        <div class="quiz-option">
+                            <label>
+                                <input type="radio" name="q2" value="b"> 2-3 years, then increasingly profitable
+                            </label>
+                        </div>
+                        <div class="quiz-option">
+                            <label>
+                                <input type="radio" name="q2" value="c"> 5+ years, takes a long time
+                            </label>
+                        </div>
+                        <button onclick="checkAnswer('q2', 'b', 'Correct! Most beekeeping businesses take 2-3 years to break even. After that, with established colonies, profitability increases significantly.')">Check Answer</button>
+                        <div class="feedback" id="q2-feedback"></div>
+                    </div>
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">3. What is the most important measure of your beekeeping business success?</div>
+                        <div class="quiz-option">
+                            <label>
+                                <input type="radio" name="q3" value="a"> Number of colonies you own
+                            </label>
+                        </div>
+                        <div class="quiz-option">
+                            <label>
+                                <input type="radio" name="q3" value="b"> Honey production quantity
+                            </label>
+                        </div>
+                        <div class="quiz-option">
+                            <label>
+                                <input type="radio" name="q3" value="c"> Profitability (revenue minus all costs)
+                            </label>
+                        </div>
+                        <button onclick="checkAnswer('q3', 'c', 'Correct! Profitability is the ultimate measure. You need revenue to exceed costs consistently to have a sustainable, successful business.')">Check Answer</button>
+                        <div class="feedback" id="q3-feedback"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="project-section">
+                    <div class="project-title">🚀 CAPSTONE PROJECT: Complete Beekeeping Business Plan</div>
+                    <p style="margin-bottom: 20px;"><strong>This is the culminating project that synthesizes all 5 previous modules into one comprehensive business plan. This is your roadmap to a profitable, sustainable beekeeping operation.</strong></p>
+                    <div class="deliverable">
+                        <strong>Part 1: Executive Summary</strong>
+                        <p>Write a 1-page summary of your complete beekeeping business, including: your vision/goals, number of colonies you plan to start with, target markets and products, annual production target, expected profitability timeline, and key success factors. This is what you'd share with a potential investor or bank for a loan.</p>
+                    </div>
+                    <div class="deliverable">
+                        <strong>Part 2: Integrated Management Plan</strong>
+                        <p>Combine all your planning from Modules 1-5 into one cohesive document: Introduction & Basics (bee species, benefits, research), Hive Design (equipment, layout, costs), Forage Management (seasonal calendar, plant list, water/feeding plans), Disease Management (monitoring schedule, prevention, treatment), and Colony Management (seasonal timeline, growth targets, expansion plan). Show how each element connects and supports the others.</p>
+                    </div>
+                    <div class="deliverable">
+                        <strong>Part 3: Startup Cost Budget</strong>
+                        <p>Create detailed budget for starting your beekeeping business with a specific number of colonies (e.g., 5 colonies): List every startup expense by category (hive, equipment, bees, tools, protective gear, initial feed/meds, extraction equipment). Calculate total investment per colony and total for your startup. Identify which costs are one-time vs. annual recurring. Show where you'll source each item and actual supplier quotes if possible.</p>
+                    </div>
+                    <div class="deliverable">
+                        <strong>Part 4: Annual Operating Budget</strong>
+                        <p>Estimate annual costs to operate your beekeeping business in Year 1 (after initial setup). Include: feed, medications, equipment maintenance/replacement, protective gear, honey extraction, marketing/sales, and owner labor costs (imputed at local wage rate). Calculate total annual cost, cost per colony, and cost per kg of honey. Identify opportunities to reduce costs.</p>
+                    </div>
+                    <div class="deliverable">
+                        <strong>Part 5: Production & Revenue Forecast</strong>
+                        <p>Project honey and bee product yields based on: your region's climate/forage, hive types selected, colony management approach, and market prices. Estimate Year 1 conservative harvest, Year 2 moderate increase (better management), and Year 3+ optimization. Calculate revenue from honey, beeswax, propolis, queens, and other products at realistic local market prices. Show revenue per colony and total operation revenue.</p>
+                    </div>
+                    <div class="deliverable">
+                        <strong>Part 6: Profitability Analysis</strong>
+                        <p>Calculate financial metrics for Year 1, Year 2, and Year 3: gross revenue, total expenses, net profit, profit margin %, and return on initial investment. Show breakeven point (when cumulative profits equal initial investment). Create graphs showing profit trajectory. Identify which products and which colonies are most profitable. Show how profitability improves over time as experience and scale increase.</p>
+                    </div>
+                    <div class="deliverable">
+                        <strong>Part 7: 5-Year Growth Strategy</strong>
+                        <p>Project your business over 5 years showing: colony count growth year-by-year (conservative expansion plan), investment in new equipment/extraction capacity, total production target, revenue projections, cumulative profit, and reinvestment of profits. Show how you'll scale operations while maintaining quality. Include expansion decision points (when to double capacity, when expansion makes economic sense) and contingency plans for disease/market challenges.</p>
+                    </div>
+                    <div class="deliverable">
+                        <strong>Part 8: Risk Analysis & Contingency Plans</strong>
+                        <p>Identify major risks to your beekeeping business and mitigation strategies: disease outbreak (prevention protocols, treatment costs), low honey prices (diversify products, focus on quality/premium market), poor forage season (supplemental feeding budget, location diversification), colony loss (requeening strategy, swarm capture, queen suppliers), and labor shortage (if hiring help). For each risk, quantify potential impact and show how you'll respond. Include financial cushion in your planning for unexpected costs.</p>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 30px; padding: 20px; background: linear-gradient(135deg, #cc8800 0%, #daa520 100%); color: white; border-radius: 8px; text-align: center;">
+                <p style="font-weight: bold; margin-bottom: 15px; font-size: 1.3em;">🎉 CONGRATULATIONS!</p>
+                <p style="margin-bottom: 15px; font-size: 1.1em;">You have completed the entire Beekeeping & Honey Production Course!</p>
+                <p style="margin-bottom: 20px;">You now have:</p>
+                <ul style="text-align: left; display: inline-block; list-style: none;">
+                    <li style="margin: 8px 0;">✅ Comprehensive understanding of bee biology and African bee species</li>
+                    <li style="margin: 8px 0;">✅ Knowledge of hive designs and equipment selection</li>
+                    <li style="margin: 8px 0;">✅ Expertise in forage management and nutrition planning</li>
+                    <li style="margin: 8px 0;">✅ Disease prevention and health management skills</li>
+                    <li style="margin: 8px 0;">✅ Colony management and breeding strategies</li>
+                    <li style="margin: 8px 0;">✅ Complete business plan and financial projections</li>
+                </ul>
+                <p style="margin-top: 20px;">You are ready to start or expand your beekeeping business!</p>
+                <button onclick="alert('Well done! Your Beekeeping course is complete. Download your business plan and start your journey to honey production success!')">Course Complete</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function checkAnswer(questionId, correctAnswer, feedback) {
+            const selected = document.querySelector(`input[name="${questionId}"]:checked`);
+            const feedbackDiv = document.getElementById(`${questionId}-feedback`);
+            if (!selected) {
+                alert('Please select an answer first!');
+                return;
+            }
+            if (selected.value === correctAnswer) {
+                feedbackDiv.className = 'feedback correct';
+                feedbackDiv.textContent = '✓ ' + feedback;
+                updateProgress();
+            } else {
+                feedbackDiv.className = 'feedback incorrect';
+                feedbackDiv.textContent = '✗ Incorrect. ' + feedback;
+            }
+        }
+        function updateProgress() {
+            const totalQuestions = 3;
+            const answered = document.querySelectorAll('.feedback.correct').length;
+            const percent = Math.round((answered / totalQuestions) * 100);
+            document.getElementById('progressFill').style.width = percent + '%';
+            document.getElementById('progressFill').textContent = percent + '%';
+        }
+    </script>
+</body>
+</html>
