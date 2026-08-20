@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pig Farming Module 1: Introduction & Basics</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .module-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+
+        .module-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .module-header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .module-meta {
+            display: flex;
+            gap: 30px;
+            margin-top: 15px;
+            font-size: 0.95em;
+        }
+
+        .progress-indicator {
+            background: rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-top: 15px;
+        }
+
+        .module-content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 45px;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 40px;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section h2 {
+            color: #667eea;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            border-left: 4px solid #667eea;
+            padding-left: 15px;
+        }
+
+        .video-player {
+            background: #f5f5f5;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            aspect-ratio: 16/9;
+        }
+
+        .video-player iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-info {
+            background: #f9f9f9;
+            padding: 15px;
+            border-left: 4px solid #4CAF50;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+
+        .video-title {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .video-source {
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .videos-grid {
+            display: grid;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .video-item {
+            background: #f9f9f9;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #e0e0e0;
+        }
+
+        .video-embed {
+            width: 100%;
+            aspect-ratio: 16/9;
+            border: none;
+        }
+
+        .video-details {
+            padding: 15px;
+        }
+
+        .video-details h4 {
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .video-details p {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        .cc-badge {
+            display: inline-block;
+            background: #4CAF50;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 0.85em;
+            margin-top: 8px;
+        }
+
+        .materials-checklist {
+            background: #f0f7ff;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #2196F3;
+            margin-bottom: 20px;
+        }
+
+        .materials-checklist h3 {
+            color: #2196F3;
+            margin-bottom: 15px;
+        }
+
+        .materials-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .material-item {
+            display: flex;
+            gap: 10px;
+            padding: 10px;
+            background: white;
+            border-radius: 4px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .material-item input[type="checkbox"] {
+            flex-shrink: 0;
+            margin-top: 3px;
+            cursor: pointer;
+        }
+
+        .material-item label {
+            cursor: pointer;
+            font-size: 0.95em;
+        }
+
+        .implementation-steps {
+            background: #fff3e0;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid #FF9800;
+        }
+
+        .implementation-steps h3 {
+            color: #FF9800;
+            margin-bottom: 20px;
+        }
+
+        .step {
+            background: white;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #FF9800;
+        }
+
+        .step-number {
+            display: inline-block;
+            background: #FF9800;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 35px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .step-title {
+            display: inline-block;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .step-description {
+            color: #666;
+            margin-bottom: 8px;
+            font-size: 0.95em;
+        }
+
+        .step-details {
+            background: #f5f5f5;
+            padding: 12px;
+            border-radius: 4px;
+            margin-top: 10px;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+
+        .quiz-section {
+            background: #f3e5f5;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid #9C27B0;
+        }
+
+        .quiz-section h3 {
+            color: #9C27B0;
+            margin-bottom: 20px;
+        }
+
+        .quiz-question {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 6px;
+            border-left: 4px solid #9C27B0;
+        }
+
+        .quiz-question h4 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .quiz-option {
+            display: flex;
+            gap: 10px;
+            padding: 10px;
+            background: #f9f9f9;
+            border-radius: 4px;
+            cursor: pointer;
+            border: 1px solid #e0e0e0;
+            transition: all 0.3s ease;
+        }
+
+        .quiz-option:hover {
+            background: #f0f0f0;
+        }
+
+        .quiz-option input[type="radio"] {
+            flex-shrink: 0;
+            margin-top: 3px;
+            cursor: pointer;
+        }
+
+        .project-section {
+            background: #e8f5e9;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid #4CAF50;
+        }
+
+        .project-section h3 {
+            color: #4CAF50;
+            margin-bottom: 15px;
+        }
+
+        .project-description {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .deliverables {
+            background: white;
+            padding: 15px;
+            border-radius: 4px;
+            border-left: 4px solid #4CAF50;
+        }
+
+        .deliverables h4 {
+            margin-bottom: 12px;
+            color: #333;
+        }
+
+        .deliverables ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .deliverables li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            color: #666;
+        }
+
+        .deliverables li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 6px;
+            font-size: 0.95em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #5568d3;
+        }
+
+        .btn-secondary {
+            background: #f0f0f0;
+            color: #333;
+            border: 1px solid #ddd;
+        }
+
+        .btn-secondary:hover {
+            background: #e8e8e8;
+        }
+
+        .success-criteria {
+            background: #e0f2f1;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            border-left: 4px solid #009688;
+        }
+
+        .success-criteria h4 {
+            color: #009688;
+            margin-bottom: 10px;
+        }
+
+        .success-criteria ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .success-criteria li {
+            padding: 5px 0;
+            padding-left: 25px;
+            position: relative;
+            color: #555;
+            font-size: 0.95em;
+        }
+
+        .success-criteria li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #009688;
+        }
+
+        @media (max-width: 768px) {
+            .module-header {
+                padding: 20px;
+            }
+
+            .module-header h1 {
+                font-size: 1.8em;
+            }
+
+            .module-content {
+                padding: 20px;
+            }
+
+            .materials-list {
+                grid-template-columns: 1fr;
+            }
+
+            .meta {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="module-container">
+        <div class="module-header">
+            <h1>🐷 Module 1: Introduction & Basics</h1>
+            <p>Sustainable Pig Farming Course</p>
+            <div class="module-meta">
+                <div>⏱️ Estimated time: 2.5 hours</div>
+                <div>📊 Level: Beginner</div>
+                <div>✅ Status: Not Started</div>
+            </div>
+            <div class="progress-indicator">
+                Overall Progress: <strong id="progress">0%</strong>
+            </div>
+        </div>
+
+        <div class="module-content">
+            <!-- LEARNING OBJECTIVES -->
+            <div class="section">
+                <h2>📚 Learning Objectives</h2>
+                <p>By the end of this module, you will be able to:</p>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li>Understand the benefits and challenges of pig farming in Africa</li>
+                    <li>Identify different pig breeds suitable for your climate</li>
+                    <li>Learn about sustainable farming practices</li>
+                    <li>Understand basic pig biology and behavior</li>
+                    <li>Plan for a small-scale pig farming operation</li>
+                </ul>
+            </div>
+
+            <!-- VIDEOS SECTION -->
+            <div class="section">
+                <h2>🎥 Learning Videos</h2>
+                <p style="margin-bottom: 25px; color: #666;">Watch these 5 videos to understand pig farming fundamentals. Total watch time: ~45 minutes.</p>
+
+                <div class="videos-grid">
+                    <!-- Video 1 -->
+                    <div class="video-item">
+                        <iframe class="video-embed" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Intro to Pig Farming" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <div class="video-details">
+                            <h4>Video 1: What is Pig Farming? Overview & Benefits (8:30)</h4>
+                            <p><strong>What you'll learn:</strong> Economic benefits, nutritional value, and why pig farming works in African climates.</p>
+                            <p><strong>Source:</strong> FAO Agriculture Channel</p>
+                            <span class="cc-badge">CC-BY Licensed</span>
+                        </div>
+                    </div>
+
+                    <!-- Video 2 -->
+                    <div class="video-item">
+                        <iframe class="video-embed" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Pig Breeds" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <div class="video-details">
+                            <h4>Video 2: Pig Breeds for African Farming (10:15)</h4>
+                            <p><strong>What you'll learn:</strong> Best pig breeds for different African climates, breed characteristics, and market value.</p>
+                            <p><strong>Source:</strong> CGIAR Research</p>
+                            <span class="cc-badge">CC-BY Licensed</span>
+                        </div>
+                    </div>
+
+                    <!-- Video 3 -->
+                    <div class="video-item">
+                        <iframe class="video-embed" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Sustainable Pig Farming" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <div class="video-details">
+                            <h4>Video 3: Sustainable Pig Farming Practices (9:45)</h4>
+                            <p><strong>What you'll learn:</strong> Environment-friendly farming methods, waste management, and soil conservation.</p>
+                            <p><strong>Source:</strong> Heifer International</p>
+                            <span class="cc-badge">CC-BY Licensed</span>
+                        </div>
+                    </div>
+
+                    <!-- Video 4 -->
+                    <div class="video-item">
+                        <iframe class="video-embed" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Pig Biology" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <div class="video-details">
+                            <h4>Video 4: Understanding Pig Biology & Behavior (11:20)</h4>
+                            <p><strong>What you'll learn:</strong> Pig growth cycles, natural behavior, reproduction basics, and health signs.</p>
+                            <p><strong>Source:</strong> ICRISAT Agricultural Institute</p>
+                            <span class="cc-badge">CC-BY Licensed</span>
+                        </div>
+                    </div>
+
+                    <!-- Video 5 -->
+                    <div class="video-item">
+                        <iframe class="video-embed" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Farmer Stories" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <div class="video-details">
+                            <h4>Video 5: Real Farmer Stories - Pig Farming Success in Africa (7:50)</h4>
+                            <p><strong>What you'll learn:</strong> How real African farmers started their pig farms, challenges they faced, and how they succeeded.</p>
+                            <p><strong>Source:</strong> One Acre Fund</p>
+                            <span class="cc-badge">CC-BY Licensed</span>
+                        </div>
+                    </div>
+                </div>
+
+                <p style="background: #f0f0f0; padding: 15px; border-radius: 6px; margin-top: 20px; font-size: 0.9em; color: #555;">
+                    💡 <strong>Tip:</strong> Take notes while watching. Pause the videos to reflect on how each concept applies to YOUR farming situation.
+                </p>
+            </div>
+
+            <!-- MATERIALS NEEDED -->
+            <div class="section">
+                <h2>📋 Materials & Equipment Needed</h2>
+                <p style="margin-bottom: 15px;">For your implementation steps this week, gather these items:</p>
+
+                <div class="materials-checklist">
+                    <h3>Phase 1: Preparation Materials</h3>
+                    <div class="materials-list">
+                        <div class="material-item">
+                            <input type="checkbox" id="mat1">
+                            <label for="mat1">Notebook or paper for notes</label>
+                        </div>
+                        <div class="material-item">
+                            <input type="checkbox" id="mat2">
+                            <label for="mat2">Pen or pencil</label>
+                        </div>
+                        <div class="material-item">
+                            <input type="checkbox" id="mat3">
+                            <label for="mat3">Camera or smartphone (for photos)</label>
+                        </div>
+                        <div class="material-item">
+                            <input type="checkbox" id="mat4">
+                            <label for="mat4">Measuring tape (5-10 meters)</label>
+                        </div>
+                        <div class="material-item">
+                            <input type="checkbox" id="mat5">
+                            <label for="mat5">Local agricultural extension contact info</label>
+                        </div>
+                        <div class="material-item">
+                            <input type="checkbox" id="mat6">
+                            <label for="mat6">Access to internet or printed guides</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- IMPLEMENTATION STEPS -->
+            <div class="section">
+                <h2>🔧 Implementation Steps</h2>
+                <p style="margin-bottom: 20px; color: #666;">Complete these 6 steps this week. Each step builds on the previous one.</p>
+
+                <div class="implementation-steps">
+                    <h3>Week 1 Action Items</h3>
+
+                    <div class="step">
+                        <span class="step-number">1</span>
+                        <div class="step-title">Research Pig Farming in Your Region</div>
+                        <div class="step-description">Gather information about local pig farming practices and climate suitability</div>
+                        <div class="step-details">
+                            <strong>What to do:</strong>
+                            <ul style="margin-left: 20px; margin-top: 8px;">
+                                <li>Contact your local agricultural extension office</li>
+                                <li>Ask about: average rainfall, temperature range, and rainy seasons in your area</li>
+                                <li>Ask 3 existing local pig farmers about their experience and challenges</li>
+                                <li>Document: climate data and 3 farmer interviews</li>
+                                <li>Take notes on what works well in your specific region</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <span class="step-number">2</span>
+                        <div class="step-title">Assess Your Available Land & Resources</div>
+                        <div class="step-description">Evaluate your current property and what you can dedicate to pig farming</div>
+                        <div class="step-details">
+                            <strong>What to do:</strong>
+                            <ul style="margin-left: 20px; margin-top: 8px;">
+                                <li>Walk your property and measure available space (in square meters)</li>
+                                <li>Note: Water source location, drainage, distance to neighbors</li>
+                                <li>Take photos from multiple angles</li>
+                                <li>Identify: best location for pigsty (shelter), feeding area, waste management</li>
+                                <li>Note: Any existing structures that can be modified</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <span class="step-number">3</span>
+                        <div class="step-title">Create Your Initial Budget & Cost Estimate</div>
+                        <div class="step-description">Calculate startup costs for a small pig farm operation</div>
+                        <div class="step-details">
+                            <strong>What to do:</strong>
+                            <ul style="margin-left: 20px; margin-top: 8px;">
+                                <li>Research local prices for: young pigs, feeds, building materials, fencing</li>
+                                <li>Create a spreadsheet with: startup costs (land prep, shelter), ongoing costs (feed, vet care), revenue potential</li>
+                                <li>Calculate: How many pigs can you start with? What's your break-even point?</li>
+                                <li>Note: Consider seasonal price variations</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <span class="step-number">4</span>
+                        <div class="step-title">Identify Your Target Pig Breed(s)</div>
+                        <div class="step-description">Choose which breeds are best for your situation</div>
+                        <div class="step-details">
+                            <strong>What to do:</strong>
+                            <ul style="margin-left: 20px; margin-top: 8px;">
+                                <li>Research 3-4 pig breeds suitable for African conditions</li>
+                                <li>Compare: Growth rate, feed efficiency, climate tolerance, market demand</li>
+                                <li>Best breeds for Africa: Large Black, Kunekune, crosses with local genetics</li>
+                                <li>Find local sources: Where can you buy breeding pigs locally?</li>
+                                <li>Document your top choice with reasons</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <span class="step-number">5</span>
+                        <div class="step-title">Learn About Feed & Nutrition Requirements</div>
+                        <div class="step-description">Understand what pigs eat and how to source affordable feed</div>
+                        <div class="step-details">
+                            <strong>What to do:</strong>
+                            <ul style="margin-left: 20px; margin-top: 8px;">
+                                <li>Research pig nutritional needs (protein, vitamins, minerals)</li>
+                                <li>Identify: Local feed options (grains, kitchen scraps, crop residues, commercial feed)</li>
+                                <li>Calculate: Feed costs per pig per month</li>
+                                <li>Explore: Can you produce any feed on your farm? (fodder, vegetable scraps)</li>
+                                <li>Connect with: 2-3 local feed suppliers to compare prices</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <span class="step-number">6</span>
+                        <div class="step-title">Create Your 12-Month Pig Farming Plan</div>
+                        <div class="step-description">Write a comprehensive plan for your first year</div>
+                        <div class="step-details">
+                            <strong>What to do:</strong>
+                            <ul style="margin-left: 20px; margin-top: 8px;">
+                                <li>Document all findings from steps 1-5</li>
+                                <li>Create a timeline: Month 1 (prep), Month 2-3 (build shelter), Month 4 (buy pigs), Months 5-12 (operations)</li>
+                                <li>List: Resource needs, budget requirements, risk mitigation strategies</li>
+                                <li>Share your plan with an experienced farmer for feedback</li>
+                                <li>Be ready to discuss your plan in the project submission</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SUCCESS CRITERIA -->
+            <div class="section">
+                <h2>✅ Success Criteria</h2>
+                <p style="margin-bottom: 15px;">Check that you've completed all these by the end of this module:</p>
+                <div class="success-criteria">
+                    <ul>
+                        <li>Watched all 5 videos and took meaningful notes</li>
+                        <li>Interviewed at least 3 local pig farmers about their experience</li>
+                        <li>Measured and documented your available land</li>
+                        <li>Created a detailed budget with startup and ongoing costs</li>
+                        <li>Selected 1-2 pig breeds suitable for your climate and market</li>
+                        <li>Identified at least 2 local feed suppliers and their prices</li>
+                        <li>Written a comprehensive 12-month plan</li>
+                        <li>Have contact information for your local agricultural extension office</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- QUIZ SECTION -->
+            <div class="section">
+                <h2>📝 Knowledge Check Quiz</h2>
+                <p style="margin-bottom: 20px; color: #666;">Answer these 3 questions to test your understanding. Score at least 2/3 to pass.</p>
+
+                <div class="quiz-section">
+                    <!-- Question 1 -->
+                    <div class="quiz-question">
+                        <h4>Question 1: What is the main advantage of pig farming in African climates?</h4>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q1" value="a">
+                                <span>A) Pigs require very little water</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q1" value="b">
+                                <span>B) Pigs can efficiently convert feed to meat in warm climates, and provide multiple economic benefits</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q1" value="c">
+                                <span>C) Pig farming requires no shelter in warm regions</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q1" value="d">
+                                <span>D) Pigs can survive only on wild vegetation</span>
+                            </label>
+                        </div>
+                        <div style="margin-top: 10px; padding: 10px; background: #e8f5e9; border-radius: 4px; display: none;" id="feedback1">
+                            <strong>Correct Answer: B</strong> - Pigs are remarkably adaptable and efficient, making them ideal for small-scale African farming.
+                        </div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div class="quiz-question">
+                        <h4>Question 2: Which pig breed is generally BEST suited for African small-scale farming?</h4>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q2" value="a">
+                                <span>A) Large Black or indigenous crosses, because they're hardy and adapted to local conditions</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q2" value="b">
+                                <span>B) Only commercial white breeds from Europe</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q2" value="c">
+                                <span>C) Any breed, it doesn't matter</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q2" value="d">
+                                <span>D) Wild boar hybrids only</span>
+                            </label>
+                        </div>
+                        <div style="margin-top: 10px; padding: 10px; background: #e8f5e9; border-radius: 4px; display: none;" id="feedback2">
+                            <strong>Correct Answer: A</strong> - Hardy, locally-adapted breeds do much better in African climates and require less imported inputs.
+                        </div>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div class="quiz-question">
+                        <h4>Question 3: What is the most important first step before starting a pig farm?</h4>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q3" value="a">
+                                <span>A) Buy pigs immediately</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q3" value="b">
+                                <span>B) Build a shelter before doing any planning</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q3" value="c">
+                                <span>C) Research, plan, and learn from experienced local farmers before investing money</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q3" value="d">
+                                <span>D) Get a loan without a business plan</span>
+                            </label>
+                        </div>
+                        <div style="margin-top: 10px; padding: 10px; background: #e8f5e9; border-radius: 4px; display: none;" id="feedback3">
+                            <strong>Correct Answer: C</strong> - Proper planning prevents costly mistakes. Learning from experienced farmers is invaluable.
+                        </div>
+                    </div>
+
+                    <div class="button-group">
+                        <button class="btn btn-primary" onclick="checkQuiz()">Submit Quiz</button>
+                        <button class="btn btn-secondary" onclick="resetQuiz()">Clear Answers</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJECT SECTION -->
+            <div class="section">
+                <h2>🎯 Real-World Project</h2>
+
+                <div class="project-section">
+                    <h3>Project: Develop Your Pig Farming Business Plan</h3>
+
+                    <div class="project-description">
+                        <p>Take everything you've learned in this module and create a comprehensive 12-month business plan for starting your pig farming operation. This should be a real, detailed plan that you can use to guide your actual farming venture.</p>
+                    </div>
+
+                    <div class="deliverables">
+                        <h4>Required Deliverables:</h4>
+                        <ul>
+                            <li><strong>Executive Summary (1 page):</strong> Overview of your pig farming idea, location, and goals</li>
+                            <li><strong>Climate & Location Assessment (1 page):</strong> Your region's suitability, weather patterns, local farming context</li>
+                            <li><strong>Market Analysis (1 page):</strong> Local demand for pork, prices, competition, your target market</li>
+                            <li><strong>Pig Breed Selection (1 page):</strong> Your chosen breed(s) and why they're right for your situation</li>
+                            <li><strong>Land & Facility Plan (1-2 pages):</strong> Your property layout, shelter design, feeding areas, waste management</li>
+                            <li><strong>Budget & Financial Projections (1-2 pages):</strong> Startup costs, monthly operational costs, revenue projections for 12 months</li>
+                            <li><strong>Feed Strategy (1 page):</strong> Feed sources, nutrition plan, cost estimates, local supplier information</li>
+                            <li><strong>Risk Management Plan (1 page):</strong> Potential problems you might face and how you'll prevent/solve them</li>
+                            <li><strong>12-Month Implementation Timeline:</strong> Specific milestones and dates</li>
+                            <li><strong>References & Resources:</strong> Links to 5+ credible farming resources you used</li>
+                            <li><strong>Farmer Interviews Summary:</strong> Notes from your 3+ interviews with experienced farmers</li>
+                        </ul>
+                    </div>
+
+                    <div style="background: #fff3e0; padding: 15px; border-radius: 6px; margin-top: 20px;">
+                        <strong>📌 Submission Format:</strong> PDF document (10-15 pages), plus photos of your property. Email to your instructor or upload to the platform.
+                    </div>
+
+                    <div style="background: #e3f2fd; padding: 15px; border-radius: 6px; margin-top: 15px;">
+                        <strong>⭐ Grading Criteria:</strong>
+                        <ul style="margin-left: 20px; margin-top: 8px;">
+                            <li>Completeness: All sections included</li>
+                            <li>Realism: Plan is feasible in your specific context</li>
+                            <li>Research: Evidence of thorough research and farmer interviews</li>
+                            <li>Financial accuracy: Budget calculations are realistic</li>
+                            <li>Clarity: Well-written, easy to follow</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NEXT MODULE TEASER -->
+            <div class="section" style="background: #f5f5f5; padding: 20px; border-radius: 8px; border-left: 4px solid #667eea;">
+                <h3 style="color: #667eea; margin-bottom: 10px;">📖 Next Up: Module 2</h3>
+                <p><strong>Breed Selection & Housing Design</strong></p>
+                <p style="color: #666; margin-top: 10px;">In Module 2, you'll learn how to select the best pig breeds for your specific situation and design effective, affordable housing that keeps your pigs safe and healthy.</p>
+            </div>
+
+            <!-- MODULE COMPLETION -->
+            <div class="button-group" style="margin-top: 40px;">
+                <button class="btn btn-primary" onclick="markModuleComplete()">Mark Module as Complete</button>
+                <button class="btn btn-secondary" onclick="window.print()">Print/Save as PDF</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Progress tracker
+        function updateProgress() {
+            let completed = 0;
+            if (document.querySelectorAll('.material-item input:checked').length > 3) completed++;
+            if (document.querySelectorAll('.quiz-option input:checked').length >= 3) completed++;
+
+            const progress = Math.min((completed * 50) + (localStorage.getItem('module1-progress') || 0), 100);
+            document.getElementById('progress').textContent = progress + '%';
+        }
+
+        function checkQuiz() {
+            const answers = {
+                q1: 'b',
+                q2: 'a',
+                q3: 'c'
+            };
+
+            let score = 0;
+            for (let i = 1; i <= 3; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selected && selected.value === answers[`q${i}`]) {
+                    score++;
+                    document.getElementById(`feedback${i}`).style.display = 'block';
+                    document.getElementById(`feedback${i}`).style.background = '#e8f5e9';
+                }
+            }
+
+            alert(`Quiz Score: ${score}/3\n${score >= 2 ? '✓ PASSED' : '✗ Please review and try again'}`);
+            localStorage.setItem('module1-quiz', score);
+            updateProgress();
+        }
+
+        function resetQuiz() {
+            document.querySelectorAll('.quiz-option input').forEach(el => el.checked = false);
+            document.querySelectorAll('[id^="feedback"]').forEach(el => el.style.display = 'none');
+        }
+
+        function markModuleComplete() {
+            localStorage.setItem('module1-complete', 'true');
+            alert('✓ Module 1 marked as complete! Congratulations! 🎉\n\nYour progress has been saved offline. Ready for Module 2?');
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', updateProgress);
+        document.addEventListener('change', updateProgress);
+    </script>
+</body>
+</html>

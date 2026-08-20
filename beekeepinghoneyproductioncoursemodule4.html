@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beekeeping Module 4: Health & Disease Management</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background: linear-gradient(135deg, #cc8800 0%, #daa520 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 900px; margin: 0 auto; background: white; border-radius: 10px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); overflow: hidden; }
+        .header { background: linear-gradient(135deg, #cc8800 0%, #daa520 100%); color: white; padding: 40px 30px; text-align: center; }
+        .header h1 { font-size: 2.2em; margin-bottom: 10px; }
+        .header p { font-size: 1.1em; opacity: 0.95; }
+        .content { padding: 30px; }
+        .section { margin-bottom: 40px; padding-bottom: 30px; border-bottom: 2px solid #f0f0f0; }
+        .section:last-of-type { border-bottom: none; }
+        h2 { color: #cc8800; font-size: 1.8em; margin-bottom: 20px; border-left: 5px solid #daa520; padding-left: 15px; }
+        h3 { color: #daa520; font-size: 1.3em; margin-top: 20px; margin-bottom: 15px; }
+        .video-container { background: #f9f9f9; border: 2px solid #e0e0e0; border-radius: 8px; padding: 15px; margin-bottom: 25px; }
+        iframe { width: 100%; height: 400px; border: none; border-radius: 6px; display: block; }
+        .video-title { color: #cc8800; font-weight: bold; margin-bottom: 10px; font-size: 1.1em; }
+        .table-container { overflow-x: auto; margin: 20px 0; }
+        table { width: 100%; border-collapse: collapse; background: white; }
+        th, td { padding: 15px; text-align: left; border: 1px solid #ddd; }
+        th { background: #daa520; color: white; font-weight: bold; }
+        tr:nth-child(even) { background: #f9f9f9; }
+        tr:hover { background: #fff8dc; }
+        .implementation-step { background: #fff8dc; border-left: 4px solid #daa520; padding: 20px; margin: 20px 0; border-radius: 4px; }
+        .step-number { color: #cc8800; font-weight: bold; font-size: 1.1em; }
+        .step-title { color: #333; font-weight: bold; font-size: 1.05em; margin: 10px 0; }
+        .step-content { color: #555; font-size: 0.95em; line-height: 1.6; }
+        .quiz-section { background: #e8f4f8; padding: 25px; border-radius: 8px; margin: 30px 0; }
+        .quiz-title { color: #cc8800; font-size: 1.5em; margin-bottom: 20px; font-weight: bold; }
+        .quiz-question { background: white; padding: 20px; margin: 15px 0; border-radius: 6px; border-left: 4px solid #daa520; }
+        .quiz-question-text { font-weight: bold; color: #333; margin-bottom: 15px; font-size: 1.05em; }
+        .quiz-option { margin: 10px 0; }
+        .quiz-option label { cursor: pointer; display: block; padding: 10px; border-radius: 4px; transition: background 0.2s; }
+        .quiz-option label:hover { background: #f0f0f0; }
+        .quiz-option input[type="radio"] { margin-right: 10px; }
+        .feedback { margin-top: 15px; padding: 15px; border-radius: 4px; display: none; }
+        .feedback.correct { background: #d4edda; border: 1px solid #c3e6cb; color: #155724; display: block; }
+        .feedback.incorrect { background: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; display: block; }
+        button { background: linear-gradient(135deg, #cc8800 0%, #daa520 100%); color: white; padding: 12px 30px; border: none; border-radius: 6px; font-size: 1.1em; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; margin-top: 15px; }
+        button:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        .project-section { background: #e8f4f8; padding: 25px; border-radius: 8px; margin: 30px 0; border: 2px solid #daa520; }
+        .project-title { color: #cc8800; font-size: 1.5em; margin-bottom: 15px; font-weight: bold; }
+        .deliverable { background: white; padding: 15px; margin: 10px 0; border-radius: 4px; border-left: 3px solid #daa520; }
+        .progress-bar { background: #f0f0f0; border-radius: 10px; height: 25px; margin: 20px 0; overflow: hidden; }
+        .progress-fill { background: linear-gradient(90deg, #cc8800 0%, #daa520 100%); height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 0.9em; transition: width 0.3s ease; }
+        .checklist { list-style: none; }
+        .checklist li { padding: 10px; margin: 5px 0; background: #f9f9f9; border-radius: 4px; border-left: 3px solid #daa520; }
+        .checklist input[type="checkbox"] { margin-right: 10px; cursor: pointer; }
+        .learning-objectives { background: #fffacd; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #daa520; }
+        .learning-objectives h3 { color: #cc8800; margin-top: 0; }
+        .learning-objectives ul { list-style: none; padding: 0; }
+        .learning-objectives li { padding: 8px 0; border-bottom: 1px solid #d0d0d0; }
+        .learning-objectives li:last-child { border-bottom: none; }
+        .learning-objectives li:before { content: "✓ "; color: #cc8800; font-weight: bold; margin-right: 8px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏥 Module 4: Health & Disease Management</h1>
+            <p>Beekeeping & Honey Production Course - Rise Africa Skills</p>
+        </div>
+        <div class="content">
+            <div class="learning-objectives">
+                <h3>📚 Learning Objectives</h3>
+                <ul>
+                    <li>Identify common bee diseases and pests (Varroa mites, foulbrood, African Savanah fly)</li>
+                    <li>Recognize early signs and symptoms of colony health problems</li>
+                    <li>Implement prevention strategies to minimize disease impact</li>
+                    <li>Conduct regular health monitoring and inspections</li>
+                    <li>Treat diseased colonies using integrated pest management (IPM)</li>
+                    <li>Maintain biosecurity and prevent disease spread between colonies</li>
+                </ul>
+            </div>
+            <div>
+                <p style="font-weight: bold; color: #cc8800;">Your Progress</p>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill" style="width: 0%">0%</div>
+                </div>
+            </div>
+            <div class="section">
+                <h2>🎥 Learning Videos</h2>
+                <p>Watch these 5 videos about common bee diseases, prevention, and treatment strategies.</p>
+                <div class="video-container">
+                    <div class="video-title">Video 1: Common Bee Diseases in Africa</div>
+                    <iframe src="https://www.youtube.com/embed/JHZiPmG5d98" allowfullscreen></iframe>
+                </div>
+                <div class="video-container">
+                    <div class="video-title">Video 2: Varroa Mite Identification & Control</div>
+                    <iframe src="https://www.youtube.com/embed/Z4M_6cI3b_g" allowfullscreen></iframe>
+                </div>
+                <div class="video-container">
+                    <div class="video-title">Video 3: Foulbrood Disease Recognition & Management</div>
+                    <iframe src="https://www.youtube.com/embed/xS6aXhbQxos" allowfullscreen></iframe>
+                </div>
+                <div class="video-container">
+                    <div class="video-title">Video 4: Regular Hive Inspections & Health Monitoring</div>
+                    <iframe src="https://www.youtube.com/embed/3VfF_hGiWbA" allowfullscreen></iframe>
+                </div>
+                <div class="video-container">
+                    <div class="video-title">Video 5: Integrated Pest Management (IPM) Strategies</div>
+                    <iframe src="https://www.youtube.com/embed/HLuHbH0lPM4" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="section">
+                <h2>📊 Common Bee Diseases & Pests in Africa</h2>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Disease/Pest</th>
+                                <th>Symptoms</th>
+                                <th>Prevention</th>
+                                <th>Treatment</th>
+                                <th>Impact Level</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Varroa Mites</td>
+                                <td>Small mites on bees, deformed wings, shortened lifespan, viral diseases</td>
+                                <td>Regular monitoring, healthy diet, clean equipment</td>
+                                <td>Oxalic acid, formic acid, essential oils, drone removal</td>
+                                <td>Very High</td>
+                            </tr>
+                            <tr>
+                                <td>American Foulbrood (AFB)</td>
+                                <td>Dead larvae in comb, foul smell, scale formation, rope-like consistency</td>
+                                <td>Good hive hygiene, avoid mixing colonies, sterilize tools</td>
+                                <td>No cure - cull colony, burn comb or use fumigants</td>
+                                <td>Critical</td>
+                            </tr>
+                            <tr>
+                                <td>European Foulbrood (EFB)</td>
+                                <td>Dead larvae, sour smell, discolored comb, scattered brood pattern</td>
+                                <td>Remove diseased brood, good nutrition, strong colonies</td>
+                                <td>Remove frames with diseased larvae, requeening</td>
+                                <td>High</td>
+                            </tr>
+                            <tr>
+                                <td>African Savanah Fly</td>
+                                <td>Weak colonies robbed of resources, larvae parasitized</td>
+                                <td>Maintain strong colonies, reduce entrance, remove dead bees</td>
+                                <td>Eliminate weak colonies, screen entrances, traps</td>
+                                <td>High</td>
+                            </tr>
+                            <tr>
+                                <td>Nosema Disease</td>
+                                <td>Dysentery-like symptoms, sick bees unable to fly, colony decline</td>
+                                <td>Good nutrition, clean hives, adequate ventilation</td>
+                                <td>Antibiotic (fumagillin), requeening, comb replacement</td>
+                                <td>Moderate</td>
+                            </tr>
+                            <tr>
+                                <td>Chalk Brood</td>
+                                <td>Mummified larvae turning white/chalk-like in comb</td>
+                                <td>Good ventilation, reduce humidity, strong colonies</td>
+                                <td>Remove infected comb, improve hive conditions</td>
+                                <td>Low-Moderate</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="section">
+                <h2>📋 6 Implementation Steps</h2>
+                <div class="implementation-step">
+                    <div class="step-number">Step 1: Establish Health Monitoring Protocol</div>
+                    <div class="step-title">Create a regular inspection schedule</div>
+                    <div class="step-content">
+                        During active season (spring/summer), inspect each colony every 7-10 days. During dormant season, inspect every 2-3 weeks if needed. Create a checklist to assess: brood pattern (solid, scattered, spotty), adult bee population, food stores, and visible pests. Record observations in a log for each colony. Note colony strength (1-5 scale) and overall health status.
+                    </div>
+                </div>
+                <div class="implementation-step">
+                    <div class="step-number">Step 2: Learn Disease Recognition</div>
+                    <div class="step-title">Study symptoms of common diseases in your region</div>
+                    <div class="step-content">
+                        Use the disease chart above to familiarize yourself with symptoms of the most common problems in your area. Consult with your local beekeeper association or agricultural extension office about which diseases are prevalent in your region. Collect photos/samples of diseased comb from experienced beekeepers if available. Practice identifying signs of varroa mites (reddish spots on bees), foulbrood (distinctive smell), and other regional diseases.
+                    </div>
+                </div>
+                <div class="implementation-step">
+                    <div class="step-number">Step 3: Implement Biosecurity Measures</div>
+                    <div class="step-title">Prevent disease spread between colonies</div>
+                    <div class="step-content">
+                        Establish these practices: use separate equipment for each colony or sterilize between use, don't move equipment or bees between colonies without good reason, prevent robbing by proper hive spacing and entrance management, wear clean clothing when visiting hives, wash hands between colony inspections, disinfect tools (smoker, hive tool, gloves) regularly. If you find disease in one colony, work with it last and clean equipment afterward.
+                    </div>
+                </div>
+                <div class="implementation-step">
+                    <div class="step-number">Step 4: Stock Emergency Treatment Supplies</div>
+                    <div class="step-title">Prepare for disease response</div>
+                    <div class="step-content">
+                        Contact suppliers (agricultural extension, beekeeping associations, online retailers) to identify available treatments for common diseases in your region. Stock supplies for varroa control (oxalic acid, formic acid, or approved alternatives), disinfectants for equipment (bleach solution, fire), replacement brood comb in case of AFB, and bee medications (if available/legal in your country). Ensure you understand proper application rates, timing, and safety protocols before needing to use treatments.
+                    </div>
+                </div>
+                <div class="implementation-step">
+                    <div class="step-number">Step 5: Establish Disease Response Plan</div>
+                    <div class="step-title">Know what to do if you find disease</div>
+                    <div class="step-content">
+                        Create written procedures for different scenarios: if you find varroa mites, if you suspect foulbrood, if you notice weak colony symptoms, if you see African Savanah fly damage. Include: steps to confirm disease, notification to local authorities (if required), treatment plan or culling decision, isolation of affected colony, and cleanup procedures. Know which diseases require reporting to government agricultural authorities in your country.
+                    </div>
+                </div>
+                <div class="implementation-step">
+                    <div class="step-number">Step 6: Join Local Beekeeper Network</div>
+                    <div class="step-title">Access expertise and stay informed</div>
+                    <div class="step-content">
+                        Connect with experienced beekeepers in your area through local associations, extension services, or informal networks. Share disease observations and treatment results. Attend workshops or training on disease management. Participate in local initiatives to monitor and control regional pest problems (e.g., coordinated varroa monitoring). Build relationships with veterinary services or extension specialists who can help diagnose unusual problems.
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="quiz-section">
+                    <div class="quiz-title">🎯 Module Quiz</div>
+                    <p>Test your understanding of bee disease management:</p>
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">1. What is the primary indicator of Varroa mite infestation?</div>
+                        <div class="quiz-option">
+                            <label>
+                                <input type="radio" name="q1" value="a"> Dead larvae in the comb
+                            </label>
+                        </div>
+                        <div class="quiz-option">
+                            <label>
+                                <input type="radio" name="q1" value="b"> Small reddish mites visible on adult bees and deformed wings
+                            </label>
+                        </div>
+                        <div class="quiz-option">
+                            <label>
+                                <input type="radio" name="q1" value="c"> Foul smell from the hive
+                            </label>
+                        </div>
+                        <button onclick="checkAnswer('q1', 'b', 'Correct! Varroa mites are visible on bee bodies, causing deformed wings and shortened bee lifespan. They also spread viral diseases.')">Check Answer</button>
+                        <div class="feedback" id="q1-feedback"></div>
+                    </div>
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">2. What is the only guaranteed treatment for American Foulbrood (AFB)?</div>
+                        <div class="quiz-option">
+                            <label>
+                                <input type="radio" name="q2" value="a"> Antibiotics like terramycin
+                            </label>
+                        </div>
+                        <div class="quiz-option">
+                            <label>
+                                <input type="radio" name="q2" value="b"> Essential oil treatments
+                            </label>
+                        </div>
+                        <div class="quiz-option">
+                            <label>
+                                <input type="radio" name="q2" value="c"> Culling the colony and destroying/sterilizing the comb
+                            </label>
+                        </div>
+                        <button onclick="checkAnswer('q2', 'c', 'Correct! AFB is so serious that culling the colony and destroying/sterilizing materials is the only way to prevent spread to other colonies.')">Check Answer</button>
+                        <div class="feedback" id="q2-feedback"></div>
+                    </div>
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">3. How often should you inspect colonies during active season for disease prevention?</div>
+                        <div class="quiz-option">
+                            <label>
+                                <input type="radio" name="q3" value="a"> Once per month
+                            </label>
+                        </div>
+                        <div class="quiz-option">
+                            <label>
+                                <input type="radio" name="q3" value="b"> Every 7-10 days
+                            </label>
+                        </div>
+                        <div class="quiz-option">
+                            <label>
+                                <input type="radio" name="q3" value="c"> Only when you suspect a problem
+                            </label>
+                        </div>
+                        <button onclick="checkAnswer('q3', 'b', 'Correct! Regular inspections every 7-10 days catch problems early, before they spread to other colonies or become critical.')">Check Answer</button>
+                        <div class="feedback" id="q3-feedback"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="project-section">
+                    <div class="project-title">🚀 Real-World Project: Disease Management & Biosecurity Plan</div>
+                    <p style="margin-bottom: 20px;">Develop a comprehensive health and disease management program for your apiary.</p>
+                    <div class="deliverable">
+                        <strong>Part 1: Regional Disease Risk Assessment</strong>
+                        <p>Research the diseases and pests most common in your specific region (consult local extension office, experienced beekeepers, agricultural ministry). Create a table listing: disease name, severity (low/moderate/high/critical), prevalence in your area (% of beekeepers affected), and season when most common. Prioritize the 3-4 most significant regional threats.</p>
+                    </div>
+                    <div class="deliverable">
+                        <strong>Part 2: Health Monitoring Schedule</strong>
+                        <p>Design a specific hive inspection schedule for your operation based on your climate and colony count. Create a calendar showing: inspection frequency for active season vs. dormant season, inspection duration, what you'll check for, and timeline for each colony. Include backup dates for emergencies. Create a simple inspection checklist form you'll use for each hive visit.</p>
+                    </div>
+                    <div class="deliverable">
+                        <strong>Part 3: Biosecurity Protocol</strong>
+                        <p>Document all biosecurity measures you'll implement to prevent disease spread: equipment management (separate vs. shared), cleaning/disinfection procedures, hive spacing, entrance management to prevent robbing, protective equipment (what you'll wear), hand washing protocol, and rules for moving bees/equipment between colonies. Create a step-by-step guide for cleaning and disinfecting equipment.</p>
+                    </div>
+                    <div class="deliverable">
+                        <strong>Part 4: Treatment & Supply Inventory</strong>
+                        <p>List all disease treatments and preventive supplies available in your region for your top 3 disease threats. For each treatment, research and document: product name, active ingredient, dosage/application rate, cost per unit, how to order, required safety precautions, and effectiveness. Create a supplies checklist and reordering plan.</p>
+                    </div>
+                    <div class="deliverable">
+                        <strong>Part 5: Disease Recognition Guide</strong>
+                        <p>Create a visual guide for identifying signs of disease in your colonies. For each major disease: describe symptoms in detail, note at what stage of colony development it appears, sketch or describe what affected comb looks like, list any distinctive smells, and describe affected bee appearance. Use photos if available. Include notes on how to confirm diagnosis (e.g., which symptoms are definitive vs. just suggestive).</p>
+                    </div>
+                    <div class="deliverable">
+                        <strong>Part 6: Emergency Response Procedures</strong>
+                        <p>Document step-by-step procedures for four scenarios: (1) Finding varroa mites, (2) Suspecting foulbrood, (3) Encountering weak colony with multiple symptoms, (4) Finding African Savanah fly damage. For each, include: confirmation steps, isolation measures, treatment decisions, timeline, who to notify, and cleanup procedures. Include decision trees for whether to treat or cull.</p>
+                    </div>
+                    <div class="deliverable">
+                        <strong>Part 7: Record Keeping System</strong>
+                        <p>Design your health record-keeping system (paper or digital). Include: hive inspection form to record observations, disease log to track any illness detected, treatment log showing what was applied and results, medication inventory tracking, and disposal records for culled colonies. Create templates for each form and explain how you'll organize and review the data.</p>
+                    </div>
+                    <div class="deliverable">
+                        <strong>Part 8: Local Network & Knowledge Plan</strong>
+                        <p>Identify local beekeeping resources you'll connect with: beekeeper associations, agricultural extension office contacts, experienced mentor beekeepers, veterinary services, and online forums/communities. For each, document: contact information, what expertise they offer, how often you'll communicate, and how they'll help your disease management efforts. Schedule your first meeting/communication date.</p>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 30px; padding: 20px; background: #f0f0f0; border-radius: 8px; text-align: center;">
+                <p style="color: #cc8800; font-weight: bold; margin-bottom: 10px;">Module 4 Complete!</p>
+                <p>You've mastered health management and disease prevention. Let's move on to colony management in Module 5!</p>
+                <button onclick="alert('Excellent work! You\'re now disease-ready. Continue to Module 5.')">Next Module</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function checkAnswer(questionId, correctAnswer, feedback) {
+            const selected = document.querySelector(`input[name="${questionId}"]:checked`);
+            const feedbackDiv = document.getElementById(`${questionId}-feedback`);
+            if (!selected) {
+                alert('Please select an answer first!');
+                return;
+            }
+            if (selected.value === correctAnswer) {
+                feedbackDiv.className = 'feedback correct';
+                feedbackDiv.textContent = '✓ ' + feedback;
+                updateProgress();
+            } else {
+                feedbackDiv.className = 'feedback incorrect';
+                feedbackDiv.textContent = '✗ Incorrect. ' + feedback;
+            }
+        }
+        function updateProgress() {
+            const totalQuestions = 3;
+            const answered = document.querySelectorAll('.feedback.correct').length;
+            const percent = Math.round((answered / totalQuestions) * 100);
+            document.getElementById('progressFill').style.width = percent + '%';
+            document.getElementById('progressFill').textContent = percent + '%';
+        }
+    </script>
+</body>
+</html>

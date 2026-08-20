@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beekeeping Module 3: Bee Nutrition & Forage Management</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background: linear-gradient(135deg, #cc8800 0%, #daa520 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 900px; margin: 0 auto; background: white; border-radius: 10px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); overflow: hidden; }
+        .header { background: linear-gradient(135deg, #cc8800 0%, #daa520 100%); color: white; padding: 40px 30px; text-align: center; }
+        .header h1 { font-size: 2.2em; margin-bottom: 10px; }
+        .header p { font-size: 1.1em; opacity: 0.95; }
+        .content { padding: 30px; }
+        .section { margin-bottom: 40px; padding-bottom: 30px; border-bottom: 2px solid #f0f0f0; }
+        .section:last-of-type { border-bottom: none; }
+        h2 { color: #cc8800; font-size: 1.8em; margin-bottom: 20px; border-left: 5px solid #daa520; padding-left: 15px; }
+        h3 { color: #daa520; font-size: 1.3em; margin-top: 20px; margin-bottom: 15px; }
+        .video-container { background: #f9f9f9; border: 2px solid #e0e0e0; border-radius: 8px; padding: 15px; margin-bottom: 25px; }
+        iframe { width: 100%; height: 400px; border: none; border-radius: 6px; display: block; }
+        .video-title { color: #cc8800; font-weight: bold; margin-bottom: 10px; font-size: 1.1em; }
+        .table-container { overflow-x: auto; margin: 20px 0; }
+        table { width: 100%; border-collapse: collapse; background: white; }
+        th, td { padding: 15px; text-align: left; border: 1px solid #ddd; }
+        th { background: #daa520; color: white; font-weight: bold; }
+        tr:nth-child(even) { background: #f9f9f9; }
+        tr:hover { background: #fff8dc; }
+        .implementation-step { background: #fff8dc; border-left: 4px solid #daa520; padding: 20px; margin: 20px 0; border-radius: 4px; }
+        .step-number { color: #cc8800; font-weight: bold; font-size: 1.1em; }
+        .step-title { color: #333; font-weight: bold; font-size: 1.05em; margin: 10px 0; }
+        .step-content { color: #555; font-size: 0.95em; line-height: 1.6; }
+        .quiz-section { background: #e8f4f8; padding: 25px; border-radius: 8px; margin: 30px 0; }
+        .quiz-title { color: #cc8800; font-size: 1.5em; margin-bottom: 20px; font-weight: bold; }
+        .quiz-question { background: white; padding: 20px; margin: 15px 0; border-radius: 6px; border-left: 4px solid #daa520; }
+        .quiz-question-text { font-weight: bold; color: #333; margin-bottom: 15px; font-size: 1.05em; }
+        .quiz-option { margin: 10px 0; }
+        .quiz-option label { cursor: pointer; display: block; padding: 10px; border-radius: 4px; transition: background 0.2s; }
+        .quiz-option label:hover { background: #f0f0f0; }
+        .quiz-option input[type="radio"] { margin-right: 10px; }
+        .feedback { margin-top: 15px; padding: 15px; border-radius: 4px; display: none; }
+        .feedback.correct { background: #d4edda; border: 1px solid #c3e6cb; color: #155724; display: block; }
+        .feedback.incorrect { background: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; display: block; }
+        button { background: linear-gradient(135deg, #cc8800 0%, #daa520 100%); color: white; padding: 12px 30px; border: none; border-radius: 6px; font-size: 1.1em; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; margin-top: 15px; }
+        button:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        .project-section { background: #e8f4f8; padding: 25px; border-radius: 8px; margin: 30px 0; border: 2px solid #daa520; }
+        .project-title { color: #cc8800; font-size: 1.5em; margin-bottom: 15px; font-weight: bold; }
+        .deliverable { background: white; padding: 15px; margin: 10px 0; border-radius: 4px; border-left: 3px solid #daa520; }
+        .progress-bar { background: #f0f0f0; border-radius: 10px; height: 25px; margin: 20px 0; overflow: hidden; }
+        .progress-fill { background: linear-gradient(90deg, #cc8800 0%, #daa520 100%); height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 0.9em; transition: width 0.3s ease; }
+        .checklist { list-style: none; }
+        .checklist li { padding: 10px; margin: 5px 0; background: #f9f9f9; border-radius: 4px; border-left: 3px solid #daa520; }
+        .checklist input[type="checkbox"] { margin-right: 10px; cursor: pointer; }
+        .learning-objectives { background: #fffacd; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #daa520; }
+        .learning-objectives h3 { color: #cc8800; margin-top: 0; }
+        .learning-objectives ul { list-style: none; padding: 0; }
+        .learning-objectives li { padding: 8px 0; border-bottom: 1px solid #d0d0d0; }
+        .learning-objectives li:last-child { border-bottom: none; }
+        .learning-objectives li:before { content: "✓ "; color: #cc8800; font-weight: bold; margin-right: 8px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌻 Module 3: Bee Nutrition & Forage Management</h1>
+            <p>Beekeeping & Honey Production Course - Rise Africa Skills</p>
+        </div>
+        <div class="content">
+            <div class="learning-objectives">
+                <h3>📚 Learning Objectives</h3>
+                <ul>
+                    <li>Understand bee nutritional requirements (nectar, pollen, water)</li>
+                    <li>Identify local forage plants and their flowering seasons</li>
+                    <li>Plan year-round forage availability for your region</li>
+                    <li>Manage water sources for bee colonies</li>
+                    <li>Implement supplemental feeding strategies when needed</li>
+                    <li>Create sustainable forage calendars and management plans</li>
+                </ul>
+            </div>
+            <div>
+                <p style="font-weight: bold; color: #cc8800;">Your Progress</p>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill" style="width: 0%">0%</div>
+                </div>
+            </div>
+            <div class="section">
+                <h2>🎥 Learning Videos</h2>
+                <p>Watch these 5 videos about bee nutrition, forage management, and seasonal planning.</p>
+                <div class="video-container">
+                    <div class="video-title">Video 1: Bee Nutrition & Nutritional Requirements</div>
+                    <iframe src="https://www.youtube.com/embed/Ib8zBpJKMtA" allowfullscreen></iframe>
+                </div>
+                <div class="video-container">
+                    <div class="video-title">Video 2: Identifying Local Forage Plants in Africa</div>
+                    <iframe src="https://www.youtube.com/embed/WQ6f3rDXY_4" allowfullscreen></iframe>
+                </div>
+                <div class="video-container">
+                    <div class="video-title">Video 3: Seasonal Forage Planning & Calendar</div>
+                    <iframe src="https://www.youtube.com/embed/1I1mWK_NKHw" allowfullscreen></iframe>
+                </div>
+                <div class="video-container">
+                    <div class="video-title">Video 4: Water Management for Bees</div>
+                    <iframe src="https://www.youtube.com/embed/1HHkVXmOPfk" allowfullscreen></iframe>
+                </div>
+                <div class="video-container">
+                    <div class="video-title">Video 5: Supplemental Feeding Strategies</div>
+                    <iframe src="https://www.youtube.com/embed/oNDEjh0YqTw" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="section">
+                <h2>📊 Forage Plants Comparison - African Regions</h2>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Plant Species</th>
+                                <th>African Region</th>
+                                <th>Flowering Season</th>
+                                <th>Nectar Yield</th>
+                                <th>Pollen Quality</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Acacia (various)</td>
+                                <td>East/West Africa</td>
+                                <td>Dry season (Jan-Apr)</td>
+                                <td>High (20-30kg/ha)</td>
+                                <td>Excellent</td>
+                            </tr>
+                            <tr>
+                                <td>Eucalyptus</td>
+                                <td>East Africa</td>
+                                <td>Year-round (peak Aug-Oct)</td>
+                                <td>Very High (40kg+/ha)</td>
+                                <td>Good</td>
+                            </tr>
+                            <tr>
+                                <td>Sunflower</td>
+                                <td>Southern Africa</td>
+                                <td>Summer (Dec-Feb)</td>
+                                <td>High (25kg/ha)</td>
+                                <td>Excellent</td>
+                            </tr>
+                            <tr>
+                                <td>Maize (pollen)</td>
+                                <td>All regions</td>
+                                <td>Rainy season (Nov-Mar)</td>
+                                <td>Low (nectar)</td>
+                                <td>Excellent</td>
+                            </tr>
+                            <tr>
+                                <td>Wildflower Mix</td>
+                                <td>All regions</td>
+                                <td>Variable by species</td>
+                                <td>Moderate (10-20kg/ha)</td>
+                                <td>Excellent</td>
+                            </tr>
+                            <tr>
+                                <td>Fruit Trees (Apple, Mango)</td>
+                                <td>All regions</td>
+                                <td>Spring (Aug-Oct)</td>
+                                <td>Moderate (15kg/ha)</td>
+                                <td>Excellent</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="section">
+                <h2>📋 6 Implementation Steps</h2>
+                <div class="implementation-step">
+                    <div class="step-number">Step 1: Assess Your Local Forage</div>
+                    <div class="step-title">Research flowering plants in your microclimate</div>
+                    <div class="step-content">
+                        Visit your local agricultural extension office or consult with experienced farmers to identify plants that flower in your area. Record which plants flower in each month. Walk your apiary location and surrounding 2km radius to document natural vegetation. Create a list of wild forage plants and cultivated crops within foraging distance of your hives.
+                    </div>
+                </div>
+                <div class="implementation-step">
+                    <div class="step-number">Step 2: Create a Seasonal Forage Calendar</div>
+                    <div class="step-title">Map forage availability for all 12 months</div>
+                    <div class="step-content">
+                        Using your forage research, create a month-by-month chart showing which plants flower when. Identify "gap months" with minimal forage (typically dry season). Estimate total forage availability month by month as percentage of colony needs. Note which months require supplemental feeding to maintain strong colonies.
+                    </div>
+                </div>
+                <div class="implementation-step">
+                    <div class="step-number">Step 3: Plan Forage Enhancement</div>
+                    <div class="step-title">Select native trees and flowers to plant</div>
+                    <div class="step-content">
+                        Based on your forage calendar, select 5-10 native plant species to fill gaps in your local forage. Prioritize plants that flower during lean months. Consider space available—can you plant on your property or arrange with neighbors? Research planting requirements (water, soil, climate) for each species. Create a 3-5 year planting plan with quantities and layout.
+                    </div>
+                </div>
+                <div class="implementation-step">
+                    <div class="step-number">Step 4: Establish Water Supply</div>
+                    <div class="step-title">Install safe, accessible water sources</div>
+                    <div class="step-content">
+                        Install at least one shallow water container within 50m of hives, filled with clean water daily. Add pebbles or sticks so bees don't drown. Consider your climate: in hot regions, bees need water daily; in cooler areas, less frequently. Backup water sources should be available during dry seasons. Plan for water during drought periods.
+                    </div>
+                </div>
+                <div class="implementation-step">
+                    <div class="step-number">Step 5: Prepare Supplemental Feed</div>
+                    <div class="step-title">Develop backup feeding strategy</div>
+                    <div class="step-content">
+                        Calculate how much supplemental feeding each colony needs during gap months based on colony size and forage shortage. Research local suppliers for bee feed (sugar syrup, pollen substitute, or protein patties). Determine feeding schedule and quantities. Calculate annual supplemental feeding cost and factor into your beekeeping budget. Practice preparing and administering feed safely.
+                    </div>
+                </div>
+                <div class="implementation-step">
+                    <div class="step-number">Step 6: Monitor & Adjust</div>
+                    <div class="step-title">Track forage and bee health continuously</div>
+                    <div class="step-content">
+                        Visit hives weekly during active season to assess pollen and nectar storage. Adjust feeding based on observed colony conditions, not just calendar dates. Monitor bee behavior (foraging activity, water collection) as indicator of forage sufficiency. After each season, review actual forage vs. predicted, and update your calendar. Track which plants actually flower when they're supposed to in your specific location.
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="quiz-section">
+                    <div class="quiz-title">🎯 Module Quiz</div>
+                    <p>Test your understanding of bee nutrition and forage management:</p>
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">1. What are the three main nutritional requirements for bees?</div>
+                        <div class="quiz-option">
+                            <label>
+                                <input type="radio" name="q1" value="a"> Nectar, water, and salt
+                            </label>
+                        </div>
+                        <div class="quiz-option">
+                            <label>
+                                <input type="radio" name="q1" value="b"> Nectar, pollen, and water
+                            </label>
+                        </div>
+                        <div class="quiz-option">
+                            <label>
+                                <input type="radio" name="q1" value="c"> Sugar, pollen, and minerals
+                            </label>
+                        </div>
+                        <button onclick="checkAnswer('q1', 'b', 'Correct! Bees need nectar (converted to honey for energy), pollen (protein source), and water (for diluting honey, cooling hive, and metabolism).')">Check Answer</button>
+                        <div class="feedback" id="q1-feedback"></div>
+                    </div>
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">2. During which season do most African bee colonies need supplemental feeding?</div>
+                        <div class="quiz-option">
+                            <label>
+                                <input type="radio" name="q2" value="a"> Rainy season (peak nectar flow)
+                            </label>
+                        </div>
+                        <div class="quiz-option">
+                            <label>
+                                <input type="radio" name="q2" value="b"> Dry season (minimal forage)
+                            </label>
+                        </div>
+                        <div class="quiz-option">
+                            <label>
+                                <input type="radio" name="q2" value="c"> Transitional seasons only
+                            </label>
+                        </div>
+                        <button onclick="checkAnswer('q2', 'b', 'Correct! Dry seasons typically have minimal flowering plants, making supplemental feeding necessary to keep colonies alive and prevent starvation.')">Check Answer</button>
+                        <div class="feedback" id="q2-feedback"></div>
+                    </div>
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">3. How often should you refill water containers for bees in a hot climate?</div>
+                        <div class="quiz-option">
+                            <label>
+                                <input type="radio" name="q3" value="a"> Every 2-3 days
+                            </label>
+                        </div>
+                        <div class="quiz-option">
+                            <label>
+                                <input type="radio" name="q3" value="b"> Daily or even multiple times per day
+                            </label>
+                        </div>
+                        <div class="quiz-option">
+                            <label>
+                                <input type="radio" name="q3" value="c"> Once per week is sufficient
+                            </label>
+                        </div>
+                        <button onclick="checkAnswer('q3', 'b', 'Correct! Hot climates increase bee water needs for cooling the hive. Daily or multiple daily refills ensure adequate water supply.')">Check Answer</button>
+                        <div class="feedback" id="q3-feedback"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="project-section">
+                    <div class="project-title">🚀 Real-World Project: Forage & Nutrition Plan</div>
+                    <p style="margin-bottom: 20px;">Create a comprehensive forage management plan for your beekeeping operation.</p>
+                    <div class="deliverable">
+                        <strong>Part 1: Local Forage Assessment</strong>
+                        <p>Document all flowering plants within 2km of your apiary location. For each plant, record: species name, local name, flowering season, nectar/pollen quality, and estimated yield. Include at least 15 plants. Create a simple map showing locations of key forage sources.</p>
+                    </div>
+                    <div class="deliverable">
+                        <strong>Part 2: 12-Month Forage Calendar</strong>
+                        <p>Create a visual calendar (chart or table) showing forage availability for each month of the year. Mark months with good forage availability (green), moderate (yellow), and poor/gap months (red). Estimate percentage of colony needs met by natural forage for each month.</p>
+                    </div>
+                    <div class="deliverable">
+                        <strong>Part 3: Forage Gap Analysis</strong>
+                        <p>Identify which 3-4 months have the most significant forage gaps. For each gap month, calculate: estimated nectar/pollen deficiency per colony, number of colonies affected, and total supplemental feed needed. List recommended supplemental feed options (sugar syrup, pollen substitute, etc.) and suppliers.</p>
+                    </div>
+                    <div class="deliverable">
+                        <strong>Part 4: Forage Enhancement Plan</strong>
+                        <p>Select 5-8 native plant species to plant or encourage on/near your property to improve forage availability. For each species, include: species and local name, reason for selection (which gap month does it fill?), planting requirements, space needed, and timeline. Include cost estimate for seeds/saplings.</p>
+                    </div>
+                    <div class="deliverable">
+                        <strong>Part 5: Water Management Plan</strong>
+                        <p>Design your bee water supply system. Specify: water source (well, rain harvesting, spring), container type/size, placement locations, daily water requirements in liters, refilling schedule, backup sources for dry season, and maintenance plan. Include diagrams or photos of your water setup.</p>
+                    </div>
+                    <div class="deliverable">
+                        <strong>Part 6: Supplemental Feed Budget</strong>
+                        <p>Calculate annual supplemental feeding costs for your colony size. Include: types of feed needed, quantities for each gap month, supplier sources, price per unit, total annual cost, and cost per kg of honey produced. Compare cost with expected honey revenue to ensure profitability.</p>
+                    </div>
+                    <div class="deliverable">
+                        <strong>Part 7: Monitoring & Adjustment Schedule</strong>
+                        <p>Create a quarterly review schedule for your forage plan. For each quarter, list: what you'll observe (pollen stores, bee behavior, water consumption), what data you'll record, and what adjustments you might make based on observations. Include templates for recording weekly observations during active season.</p>
+                    </div>
+                    <div class="deliverable">
+                        <strong>Part 8: 3-Year Implementation Strategy</strong>
+                        <p>Create a 3-year timeline showing: when forage plants will be established, when new water sources come online, when supplemental feeding will begin/end, and when you expect to see improved colony health/productivity. Show how your forage plan directly supports your overall beekeeping business goals.</p>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 30px; padding: 20px; background: #f0f0f0; border-radius: 8px; text-align: center;">
+                <p style="color: #cc8800; font-weight: bold; margin-bottom: 10px;">Module 3 Complete!</p>
+                <p>You've learned about bee nutrition and forage management. Ready to tackle health and disease management in Module 4?</p>
+                <button onclick="alert('Great work! Move on to Module 4 when ready.')">Next Module</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function checkAnswer(questionId, correctAnswer, feedback) {
+            const selected = document.querySelector(`input[name="${questionId}"]:checked`);
+            const feedbackDiv = document.getElementById(`${questionId}-feedback`);
+            if (!selected) {
+                alert('Please select an answer first!');
+                return;
+            }
+            if (selected.value === correctAnswer) {
+                feedbackDiv.className = 'feedback correct';
+                feedbackDiv.textContent = '✓ ' + feedback;
+                updateProgress();
+            } else {
+                feedbackDiv.className = 'feedback incorrect';
+                feedbackDiv.textContent = '✗ Incorrect. ' + feedback;
+            }
+        }
+        function updateProgress() {
+            const totalQuestions = 3;
+            const answered = document.querySelectorAll('.feedback.correct').length;
+            const percent = Math.round((answered / totalQuestions) * 100);
+            document.getElementById('progressFill').style.width = percent + '%';
+            document.getElementById('progressFill').textContent = percent + '%';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poultry Farming Module 5: Breeding & Egg Production</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #8b0000 0%, #a52a2a 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #8b0000 0%, #a52a2a 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .section:last-of-type {
+            border-bottom: none;
+        }
+
+        h2 {
+            color: #8b0000;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            border-left: 5px solid #a52a2a;
+            padding-left: 15px;
+        }
+
+        h3 {
+            color: #a52a2a;
+            font-size: 1.3em;
+            margin-top: 20px;
+            margin-bottom: 15px;
+        }
+
+        .video-container {
+            background: #f9f9f9;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 25px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            border-radius: 6px;
+            display: block;
+        }
+
+        .video-title {
+            color: #8b0000;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background: #a52a2a;
+            color: white;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        tr:hover {
+            background: #fff3cd;
+        }
+
+        .implementation-step {
+            background: #fff3cd;
+            border-left: 4px solid #a52a2a;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .step-number {
+            color: #8b0000;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .step-title {
+            color: #333;
+            font-weight: bold;
+            font-size: 1.05em;
+            margin: 10px 0;
+        }
+
+        .step-content {
+            color: #555;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .quiz-section {
+            background: #e8f4f8;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+        .quiz-title {
+            color: #8b0000;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .quiz-question {
+            background: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 6px;
+            border-left: 4px solid #a52a2a;
+        }
+
+        .quiz-question-text {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.05em;
+        }
+
+        .quiz-option {
+            margin: 10px 0;
+        }
+
+        .quiz-option label {
+            cursor: pointer;
+            display: block;
+            padding: 10px;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        .quiz-option label:hover {
+            background: #f0f0f0;
+        }
+
+        .quiz-option input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .feedback {
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: 4px;
+            display: none;
+        }
+
+        .feedback.correct {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            display: block;
+        }
+
+        .feedback.incorrect {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+            display: block;
+        }
+
+        button {
+            background: linear-gradient(135deg, #8b0000 0%, #a52a2a 100%);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-top: 15px;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .project-section {
+            background: #e8f4f8;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 30px 0;
+            border: 2px solid #a52a2a;
+        }
+
+        .project-title {
+            color: #8b0000;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .deliverable {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border-left: 3px solid #a52a2a;
+        }
+
+        .progress-bar {
+            background: #f0f0f0;
+            border-radius: 10px;
+            height: 25px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            background: linear-gradient(90deg, #8b0000 0%, #a52a2a 100%);
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.9em;
+            transition: width 0.3s ease;
+        }
+
+        .checklist {
+            list-style: none;
+        }
+
+        .checklist li {
+            padding: 10px;
+            margin: 5px 0;
+            background: #f9f9f9;
+            border-radius: 4px;
+            border-left: 3px solid #a52a2a;
+        }
+
+        .checklist input[type="checkbox"] {
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .learning-objectives {
+            background: #e8f4f8;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #a52a2a;
+        }
+
+        .learning-objectives h3 {
+            color: #8b0000;
+            margin-top: 0;
+        }
+
+        .learning-objectives ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .learning-objectives li {
+            padding: 8px 0;
+            border-bottom: 1px solid #d0d0d0;
+        }
+
+        .learning-objectives li:last-child {
+            border-bottom: none;
+        }
+
+        .learning-objectives li:before {
+            content: "✓ ";
+            color: #8b0000;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.6em;
+            }
+
+            iframe {
+                height: 250px;
+            }
+
+            table {
+                font-size: 0.9em;
+            }
+
+            th, td {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🥚 Module 5: Breeding & Egg Production</h1>
+            <p>Sustainable Poultry Farming Course - Rise Africa Skills</p>
+        </div>
+
+        <div class="content">
+            <!-- Learning Objectives -->
+            <div class="learning-objectives">
+                <h3>📚 Learning Objectives</h3>
+                <ul>
+                    <li>Understand poultry reproductive cycles and breeding biology</li>
+                    <li>Recognize signs of heat and readiness to breed</li>
+                    <li>Manage breeding birds and breeding seasons</li>
+                    <li>Handle eggs and prepare for hatching</li>
+                    <li>Care for chicks after hatching</li>
+                    <li>Build a sustainable, profitable breeding program</li>
+                </ul>
+            </div>
+
+            <!-- Progress Bar -->
+            <div>
+                <p style="font-weight: bold; color: #8b0000;">Your Progress</p>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill" style="width: 0%">0%</div>
+                </div>
+            </div>
+
+            <!-- Videos Section -->
+            <div class="section">
+                <h2>🎥 Learning Videos</h2>
+                <p>Watch these 5 videos to understand poultry breeding and egg production. Take detailed notes.</p>
+
+                <div class="video-container">
+                    <div class="video-title">Video 1: Poultry Reproductive Biology & Egg Formation</div>
+                    <iframe src="https://www.youtube.com/embed/5YH0mhT-RmU" allowfullscreen></iframe>
+                </div>
+
+                <div class="video-container">
+                    <div class="video-title">Video 2: Recognizing Breeding Readiness & Heat Cycles</div>
+                    <iframe src="https://www.youtube.com/embed/p0qjqQT_ksU" allowfullscreen></iframe>
+                </div>
+
+                <div class="video-container">
+                    <div class="video-title">Video 3: Managing Breeding Programs & Flock Selection</div>
+                    <iframe src="https://www.youtube.com/embed/RFMPfO7TCPE" allowfullscreen></iframe>
+                </div>
+
+                <div class="video-container">
+                    <div class="video-title">Video 4: Egg Handling & Incubation Basics</div>
+                    <iframe src="https://www.youtube.com/embed/bm-9JxsEIQQ" allowfullscreen></iframe>
+                </div>
+
+                <div class="video-container">
+                    <div class="video-title">Video 5: Chick Care & Brooding Essentials</div>
+                    <iframe src="https://www.youtube.com/embed/Jl9Wf7Cw5ms" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <!-- Reproductive Cycles -->
+            <div class="section">
+                <h2>📊 Poultry Reproductive Cycles & Timeline</h2>
+                <p>Understanding reproductive biology helps you manage your breeding flock effectively:</p>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Species</th>
+                                <th>Sexual Maturity</th>
+                                <th>Heat Duration</th>
+                                <th>Incubation Period</th>
+                                <th>Egg Production</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Chickens</strong></td>
+                                <td>16-24 weeks</td>
+                                <td>1-2 days</td>
+                                <td>21 days</td>
+                                <td>200-300 eggs/year</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Turkeys</strong></td>
+                                <td>24-28 weeks</td>
+                                <td>2-4 days</td>
+                                <td>28 days</td>
+                                <td>100-150 eggs/year</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ducks</strong></td>
+                                <td>16-22 weeks</td>
+                                <td>Continuous (seasonal)</td>
+                                <td>28-30 days</td>
+                                <td>150-200 eggs/year</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Geese</strong></td>
+                                <td>18-24 months (!)</td>
+                                <td>Seasonal (2-3 months)</td>
+                                <td>28-32 days</td>
+                                <td>10-20 eggs/year</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Guinea Fowl</strong></td>
+                                <td>12-16 weeks</td>
+                                <td>1-2 days</td>
+                                <td>26-28 days</td>
+                                <td>100-150 eggs/year</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Egg Production Timeline (Example: Chickens)</h3>
+                <p><strong>Week 1-4 (Chick period):</strong> Rapid growth; no sexual development</p>
+                <p><strong>Week 5-16 (Grower period):</strong> Sexual organs developing; approaching maturity</p>
+                <p><strong>Week 16-18:</strong> First ovulation; may lay small or soft-shelled eggs initially</p>
+                <p><strong>Week 18-24:</strong> Full production cycle begins; regular egg laying 5-6 days/week</p>
+                <p><strong>Month 4-12 (Peak production):</strong> Maximum egg laying; consistent large eggs</p>
+                <p><strong>Year 2+:</strong> Production slowly declines; molting cycle affects laying</p>
+            </div>
+
+            <!-- Signs of Heat -->
+            <div class="section">
+                <h2>🔥 Recognizing Breeding Readiness</h2>
+                <p>Watch for these physical and behavioral signs that hens are ready to breed:</p>
+
+                <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+                    <tr>
+                        <td style="padding: 15px; border: 1px solid #ddd; font-weight: bold; background: #f9f9f9; width: 30%;">Physical Signs</td>
+                        <td style="padding: 15px; border: 1px solid #ddd;">Swollen, red comb and wattles; pale, moist vent; receptive posture (squatting)</td>
+                    </tr>
+                    <tr style="background: #f9f9f9;">
+                        <td style="padding: 15px; border: 1px solid #ddd; font-weight: bold;">Behavioral Signs</td>
+                        <td style="padding: 15px; border: 1px solid #ddd;">Restlessness; vocalizations; seeks roosters; remains still during mating</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 15px; border: 1px solid #ddd; font-weight: bold; background: #f9f9f9;">Timing</td>
+                        <td style="padding: 15px; border: 1px solid #ddd; background: #f9f9f9;">Morning hours (early heat); peak around dawn; lasts 1-2 days max</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 15px; border: 1px solid #ddd; font-weight: bold;">Triggers</td>
+                        <td style="padding: 15px; border: 1px solid #ddd;">Photoperiod (14+ hours light); temperature (>15°C); nutrition; presence of roosters</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Implementation Steps -->
+            <div class="section">
+                <h2>⚙️ Implementation Steps</h2>
+
+                <div class="implementation-step">
+                    <div class="step-number">STEP 1: Select Breeding Stock</div>
+                    <div class="step-title">Choose healthy, genetically sound birds for breeding</div>
+                    <div class="step-content">
+                        <strong>What to do:</strong>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Identify your best hens (health, size, egg quality, temperament)</li>
+                            <li>Select roosters (good health, vigor, breed standards)</li>
+                            <li>Use ratio: 1 rooster per 8-10 hens (varies by breed)</li>
+                            <li>Avoid breeding birds with deformities or poor temperament</li>
+                            <li>Keep detailed records of selected birds (age, breeding history)</li>
+                            <li>Plan for genetic diversity (avoid inbreeding)</li>
+                        </ul>
+                        <p style="margin-top: 15px;"><strong>Expected output:</strong> List of breeding birds with selection criteria documented</p>
+                        <p><strong>Time needed:</strong> 2-3 hours</p>
+                    </div>
+                </div>
+
+                <div class="implementation-step">
+                    <div class="step-number">STEP 2: Monitor & Track Breeding Cycles</div>
+                    <div class="step-title">Keep detailed breeding cycle records</div>
+                    <div class="step-content">
+                        <strong>What to do:</strong>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Monitor hens daily for signs of heat/breeding readiness</li>
+                            <li>Record dates when hens show breeding signs</li>
+                            <li>Document successful matings</li>
+                            <li>Track when first eggs appear (after mating)</li>
+                            <li>Create breeding calendar showing active breeding months</li>
+                            <li>Note environmental triggers (photoperiod, temperature)</li>
+                        </ul>
+                        <p style="margin-top: 15px;"><strong>Expected output:</strong> Breeding cycle tracking spreadsheet with dates and observations</p>
+                        <p><strong>Time needed:</strong> 15 minutes daily; 2-3 hours setup</p>
+                    </div>
+                </div>
+
+                <div class="implementation-step">
+                    <div class="step-number">STEP 3: Prepare Nesting & Brooding Facilities</div>
+                    <div class="step-title">Set up proper spaces for laying and chick care</div>
+                    <div class="step-content">
+                        <strong>What to do:</strong>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Install nesting boxes (dark, private, clean straw/shavings)</li>
+                            <li>Prepare brooding areas for chicks (lamp, heat source, pen)</li>
+                            <li>Set up chick feeders and water systems</li>
+                            <li>Gather brooding supplies (bedding, heat lamp, thermometer)</li>
+                            <li>Test heat lamps and maintain appropriate temperature (95°F first week, decrease 5°F weekly)</li>
+                            <li>Prepare facilities before breeding season starts</li>
+                        </ul>
+                        <p style="margin-top: 15px;"><strong>Expected output:</strong> Prepared nesting boxes and brooder setup; equipment checklist</p>
+                        <p><strong>Time needed:</strong> 4-6 hours (one-time setup)</p>
+                    </div>
+                </div>
+
+                <div class="implementation-step">
+                    <div class="step-number">STEP 4: Collect & Handle Eggs</div>
+                    <div class="step-title">Establish egg collection and storage procedures</div>
+                    <div class="step-content">
+                        <strong>What to do:</strong>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Collect eggs daily (morning preferred) to prevent damage/breakage</li>
+                            <li>Handle eggs gently; avoid rough surfaces</li>
+                            <li>Store eggs in cool (55-65°F), dry place; avoid temperature fluctuations</li>
+                            <li>Store eggs pointed-end down; rotate every 3-4 days if storing >7 days</li>
+                            <li>Don't wash eggs (removes protective cuticle); brush off dirt gently</li>
+                            <li>Keep detailed records of eggs collected by date</li>
+                        </ul>
+                        <p style="margin-top: 15px;"><strong>Expected output:</strong> Egg handling procedures documented; storage system established</p>
+                        <p><strong>Time needed:</strong> 1-2 hours (setup); 10-15 minutes daily (ongoing)</p>
+                    </div>
+                </div>
+
+                <div class="implementation-step">
+                    <div class="step-number">STEP 5: Plan Incubation & Hatching</div>
+                    <div class="step-title">Prepare for natural or artificial incubation</div>
+                    <div class="step-content">
+                        <strong>What to do:</strong>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Choose: natural incubation (broody hen) or artificial (incubator)</li>
+                            <li>If natural: identify broody hens; provide private nesting area</li>
+                            <li>If artificial: obtain/test incubator; maintain proper temperature/humidity</li>
+                            <li>Plan incubation schedule (21 days for chickens)</li>
+                            <li>Prepare candling supplies (light source to check embryo development)</li>
+                            <li>Create hatch date tracking system</li>
+                        </ul>
+                        <p style="margin-top: 15px;"><strong>Expected output:</strong> Incubation plan with temperature/humidity settings; hatch calendar</p>
+                        <p><strong>Time needed:</strong> 3-4 hours</p>
+                    </div>
+                </div>
+
+                <div class="implementation-step">
+                    <div class="step-number">STEP 6: Develop Chick Care & Growth Plan</div>
+                    <div class="step-title">Create complete chick rearing procedures</div>
+                    <div class="step-content">
+                        <strong>What to do:</strong>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Plan weekly brooding management (heat, feeding, water, cleaning)</li>
+                            <li>Design transition plan (week by week: temperature reduction, space increase)</li>
+                            <li>Plan vaccination schedule for chicks</li>
+                            <li>Create feeding program (chick starter feed, special nutrients)</li>
+                            <li>Plan health monitoring (daily observation, mortality tracking)</li>
+                            <li>Set timeline for transition to adult housing (8-12 weeks)</li>
+                        </ul>
+                        <p style="margin-top: 15px;"><strong>Expected output:</strong> 12-week chick care timeline with weekly procedures and requirements</p>
+                        <p><strong>Time needed:</strong> 3-4 hours</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Knowledge Check Quiz -->
+            <div class="section">
+                <div class="quiz-section">
+                    <div class="quiz-title">✓ Knowledge Check Quiz</div>
+                    <p>Answer these 3 questions to verify your understanding. You need 2/3 (66%) to pass.</p>
+
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">Question 1: At what age do most chickens reach sexual maturity?</div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q1" value="a"> (A) 8-12 weeks</label>
+                        </div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q1" value="b"> (B) 16-24 weeks</label>
+                        </div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q1" value="c"> (C) 6-8 months</label>
+                        </div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q1" value="d"> (D) 12+ months</label>
+                        </div>
+                        <div class="feedback" id="q1-feedback"></div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">Question 2: How long does chicken egg incubation typically take?</div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q2" value="a"> (A) 14 days</label>
+                        </div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q2" value="b"> (B) 21 days</label>
+                        </div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q2" value="c"> (C) 28 days</label>
+                        </div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q2" value="d"> (D) 35 days</label>
+                        </div>
+                        <div class="feedback" id="q2-feedback"></div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">Question 3: What is the proper rooster-to-hen ratio for breeding?</div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q3" value="a"> (A) 1 rooster per 15-20 hens</label>
+                        </div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q3" value="b"> (B) 1 rooster per 8-10 hens</label>
+                        </div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q3" value="c"> (C) 1 rooster per 4-5 hens</label>
+                        </div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q3" value="d"> (D) 1 rooster per 1-2 hens</label>
+                        </div>
+                        <div class="feedback" id="q3-feedback"></div>
+                    </div>
+
+                    <button onclick="submitQuiz()">Submit Quiz</button>
+                    <div id="quiz-result" style="margin-top: 20px; font-weight: bold; font-size: 1.1em;"></div>
+                </div>
+            </div>
+
+            <!-- Real-World Project -->
+            <div class="section">
+                <div class="project-section">
+                    <div class="project-title">🎯 Real-World Project: 12-Month Breeding & Production Plan</div>
+                    <p>Create a comprehensive breeding and egg production plan for your flock.</p>
+
+                    <h3>Project Deliverables (Submit as PDF or Word):</h3>
+
+                    <div class="deliverable">
+                        <strong>1. Breeding Stock Selection</strong>
+                        <p>Documentation of selected breeding birds with age, health status, genetic history, breeding records</p>
+                    </div>
+
+                    <div class="deliverable">
+                        <strong>2. Breeding Calendar</strong>
+                        <p>12-month breeding cycle plan: active breeding months, off-season periods, environmental triggers</p>
+                    </div>
+
+                    <div class="deliverable">
+                        <strong>3. Egg Production Forecast</strong>
+                        <p>Projected egg production by month; estimates of total eggs per hen per year; quality expectations</p>
+                    </div>
+
+                    <div class="deliverable">
+                        <strong>4. Egg Handling & Storage Protocol</strong>
+                        <p>Detailed procedures for collection, handling, storage, temperature management, tracking systems</p>
+                    </div>
+
+                    <div class="deliverable">
+                        <strong>5. Incubation & Hatch Plan</strong>
+                        <p>Natural vs. artificial incubation decision; timeline; temperature/humidity requirements; monitoring procedures</p>
+                    </div>
+
+                    <div class="deliverable">
+                        <strong>6. Chick Care & Brooding Manual</strong>
+                        <p>Week-by-week timeline: temperature, feeding, vaccinations, housing, transitions through 12 weeks</p>
+                    </div>
+
+                    <div class="deliverable">
+                        <strong>7. Breeding Performance Tracking Sheet</strong>
+                        <p>Templates for recording: breeding dates, hatch dates, chick survival, egg production, mortality</p>
+                    </div>
+
+                    <div class="deliverable">
+                        <strong>8. Facilities & Equipment Documentation</strong>
+                        <p>Photos of nesting boxes, brooding areas, incubation setup; equipment list and costs</p>
+                    </div>
+
+                    <p style="margin-top: 20px;"><strong>Total length:</strong> 12-18 pages with photos, charts, and tracking forms</p>
+                    <p><strong>Grading criteria:</strong></p>
+                    <ul style="margin-left: 20px;">
+                        <li><strong>Completeness (20%):</strong> All 8 deliverables included; no gaps</li>
+                        <li><strong>Realism (20%):</strong> Plan is achievable with your birds and resources</li>
+                        <li><strong>Accuracy (20%):</strong> Breeding data correct; timelines realistic; calculations accurate</li>
+                        <li><strong>Clarity (20%):</strong> Easy-to-follow procedures; clear tracking forms</li>
+                        <li><strong>Detail (20%):</strong> Thorough breed-specific considerations; contingency planning</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Success Criteria -->
+            <div class="section">
+                <h2>✅ Module Success Criteria</h2>
+                <ul class="checklist">
+                    <li><input type="checkbox"> Watched all 5 videos on breeding and egg production</li>
+                    <li><input type="checkbox"> Completed all 6 implementation steps</li>
+                    <li><input type="checkbox"> Scored 2/3 (66%) or higher on knowledge check</li>
+                    <li><input type="checkbox"> Submitted all 8 project deliverables</li>
+                    <li><input type="checkbox"> Selected quality breeding stock</li>
+                    <li><input type="checkbox"> Established breeding cycle monitoring system</li>
+                    <li><input type="checkbox"> Prepared breeding facilities and equipment</li>
+                </ul>
+            </div>
+
+            <!-- Next Steps -->
+            <div class="section" style="background: #e8f4f8; padding: 20px; border-radius: 8px;">
+                <h2 style="margin-top: 0;">🚀 Ready for the Final Module?</h2>
+                <p>Once you've completed this module and submitted your breeding plan, you're ready for:</p>
+                <p style="font-size: 1.1em; font-weight: bold; color: #8b0000;">💰 Module 6: Record Keeping & Economics (CAPSTONE)</p>
+                <p>Your final module synthesizes everything into a complete, implementable business plan.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function submitQuiz() {
+            let score = 0;
+            const answers = {
+                q1: 'b',
+                q2: 'b',
+                q3: 'b'
+            };
+
+            const feedback = {
+                q1: {
+                    correct: 'Correct! Chickens reach sexual maturity at 16-24 weeks and can begin laying eggs around week 18-20.',
+                    incorrect: 'Incorrect. Chickens reach sexual maturity at 16-24 weeks. Earlier ages won\'t produce eggs; older ages indicate late maturity.'
+                },
+                q2: {
+                    correct: 'Correct! Chicken eggs incubate for exactly 21 days from start to hatch. Ducks take 28-30 days; turkeys take 28 days.',
+                    incorrect: 'Incorrect. Chicken eggs take 21 days to hatch. This is consistent across all chicken breeds.'
+                },
+                q3: {
+                    correct: 'Correct! One rooster per 8-10 hens ensures good fertilization and flock harmony. Too many roosters cause fighting.',
+                    incorrect: 'Incorrect. The ideal ratio is 1 rooster per 8-10 hens. Too many roosters causes aggression; too few reduces fertility.'
+                }
+            };
+
+            for (let i = 1; i <= 3; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                const feedbackDiv = document.getElementById(`q${i}-feedback`);
+
+                if (!selected) {
+                    feedbackDiv.textContent = 'Please select an answer.';
+                    feedbackDiv.className = 'feedback incorrect';
+                    feedbackDiv.style.display = 'block';
+                } else {
+                    const isCorrect = selected.value === answers[`q${i}`];
+                    if (isCorrect) {
+                        score++;
+                        feedbackDiv.textContent = feedback[`q${i}`].correct;
+                        feedbackDiv.className = 'feedback correct';
+                    } else {
+                        feedbackDiv.textContent = feedback[`q${i}`].incorrect;
+                        feedbackDiv.className = 'feedback incorrect';
+                    }
+                    feedbackDiv.style.display = 'block';
+                }
+            }
+
+            const resultDiv = document.getElementById('quiz-result');
+            const percentage = Math.round((score / 3) * 100);
+            resultDiv.textContent = `Score: ${score}/3 (${percentage}%) - ${percentage >= 66 ? '✓ PASS' : '✗ Please review and try again'}`;
+            resultDiv.style.color = percentage >= 66 ? '#155724' : '#721c24';
+
+            localStorage.setItem('module5-quiz-score', score);
+            updateProgress();
+        }
+
+        function updateProgress() {
+            let completed = 0;
+            if (localStorage.getItem('module5-quiz-score')) completed++;
+
+            const progressPercent = (completed / 7) * 100;
+            document.getElementById('progressFill').style.width = progressPercent + '%';
+            document.getElementById('progressFill').textContent = Math.round(progressPercent) + '%';
+
+            localStorage.setItem('module5-progress', progressPercent);
+        }
+
+        window.addEventListener('load', updateProgress);
+    </script>
+</body>
+</html>

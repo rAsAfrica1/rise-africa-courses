@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poultry Farming Module 3: Feed & Nutrition Planning</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #8b0000 0%, #a52a2a 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #8b0000 0%, #a52a2a 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .section:last-of-type {
+            border-bottom: none;
+        }
+
+        h2 {
+            color: #8b0000;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            border-left: 5px solid #a52a2a;
+            padding-left: 15px;
+        }
+
+        h3 {
+            color: #a52a2a;
+            font-size: 1.3em;
+            margin-top: 20px;
+            margin-bottom: 15px;
+        }
+
+        .video-container {
+            background: #f9f9f9;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 25px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            border-radius: 6px;
+            display: block;
+        }
+
+        .video-title {
+            color: #8b0000;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background: #a52a2a;
+            color: white;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        tr:hover {
+            background: #fff3cd;
+        }
+
+        .implementation-step {
+            background: #fff3cd;
+            border-left: 4px solid #a52a2a;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .step-number {
+            color: #8b0000;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .step-title {
+            color: #333;
+            font-weight: bold;
+            font-size: 1.05em;
+            margin: 10px 0;
+        }
+
+        .step-content {
+            color: #555;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .quiz-section {
+            background: #e8f4f8;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+        .quiz-title {
+            color: #8b0000;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .quiz-question {
+            background: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 6px;
+            border-left: 4px solid #a52a2a;
+        }
+
+        .quiz-question-text {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.05em;
+        }
+
+        .quiz-option {
+            margin: 10px 0;
+        }
+
+        .quiz-option label {
+            cursor: pointer;
+            display: block;
+            padding: 10px;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        .quiz-option label:hover {
+            background: #f0f0f0;
+        }
+
+        .quiz-option input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .feedback {
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: 4px;
+            display: none;
+        }
+
+        .feedback.correct {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            display: block;
+        }
+
+        .feedback.incorrect {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+            display: block;
+        }
+
+        button {
+            background: linear-gradient(135deg, #8b0000 0%, #a52a2a 100%);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-top: 15px;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .project-section {
+            background: #e8f4f8;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 30px 0;
+            border: 2px solid #a52a2a;
+        }
+
+        .project-title {
+            color: #8b0000;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .deliverable {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border-left: 3px solid #a52a2a;
+        }
+
+        .progress-bar {
+            background: #f0f0f0;
+            border-radius: 10px;
+            height: 25px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            background: linear-gradient(90deg, #8b0000 0%, #a52a2a 100%);
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.9em;
+            transition: width 0.3s ease;
+        }
+
+        .checklist {
+            list-style: none;
+        }
+
+        .checklist li {
+            padding: 10px;
+            margin: 5px 0;
+            background: #f9f9f9;
+            border-radius: 4px;
+            border-left: 3px solid #a52a2a;
+        }
+
+        .checklist input[type="checkbox"] {
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .learning-objectives {
+            background: #e8f4f8;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #a52a2a;
+        }
+
+        .learning-objectives h3 {
+            color: #8b0000;
+            margin-top: 0;
+        }
+
+        .learning-objectives ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .learning-objectives li {
+            padding: 8px 0;
+            border-bottom: 1px solid #d0d0d0;
+        }
+
+        .learning-objectives li:last-child {
+            border-bottom: none;
+        }
+
+        .learning-objectives li:before {
+            content: "✓ ";
+            color: #8b0000;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.6em;
+            }
+
+            iframe {
+                height: 250px;
+            }
+
+            table {
+                font-size: 0.9em;
+            }
+
+            th, td {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌾 Module 3: Feed & Nutrition Planning</h1>
+            <p>Sustainable Poultry Farming Course - Rise Africa Skills</p>
+        </div>
+
+        <div class="content">
+            <!-- Learning Objectives -->
+            <div class="learning-objectives">
+                <h3>📚 Learning Objectives</h3>
+                <ul>
+                    <li>Understand nutritional requirements for different poultry types and growth stages</li>
+                    <li>Identify local, affordable feed sources in your region</li>
+                    <li>Calculate daily and monthly feed requirements for your flock</li>
+                    <li>Create balanced feeding rations using available ingredients</li>
+                    <li>Design feeding management systems</li>
+                    <li>Plan and budget for annual feed costs</li>
+                </ul>
+            </div>
+
+            <!-- Progress Bar -->
+            <div>
+                <p style="font-weight: bold; color: #8b0000;">Your Progress</p>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill" style="width: 0%">0%</div>
+                </div>
+            </div>
+
+            <!-- Videos Section -->
+            <div class="section">
+                <h2>🎥 Learning Videos</h2>
+                <p>Watch these 5 videos to understand poultry nutrition and feeding systems. Take notes and rewatch as needed.</p>
+
+                <div class="video-container">
+                    <div class="video-title">Video 1: Poultry Nutrition Basics & Requirements</div>
+                    <iframe src="https://www.youtube.com/embed/9k3N2Jl1s_4" allowfullscreen></iframe>
+                </div>
+
+                <div class="video-container">
+                    <div class="video-title">Video 2: Local Feed Ingredients & Resources</div>
+                    <iframe src="https://www.youtube.com/embed/LdF7dLH4-6U" allowfullscreen></iframe>
+                </div>
+
+                <div class="video-container">
+                    <div class="video-title">Video 3: Creating Balanced Feed Rations</div>
+                    <iframe src="https://www.youtube.com/embed/O3QWBcT3rXo" allowfullscreen></iframe>
+                </div>
+
+                <div class="video-container">
+                    <div class="video-title">Video 4: Feeding Systems & Management</div>
+                    <iframe src="https://www.youtube.com/embed/G5tWMPm-P90" allowfullscreen></iframe>
+                </div>
+
+                <div class="video-container">
+                    <div class="video-title">Video 5: Cost-Effective Feeding Strategies for Small Farms</div>
+                    <iframe src="https://www.youtube.com/embed/MBWpx9Kc8FE" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <!-- Nutritional Requirements Table -->
+            <div class="section">
+                <h2>📋 Poultry Nutritional Requirements</h2>
+                <p>Different bird types and growth stages have different nutritional needs:</p>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Bird Type & Stage</th>
+                                <th>Daily Feed (g/bird)</th>
+                                <th>Protein (%)</th>
+                                <th>Energy (kcal/kg)</th>
+                                <th>Calcium (%)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Chicks (0-4 weeks)</strong></td>
+                                <td>15-25</td>
+                                <td>22-24%</td>
+                                <td>2,800-3,000</td>
+                                <td>0.9-1.0%</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Growers (5-12 weeks)</strong></td>
+                                <td>40-80</td>
+                                <td>18-20%</td>
+                                <td>2,700-2,900</td>
+                                <td>0.8-0.9%</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Broilers (finishing)</strong></td>
+                                <td>100-130</td>
+                                <td>20-22%</td>
+                                <td>3,000-3,100</td>
+                                <td>0.8-0.9%</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Layers (in production)</strong></td>
+                                <td>90-120</td>
+                                <td>16-18%</td>
+                                <td>2,700-2,900</td>
+                                <td>3.5-4.0%</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Turkeys (growers)</strong></td>
+                                <td>60-100</td>
+                                <td>24-26%</td>
+                                <td>2,900-3,100</td>
+                                <td>1.0-1.2%</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ducks (layers)</strong></td>
+                                <td>120-150</td>
+                                <td>15-17%</td>
+                                <td>2,900-3,100</td>
+                                <td>3.0-3.5%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Local Feed Ingredients -->
+            <div class="section">
+                <h2>🌱 Common Local Feed Ingredients</h2>
+                <p>Use these affordable, locally-available ingredients to create balanced rations:</p>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Ingredient</th>
+                                <th>Protein (%)</th>
+                                <th>Energy (kcal/kg)</th>
+                                <th>Availability</th>
+                                <th>Common Use</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Maize/Corn</strong></td>
+                                <td>8-9%</td>
+                                <td>3,300-3,500</td>
+                                <td>Widely available</td>
+                                <td>Energy source (main grain)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Sorghum</strong></td>
+                                <td>10-11%</td>
+                                <td>3,200-3,400</td>
+                                <td>Drought-tolerant areas</td>
+                                <td>Grain substitute</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Millet</strong></td>
+                                <td>10-12%</td>
+                                <td>3,100-3,300</td>
+                                <td>Semi-arid regions</td>
+                                <td>Grain substitute</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cassava Meal</strong></td>
+                                <td>2-3%</td>
+                                <td>3,300-3,400</td>
+                                <td>Tropical regions</td>
+                                <td>Energy, bulking agent</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Groundnut Meal</strong></td>
+                                <td>40-50%</td>
+                                <td>2,800-3,000</td>
+                                <td>Common legume</td>
+                                <td>Protein source</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Soybean Meal</strong></td>
+                                <td>44-48%</td>
+                                <td>2,600-2,800</td>
+                                <td>Increasingly available</td>
+                                <td>High-quality protein</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Beans/Legumes</strong></td>
+                                <td>20-24%</td>
+                                <td>2,800-3,100</td>
+                                <td>Cultivated locally</td>
+                                <td>Protein supplement</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Fish Meal</strong></td>
+                                <td>50-60%</td>
+                                <td>2,400-2,600</td>
+                                <td>Coastal areas</td>
+                                <td>High protein, minerals</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Bone Meal</strong></td>
+                                <td>10-15% (protein + minerals)</td>
+                                <td>N/A</td>
+                                <td>From slaughterhouses</td>
+                                <td>Calcium & phosphorus</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Limestone/Shell</strong></td>
+                                <td>0%</td>
+                                <td>N/A</td>
+                                <td>Readily available</td>
+                                <td>Calcium (layers)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Green Feed/Grass</strong></td>
+                                <td>15-20% (fresh)</td>
+                                <td>800-1,200</td>
+                                <td>Seasonal, free</td>
+                                <td>Vitamins, minerals, bulk</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Kitchen Waste</strong></td>
+                                <td>5-10%</td>
+                                <td>1,000-1,500</td>
+                                <td>Free, household</td>
+                                <td>Supplement (20% max)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Implementation Steps -->
+            <div class="section">
+                <h2>⚙️ Implementation Steps</h2>
+
+                <div class="implementation-step">
+                    <div class="step-number">STEP 1: Research Local Feed Availability</div>
+                    <div class="step-title">Identify feed sources in your region</div>
+                    <div class="step-content">
+                        <strong>What to do:</strong>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>List all available feed ingredients in your area (grains, legumes, by-products)</li>
+                            <li>Visit local grain merchants and feed suppliers</li>
+                            <li>Ask farmers what they feed their birds</li>
+                            <li>Identify agricultural by-products (mill waste, vegetable scraps, etc.)</li>
+                            <li>Document seasonal availability of ingredients</li>
+                        </ul>
+                        <p style="margin-top: 15px;"><strong>Expected output:</strong> List of available feed ingredients with seasonal availability notes</p>
+                        <p><strong>Time needed:</strong> 2-3 hours</p>
+                    </div>
+                </div>
+
+                <div class="implementation-step">
+                    <div class="step-number">STEP 2: Calculate Flock Feed Requirements</div>
+                    <div class="step-title">Determine total daily and monthly feed needs</div>
+                    <div class="step-content">
+                        <strong>What to do:</strong>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>List each bird type and age group in your flock</li>
+                            <li>Multiply bird count × daily feed requirement per bird</li>
+                            <li>Calculate total daily feed needs (all birds combined)</li>
+                            <li>Multiply by 30 to get monthly requirements</li>
+                            <li>Create spreadsheet with calculations for each bird type</li>
+                        </ul>
+                        <p style="margin-top: 15px;"><strong>Expected output:</strong> Detailed feed requirement calculations by bird type and month</p>
+                        <p><strong>Time needed:</strong> 2-3 hours</p>
+                    </div>
+                </div>
+
+                <div class="implementation-step">
+                    <div class="step-number">STEP 3: Design Balanced Feeding Rations</div>
+                    <div class="step-title">Create nutritionally complete feed mixtures</div>
+                    <div class="step-content">
+                        <strong>What to do:</strong>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Select 3-4 main ingredients (grain + protein sources)</li>
+                            <li>Calculate percentage of each ingredient needed to meet nutritional targets</li>
+                            <li>Test ration formulas to balance protein, energy, calcium</li>
+                            <li>Create 2-3 alternative rations using different local ingredients</li>
+                            <li>Document ration formulas with exact percentages and costs</li>
+                        </ul>
+                        <p style="margin-top: 15px;"><strong>Expected output:</strong> 2-3 balanced feed rations with ingredient percentages and nutritional targets met</p>
+                        <p><strong>Time needed:</strong> 3-4 hours</p>
+                    </div>
+                </div>
+
+                <div class="implementation-step">
+                    <div class="step-number">STEP 4: Get Feed Ingredient Prices</div>
+                    <div class="step-title">Research current market prices for ingredients</div>
+                    <div class="step-content">
+                        <strong>What to do:</strong>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Get current prices from 3+ local suppliers for each ingredient</li>
+                            <li>Calculate cost per kilogram of each ingredient</li>
+                            <li>Identify bulk pricing and seasonal price variations</li>
+                            <li>Compare cost of homemade rations vs. commercial feed</li>
+                            <li>Document prices and supplier contact information</li>
+                        </ul>
+                        <p style="margin-top: 15px;"><strong>Expected output:</strong> Feed price list with supplier information and cost comparisons</p>
+                        <p><strong>Time needed:</strong> 3-4 hours</p>
+                    </div>
+                </div>
+
+                <div class="implementation-step">
+                    <div class="step-number">STEP 5: Develop Feeding & Management System</div>
+                    <div class="step-title">Plan how you'll feed and manage your flock daily</div>
+                    <div class="step-content">
+                        <strong>What to do:</strong>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Decide feeding frequency (1x, 2x, or free-choice per day)</li>
+                            <li>Plan feeding schedule that fits your farm work routine</li>
+                            <li>Calculate feeding equipment needed (feeders, drinkers, storage)</li>
+                            <li>Plan storage system for feed (pest-proof, dry conditions)</li>
+                            <li>Document daily and weekly feeding procedures</li>
+                            <li>Plan for water management (continuous, scheduled, or wet feeding)</li>
+                        </ul>
+                        <p style="margin-top: 15px;"><strong>Expected output:</strong> Feeding management plan with daily procedures, equipment needs, and storage solution</p>
+                        <p><strong>Time needed:</strong> 2-3 hours</p>
+                    </div>
+                </div>
+
+                <div class="implementation-step">
+                    <div class="step-number">STEP 6: Create Annual Feed Budget</div>
+                    <div class="step-title">Project total feed costs for 12 months</div>
+                    <div class="step-content">
+                        <strong>What to do:</strong>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Calculate monthly feed costs for each bird group</li>
+                            <li>Account for seasonal price variations</li>
+                            <li>Add 10-15% contingency for price increases</li>
+                            <li>Calculate feed cost per kg of meat/eggs produced</li>
+                            <li>Project annual budget and identify high-cost months</li>
+                            <li>Plan for cash flow challenges in expensive months</li>
+                        </ul>
+                        <p style="margin-top: 15px;"><strong>Expected output:</strong> 12-month feed budget with monthly costs, contingency, and cost-per-product analysis</p>
+                        <p><strong>Time needed:</strong> 2-3 hours</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Knowledge Check Quiz -->
+            <div class="section">
+                <div class="quiz-section">
+                    <div class="quiz-title">✓ Knowledge Check Quiz</div>
+                    <p>Answer these 3 questions to verify your understanding. You need 2/3 (66%) to pass. Retake as many times as needed.</p>
+
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">Question 1: How much daily feed does a laying hen typically need?</div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q1" value="a"> (A) 40-50 g</label>
+                        </div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q1" value="b"> (B) 90-120 g</label>
+                        </div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q1" value="c"> (C) 150-200 g</label>
+                        </div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q1" value="d"> (D) 250+ g</label>
+                        </div>
+                        <div class="feedback" id="q1-feedback"></div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">Question 2: What is the protein requirement for broiler chickens?</div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q2" value="a"> (A) 10-12%</label>
+                        </div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q2" value="b"> (B) 15-18%</label>
+                        </div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q2" value="c"> (C) 20-22%</label>
+                        </div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q2" value="d"> (D) 35-40%</label>
+                        </div>
+                        <div class="feedback" id="q2-feedback"></div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">Question 3: Which ingredient has the highest protein content?</div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q3" value="a"> (A) Maize (corn) at 8-9%</label>
+                        </div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q3" value="b"> (B) Groundnut meal at 40-50%</label>
+                        </div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q3" value="c"> (C) Cassava at 2-3%</label>
+                        </div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q3" value="d"> (D) Green grass at 15-20%</label>
+                        </div>
+                        <div class="feedback" id="q3-feedback"></div>
+                    </div>
+
+                    <button onclick="submitQuiz()">Submit Quiz</button>
+                    <div id="quiz-result" style="margin-top: 20px; font-weight: bold; font-size: 1.1em;"></div>
+                </div>
+            </div>
+
+            <!-- Real-World Project -->
+            <div class="section">
+                <div class="project-section">
+                    <div class="project-title">🎯 Real-World Project: Complete Feeding Program</div>
+                    <p>Design a comprehensive feeding program for your actual poultry operation.</p>
+
+                    <h3>Project Deliverables (Submit as PDF or Word):</h3>
+
+                    <div class="deliverable">
+                        <strong>1. Feed Availability Assessment</strong>
+                        <p>List all locally-available feed ingredients with seasonal availability and current market prices</p>
+                    </div>
+
+                    <div class="deliverable">
+                        <strong>2. Flock Requirements Calculation</strong>
+                        <p>Detailed spreadsheet: bird types, counts, daily feed per bird, total daily/monthly requirements</p>
+                    </div>
+
+                    <div class="deliverable">
+                        <strong>3. Balanced Feeding Rations</strong>
+                        <p>2-3 complete ration formulas with ingredient percentages, nutritional targets achieved, cost per kg</p>
+                    </div>
+
+                    <div class="deliverable">
+                        <strong>4. Cost Analysis & Comparison</strong>
+                        <p>Compare homemade rations vs. commercial feed; identify most cost-effective option</p>
+                    </div>
+
+                    <div class="deliverable">
+                        <strong>5. Feeding Management Plan</strong>
+                        <p>Daily procedures, feeding schedule, equipment needed, storage system design, water management</p>
+                    </div>
+
+                    <div class="deliverable">
+                        <strong>6. Annual Feed Budget</strong>
+                        <p>12-month projection with monthly costs, seasonal variations, contingency, cost-per-product analysis</p>
+                    </div>
+
+                    <div class="deliverable">
+                        <strong>7. Supplier Information</strong>
+                        <p>Contact information for 3+ feed suppliers; prices; delivery options; bulk pricing available</p>
+                    </div>
+
+                    <div class="deliverable">
+                        <strong>8. Feed Mix Documentation</strong>
+                        <p>Photos or sketches showing: storage system, mixing/preparation area, feeding equipment</p>
+                    </div>
+
+                    <p style="margin-top: 20px;"><strong>Total length:</strong> 10-15 pages with spreadsheets and photos</p>
+                    <p><strong>Grading criteria:</strong></p>
+                    <ul style="margin-left: 20px;">
+                        <li><strong>Completeness (20%):</strong> All 8 deliverables included, nothing missing</li>
+                        <li><strong>Realism (20%):</strong> Rations achievable with local ingredients, budget feasible</li>
+                        <li><strong>Accuracy (20%):</strong> Calculations correct, prices reflect actual local costs</li>
+                        <li><strong>Clarity (20%):</strong> Easy to understand and implement; spreadsheets organized</li>
+                        <li><strong>Detail (20%):</strong> Thorough research, includes alternatives, contingency planning</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Success Criteria -->
+            <div class="section">
+                <h2>✅ Module Success Criteria</h2>
+                <ul class="checklist">
+                    <li><input type="checkbox"> Watched all 5 videos on poultry nutrition and feeding</li>
+                    <li><input type="checkbox"> Completed all 6 implementation steps for your farm</li>
+                    <li><input type="checkbox"> Scored 2/3 (66%) or higher on knowledge check quiz</li>
+                    <li><input type="checkbox"> Submitted all 8 project deliverables</li>
+                    <li><input type="checkbox"> Feeding rations are nutritionally balanced for your birds</li>
+                    <li><input type="checkbox"> Budget is realistic and based on actual local prices</li>
+                    <li><input type="checkbox"> Feeding plan is practical and fits your daily schedule</li>
+                </ul>
+            </div>
+
+            <!-- Next Steps -->
+            <div class="section" style="background: #e8f4f8; padding: 20px; border-radius: 8px;">
+                <h2 style="margin-top: 0;">🚀 Ready for the Next Module?</h2>
+                <p>Once you've completed this module and submitted your feeding program project, you're ready for:</p>
+                <p style="font-size: 1.1em; font-weight: bold; color: #8b0000;">🏥 Module 4: Health & Disease Management</p>
+                <p>You'll learn disease prevention, health monitoring, and veterinary care for your flock.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function submitQuiz() {
+            let score = 0;
+            const answers = {
+                q1: 'b',
+                q2: 'c',
+                q3: 'b'
+            };
+
+            const feedback = {
+                q1: {
+                    correct: 'Correct! Laying hens need 90-120 g of feed daily to maintain egg production.',
+                    incorrect: 'Incorrect. Laying hens need 90-120 g daily. Too little feed reduces egg production; too much wastes resources.'
+                },
+                q2: {
+                    correct: 'Correct! Broiler chickens need 20-22% protein for rapid muscle growth and meat production.',
+                    incorrect: 'Incorrect. Broiler chickens need 20-22% protein. Lower protein slows growth; higher is wasteful.'
+                },
+                q3: {
+                    correct: 'Correct! Fish meal and soybean meal have the highest protein (50-60%), followed by groundnut meal (40-50%).',
+                    incorrect: 'Incorrect. Groundnut meal (40-50%) and fish/soybean meal (50-60%) are the highest protein sources. Maize and cassava are mainly energy sources.'
+                }
+            };
+
+            for (let i = 1; i <= 3; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                const feedbackDiv = document.getElementById(`q${i}-feedback`);
+
+                if (!selected) {
+                    feedbackDiv.textContent = 'Please select an answer.';
+                    feedbackDiv.className = 'feedback incorrect';
+                    feedbackDiv.style.display = 'block';
+                } else {
+                    const isCorrect = selected.value === answers[`q${i}`];
+                    if (isCorrect) {
+                        score++;
+                        feedbackDiv.textContent = feedback[`q${i}`].correct;
+                        feedbackDiv.className = 'feedback correct';
+                    } else {
+                        feedbackDiv.textContent = feedback[`q${i}`].incorrect;
+                        feedbackDiv.className = 'feedback incorrect';
+                    }
+                    feedbackDiv.style.display = 'block';
+                }
+            }
+
+            const resultDiv = document.getElementById('quiz-result');
+            const percentage = Math.round((score / 3) * 100);
+            resultDiv.textContent = `Score: ${score}/3 (${percentage}%) - ${percentage >= 66 ? '✓ PASS' : '✗ Please review and try again'}`;
+            resultDiv.style.color = percentage >= 66 ? '#155724' : '#721c24';
+
+            localStorage.setItem('module3-quiz-score', score);
+            updateProgress();
+        }
+
+        function updateProgress() {
+            let completed = 0;
+            if (localStorage.getItem('module3-quiz-score')) completed++;
+
+            const progressPercent = (completed / 7) * 100;
+            document.getElementById('progressFill').style.width = progressPercent + '%';
+            document.getElementById('progressFill').textContent = Math.round(progressPercent) + '%';
+
+            localStorage.setItem('module3-progress', progressPercent);
+        }
+
+        window.addEventListener('load', updateProgress);
+    </script>
+</body>
+</html>
