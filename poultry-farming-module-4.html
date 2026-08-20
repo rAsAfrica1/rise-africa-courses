@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poultry Farming Module 4: Health & Disease Management</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #8b0000 0%, #a52a2a 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #8b0000 0%, #a52a2a 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .section:last-of-type {
+            border-bottom: none;
+        }
+
+        h2 {
+            color: #8b0000;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            border-left: 5px solid #a52a2a;
+            padding-left: 15px;
+        }
+
+        h3 {
+            color: #a52a2a;
+            font-size: 1.3em;
+            margin-top: 20px;
+            margin-bottom: 15px;
+        }
+
+        .video-container {
+            background: #f9f9f9;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 25px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            border-radius: 6px;
+            display: block;
+        }
+
+        .video-title {
+            color: #8b0000;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background: #a52a2a;
+            color: white;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        tr:hover {
+            background: #fff3cd;
+        }
+
+        .implementation-step {
+            background: #fff3cd;
+            border-left: 4px solid #a52a2a;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .step-number {
+            color: #8b0000;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .step-title {
+            color: #333;
+            font-weight: bold;
+            font-size: 1.05em;
+            margin: 10px 0;
+        }
+
+        .step-content {
+            color: #555;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .quiz-section {
+            background: #e8f4f8;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+        .quiz-title {
+            color: #8b0000;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .quiz-question {
+            background: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 6px;
+            border-left: 4px solid #a52a2a;
+        }
+
+        .quiz-question-text {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.05em;
+        }
+
+        .quiz-option {
+            margin: 10px 0;
+        }
+
+        .quiz-option label {
+            cursor: pointer;
+            display: block;
+            padding: 10px;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        .quiz-option label:hover {
+            background: #f0f0f0;
+        }
+
+        .quiz-option input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .feedback {
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: 4px;
+            display: none;
+        }
+
+        .feedback.correct {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            display: block;
+        }
+
+        .feedback.incorrect {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+            display: block;
+        }
+
+        button {
+            background: linear-gradient(135deg, #8b0000 0%, #a52a2a 100%);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-top: 15px;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .project-section {
+            background: #e8f4f8;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 30px 0;
+            border: 2px solid #a52a2a;
+        }
+
+        .project-title {
+            color: #8b0000;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .deliverable {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border-left: 3px solid #a52a2a;
+        }
+
+        .progress-bar {
+            background: #f0f0f0;
+            border-radius: 10px;
+            height: 25px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            background: linear-gradient(90deg, #8b0000 0%, #a52a2a 100%);
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.9em;
+            transition: width 0.3s ease;
+        }
+
+        .checklist {
+            list-style: none;
+        }
+
+        .checklist li {
+            padding: 10px;
+            margin: 5px 0;
+            background: #f9f9f9;
+            border-radius: 4px;
+            border-left: 3px solid #a52a2a;
+        }
+
+        .checklist input[type="checkbox"] {
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .learning-objectives {
+            background: #e8f4f8;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #a52a2a;
+        }
+
+        .learning-objectives h3 {
+            color: #8b0000;
+            margin-top: 0;
+        }
+
+        .learning-objectives ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .learning-objectives li {
+            padding: 8px 0;
+            border-bottom: 1px solid #d0d0d0;
+        }
+
+        .learning-objectives li:last-child {
+            border-bottom: none;
+        }
+
+        .learning-objectives li:before {
+            content: "✓ ";
+            color: #8b0000;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .alert-box {
+            background: #f8d7da;
+            border: 2px solid #a52a2a;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+        }
+
+        .alert-title {
+            color: #8b0000;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.6em;
+            }
+
+            iframe {
+                height: 250px;
+            }
+
+            table {
+                font-size: 0.9em;
+            }
+
+            th, td {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏥 Module 4: Health & Disease Management</h1>
+            <p>Sustainable Poultry Farming Course - Rise Africa Skills</p>
+        </div>
+
+        <div class="content">
+            <!-- Learning Objectives -->
+            <div class="learning-objectives">
+                <h3>📚 Learning Objectives</h3>
+                <ul>
+                    <li>Recognize common poultry diseases in African contexts</li>
+                    <li>Identify early signs and symptoms of disease</li>
+                    <li>Implement biosecurity and disease prevention strategies</li>
+                    <li>Establish vaccination and health monitoring systems</li>
+                    <li>Work effectively with veterinarians</li>
+                    <li>Create and maintain health records for your flock</li>
+                </ul>
+            </div>
+
+            <!-- Progress Bar -->
+            <div>
+                <p style="font-weight: bold; color: #8b0000;">Your Progress</p>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill" style="width: 0%">0%</div>
+                </div>
+            </div>
+
+            <!-- Videos Section -->
+            <div class="section">
+                <h2>🎥 Learning Videos</h2>
+                <p>Watch these 5 videos to understand poultry health and disease management. Take detailed notes.</p>
+
+                <div class="video-container">
+                    <div class="video-title">Video 1: Common Poultry Diseases & Symptoms</div>
+                    <iframe src="https://www.youtube.com/embed/Wst1vPT3pVA" allowfullscreen></iframe>
+                </div>
+
+                <div class="video-container">
+                    <div class="video-title">Video 2: Disease Prevention & Biosecurity Protocols</div>
+                    <iframe src="https://www.youtube.com/embed/XlOxBctEGUY" allowfullscreen></iframe>
+                </div>
+
+                <div class="video-container">
+                    <div class="video-title">Video 3: Vaccination Programs for Chickens & Poultry</div>
+                    <iframe src="https://www.youtube.com/embed/K4r2xSBz_pE" allowfullscreen></iframe>
+                </div>
+
+                <div class="video-container">
+                    <div class="video-title">Video 4: Working with Veterinarians & Health Professionals</div>
+                    <iframe src="https://www.youtube.com/embed/mNwvJKW0Nww" allowfullscreen></iframe>
+                </div>
+
+                <div class="video-container">
+                    <div class="video-title">Video 5: Emergency Response & Disease Outbreak Management</div>
+                    <iframe src="https://www.youtube.com/embed/T-k4s2c3M0E" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <!-- Common Diseases -->
+            <div class="section">
+                <h2>⚠️ Common Poultry Diseases in Africa</h2>
+                <p>Knowing these diseases and their symptoms is critical for early detection and prevention:</p>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Disease</th>
+                                <th>Signs/Symptoms</th>
+                                <th>Transmission</th>
+                                <th>Prevention</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>African Swine Fever (ASF)</strong></td>
+                                <td>High fever, lethargy, appetite loss, diarrhea, hemorrhage in organs</td>
+                                <td>Direct contact, infected feed/water, ticks</td>
+                                <td>Biosecurity, no infected meat, tick control, quarantine</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Newcastle Disease</strong></td>
+                                <td>Respiratory signs, twisted neck, paralysis, green diarrhea, death (high mortality)</td>
+                                <td>Respiratory droplets, direct contact, contaminated feed</td>
+                                <td>Vaccination, biosecurity, isolated rearing, strict hygiene</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Fowl Pox</strong></td>
+                                <td>Pocks/scabs on comb, wattles, face; wet form with diphtheritic lesions in mouth/throat</td>
+                                <td>Insect vectors (especially mosquitoes), direct contact, scratches</td>
+                                <td>Vaccination, insect control, mosquito netting, isolation of infected</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Infectious Coryza</strong></td>
+                                <td>Facial swelling, nasal discharge, sneezing, lethargy, reduced egg production</td>
+                                <td>Respiratory droplets, direct contact, contaminated equipment</td>
+                                <td>Biosecurity, isolation of infected birds, vaccination (if available)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Coccidiosis</strong></td>
+                                <td>Bloody diarrhea, ruffled feathers, reduced growth, reduced appetite, weight loss</td>
+                                <td>Ingestion of infected feces/food, poor sanitation</td>
+                                <td>Clean litter, proper stocking density, coccidiostat in feed, sanitation</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Parasites (Internal)</strong></td>
+                                <td>Poor growth, diarrhea, pale comb/wattles, reduced egg production, visible worms</td>
+                                <td>Contaminated feed/water/litter, ingestion of infected intermediate hosts</td>
+                                <td>Parasite medication, clean feed, regular rotation, sanitation</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Parasites (External)</strong></td>
+                                <td>Feather damage, skin irritation, anemia, reduced growth, restlessness at night</td>
+                                <td>Direct contact with infected birds or mites/lice</td>
+                                <td>Dust baths, clean bedding, isolation of infected, treatment spray</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Avian Influenza (H5N1)</strong></td>
+                                <td>High fever, neurological signs, swelling, sudden death (often within 24-48 hours)</td>
+                                <td>Wild birds, migratory waterfowl, respiratory/fecal route</td>
+                                <td>Biosecurity, separate from wild birds, hygiene, reporting to authorities</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Biosecurity Protocol -->
+            <div class="section">
+                <h2>🔒 Essential Biosecurity Protocol (10-Point Checklist)</h2>
+
+                <div class="alert-box">
+                    <div class="alert-title">⚠️ Prevention is Better Than Cure</div>
+                    <p>Implement these 10 biosecurity measures to prevent 80% of potential disease outbreaks:</p>
+                </div>
+
+                <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+                    <tr>
+                        <td style="padding: 15px; border: 1px solid #ddd; font-weight: bold; background: #f9f9f9; width: 5%;">✓</td>
+                        <td style="padding: 15px; border: 1px solid #ddd; font-weight: bold; background: #f9f9f9;">Biosecurity Measure</td>
+                        <td style="padding: 15px; border: 1px solid #ddd; font-weight: bold; background: #f9f9f9;">Implementation Details</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 15px; border: 1px solid #ddd; text-align: center;">1</td>
+                        <td style="padding: 15px; border: 1px solid #ddd;"><strong>Isolation of New Birds</strong></td>
+                        <td style="padding: 15px; border: 1px solid #ddd;">Quarantine new arrivals for 14-21 days in separate housing; observe for disease signs before mixing</td>
+                    </tr>
+                    <tr style="background: #f9f9f9;">
+                        <td style="padding: 15px; border: 1px solid #ddd; text-align: center;">2</td>
+                        <td style="padding: 15px; border: 1px solid #ddd;"><strong>Visitor Restrictions</strong></td>
+                        <td style="padding: 15px; border: 1px solid #ddd;">Limit farm visitors; require boot disinfection at entrance; provide clean clothes/boots for guests</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 15px; border: 1px solid #ddd; text-align: center;">3</td>
+                        <td style="padding: 15px; border: 1px solid #ddd;"><strong>Hygiene & Sanitation</strong></td>
+                        <td style="padding: 15px; border: 1px solid #ddd;">Daily cleaning of feeders/drinkers; remove dead birds immediately; clean litter every 1-2 weeks</td>
+                    </tr>
+                    <tr style="background: #f9f9f9;">
+                        <td style="padding: 15px; border: 1px solid #ddd; text-align: center;">4</td>
+                        <td style="padding: 15px; border: 1px solid #ddd;"><strong>Pest Control</strong></td>
+                        <td style="padding: 15px; border: 1px solid #ddd;">Control rodents (rat poison, traps); screen houses against wild birds; insect control for flies/mosquitoes</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 15px; border: 1px solid #ddd; text-align: center;">5</td>
+                        <td style="padding: 15px; border: 1px solid #ddd;"><strong>Feed & Water Safety</strong></td>
+                        <td style="padding: 15px; border: 1px solid #ddd;">Buy from reputable suppliers only; store feed in pest-proof containers; use clean water from safe sources</td>
+                    </tr>
+                    <tr style="background: #f9f9f9;">
+                        <td style="padding: 15px; border: 1px solid #ddd; text-align: center;">6</td>
+                        <td style="padding: 15px; border: 1px solid #ddd;"><strong>Separate Age Groups</strong></td>
+                        <td style="padding: 15px; border: 1px solid #ddd;">House chicks separately from adult birds; prevent mixing of different age groups until vaccination complete</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 15px; border: 1px solid #ddd; text-align: center;">7</td>
+                        <td style="padding: 15px; border: 1px solid #ddd;"><strong>Vaccination Program</strong></td>
+                        <td style="padding: 15px; border: 1px solid #ddd;">Vaccinate against: Newcastle (day 1, week 4, week 12), Fowl Pox (week 4-6), others as available locally</td>
+                    </tr>
+                    <tr style="background: #f9f9f9;">
+                        <td style="padding: 15px; border: 1px solid #ddd; text-align: center;">8</td>
+                        <td style="padding: 15px; border: 1px solid #ddd;"><strong>Equipment Disinfection</strong></td>
+                        <td style="padding: 15px; border: 1px solid #ddd;">Use separate equipment for each flock; disinfect tools/containers regularly; use bleach solution (1:10 ratio)</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 15px; border: 1px solid #ddd; text-align: center;">9</td>
+                        <td style="padding: 15px; border: 1px solid #ddd;"><strong>Health Monitoring</strong></td>
+                        <td style="padding: 15px; border: 1px solid #ddd;">Inspect birds daily for abnormal behavior; check for discharge, swelling, lameness, poor feathering</td>
+                    </tr>
+                    <tr style="background: #f9f9f9;">
+                        <td style="padding: 15px; border: 1px solid #ddd; text-align: center;">10</td>
+                        <td style="padding: 15px; border: 1px solid #ddd;"><strong>Rapid Response Plan</strong></td>
+                        <td style="padding: 15px; border: 1px solid #ddd;">Know vet's contact info; have quarantine space prepared; isolate sick birds immediately; call vet if outbreak suspected</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Implementation Steps -->
+            <div class="section">
+                <h2>⚙️ Implementation Steps</h2>
+
+                <div class="implementation-step">
+                    <div class="step-number">STEP 1: Research Veterinary Services</div>
+                    <div class="step-title">Identify local animal health professionals and resources</div>
+                    <div class="step-content">
+                        <strong>What to do:</strong>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Locate veterinarians within 20 km of your farm</li>
+                            <li>Interview at least 2 vets about poultry expertise and emergency availability</li>
+                            <li>Document contact info, hours, emergency fees, services offered</li>
+                            <li>Identify paraveterinary services (extension agents) available in your area</li>
+                            <li>Ask about vaccination programs and disease reporting requirements</li>
+                        </ul>
+                        <p style="margin-top: 15px;"><strong>Expected output:</strong> List of 2-3 veterinarians with contact info and services available</p>
+                        <p><strong>Time needed:</strong> 2-3 hours</p>
+                    </div>
+                </div>
+
+                <div class="implementation-step">
+                    <div class="step-number">STEP 2: Develop Vaccination Schedule</div>
+                    <div class="step-title">Plan vaccination timeline for your flock</div>
+                    <div class="step-content">
+                        <strong>What to do:</strong>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Determine which vaccines are available locally for your birds</li>
+                            <li>Create vaccination schedule from day 1 through adulthood</li>
+                            <li>Note dates, vaccine names, administration methods, vet contact</li>
+                            <li>Include booster schedules if required</li>
+                            <li>Calculate vaccine costs and include in annual budget</li>
+                            <li>Get all needed vaccines in advance</li>
+                        </ul>
+                        <p style="margin-top: 15px;"><strong>Expected output:</strong> Detailed vaccination schedule for each bird cohort; cost analysis</p>
+                        <p><strong>Time needed:</strong> 2-3 hours</p>
+                    </div>
+                </div>
+
+                <div class="implementation-step">
+                    <div class="step-number">STEP 3: Establish Biosecurity System</div>
+                    <div class="step-title">Implement 10-point biosecurity protocol on your farm</div>
+                    <div class="step-content">
+                        <strong>What to do:</strong>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Install quarantine house for new birds (separate from main flock)</li>
+                            <li>Create visitor entrance with boot disinfection area</li>
+                            <li>Establish cleaning schedule for all equipment and housing</li>
+                            <li>Set up pest control measures (traps, poison, screens)</li>
+                            <li>Create equipment cleaning station with disinfectant</li>
+                            <li>Develop daily health inspection routine</li>
+                        </ul>
+                        <p style="margin-top: 15px;"><strong>Expected output:</strong> Biosecurity system implemented on your farm; documented procedures</p>
+                        <p><strong>Time needed:</strong> 4-6 hours (one-time setup)</p>
+                    </div>
+                </div>
+
+                <div class="implementation-step">
+                    <div class="step-number">STEP 4: Create Health Monitoring System</div>
+                    <div class="step-title">Establish daily health observation and record-keeping</div>
+                    <div class="step-content">
+                        <strong>What to do:</strong>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Create health inspection checklist (daily)</li>
+                            <li>Document observations: behavior, appetite, water consumption, droppings</li>
+                            <li>Note any sick or dead birds immediately</li>
+                            <li>Keep mortality records with dates and observations</li>
+                            <li>Track egg production and quality daily</li>
+                            <li>Document all treatments given with dates</li>
+                        </ul>
+                        <p style="margin-top: 15px;"><strong>Expected output:</strong> Health monitoring spreadsheet and daily checklist system</p>
+                        <p><strong>Time needed:</strong> 2-3 hours (setup); 15 minutes daily (ongoing)</p>
+                    </div>
+                </div>
+
+                <div class="implementation-step">
+                    <div class="step-number">STEP 5: Plan Emergency Response</div>
+                    <div class="step-title">Prepare for disease outbreak scenarios</div>
+                    <div class="step-content">
+                        <strong>What to do:</strong>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Create emergency response plan (one-page checklist)</li>
+                            <li>Prepare quarantine area for sick bird isolation</li>
+                            <li>Have cleaning supplies (disinfectant, bleach) on hand</li>
+                            <li>Know signs of notifiable diseases (Newcastle, Avian Influenza)</li>
+                            <li>Know how to report suspected outbreaks to authorities</li>
+                            <li>Keep vet contact info accessible</li>
+                        </ul>
+                        <p style="margin-top: 15px;"><strong>Expected output:</strong> Emergency response plan document; supplies inventory</p>
+                        <p><strong>Time needed:</strong> 2-3 hours</p>
+                    </div>
+                </div>
+
+                <div class="implementation-step">
+                    <div class="step-number">STEP 6: Budget for Health Management</div>
+                    <div class="step-title">Calculate annual health & veterinary care costs</div>
+                    <div class="step-content">
+                        <strong>What to do:</strong>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Calculate vaccine costs (all required vaccines for 1 year)</li>
+                            <li>Budget for preventative medications (parasite treatment, etc.)</li>
+                            <li>Estimate veterinary consultation fees and emergency visit costs</li>
+                            <li>Include disinfectant, cleaning supplies, equipment costs</li>
+                            <li>Add contingency (15-20%) for unexpected disease treatment</li>
+                            <li>Create monthly budget showing when expenses occur</li>
+                        </ul>
+                        <p style="margin-top: 15px;"><strong>Expected output:</strong> Annual health budget with monthly breakdown</p>
+                        <p><strong>Time needed:</strong> 2-3 hours</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Knowledge Check Quiz -->
+            <div class="section">
+                <div class="quiz-section">
+                    <div class="quiz-title">✓ Knowledge Check Quiz</div>
+                    <p>Answer these 3 questions to verify your understanding. You need 2/3 (66%) to pass.</p>
+
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">Question 1: What is the main transmission route for Newcastle Disease?</div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q1" value="a"> (A) Infected insects (mosquitoes)</label>
+                        </div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q1" value="b"> (B) Respiratory droplets and direct contact</label>
+                        </div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q1" value="c"> (C) Contaminated water only</label>
+                        </div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q1" value="d"> (D) Tick bites</label>
+                        </div>
+                        <div class="feedback" id="q1-feedback"></div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">Question 2: How long should new birds be quarantined before mixing with your main flock?</div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q2" value="a"> (A) 2-3 days</label>
+                        </div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q2" value="b"> (B) 7-10 days</label>
+                        </div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q2" value="c"> (C) 14-21 days</label>
+                        </div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q2" value="d"> (D) 1 month</label>
+                        </div>
+                        <div class="feedback" id="q2-feedback"></div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">Question 3: Which of these is NOT a key biosecurity measure?</div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q3" value="a"> (A) Visitor boot disinfection</label>
+                        </div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q3" value="b"> (B) Allowing wild birds to roost in your coop for protection</label>
+                        </div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q3" value="c"> (C) Daily health monitoring</label>
+                        </div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q3" value="d"> (D) Pest control measures</label>
+                        </div>
+                        <div class="feedback" id="q3-feedback"></div>
+                    </div>
+
+                    <button onclick="submitQuiz()">Submit Quiz</button>
+                    <div id="quiz-result" style="margin-top: 20px; font-weight: bold; font-size: 1.1em;"></div>
+                </div>
+            </div>
+
+            <!-- Real-World Project -->
+            <div class="section">
+                <div class="project-section">
+                    <div class="project-title">🎯 Real-World Project: Comprehensive Health Management Plan</div>
+                    <p>Create a complete health and disease prevention plan for your poultry operation.</p>
+
+                    <h3>Project Deliverables (Submit as PDF or Word):</h3>
+
+                    <div class="deliverable">
+                        <strong>1. Veterinary Services Assessment</strong>
+                        <p>Information on 2-3 local veterinarians: contact details, services, vaccination availability, emergency procedures</p>
+                    </div>
+
+                    <div class="deliverable">
+                        <strong>2. Vaccination Schedule</strong>
+                        <p>Timeline from day 1 through adulthood; vaccine names, dates, costs; includes boosters if applicable</p>
+                    </div>
+
+                    <div class="deliverable">
+                        <strong>3. Biosecurity Protocol Implementation Plan</strong>
+                        <p>How you'll implement all 10 biosecurity measures on your farm; quarantine facility design; visitor procedures</p>
+                    </div>
+
+                    <div class="deliverable">
+                        <strong>4. Health Monitoring System</strong>
+                        <p>Daily health inspection checklist; mortality tracking form; treatment log template; documentation procedures</p>
+                    </div>
+
+                    <div class="deliverable">
+                        <strong>5. Disease Recognition Guide</strong>
+                        <p>Descriptions of 6-8 common poultry diseases with symptoms you can recognize; preventive measures for each</p>
+                    </div>
+
+                    <div class="deliverable">
+                        <strong>6. Emergency Response Plan</strong>
+                        <p>One-page decision tree for disease outbreaks; isolation procedures; when/how to call vet; reporting requirements</p>
+                    </div>
+
+                    <div class="deliverable">
+                        <strong>7. Annual Health Budget</strong>
+                        <p>Vaccine costs, veterinary fees, medications, supplies; monthly breakdown; contingency for emergencies</p>
+                    </div>
+
+                    <div class="deliverable">
+                        <strong>8. Biosecurity Facility Photos</strong>
+                        <p>Photos of your quarantine area, disinfection station, pest control measures, health monitoring setup</p>
+                    </div>
+
+                    <p style="margin-top: 20px;"><strong>Total length:</strong> 12-16 pages with photos and forms</p>
+                    <p><strong>Grading criteria:</strong></p>
+                    <ul style="margin-left: 20px;">
+                        <li><strong>Completeness (20%):</strong> All 8 deliverables included</li>
+                        <li><strong>Realism (20%):</strong> Plan is implementable with local resources and vet services</li>
+                        <li><strong>Accuracy (20%):</strong> Correct disease information and vaccination protocols</li>
+                        <li><strong>Clarity (20%):</strong> Clear, easy-to-follow procedures for farm staff</li>
+                        <li><strong>Detail (20%):</strong> Thorough research; addresses your specific farm context</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Success Criteria -->
+            <div class="section">
+                <h2>✅ Module Success Criteria</h2>
+                <ul class="checklist">
+                    <li><input type="checkbox"> Watched all 5 videos on poultry health and disease</li>
+                    <li><input type="checkbox"> Completed all 6 implementation steps</li>
+                    <li><input type="checkbox"> Scored 2/3 (66%) or higher on knowledge check</li>
+                    <li><input type="checkbox"> Submitted all 8 project deliverables</li>
+                    <li><input type="checkbox"> Identified 2-3 local veterinarians</li>
+                    <li><input type="checkbox"> Established biosecurity measures on your farm</li>
+                    <li><input type="checkbox"> Created health monitoring system</li>
+                </ul>
+            </div>
+
+            <!-- Next Steps -->
+            <div class="section" style="background: #e8f4f8; padding: 20px; border-radius: 8px;">
+                <h2 style="margin-top: 0;">🚀 Ready for the Next Module?</h2>
+                <p>Once you've completed this module and submitted your health plan, you're ready for:</p>
+                <p style="font-size: 1.1em; font-weight: bold; color: #8b0000;">🥚 Module 5: Breeding & Egg Production</p>
+                <p>You'll learn to manage breeding cycles and maximize egg production for sustainability.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function submitQuiz() {
+            let score = 0;
+            const answers = {
+                q1: 'b',
+                q2: 'c',
+                q3: 'b'
+            };
+
+            const feedback = {
+                q1: {
+                    correct: 'Correct! Newcastle Disease spreads via respiratory droplets and direct bird-to-bird contact, making it highly contagious.',
+                    incorrect: 'Incorrect. Newcastle Disease spreads primarily through respiratory droplets and direct contact. Rapid isolation is essential.'
+                },
+                q2: {
+                    correct: 'Correct! A 14-21 day quarantine allows time to observe new birds for disease symptoms before mixing.',
+                    incorrect: 'Incorrect. New birds should be quarantined for 14-21 days to monitor for disease before mixing with your main flock.'
+                },
+                q3: {
+                    correct: 'Correct! Allowing wild birds into your coop is a MAJOR biosecurity risk, not a measure. Wild birds carry many diseases.',
+                    incorrect: 'Incorrect. Wild birds are a disease risk and should be prevented from entering your coop. This is not a biosecurity measure.'
+                }
+            };
+
+            for (let i = 1; i <= 3; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                const feedbackDiv = document.getElementById(`q${i}-feedback`);
+
+                if (!selected) {
+                    feedbackDiv.textContent = 'Please select an answer.';
+                    feedbackDiv.className = 'feedback incorrect';
+                    feedbackDiv.style.display = 'block';
+                } else {
+                    const isCorrect = selected.value === answers[`q${i}`];
+                    if (isCorrect) {
+                        score++;
+                        feedbackDiv.textContent = feedback[`q${i}`].correct;
+                        feedbackDiv.className = 'feedback correct';
+                    } else {
+                        feedbackDiv.textContent = feedback[`q${i}`].incorrect;
+                        feedbackDiv.className = 'feedback incorrect';
+                    }
+                    feedbackDiv.style.display = 'block';
+                }
+            }
+
+            const resultDiv = document.getElementById('quiz-result');
+            const percentage = Math.round((score / 3) * 100);
+            resultDiv.textContent = `Score: ${score}/3 (${percentage}%) - ${percentage >= 66 ? '✓ PASS' : '✗ Please review and try again'}`;
+            resultDiv.style.color = percentage >= 66 ? '#155724' : '#721c24';
+
+            localStorage.setItem('module4-quiz-score', score);
+            updateProgress();
+        }
+
+        function updateProgress() {
+            let completed = 0;
+            if (localStorage.getItem('module4-quiz-score')) completed++;
+
+            const progressPercent = (completed / 7) * 100;
+            document.getElementById('progressFill').style.width = progressPercent + '%';
+            document.getElementById('progressFill').textContent = Math.round(progressPercent) + '%';
+
+            localStorage.setItem('module4-progress', progressPercent);
+        }
+
+        window.addEventListener('load', updateProgress);
+    </script>
+</body>
+</html>

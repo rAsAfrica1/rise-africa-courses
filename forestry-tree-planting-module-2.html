@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forestry & Tree Planting - Module 2: Nursery & Seedling Production</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background: #f9f9f9; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .header { background: linear-gradient(135deg, #2d5016 0%, #4a7c2f 100%); color: white; padding: 30px; border-radius: 10px; margin-bottom: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .header p { font-size: 1.2em; opacity: 0.9; }
+        .content { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .section { margin-bottom: 40px; }
+        .section h2 { color: #2d5016; font-size: 1.8em; margin-bottom: 20px; border-bottom: 3px solid #4a7c2f; padding-bottom: 10px; }
+        .learning-objectives { background: #e8f5e9; padding: 20px; border-left: 5px solid #4a7c2f; margin-bottom: 20px; border-radius: 5px; }
+        .learning-objectives ul { list-style-position: inside; }
+        .learning-objectives li { margin-bottom: 8px; }
+        .video-container { background: #f5f5f5; padding: 15px; margin-bottom: 15px; border-radius: 5px; border-left: 4px solid #4a7c2f; }
+        .video-container h3 { color: #2d5016; margin-bottom: 10px; }
+        iframe { width: 100%; height: 400px; border-radius: 5px; border: none; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th { background: #2d5016; color: white; padding: 15px; text-align: left; }
+        td { padding: 12px; border-bottom: 1px solid #ddd; }
+        tr:hover { background: #f5f5f5; }
+        .implementation-step { background: #fafafa; padding: 15px; margin-bottom: 15px; border-radius: 5px; border-left: 4px solid #4a7c2f; }
+        .implementation-step h3 { color: #2d5016; margin-bottom: 8px; }
+        .implementation-step p { line-height: 1.8; }
+        .quiz-section { background: #fff3e0; padding: 20px; border-radius: 5px; border: 2px solid #4a7c2f; }
+        .quiz-section h3 { color: #2d5016; margin-bottom: 20px; }
+        .quiz-question { margin-bottom: 20px; background: white; padding: 15px; border-radius: 5px; }
+        .quiz-question p { font-weight: bold; margin-bottom: 10px; }
+        .quiz-option { margin-left: 20px; margin-bottom: 8px; }
+        .quiz-option input[type="radio"] { margin-right: 8px; }
+        .feedback { margin-top: 10px; padding: 10px; border-radius: 5px; display: none; }
+        .feedback.show { display: block; }
+        .feedback.correct { background: #c8e6c9; color: #2d5016; border-left: 4px solid #4a7c2f; }
+        .feedback.incorrect { background: #ffcdd2; color: #c62828; border-left: 4px solid #c62828; }
+        .project-section { background: #f1f8e9; padding: 20px; border-radius: 5px; border: 2px solid #4a7c2f; }
+        .project-section h2 { color: #2d5016; }
+        .project-item { background: white; padding: 15px; margin: 15px 0; border-radius: 5px; border-left: 4px solid #4a7c2f; }
+        .project-item h4 { color: #2d5016; margin-bottom: 8px; }
+        .progress-bar { background: #e0e0e0; height: 10px; border-radius: 5px; overflow: hidden; margin-bottom: 20px; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, #2d5016, #4a7c2f); width: 0%; transition: width 0.3s; }
+        .next-module { margin-top: 30px; padding: 20px; background: #e8f5e9; border-radius: 5px; text-align: center; }
+        .next-module a { display: inline-block; background: #2d5016; color: white; padding: 12px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background 0.3s; }
+        .next-module a:hover { background: #4a7c2f; }
+        @media (max-width: 768px) { .header h1 { font-size: 1.8em; } iframe { height: 300px; } table { font-size: 0.9em; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌱 Forestry & Tree Planting</h1>
+            <p>Module 2: Nursery & Seedling Production</p>
+        </div>
+
+        <div class="content">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+
+            <div class="section">
+                <div class="learning-objectives">
+                    <h2>📚 Learning Objectives</h2>
+                    <ul>
+                        <li>Understand nursery types and choosing the right model for your context</li>
+                        <li>Master seedling production techniques (seed collection, germination, care)</li>
+                        <li>Design and build a functional tree nursery on your land</li>
+                        <li>Calculate nursery operating costs and revenue from seedling sales</li>
+                        <li>Maintain seedling health and prepare for successful transplanting</li>
+                        <li>Scale nursery production to meet demand</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🎥 Learning Videos</h2>
+
+                <div class="video-container">
+                    <h3>1. Types of Tree Nurseries: From Small to Commercial</h3>
+                    <iframe src="https://www.youtube.com/embed/vG8O_bB0a7I?rel=0" allowfullscreen></iframe>
+                </div>
+
+                <div class="video-container">
+                    <h3>2. Seed Collection, Storage & Germination for African Trees</h3>
+                    <iframe src="https://www.youtube.com/embed/wR8Gm8qPZpA?rel=0" allowfullscreen></iframe>
+                </div>
+
+                <div class="video-container">
+                    <h3>3. Building a Tree Nursery: Facilities & Equipment</h3>
+                    <iframe src="https://www.youtube.com/embed/6UdQdN_CWVQ?rel=0" allowfullscreen></iframe>
+                </div>
+
+                <div class="video-container">
+                    <h3>4. Seedling Care: Watering, Fertilizing & Disease Management</h3>
+                    <iframe src="https://www.youtube.com/embed/YVjqsZrx0FY?rel=0" allowfullscreen></iframe>
+                </div>
+
+                <div class="video-container">
+                    <h3>5. Nursery Economics: From Cost to Profit per Seedling</h3>
+                    <iframe src="https://www.youtube.com/embed/EY-H6Q7Jh4s?rel=0" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>📊 Nursery Setup Comparison by Scale</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nursery Type</th>
+                            <th>Space Required</th>
+                            <th>Setup Cost (USD)</th>
+                            <th>Seedlings/Year</th>
+                            <th>Revenue/Year (USD)</th>
+                            <th>Best For</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Backyard Nursery</td>
+                            <td>100-500 m²</td>
+                            <td>$200-500</td>
+                            <td>500-2,000</td>
+                            <td>$500-1,000</td>
+                            <td>Household use + sales</td>
+                        </tr>
+                        <tr>
+                            <td>Small Commercial</td>
+                            <td>0.5-1 hectare</td>
+                            <td>$1,000-3,000</td>
+                            <td>10,000-30,000</td>
+                            <td>$5,000-15,000</td>
+                            <td>Local community sales</td>
+                        </tr>
+                        <tr>
+                            <td>Medium Nursery</td>
+                            <td>1-5 hectares</td>
+                            <td>$5,000-15,000</td>
+                            <td>50,000-200,000</td>
+                            <td>$25,000-100,000</td>
+                            <td>Regional supply chains</td>
+                        </tr>
+                        <tr>
+                            <td>Large Commercial</td>
+                            <td>5+ hectares</td>
+                            <td>$20,000+</td>
+                            <td>500,000+</td>
+                            <td>$250,000+</td>
+                            <td>National/export markets</td>
+                        </tr>
+                        <tr>
+                            <td>Cost per Seedling</td>
+                            <td colspan="5" style="text-align: center;"><strong>$0.50-$2.00 depending on type (hardwood higher than softwood)</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h2>📋 6 Implementation Steps</h2>
+
+                <div class="implementation-step">
+                    <h3>Step 1: Choose Your Nursery Model</h3>
+                    <p><strong>Decision to make:</strong> Start backyard (100-500 m²) or go commercial (1+ hectares)? Consider your land availability, capital, and market demand. Most farmers start small and expand. A backyard nursery needs just $200-500 to start. For commercial scale, budget $1,000-3,000 for first year infrastructure.</p>
+                    <p><strong>Action:</strong> List available space, calculate startup budget, research local market demand for seedlings.</p>
+                </div>
+
+                <div class="implementation-step">
+                    <h3>Step 2: Source Quality Seeds</h3>
+                    <p><strong>Where to get seeds:</strong> Wild collection (free but risky), certified suppliers ($100-500/kg), international seed banks, or partnerships with existing nurseries. Priority species: Teak ($5-15/kg), Mahogany ($10-20/kg), Mango ($2-5/kg), Acacia ($1-3/kg).</p>
+                    <p><strong>Action:</strong> Identify 3-5 seed suppliers, order samples, test germination rates (should be 60%+ for quality seed).</p>
+                </div>
+
+                <div class="implementation-step">
+                    <h3>Step 3: Prepare Germination Area</h3>
+                    <p><strong>Setup needed:</strong> Seed beds or trays (1 m² = 500-1,000 seedlings), shade structure (50-75% shade cloth), water source, storage for seeds. Most critical: consistent moisture (not waterlogged) and temperature 20-30°C.</p>
+                    <p><strong>Action:</strong> Build or purchase germination trays, install shade structure, set up drip irrigation or watering system.</p>
+                </div>
+
+                <div class="implementation-step">
+                    <h3>Step 4: Establish Seedling Growing Area</h3>
+                    <p><strong>Space requirements:</strong> Once germinated (2-4 weeks), seedlings need 3-6 months of growth. Nursery bed area should be 2-3 times larger than germination area to prevent overcrowding. Plant spacing: 10-15 cm × 15-20 cm depending on species.</p>
+                    <p><strong>Action:</strong> Prepare growing beds with quality soil (mix topsoil + compost), install shade structures, set up nursery management records.</p>
+                </div>
+
+                <div class="implementation-step">
+                    <h3>Step 5: Implement Health Management</h3>
+                    <p><strong>Critical tasks:</strong> Watering (daily in hot season, every 2-3 days in cool season), fertilizing (NPK 10-10-10 starting week 3), pest/disease monitoring, hardening off (reduce shade 2-4 weeks before transplant). Common issues: damping-off (fungal disease - prevent with drains), leaf spots (spray with copper), insect damage (manual removal preferred).</p>
+                    <p><strong>Action:</strong> Create daily care schedule, set up pest monitoring system, keep health records for each seedling batch.</p>
+                </div>
+
+                <div class="implementation-step">
+                    <h3>Step 6: Scale Operations & Profitability</h3>
+                    <p><strong>Profit calculation:</strong> Seedling cost = ($500 setup + $50 seeds + $100 labor) ÷ 1,000 seedlings = $0.65/seedling. Selling price $1.50-$3.00/seedling = $0.85-$2.35 profit per seedling. 10,000 seedlings/year = $8,500-$23,500 gross profit after second year. Start with 1,000 seedlings (safe), scale to 5,000-10,000 as you gain confidence.</p>
+                    <p><strong>Action:</strong> Project sales for year 1 (conservative), year 2 (moderate growth), year 3+ (expansion). Save profits for equipment upgrades (shade houses, misting systems, better storage).</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="quiz-section">
+                    <h3>🎯 Module 2 Quiz</h3>
+
+                    <div class="quiz-question">
+                        <p>1. What is the most cost-effective way to start a backyard tree nursery?</p>
+                        <div class="quiz-option">
+                            <input type="radio" name="q1" value="a" id="q1a">
+                            <label for="q1a">a) Buy expensive shade house structures immediately</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q1" value="b" id="q1b">
+                            <label for="q1b">b) Start with 100-500 m², simple shade cloth, germination trays ($200-500 setup)</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q1" value="c" id="q1c">
+                            <label for="q1c">c) Begin with commercial-scale equipment costing $20,000+</label>
+                        </div>
+                        <button onclick="checkAnswer('q1', 'b', 'Correct! Start small and scale up. A backyard nursery costs $200-500 and can generate $500-1,000 revenue in year one.')">Check Answer</button>
+                        <div id="feedback-q1" class="feedback"></div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p>2. What is the typical profitability margin on tree seedlings?</p>
+                        <div class="quiz-option">
+                            <input type="radio" name="q2" value="a" id="q2a">
+                            <label for="q2a">a) $0.10-$0.20 per seedling (very low margin)</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q2" value="b" id="q2b">
+                            <label for="q2b">b) $0.85-$2.35 per seedling (cost $0.65-$1.15, sell $1.50-$3.00)</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q2" value="c" id="q2c">
+                            <label for="q2c">c) $5.00+ per seedling (unrealistic without premium certification)</label>
+                        </div>
+                        <button onclick="checkAnswer('q2', 'b', 'Correct! Typical margin is $0.85-$2.35 per seedling. 10,000 seedlings/year = $8,500-$23,500 profit potential.')">Check Answer</button>
+                        <div id="feedback-q2" class="feedback"></div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p>3. How long does it take to grow a transplant-ready seedling?</p>
+                        <div class="quiz-option">
+                            <input type="radio" name="q3" value="a" id="q3a">
+                            <label for="q3a">a) 2-4 weeks (too short for healthy development)</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q3" value="b" id="q3b">
+                            <label for="q3b">b) 3-6 months (typical for most African tree species)</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q3" value="c" id="q3c">
+                            <label for="q3c">c) 12+ months (too long, seedlings overgrow)</label>
+                        </div>
+                        <button onclick="checkAnswer('q3', 'b', 'Correct! Most hardwoods need 3-6 months to reach 30-50 cm height, ready for field transplanting.')">Check Answer</button>
+                        <div id="feedback-q3" class="feedback"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="project-section">
+                    <h2>🚀 Real-World Project: Design Your Nursery Operation</h2>
+
+                    <div class="project-item">
+                        <h4>Part 1: Nursery Plan</h4>
+                        <p>Sketch your nursery layout (1-2 pages). Include: total area, germination zone, growing zone, shade structures, water source, storage, office space. Specify nursery type (backyard/small/medium) and total capacity (seedlings/year).</p>
+                    </div>
+
+                    <div class="project-item">
+                        <h4>Part 2: Seed Sourcing Strategy</h4>
+                        <p>Research 3 suppliers for your chosen species. Document: species name, cost/kg, min. order quantity, germination rates, delivery time. Calculate total seed budget for first 1,000 seedlings.</p>
+                    </div>
+
+                    <div class="project-item">
+                        <h4>Part 3: Setup Cost Analysis</h4>
+                        <p>Create a spreadsheet: land preparation ($), shade cloth ($), germination trays ($), soil/compost ($), tools ($), seeds ($), labor ($). Total first-year setup cost. Budget for ongoing supplies (year 2, 3).</p>
+                    </div>
+
+                    <div class="project-item">
+                        <h4>Part 4: Seedling Care Schedule</h4>
+                        <p>Create a 6-month calendar: Week 1-2 germination, Week 3-4 first fertilizer, Week 5-12 growth phase, Week 13-20 hardening off, Week 21-26 harvest. Include daily watering, weekly fertilizing, monthly pest checks.</p>
+                    </div>
+
+                    <div class="project-item">
+                        <h4>Part 5: Profitability Projection</h4>
+                        <p>Calculate 3-year projections: Year 1 (assume 50% of capacity due to learning), Year 2 (80% capacity), Year 3 (100%+). Factor costs, revenue, profit margins. Break-even point: when cumulative profit exceeds setup costs?</p>
+                    </div>
+
+                    <div class="project-item">
+                        <h4>Part 6: Market Research</h4>
+                        <p>Survey 5-10 local farmers/organizations: How many seedlings would they buy annually? What price per seedling? What species most needed? Document demand vs. your supply capacity.</p>
+                    </div>
+
+                    <div class="project-item">
+                        <h4>Part 7: Risk Assessment</h4>
+                        <p>Identify 5 major risks (drought, disease, market collapse, theft, labor shortage). For each: likelihood (high/medium/low), impact (financial loss), mitigation strategy (how to prevent/reduce).</p>
+                    </div>
+
+                    <div class="project-item">
+                        <h4>Part 8: Action Plan</h4>
+                        <p>Write your first 90-day nursery startup plan: Week 1-2 (site prep), Week 3-4 (build structures), Week 5-8 (source seeds, start germination), Week 9-12 (establish first seedling batch). Include timeline, costs, responsibilities, success metrics.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="next-module">
+                <p>Ready to continue? Move to Module 3: Feed & Nutrition Management for Trees</p>
+                <a href="forestry-tree-planting-module-3.html">→ Next Module</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswer(questionId, correctAnswer, feedback) {
+            const selected = document.querySelector(`input[name="${questionId}"]:checked`);
+            const feedbackEl = document.getElementById(`feedback-${questionId}`);
+
+            if (!selected) {
+                alert('Please select an answer');
+                return;
+            }
+
+            if (selected.value === correctAnswer) {
+                feedbackEl.className = 'feedback show correct';
+                feedbackEl.textContent = '✓ ' + feedback;
+            } else {
+                feedbackEl.className = 'feedback show incorrect';
+                feedbackEl.textContent = '✗ Incorrect. ' + feedback;
+            }
+            updateProgress();
+        }
+
+        function updateProgress() {
+            const answered = document.querySelectorAll('input[type="radio"]:checked').length;
+            const total = document.querySelectorAll('input[type="radio"]').length / 3;
+            const progress = (answered / total) * 100;
+            document.getElementById('progressFill').style.width = progress + '%';
+            localStorage.setItem('module2Progress', progress);
+        }
+
+        window.addEventListener('load', () => {
+            const saved = localStorage.getItem('module2Progress');
+            if (saved) document.getElementById('progressFill').style.width = saved + '%';
+        });
+    </script>
+</body>
+</html>

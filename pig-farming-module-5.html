@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pig Farming Module 5: Breeding & Reproduction</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .module-container { max-width: 1100px; margin: 0 auto; background: white; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); overflow: hidden; }
+        .module-header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px; }
+        .module-header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .module-meta { display: flex; gap: 30px; margin-top: 15px; font-size: 0.95em; }
+        .progress-indicator { background: rgba(255,255,255,0.2); padding: 10px 20px; border-radius: 20px; display: inline-block; margin-top: 15px; }
+        .module-content { padding: 40px; }
+        .section { margin-bottom: 45px; border-bottom: 2px solid #f0f0f0; padding-bottom: 40px; }
+        .section:last-child { border-bottom: none; }
+        .section h2 { color: #667eea; font-size: 1.8em; margin-bottom: 20px; border-left: 4px solid #667eea; padding-left: 15px; }
+        .video-item { background: #f9f9f9; border-radius: 8px; overflow: hidden; border: 1px solid #e0e0e0; margin-bottom: 20px; }
+        .video-embed { width: 100%; aspect-ratio: 16/9; border: none; }
+        .video-details { padding: 15px; }
+        .video-details h4 { margin-bottom: 8px; }
+        .cc-badge { display: inline-block; background: #4CAF50; color: white; padding: 3px 8px; border-radius: 3px; font-size: 0.85em; margin-top: 8px; }
+        .reproduction-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.9em; }
+        .reproduction-table th { background: #667eea; color: white; padding: 12px; text-align: left; }
+        .reproduction-table td { padding: 12px; border-bottom: 1px solid #f0f0f0; }
+        .reproduction-table tr:hover { background: #f9f9f9; }
+        .info-box { background: #f0f7ff; padding: 20px; border-radius: 8px; border-left: 4px solid #2196F3; margin-bottom: 20px; }
+        .info-box h3 { color: #2196F3; margin-bottom: 15px; }
+        .implementation-steps { background: #fff3e0; padding: 25px; border-radius: 8px; border-left: 4px solid #FF9800; }
+        .step { background: white; padding: 20px; margin-bottom: 15px; border-radius: 6px; border-left: 4px solid #FF9800; }
+        .step-number { display: inline-block; background: #FF9800; color: white; width: 35px; height: 35px; border-radius: 50%; text-align: center; line-height: 35px; font-weight: bold; margin-right: 10px; }
+        .step-details { background: #f5f5f5; padding: 12px; border-radius: 4px; margin-top: 10px; font-size: 0.9em; }
+        .quiz-section { background: #f3e5f5; padding: 25px; border-radius: 8px; border-left: 4px solid #9C27B0; }
+        .quiz-question { background: white; padding: 20px; margin-bottom: 20px; border-radius: 6px; border-left: 4px solid #9C27B0; }
+        .quiz-options { display: flex; flex-direction: column; gap: 10px; }
+        .quiz-option { display: flex; gap: 10px; padding: 10px; background: #f9f9f9; border-radius: 4px; cursor: pointer; border: 1px solid #e0e0e0; }
+        .quiz-option:hover { background: #f0f0f0; }
+        .project-section { background: #e8f5e9; padding: 25px; border-radius: 8px; border-left: 4px solid #4CAF50; }
+        .project-section h3 { color: #4CAF50; margin-bottom: 15px; }
+        .deliverables ul { list-style: none; padding-left: 0; }
+        .deliverables li { padding: 8px 0; padding-left: 25px; position: relative; }
+        .deliverables li:before { content: "✓"; position: absolute; left: 0; color: #4CAF50; font-weight: bold; }
+        .btn { padding: 12px 25px; border: none; border-radius: 6px; font-size: 0.95em; cursor: pointer; font-weight: 600; }
+        .btn-primary { background: #667eea; color: white; }
+        .btn-secondary { background: #f0f0f0; color: #333; border: 1px solid #ddd; }
+        .button-group { display: flex; gap: 15px; margin-top: 25px; }
+    </style>
+</head>
+<body>
+    <div class="module-container">
+        <div class="module-header">
+            <h1>🤰 Module 5: Breeding & Reproduction</h1>
+            <p>Sustainable Pig Farming Course</p>
+            <div class="module-meta">
+                <div>⏱️ Estimated time: 3 hours</div>
+                <div>📊 Level: Intermediate</div>
+                <div>✅ Status: Not Started</div>
+            </div>
+            <div class="progress-indicator">
+                Overall Progress: <strong id="progress">0%</strong>
+            </div>
+        </div>
+
+        <div class="module-content">
+            <div class="section">
+                <h2>📚 Learning Objectives</h2>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li>Understand pig reproductive cycles and timing</li>
+                    <li>Know signs of heat and optimal breeding times</li>
+                    <li>Manage pregnancy and care for pregnant sows</li>
+                    <li>Prepare for farrowing (giving birth)</li>
+                    <li>Provide proper piglet care in first weeks of life</li>
+                    <li>Build a sustainable breeding program</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>🎥 Learning Videos (5 videos, ~50 minutes)</h2>
+
+                <div class="video-item">
+                    <iframe class="video-embed" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="video-details">
+                        <h4>Video 1: Pig Reproductive Biology (10:20)</h4>
+                        <p>Understanding estrous cycles, breeding age, gestation, and reproductive health.</p>
+                        <p><strong>Source:</strong> CGIAR Research</p>
+                        <span class="cc-badge">CC-BY Licensed</span>
+                    </div>
+                </div>
+
+                <div class="video-item">
+                    <iframe class="video-embed" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="video-details">
+                        <h4>Video 2: Recognizing Heat & Optimal Breeding Time (9:45)</h4>
+                        <p>Signs a sow is in heat, timing for breeding, frequency of cycles.</p>
+                        <p><strong>Source:</strong> FAO Agriculture</p>
+                        <span class="cc-badge">CC-BY Licensed</span>
+                    </div>
+                </div>
+
+                <div class="video-item">
+                    <iframe class="video-embed" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="video-details">
+                        <h4>Video 3: Pregnancy Care & Gestation Management (11:30)</h4>
+                        <p>Nutrition, housing, health monitoring during 3.5-month pregnancy.</p>
+                        <p><strong>Source:</strong> Heifer International</p>
+                        <span class="cc-badge">CC-BY Licensed</span>
+                    </div>
+                </div>
+
+                <div class="video-item">
+                    <iframe class="video-embed" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="video-details">
+                        <h4>Video 4: Farrowing Process & Newborn Piglet Care (12:15)</h4>
+                        <p>Signs of labor, managing difficult births, caring for newborn piglets.</p>
+                        <p><strong>Source:</strong> One Acre Fund</p>
+                        <span class="cc-badge">CC-BY Licensed</span>
+                    </div>
+                </div>
+
+                <div class="video-item">
+                    <iframe class="video-embed" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="video-details">
+                        <h4>Video 5: Farmer Stories - Building a Breeding Program (6:30)</h4>
+                        <p>Real farmers sharing their breeding successes and lessons learned.</p>
+                        <p><strong>Source:</strong> Agricultural Extension</p>
+                        <span class="cc-badge">CC-BY Licensed</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>♻️ Pig Reproductive Timeline</h2>
+
+                <div class="info-box">
+                    <h3>Key Reproductive Milestones</h3>
+                    <table class="reproduction-table">
+                        <thead>
+                            <tr>
+                                <th>Stage</th>
+                                <th>Age/Timing</th>
+                                <th>Key Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Puberty</strong></td>
+                                <td>16-24 weeks (4-6 months)</td>
+                                <td>First estrous cycle appears. Not recommended to breed at first cycle - wait for maturity.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>First Breeding</strong></td>
+                                <td>24-32 weeks (6-8 months)</td>
+                                <td>Gilts (young females) ready if weight is 120-150 kg. Must be well-grown and healthy.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Estrous Cycle</strong></td>
+                                <td>21 days average</td>
+                                <td>Heat lasts 2-3 days. Sows cycle year-round in proper conditions.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Gestation</strong></td>
+                                <td>114-116 days (~3.8 months)</td>
+                                <td>From breeding to farrowing. Sow pregnant with typically 8-12 piglets.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Farrowing</strong></td>
+                                <td>114-116 days after breeding</td>
+                                <td>Giving birth, typically 2-4 hours for whole litter. Usually 8-12 piglets born.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Lactation</strong></td>
+                                <td>6-8 weeks</td>
+                                <td>Piglets nurse from mother. Weaning at 3-4 weeks is common (piglets then need starter feed).</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Reproductive Life</strong></td>
+                                <td>4-6 years</td>
+                                <td>Quality sows can produce 5-6+ litters per lifetime (2 litters per year typical).</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🔥 Signs a Sow is in Heat</h2>
+
+                <div class="info-box">
+                    <h3>How to Recognize Breeding Time</h3>
+                    <ul style="margin-left: 20px; line-height: 1.9; font-size: 0.95em;">
+                        <li>✓ <strong>Swelling of vulva</strong> - Pink, puffy, may have mucus discharge</li>
+                        <li>✓ <strong>Restlessness</strong> - Pacing, trying to escape pen, mounting other pigs</li>
+                        <li>✓ <strong>Standing reflex</strong> - Stands still when boar/person applies pressure to back (key sign)</li>
+                        <li>✓ <strong>Vocalization</strong> - Grunting and vocalizing more than usual</li>
+                        <li>✓ <strong>Loss of appetite</strong> - May not eat normally for a day or two</li>
+                        <li>✓ <strong>Best breeding window</strong> - Heat lasts 2-3 days; breed on day 1-2 of heat</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🔧 Implementation Steps</h2>
+
+                <div class="implementation-steps">
+                    <h3>Week 5-6 Action Items</h3>
+
+                    <div class="step">
+                        <span class="step-number">1</span>
+                        <div class="step-title">Select & Obtain Breeding Stock</div>
+                        <div class="step-details">
+                            <ul style="margin-left: 20px; margin-top: 8px;">
+                                <li>Source quality breeding sow (6-8 months old, healthy, good genetics)</li>
+                                <li>Arrange boar access: on-farm boar, hire for breeding, or artificial insemination</li>
+                                <li>Verify health status of breeding animals (vaccinations, disease-free)</li>
+                                <li>Document breeding animal records (age, breed, health, performance)</li>
+                                <li>Plan backup breeding options in case of infertility</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <span class="step-number">2</span>
+                        <div class="step-title">Monitor Heat Cycles & Record Dates</div>
+                        <div class="step-details">
+                            <ul style="margin-left: 20px; margin-top: 8px;">
+                                <li>Start recording sow observations daily (beginning 2 weeks after purchase)</li>
+                                <li>Document: date of heat signs, duration, breeding date if bred</li>
+                                <li>Create simple spreadsheet tracking: name, date of heat, date bred, expected due date</li>
+                                <li>Test standing reflex daily during suspected heat</li>
+                                <li>If using boar, confirm successful mating occurred</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <span class="step-number">3</span>
+                        <div class="step-title">Prepare Farrowing Pen/Nest</div>
+                        <div class="step-details">
+                            <ul style="margin-left: 20px; margin-top: 8px;">
+                                <li>Build/repair farrowing pen: safe, draft-free, temperature-controlled (22-25°C ideal)</li>
+                                <li>Provide nesting materials: straw or hay for bedding</li>
+                                <li>Install heat lamp for piglets (if farrowing in cool season)</li>
+                                <li>Ensure good drainage and ventilation</li>
+                                <li>Keep pen clean and disinfected before sow enters</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <span class="step-number">4</span>
+                        <div class="step-title">Provide Proper Pregnancy Care</div>
+                        <div class="step-details">
+                            <ul style="margin-left: 20px; margin-top: 8px;">
+                                <li>Feed pregnant sow high-quality diet with proper nutrition (increase feed 2nd-3rd trimester)</li>
+                                <li>Provide clean water 24/7</li>
+                                <li>Monitor health: watch for signs of problems (lethargy, lack of appetite, discharge)</li>
+                                <li>Exercise: allow movement (farrowing sow shouldn't be in small pen entire pregnancy)</li>
+                                <li>Health checks: maintain vaccination schedule and parasite control</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <span class="step-number">5</span>
+                        <div class="step-title">Prepare for Farrowing Event</div>
+                        <div class="step-details">
+                            <ul style="margin-left: 20px; margin-top: 8px;">
+                                <li>Signs labor is near: swollen vulva, leaking milk, restlessness 12-24 hours before</li>
+                                <li>Prepare supplies: clean towels, disinfectant, iodine for piglet navels, heat source</li>
+                                <li>Know when to call veterinarian: straining >2 hours with no piglet, piglet stuck, sow collapse</li>
+                                <li>Plan monitoring: observe farrowing process but don't interfere unless necessary</li>
+                                <li>Have emergency cash for veterinary help if needed</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <span class="step-number">6</span>
+                        <div class="step-title">Create Newborn Piglet Care Plan</div>
+                        <div class="step-details">
+                            <ul style="margin-left: 20px; margin-top: 8px;">
+                                <li>Colostrum (first milk): ensure all piglets nurse within first 6 hours</li>
+                                <li>Disinfect umbilical cords with iodine to prevent infection</li>
+                                <li>Piglet mortality prevention: monitor for crushing, provide heat lamp</li>
+                                <li>Early nutrition: introduce starter feed at 2-3 weeks (before weaning at 4-6 weeks)</li>
+                                <li>Health care: vitamin injections if needed, tail docking, castration procedures (region-dependent)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>📝 Knowledge Check Quiz</h2>
+
+                <div class="quiz-section">
+                    <div class="quiz-question">
+                        <h4>Question 1: How long is a pig's gestation period?</h4>
+                        <div class="quiz-options">
+                            <label class="quiz-option"><input type="radio" name="q1" value="a"><span>A) 2 months (60 days)</span></label>
+                            <label class="quiz-option"><input type="radio" name="q1" value="b"><span>B) 3-4 months (~114-116 days)</span></label>
+                            <label class="quiz-option"><input type="radio" name="q1" value="c"><span>C) 6 months</span></label>
+                            <label class="quiz-option"><input type="radio" name="q1" value="d"><span>D) 1 year</span></label>
+                        </div>
+                        <div style="margin-top: 10px; padding: 10px; background: #e8f5e9; border-radius: 4px; display: none;" id="feedback1"><strong>Correct: B</strong> - Pigs gestate ~114-116 days, about 3.8 months.</div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h4>Question 2: What is the "standing reflex"?</h4>
+                        <div class="quiz-options">
+                            <label class="quiz-option"><input type="radio" name="q2" value="a"><span>A) The sow standing up to eat</span></label>
+                            <label class="quiz-option"><input type="radio" name="q2" value="b"><span>B) A sow standing still when pressure is applied to her back - indicating heat</span></label>
+                            <label class="quiz-option"><input type="radio" name="q2" value="c"><span>C) The sow's posture when pregnant</span></label>
+                            <label class="quiz-option"><input type="radio" name="q2" value="d"><span>D) Not relevant to pig breeding</span></label>
+                        </div>
+                        <div style="margin-top: 10px; padding: 10px; background: #e8f5e9; border-radius: 4px; display: none;" id="feedback2"><strong>Correct: B</strong> - The standing reflex is the KEY sign a sow is in heat and ready to breed.</div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h4>Question 3: How many piglets typically born in one litter?</h4>
+                        <div class="quiz-options">
+                            <label class="quiz-option"><input type="radio" name="q3" value="a"><span>A) 1-2 piglets</span></label>
+                            <label class="quiz-option"><input type="radio" name="q3" value="b"><span>B) 8-12 piglets (average)</span></label>
+                            <label class="quiz-option"><input type="radio" name="q3" value="c"><span>C) 20-30 piglets</span></label>
+                            <label class="quiz-option"><input type="radio" name="q3" value="d"><span>D) Varies wildly, can't predict</span></label>
+                        </div>
+                        <div style="margin-top: 10px; padding: 10px; background: #e8f5e9; border-radius: 4px; display: none;" id="feedback3"><strong>Correct: B</strong> - A healthy sow typically produces 8-12 piglets per litter.</div>
+                    </div>
+
+                    <div class="button-group">
+                        <button class="btn btn-primary" onclick="checkQuiz()">Submit Quiz</button>
+                        <button class="btn btn-secondary" onclick="resetQuiz()">Clear Answers</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🎯 Real-World Project</h2>
+
+                <div class="project-section">
+                    <h3>Project: 12-Month Breeding & Reproduction Plan</h3>
+                    <div class="deliverables">
+                        <h4>Create a comprehensive breeding program:</h4>
+                        <ul>
+                            <li>Breeding stock selection rationale</li>
+                            <li>Estrous cycle monitoring template</li>
+                            <li>12-month breeding calendar (planned breeding dates and expected farrowing)</li>
+                            <li>Farrowing facility design and specifications</li>
+                            <li>Pregnancy care nutrition plan</li>
+                            <li>Farrowing event preparation checklist</li>
+                            <li>Newborn piglet care protocol</li>
+                            <li>Contingency plans for breeding failures or complications</li>
+                            <li>Piglet weaning and post-weaning management plan</li>
+                            <li>Breeding records template to use going forward</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section" style="background: #f5f5f5; padding: 20px; border-radius: 8px; border-left: 4px solid #667eea;">
+                <h3 style="color: #667eea; margin-bottom: 10px;">📖 Next Up: Module 6 (FINAL)</h3>
+                <p><strong>Record Keeping & Economics</strong></p>
+                <p style="color: #666; margin-top: 10px;">Master farm accounting, profit calculations, and complete business planning for your pig farming enterprise.</p>
+            </div>
+
+            <div class="button-group" style="margin-top: 40px;">
+                <button class="btn btn-primary" onclick="localStorage.setItem('module5-complete', 'true'); alert('✓ Module 5 complete! One more to go...')">Mark Module as Complete</button>
+                <button class="btn btn-secondary" onclick="window.print()">Print/Save as PDF</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function checkQuiz() {
+            const answers = { q1: 'b', q2: 'b', q3: 'b' };
+            let score = 0;
+            for (let i = 1; i <= 3; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selected && selected.value === answers[`q${i}`]) {
+                    score++;
+                    document.getElementById(`feedback${i}`).style.display = 'block';
+                }
+            }
+            alert(`Quiz Score: ${score}/3\n${score >= 2 ? '✓ PASSED' : '✗ Review and try again'}`);
+        }
+        function resetQuiz() {
+            document.querySelectorAll('.quiz-option input').forEach(el => el.checked = false);
+            document.querySelectorAll('[id^="feedback"]').forEach(el => el.style.display = 'none');
+        }
+    </script>
+</body>
+</html>

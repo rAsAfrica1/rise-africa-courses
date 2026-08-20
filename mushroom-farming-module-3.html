@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mushroom Farming - Module 3: Growing Conditions & Fruiting</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background: #f9f9f9; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .header { background: linear-gradient(135deg, #6b4423 0%, #9d6d37 100%); color: white; padding: 30px; border-radius: 10px; margin-bottom: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .header p { font-size: 1.2em; opacity: 0.9; }
+        .content { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .section { margin-bottom: 40px; }
+        .section h2 { color: #6b4423; font-size: 1.8em; margin-bottom: 20px; border-bottom: 3px solid #9d6d37; padding-bottom: 10px; }
+        .learning-objectives { background: #f5e6d3; padding: 20px; border-left: 5px solid #9d6d37; margin-bottom: 20px; border-radius: 5px; }
+        .learning-objectives ul { list-style-position: inside; }
+        .learning-objectives li { margin-bottom: 8px; }
+        .video-container { background: #f9f9f9; padding: 15px; margin-bottom: 15px; border-radius: 5px; border-left: 4px solid #9d6d37; }
+        .video-container h3 { color: #6b4423; margin-bottom: 10px; }
+        iframe { width: 100%; height: 400px; border-radius: 5px; border: none; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th { background: #6b4423; color: white; padding: 15px; text-align: left; }
+        td { padding: 12px; border-bottom: 1px solid #ddd; }
+        tr:hover { background: #f9f9f9; }
+        .implementation-step { background: #fafafa; padding: 15px; margin-bottom: 15px; border-radius: 5px; border-left: 4px solid #9d6d37; }
+        .implementation-step h3 { color: #6b4423; margin-bottom: 8px; }
+        .quiz-section { background: #fff9e6; padding: 20px; border-radius: 5px; border: 2px solid #9d6d37; }
+        .quiz-section h3 { color: #6b4423; margin-bottom: 20px; }
+        .quiz-question { margin-bottom: 20px; background: white; padding: 15px; border-radius: 5px; }
+        .quiz-question p { font-weight: bold; margin-bottom: 10px; }
+        .quiz-option { margin-left: 20px; margin-bottom: 8px; }
+        .quiz-option input[type="radio"] { margin-right: 8px; }
+        .feedback { margin-top: 10px; padding: 10px; border-radius: 5px; display: none; }
+        .feedback.show { display: block; }
+        .feedback.correct { background: #d4edda; color: #155724; border-left: 4px solid #28a745; }
+        .feedback.incorrect { background: #f8d7da; color: #721c24; border-left: 4px solid #f5c6cb; }
+        .project-section { background: #e8f5e9; padding: 20px; border-radius: 5px; border: 2px solid #9d6d37; }
+        .project-section h2 { color: #6b4423; }
+        .project-item { background: white; padding: 15px; margin: 15px 0; border-radius: 5px; border-left: 4px solid #9d6d37; }
+        .project-item h4 { color: #6b4423; margin-bottom: 8px; }
+        .progress-bar { background: #e0e0e0; height: 10px; border-radius: 5px; overflow: hidden; margin-bottom: 20px; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, #6b4423, #9d6d37); width: 0%; transition: width 0.3s; }
+        .next-module { margin-top: 30px; padding: 20px; background: #f5e6d3; border-radius: 5px; text-align: center; }
+        .next-module a { display: inline-block; background: #6b4423; color: white; padding: 12px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background 0.3s; }
+        .next-module a:hover { background: #9d6d37; }
+        @media (max-width: 768px) { .header h1 { font-size: 1.8em; } iframe { height: 300px; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🍄 Mushroom Farming</h1>
+            <p>Module 3: Growing Conditions & Fruiting</p>
+        </div>
+
+        <div class="content">
+            <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+            <div class="section">
+                <div class="learning-objectives">
+                    <h2>📚 Learning Objectives</h2>
+                    <ul>
+                        <li>Master optimal temperature and humidity conditions for fruiting</li>
+                        <li>Learn fruiting trigger methods for initiating mushroom production</li>
+                        <li>Understand air exchange and fresh air requirements</li>
+                        <li>Manage watering and misting schedules</li>
+                        <li>Monitor and adjust growing conditions for optimal yield</li>
+                        <li>Troubleshoot common fruiting problems (contamination, poor pins)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🎥 Learning Videos</h2>
+                <div class="video-container"><h3>1. Fruiting Conditions: Temperature, Humidity, Light</h3><iframe src="https://www.youtube.com/embed/o8G2qGR1Gbo?rel=0" allowfullscreen></iframe></div>
+                <div class="video-container"><h3>2. Triggering Mushroom Fruiting: Techniques & Timing</h3><iframe src="https://www.youtube.com/embed/dqaWaIwjLvA?rel=0" allowfullscreen></iframe></div>
+                <div class="video-container"><h3>3. Watering & Misting: Getting Moisture Right</h3><iframe src="https://www.youtube.com/embed/tZpFl8DLvmk?rel=0" allowfullscreen></iframe></div>
+                <div class="video-container"><h3>4. Air Circulation & Humidity Monitoring</h3><iframe src="https://www.youtube.com/embed/PYbmVJlxqPE?rel=0" allowfullscreen></iframe></div>
+                <div class="video-container"><h3>5. Troubleshooting Growth Problems & Contamination</h3><iframe src="https://www.youtube.com/embed/fVd2bQQFgcE?rel=0" allowfullscreen></iframe></div>
+            </div>
+
+            <div class="section">
+                <h2>📊 Optimal Fruiting Conditions by Species</h2>
+                <table><thead><tr><th>Species</th><th>Temperature</th><th>Humidity</th><th>Light</th><th>Air Exchanges</th></tr></thead><tbody>
+                        <tr><td>Oyster (white/pink)</td><td>13-20°C</td><td>85-95%</td><td>100-200 lux</td><td>2-4x/day</td></tr>
+                        <tr><td>Shiitake</td><td>10-18°C</td><td>80-90%</td><td>200-400 lux</td><td>2-3x/day</td></tr>
+                        <tr><td>Button</td><td>12-16°C</td><td>85-95%</td><td>100 lux (dim)</td><td>2x/day</td></tr>
+                        <tr><td>Lion's Mane</td><td>15-22°C</td><td>80-90%</td><td>200 lux</td><td>2-3x/day</td></tr>
+                    </tbody></table>
+            </div>
+
+            <div class="section">
+                <h2>📋 6 Implementation Steps</h2>
+                <div class="implementation-step"><h3>Step 1: Prepare Fruiting Space</h3><p>Location: basement, greenhouse, shed - must maintain temperature 13-20°C and 85-95% humidity. Budget for: hygrometer ($5-15), thermometer ($3-10), misting bottle/spray ($2-5), shelving ($50-200). Small setup: 4-shelf unit in corner, 100+ bags. Control: fan for air exchange, plastic sheeting for humidity.</p></div>
+                <div class="implementation-step"><h3>Step 2: Trigger Fruiting</h3><p>Method: After colonization complete (all-white bags), move to fruiting space. Increase fresh air (open holes in bags), increase humidity (mist 2-3x daily), provide light (indirect, 12 hrs/day). Cost: minimal (water, electricity). Pin formation: 3-7 days (tiny mushroom bumps appear). Fruiting: 7-14 days to harvest size.</p></div>
+                <div class="implementation-step"><h3>Step 3: Manage Humidity Daily</h3><p>Target: 85-95% humidity (measure with hygrometer). Method: Mist bags 2-4x daily with spray bottle (30 seconds per misting). Alternative: humidity tent (plastic sheeting) with humidifier ($30-100). Consequence of low humidity: pins abort, mushrooms dry, yield drops 50%+. Consequence of too high (>98%): mold contamination increases.</p></div>
+                <div class="implementation-step"><h3>Step 4: Provide Fresh Air Exchange</h3><p>Oxygen = essential for fruiting. Method: passive (fan blowing through holes in bags) or active (small fan on timer 2-3x/day). Cost: fan ($20-50), timer ($5-15). Poor air = mushrooms don't form properly, stems get long/thin. Adequate air = nice caps, good texture, premium appearance.</p></div>
+                <div class="implementation-step"><h3>Step 5: Monitor & Adjust Conditions</h3><p>Daily checks: temperature (optimal 13-20°C), humidity (optimal 85-95%), contamination (any green/black mold = remove bag). Weekly: count pins appearing, measure mushroom size, note colonization-to-harvest timeline. Adjust: if pins abort = increase humidity, if mold appears = increase air flow, if slow growth = check temperature.</p></div>
+                <div class="implementation-step"><h3>Step 6: Plan Multiple Flushes</h3><p>Oyster mushrooms: 3-4 flushes per bag over 6-8 weeks. After first harvest, rest bag 1 week, soak in water for 12 hours, re-trigger fruiting. Each flush yields 20-30% less than previous. Track yield per bag: Flush 1: 0.4kg, Flush 2: 0.3kg, Flush 3: 0.2kg = 0.9kg total per bag. Economic model: plan flushes when calculating revenue.</p></div>
+            </div>
+
+            <div class="section">
+                <div class="quiz-section"><h3>🎯 Module 3 Quiz</h3>
+                    <div class="quiz-question"><p>1. What humidity level is optimal for mushroom fruiting?</p>
+                        <div class="quiz-option"><input type="radio" name="q1" value="a" id="q1a"><label for="q1a">a) 50-60% (mushrooms dry out)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q1" value="b" id="q1b"><label for="q1b">b) 85-95% (optimal growth)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q1" value="c" id="q1c"><label for="q1c">c) >98% (leads to mold)</label></div>
+                        <button onclick="checkAnswer('q1', 'b', 'Correct! 85-95% humidity is ideal. Too low = dry mushrooms, too high = contamination.')">Check Answer</button>
+                        <div id="feedback-q1" class="feedback"></div>
+                    </div>
+                    <div class="quiz-question"><p>2. Why is fresh air exchange critical during fruiting?</p>
+                        <div class="quiz-option"><input type="radio" name="q2" value="a" id="q2a"><label for="q2a">a) Makes mushrooms smell better (cosmetic)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q2" value="b" id="q2b"><label for="q2b">b) Oxygen enables fruiting. Without it, pins won't form.</label></div>
+                        <div class="quiz-option"><input type="radio" name="q2" value="c" id="q2c"><label for="q2c">c) Reduces labor (less misting needed)</label></div>
+                        <button onclick="checkAnswer('q2', 'b', 'Correct! Mushroom fruiting requires oxygen. No air = no pins, failed crop.')">Check Answer</button>
+                        <div id="feedback-q2" class="feedback"></div>
+                    </div>
+                    <div class="quiz-question"><p>3. How many flushes can you expect from one oyster bag?</p>
+                        <div class="quiz-option"><input type="radio" name="q3" value="a" id="q3a"><label for="q3a">a) 1 flush only (one-time harvest)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q3" value="b" id="q3b"><label for="q3b">b) 3-4 flushes over 6-8 weeks</label></div>
+                        <div class="quiz-option"><input type="radio" name="q3" value="c" id="q3c"><label for="q3c">c) 10+ flushes (continuous)</label></div>
+                        <button onclick="checkAnswer('q3', 'b', 'Correct! 3-4 flushes per bag, each 20-30% less than the previous.')">Check Answer</button>
+                        <div id="feedback-q3" class="feedback"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="project-section"><h2>🚀 Real-World Project: Fruiting Space Setup & Management</h2>
+                    <div class="project-item"><h4>Part 1: Fruiting Space Design</h4><p>Sketch your setup: shelving, bags per shelf, fan placement, misting area, drainage. Budget: shelves ($___), fan ($___), hygrometer ($___), thermometer ($___), plastic sheeting ($___). Total investment: ___. Capacity: ___ bags in your space.</p></div>
+                    <div class="project-item"><h4>Part 2: Temperature & Humidity Monitoring</h4><p>Install hygrometer & thermometer. Track daily for 1 week: time, temperature, humidity, pins observed, mold observed. Identify if space naturally meets requirements or needs equipment (heater/cooler, humidifier).</p></div>
+                    <div class="project-item"><h4>Part 3: Fruiting Protocol Development</h4><p>Create daily routine: misting schedule (how many times? when?), air exchange (fan on/off schedule), inspection (daily checklist: contamination? pins? mushroom size?). Time per bag per day: ___. Realistic for ___ bags/day care?</p></div>
+                    <div class="project-item"><h4>Part 4: Multiple Flush Planning</h4><p>Create 8-week timeline: Bag 1 - Day 1-3 trigger, Day 4-10 fruiting, Day 11-14 harvest (Flush 1), Day 15-17 rest/soak, Day 18-24 second fruiting (Flush 2), etc. Projected total yield per bag: Flush 1 (0.4kg) + Flush 2 (0.3kg) + Flush 3 (0.2kg) = 0.9kg per bag.</p></div>
+                    <div class="project-item"><h4>Part 5: Contamination Prevention & Response</h4><p>Early warning signs: green fuzz (mold), black spots, mushy substrate. Response plan: immediately remove contaminated bag, investigate (too high humidity? poor air flow?), adjust conditions. Track contamination rate: ___ out of 100 bags = ___% loss.</p></div>
+                    <div class="project-item"><h4>Part 6: Yield Tracking System</h4><p>For each bag, record: inoculation date, fruiting start date, days to pin formation, total harvest weight (Flush 1, 2, 3), yield per bag. Target: 0.8-1.0kg per bag minimum. Identify successful vs. poor-performing batches.</p></div>
+                    <div class="project-item"><h4>Part 7: Equipment Cost vs. Benefit Analysis</h4><p>Scenario A (manual): spray bottle + fan + natural light = $30 cost, 1 hour/day labor. Scenario B (semi-auto): humidifier + timer fan + LED + spray = $150 cost, 20 min/day labor. Calculate breakeven: at what production scale does automation pay off?</p></div>
+                    <div class="project-item"><h4>Part 8: Scaling Fruiting Capacity</h4><p>Current space: ___ bags. Required for full-time income ($10k/year): ___ bags/year ÷ 0.9kg/bag × $6/kg = ___. Plan: when to add second fruiting room? Labor needed? Equipment upgrade?</p></div>
+                </div>
+            </div>
+
+            <div class="next-module"><p>Ready to continue? Move to Module 4: Harvest & Quality Control</p><a href="mushroom-farming-module-4.html">→ Next Module</a></div>
+        </div>
+    </div>
+    <script>
+        function checkAnswer(q, a, f) { const s = document.querySelector(`input[name="${q}"]:checked`); const e = document.getElementById(`feedback-${q}`); if (!s) { alert('Select answer'); return; } e.className = 'feedback show ' + (s.value === a ? 'correct' : 'incorrect'); e.textContent = (s.value === a ? '✓ ' : '✗ Incorrect. ') + f; updateProgress(); }
+        function updateProgress() { const c = document.querySelectorAll('input[type="radio"]:checked').length; const t = document.querySelectorAll('input[type="radio"]').length / 3; const p = (c / t) * 100; document.getElementById('progressFill').style.width = p + '%'; localStorage.setItem('mushroom3', p); }
+        window.addEventListener('load', () => { const s = localStorage.getItem('mushroom3'); if (s) document.getElementById('progressFill').style.width = s + '%'; });
+    </script>
+</body>
+</html>

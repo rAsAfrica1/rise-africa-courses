@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rabbit Farming - Module 2: Housing & Environment Control</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background: #f9f9f9; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .header { background: linear-gradient(135deg, #8b4513 0%, #cd853f 100%); color: white; padding: 30px; border-radius: 10px; margin-bottom: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .header p { font-size: 1.2em; opacity: 0.9; }
+        .content { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .section { margin-bottom: 40px; }
+        .section h2 { color: #8b4513; font-size: 1.8em; margin-bottom: 20px; border-bottom: 3px solid #cd853f; padding-bottom: 10px; }
+        .learning-objectives { background: #ffe4c4; padding: 20px; border-left: 5px solid #cd853f; margin-bottom: 20px; border-radius: 5px; }
+        .learning-objectives ul { list-style-position: inside; }
+        .learning-objectives li { margin-bottom: 8px; }
+        .video-container { background: #f9f9f9; padding: 15px; margin-bottom: 15px; border-radius: 5px; border-left: 4px solid #cd853f; }
+        .video-container h3 { color: #8b4513; margin-bottom: 10px; }
+        iframe { width: 100%; height: 400px; border-radius: 5px; border: none; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th { background: #8b4513; color: white; padding: 15px; text-align: left; }
+        td { padding: 12px; border-bottom: 1px solid #ddd; }
+        tr:hover { background: #f9f9f9; }
+        .implementation-step { background: #fafafa; padding: 15px; margin-bottom: 15px; border-radius: 5px; border-left: 4px solid #cd853f; }
+        .implementation-step h3 { color: #8b4513; margin-bottom: 8px; }
+        .quiz-section { background: #fff9e6; padding: 20px; border-radius: 5px; border: 2px solid #cd853f; }
+        .quiz-section h3 { color: #8b4513; margin-bottom: 20px; }
+        .quiz-question { margin-bottom: 20px; background: white; padding: 15px; border-radius: 5px; }
+        .quiz-question p { font-weight: bold; margin-bottom: 10px; }
+        .quiz-option { margin-left: 20px; margin-bottom: 8px; }
+        .quiz-option input[type="radio"] { margin-right: 8px; }
+        .feedback { margin-top: 10px; padding: 10px; border-radius: 5px; display: none; }
+        .feedback.show { display: block; }
+        .feedback.correct { background: #d4edda; color: #155724; border-left: 4px solid #28a745; }
+        .feedback.incorrect { background: #f8d7da; color: #721c24; border-left: 4px solid #f5c6cb; }
+        .project-section { background: #e8f5e9; padding: 20px; border-radius: 5px; border: 2px solid #cd853f; }
+        .project-section h2 { color: #8b4513; }
+        .project-item { background: white; padding: 15px; margin: 15px 0; border-radius: 5px; border-left: 4px solid #cd853f; }
+        .project-item h4 { color: #8b4513; margin-bottom: 8px; }
+        .progress-bar { background: #e0e0e0; height: 10px; border-radius: 5px; overflow: hidden; margin-bottom: 20px; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, #8b4513, #cd853f); width: 0%; transition: width 0.3s; }
+        .next-module { margin-top: 30px; padding: 20px; background: #ffe4c4; border-radius: 5px; text-align: center; }
+        .next-module a { display: inline-block; background: #8b4513; color: white; padding: 12px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background 0.3s; }
+        .next-module a:hover { background: #cd853f; }
+        @media (max-width: 768px) { .header h1 { font-size: 1.8em; } iframe { height: 300px; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🐰 Rabbit Farming</h1>
+            <p>Module 2: Housing & Environment Control</p>
+        </div>
+
+        <div class="content">
+            <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+            <div class="section">
+                <div class="learning-objectives">
+                    <h2>📚 Learning Objectives</h2>
+                    <ul>
+                        <li>Design appropriate rabbit housing by breed and production scale</li>
+                        <li>Master temperature and humidity control for rabbit health</li>
+                        <li>Understand cage systems: individual cages vs. colony housing</li>
+                        <li>Learn water and waste management systems</li>
+                        <li>Plan efficient labor-saving designs for daily management</li>
+                        <li>Prevent disease through proper housing and sanitation</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🎥 Learning Videos</h2>
+                <div class="video-container"><h3>1. Rabbit Housing Systems: Cages, Tractors, Colony</h3><iframe src="https://www.youtube.com/embed/1XN0f2tWmcI?rel=0" allowfullscreen></iframe></div>
+                <div class="video-container"><h3>2. Building Rabbit Cages: Materials & Design</h3><iframe src="https://www.youtube.com/embed/YZUhBbw7VFc?rel=0" allowfullscreen></iframe></div>
+                <div class="video-container"><h3>3. Temperature & Humidity Management</h3><iframe src="https://www.youtube.com/embed/1Oa5pUeVH7c?rel=0" allowfullscreen></iframe></div>
+                <div class="video-container"><h3>4. Water & Feed Systems for Rabbits</h3><iframe src="https://www.youtube.com/embed/0blT_zR_wdk?rel=0" allowfullscreen></iframe></div>
+                <div class="video-container"><h3>5. Sanitation & Disease Prevention in Rabbit Houses</h3><iframe src="https://www.youtube.com/embed/HwFzV4kEkL0?rel=0" allowfullscreen></iframe></div>
+            </div>
+
+            <div class="section">
+                <h2>📊 Housing Systems Comparison</h2>
+                <table><thead><tr><th>System</th><th>Initial Cost</th><th>Space/Rabbit</th><th>Maintenance</th><th>Capacity</th></tr></thead><tbody>
+                        <tr><td>Single cage (wire)</td><td>$15-30</td><td>0.25m²</td><td>High</td><td>1-2 rabbits</td></tr>
+                        <tr><td>Stacked hutch system</td><td>$100-300</td><td>0.3-0.5m²</td><td>Medium</td><td>3-6 rabbits</td></tr>
+                        <tr><td>Colony housing</td><td>$200-500</td><td>1-2m² (group)</td><td>Low</td><td>10-20 rabbits</td></tr>
+                        <tr><td>Commercial shed (25+ rabbits)</td><td>$1,000-3,000</td><td>0.5m²</td><td>Medium</td><td>50+ rabbits</td></tr>
+                    </tbody></table>
+            </div>
+
+            <div class="section">
+                <h2>📋 6 Implementation Steps</h2>
+                <div class="implementation-step"><h3>Step 1: Choose Housing System by Scale</h3><p>Hobby (2-3 rabbits): single wooden hutches ($50-100 each). Small farm (5-10): stacked cage system ($200-300). Serious production (20+): colony system or commercial shed. Key consideration: daily management time. Single cage = 15 min/day for 3 rabbits. Colony = 20 min/day for 15 rabbits (4x more efficient). Space: 4-6 rabbits per m² in commercial systems.</p></div>
+                <div class="implementation-step"><h3>Step 2: Build or Acquire Cages</h3><p>DIY: wood frame + 1/2" wire mesh + plywood bottom = $15-25 per cage. Commercial: quality cages $30-50 each. Cage size: standard 60cm L × 45cm W × 35cm H (suitable for New Zealand White). Space: does = slightly larger than bucks (breeding females need more comfort). Essential: smooth floors (prevents sore hocks), proper ventilation, easy cleaning access.</p></div>
+                <div class="implementation-step"><h3>Step 3: Install Feeding & Watering Systems</h3><p>Water: hanging bottles ($5 each, change daily) or automatic water lines (more expensive, saves labor). Feeders: manual bowls (cleaned 2x daily) or automatic feeders ($20-50, requires less daily work). Cost-benefit: spend $100 on automation to save 30 min daily labor (worth it above 20 rabbits).</p></div>
+                <div class="implementation-step"><h3>Step 4: Control Temperature & Light</h3><p>Optimal: 15-20°C, 40-60% humidity. Avoid: direct sunlight (heat stress at >25°C), drafts, damp conditions. In tropics: shade (tarps), ventilation (fans $30-50), possibly evaporative cooling ($100+). In cold climates: insulation, possible supplemental heating ($50-200). Light: 10-14 hrs/day optimal for breeding/production. Budget $50-200 for climate control depending on region.</p></div>
+                <div class="implementation-step"><h3>Step 5: Manage Waste & Sanitation</h3><p>Rabbits produce 10-15kg waste per rabbit per month (excellent fertilizer). Slotted floors allow waste to fall through to collection area below (easier cleaning). Alternative: deep litter system (change monthly, composting in place). Daily: remove soiled hay, top up feed. Weekly: full cage cleaning (essential for disease prevention). Sanitation saves veterinary costs 10x over.</p></div>
+                <div class="implementation-step"><h3>Step 6: Plan for Scalability</h3><p>Start small (3-5 does): prove model, learn management, test market. Expand: add 1-2 does every 2-3 months as cash flow allows. At 10 does: consider shelter upgrade (dedicated rabbit shed). Labor: 3-5 does need 20-30 min/day. 20 does = 60-80 min/day. Plan hiring (part-time help at 15+ rabbits) or rationalize expansion to match available time.</p></div>
+            </div>
+
+            <div class="section">
+                <div class="quiz-section"><h3>🎯 Module 2 Quiz</h3>
+                    <div class="quiz-question"><p>1. What is optimal housing temperature for rabbits?</p>
+                        <div class="quiz-option"><input type="radio" name="q1" value="a" id="q1a"><label for="q1a">a) 10-15°C (too cold)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q1" value="b" id="q1b"><label for="q1b">b) 15-20°C (optimal)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q1" value="c" id="q1c"><label for="q1c">c) >25°C (heat stress)</label></div>
+                        <button onclick="checkAnswer('q1', 'b', 'Correct! 15-20°C is ideal. Heat stress at >25°C leads to mortality & poor reproduction.')">Check Answer</button>
+                        <div id="feedback-q1" class="feedback"></div>
+                    </div>
+                    <div class="quiz-question"><p>2. Why is cage floor design critical?</p>
+                        <div class="quiz-option"><input type="radio" name="q2" value="a" id="q2a"><label for="q2a">a) Purely cosmetic (doesn't matter)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q2" value="b" id="q2b"><label for="q2b">b) Prevents sore hocks (foot disease from pressure)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q2" value="c" id="q2c"><label for="q2c">c) Improves feeding efficiency</label></div>
+                        <button onclick="checkAnswer('q2', 'b', 'Correct! Wire/slotted floors prevent painful sore hocks & aid waste management.')">Check Answer</button>
+                        <div id="feedback-q2" class="feedback"></div>
+                    </div>
+                    <div class="quiz-question"><p>3. How much daily labor for 10 rabbits with proper housing?</p>
+                        <div class="quiz-option"><input type="radio" name="q3" value="a" id="q3a"><label for="q3a">a) 5-10 minutes (too low)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q3" value="b" id="q3b"><label for="q3b">b) 30-45 minutes (realistic)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q3" value="c" id="q3c"><label for="q3c">c) 2+ hours (inefficient design)</label></div>
+                        <button onclick="checkAnswer('q3', 'b', 'Correct! Well-designed housing means 30-45 min/day for 10 rabbits.')">Check Answer</button>
+                        <div id="feedback-q3" class="feedback"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="project-section"><h2>🚀 Real-World Project: Housing System Design & Build</h2>
+                    <div class="project-item"><h4>Part 1: System Selection & Planning</h4><p>Based on your target herd size, choose housing system. Sketch design: number of cages, arrangement (vertical stacking? rows?), ventilation, water/feed system. Calculate: total cost ($___), space needed (m²), labor time/day (min).</p></div>
+                    <div class="project-item"><h4>Part 2: Material Sourcing & Budget</h4><p>Get quotes: wire mesh, wood, feeders, waterers, tools. Total material cost: ___. DIY vs. buy decision: time to build (hrs?) vs. cost to purchase commercial. Amortized over 5 years, what's cheapest?</p></div>
+                    <div class="project-item"><h4>Part 3: Construction & Setup</h4><p>Build/acquire cages. Install water system (bottles or lines + backups). Set up feeding station. Create waste collection area. Test: can you access every rabbit for handling? Water flowing properly? Adequate ventilation?</p></div>
+                    <div class="project-item"><h4>Part 4: Climate Control Planning</h4><p>Assess your location: typical temperatures year-round. Design: cooling strategy (shade/fans/water) for summer, insulation/heating for winter if needed. Cost estimate: ___. Implementation: prioritize based on climate extremes in your area.</p></div>
+                    <div class="project-item"><h4>Part 5: Daily Routine Documentation</h4><p>Create checklist: morning tasks (check water, top-up feed), evening (check all rabbits for health), weekly (deep clean cages), monthly (facility maintenance). Time study: track actual hours for 1 week. Identify time-savers for next iteration.</p></div>
+                    <div class="project-item"><h4>Part 6: Sanitation Protocol</h4><p>Define: daily cleaning (remove uneaten food, spot-clean), weekly deep clean (entire cage, disinfect), monthly deep disinfection (cages removed, spray). Cost: cleaning supplies (___). Track: disease outbreaks (target: zero in first 6 months = proof of good sanitation).</p></div>
+                    <div class="project-item"><h4>Part 7: Safety & Welfare Assessment</h4><p>Checklist: no sharp edges (sore feet), proper cage size, adequate ventilation, temperature within range, water always fresh. Observe rabbits: healthy posture? good appetite? normal behavior? Adjust if any concerns.</p></div>
+                    <div class="project-item"><h4>Part 8: Scalability Plan</h4><p>Current: 3-5 rabbits, current system. Plan: at what point upgrade housing? (after 10 rabbits? when expanding to 20?). Space requirements, labor requirements, cost. Timeline: realistic expansion pace based on profits & available time/money.</p></div>
+                </div>
+            </div>
+
+            <div class="next-module"><p>Ready to continue? Move to Module 3: Nutrition & Feed Management</p><a href="rabbit-farming-module-3.html">→ Next Module</a></div>
+        </div>
+    </div>
+    <script>
+        function checkAnswer(q, a, f) { const s = document.querySelector(`input[name="${q}"]:checked`); const e = document.getElementById(`feedback-${q}`); if (!s) { alert('Select answer'); return; } e.className = 'feedback show ' + (s.value === a ? 'correct' : 'incorrect'); e.textContent = (s.value === a ? '✓ ' : '✗ Incorrect. ') + f; updateProgress(); }
+        function updateProgress() { const c = document.querySelectorAll('input[type="radio"]:checked').length; const t = document.querySelectorAll('input[type="radio"]').length / 3; const p = (c / t) * 100; document.getElementById('progressFill').style.width = p + '%'; localStorage.setItem('rabbit2', p); }
+        window.addEventListener('load', () => { const s = localStorage.getItem('rabbit2'); if (s) document.getElementById('progressFill').style.width = s + '%'; });
+    </script>
+</body>
+</html>

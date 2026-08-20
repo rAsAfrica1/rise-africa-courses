@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fishing & Fish Farming - Module 2: Pond Construction & System Setup</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background: #f9f9f9; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .header { background: linear-gradient(135deg, #1a4d7a 0%, #2980b9 100%); color: white; padding: 30px; border-radius: 10px; margin-bottom: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .header p { font-size: 1.2em; opacity: 0.9; }
+        .content { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .section { margin-bottom: 40px; }
+        .section h2 { color: #1a4d7a; font-size: 1.8em; margin-bottom: 20px; border-bottom: 3px solid #2980b9; padding-bottom: 10px; }
+        .learning-objectives { background: #e3f2fd; padding: 20px; border-left: 5px solid #2980b9; margin-bottom: 20px; border-radius: 5px; }
+        .learning-objectives ul { list-style-position: inside; }
+        .learning-objectives li { margin-bottom: 8px; }
+        .video-container { background: #f5f5f5; padding: 15px; margin-bottom: 15px; border-radius: 5px; border-left: 4px solid #2980b9; }
+        .video-container h3 { color: #1a4d7a; margin-bottom: 10px; }
+        iframe { width: 100%; height: 400px; border-radius: 5px; border: none; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th { background: #1a4d7a; color: white; padding: 15px; text-align: left; }
+        td { padding: 12px; border-bottom: 1px solid #ddd; }
+        tr:hover { background: #f5f5f5; }
+        .implementation-step { background: #fafafa; padding: 15px; margin-bottom: 15px; border-radius: 5px; border-left: 4px solid #2980b9; }
+        .implementation-step h3 { color: #1a4d7a; margin-bottom: 8px; }
+        .quiz-section { background: #fff3e0; padding: 20px; border-radius: 5px; border: 2px solid #2980b9; }
+        .quiz-section h3 { color: #1a4d7a; margin-bottom: 20px; }
+        .quiz-question { margin-bottom: 20px; background: white; padding: 15px; border-radius: 5px; }
+        .quiz-question p { font-weight: bold; margin-bottom: 10px; }
+        .quiz-option { margin-left: 20px; margin-bottom: 8px; }
+        .quiz-option input[type="radio"] { margin-right: 8px; }
+        .feedback { margin-top: 10px; padding: 10px; border-radius: 5px; display: none; }
+        .feedback.show { display: block; }
+        .feedback.correct { background: #c8e6c9; color: #1a4d7a; border-left: 4px solid #2980b9; }
+        .feedback.incorrect { background: #ffcdd2; color: #c62828; border-left: 4px solid #c62828; }
+        .project-section { background: #e1f5fe; padding: 20px; border-radius: 5px; border: 2px solid #2980b9; }
+        .project-section h2 { color: #1a4d7a; }
+        .project-item { background: white; padding: 15px; margin: 15px 0; border-radius: 5px; border-left: 4px solid #2980b9; }
+        .project-item h4 { color: #1a4d7a; margin-bottom: 8px; }
+        .progress-bar { background: #e0e0e0; height: 10px; border-radius: 5px; overflow: hidden; margin-bottom: 20px; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, #1a4d7a, #2980b9); width: 0%; transition: width 0.3s; }
+        .next-module { margin-top: 30px; padding: 20px; background: #e3f2fd; border-radius: 5px; text-align: center; }
+        .next-module a { display: inline-block; background: #1a4d7a; color: white; padding: 12px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background 0.3s; }
+        .next-module a:hover { background: #2980b9; }
+        @media (max-width: 768px) { .header h1 { font-size: 1.8em; } iframe { height: 300px; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎣 Fishing & Fish Farming</h1>
+            <p>Module 2: Pond Construction & System Setup</p>
+        </div>
+
+        <div class="content">
+            <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+            <div class="section">
+                <div class="learning-objectives">
+                    <h2>📚 Learning Objectives</h2>
+                    <ul>
+                        <li>Learn proper site selection and soil evaluation for fish ponds</li>
+                        <li>Understand pond design principles and construction techniques</li>
+                        <li>Master water retention and sealing methods (clay, liners, concrete)</li>
+                        <li>Design inlet and outlet systems for water quality control</li>
+                        <li>Install aeration systems for healthy fish growth</li>
+                        <li>Calculate pond size, depth, and capacity for your target fish production</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🎥 Learning Videos</h2>
+                <div class="video-container"><h3>1. Selecting the Perfect Pond Site: Soil, Water, Elevation</h3><iframe src="https://www.youtube.com/embed/M1Y2tKfCPjg?rel=0" allowfullscreen></iframe></div>
+                <div class="video-container"><h3>2. Fish Pond Construction: Step-by-Step Digging & Preparation</h3><iframe src="https://www.youtube.com/embed/OFaHvXTrZ6s?rel=0" allowfullscreen></iframe></div>
+                <div class="video-container"><h3>3. Pond Sealing Methods: Clay, Plastic Liners & Concrete</h3><iframe src="https://www.youtube.com/embed/qQMvXqfLMEY?rel=0" allowfullscreen></iframe></div>
+                <div class="video-container"><h3>4. Water Inlet & Outlet Design for Fish Ponds</h3><iframe src="https://www.youtube.com/embed/NkT8QGpH7Ys?rel=0" allowfullscreen></iframe></div>
+                <div class="video-container"><h3>5. Aeration Systems: Windmills, Pumps & Paddle Wheels</h3><iframe src="https://www.youtube.com/embed/d8AiLSHdU_A?rel=0" allowfullscreen></iframe></div>
+            </div>
+
+            <div class="section">
+                <h2>📊 Pond Construction Methods by Scale</h2>
+                <table><thead><tr><th>Pond Type</th><th>Size/Capacity</th><th>Cost ($)</th><th>Sealing Method</th><th>Construction Time</th></tr></thead><tbody>
+                        <tr><td>Small Backyard</td><td>100-500 m³</td><td>$200-500</td><td>Puddled clay</td><td>2-3 weeks</td></tr>
+                        <tr><td>Medium Farm</td><td>500-2,000 m³</td><td>$800-2,000</td><td>Bentonite clay</td><td>3-4 weeks</td></tr>
+                        <tr><td>Large Commercial</td><td>2,000-5,000 m³</td><td>$3,000-8,000</td><td>Plastic liner</td><td>4-6 weeks</td></tr>
+                        <tr><td>Premium System</td><td>1,000-3,000 m³</td><td>$2,000-5,000</td><td>Concrete</td><td>6-8 weeks</td></tr>
+                    </tbody></table>
+            </div>
+
+            <div class="section">
+                <h2>📋 6 Implementation Steps</h2>
+                <div class="implementation-step"><h3>Step 1: Select & Prepare Your Site</h3><p>Choose location with: reliable water source (spring, rainfall, stream), level or gently sloped land, clay soil (holds water), away from pollution. Avoid: high flood risk, dense vegetation, sandy soils. Test soil: dig 1m hole, fill with water, measure water loss per hour. Loss < 5cm/hr = good retention.</p></div>
+                <div class="implementation-step"><h3>Step 2: Design Pond Dimensions</h3><p>For 1,000 fish production: 200-300 m³ volume. Typical: 20m × 15m × 0.8m deep. Depth: 0.8-1.2m (shallow enough for management, deep enough for oxygen at bottom). Slope pond bottom 1:100 for easy drainage during harvest. Mark boundaries with stakes before digging.</p></div>
+                <div class="implementation-step"><h3>Step 3: Excavate & Compact Pond Basin</h3><p>Hire excavator ($50-100/day) or manual labor ($5-10/person/day). Remove topsoil, excavate to target depth. Compact bottom and walls firmly (prevents seepage). Grade depth to ensure water flows to lowest point for harvest. Remove rocks/roots that puncture liners.</p></div>
+                <div class="implementation-step"><h3>Step 4: Seal the Pond (Choose Method)</h3><p>Option A - Clay sealing ($100-300): Compact 20-30cm puddled clay layer, wet and tamp repeatedly. Option B - Plastic liner ($300-1,000): Use 0.5-1mm HDPE plastic, overlap 1m around edges. Option C - Concrete ($1,000-3,000): Pour 10cm concrete, reinforce with rebar (premium, permanent).</p></div>
+                <div class="implementation-step"><h3>Step 5: Install Water Supply & Outlet Systems</h3><p>Inlet: Pipe from water source (river, well, rainwater catchment) with screened opening. Outlet: Drain pipe at pond bottom for harvest/emergency. Air vent: Small pipe to prevent vacuum during drainage. Test all connections before stocking fish.</p></div>
+                <div class="implementation-step"><h3>Step 6: Add Aeration & Test Water Quality</h3><p>Install paddle wheel ($200-500) or solar pump ($300-600) for oxygen. Run system 24/7 during stocking. Test water: pH 6.5-8.0, dissolved oxygen 5+ mg/L, ammonia 0 ppm, temperature 24-28°C. Wait 2 weeks after filling before stocking fish to stabilize water chemistry.</p></div>
+            </div>
+
+            <div class="section">
+                <div class="quiz-section"><h3>🎯 Module 2 Quiz</h3>
+                    <div class="quiz-question"><p>1. What is the minimum water loss rate for good pond site selection?</p>
+                        <div class="quiz-option"><input type="radio" name="q1" value="a" id="q1a"><label for="q1a">a) Less than 5cm/hour (good retention)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q1" value="b" id="q1b"><label for="q1b">b) 10-15cm/hour (acceptable)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q1" value="c" id="q1c"><label for="q1c">c) More than 20cm/hour (manageable)</label></div>
+                        <button onclick="checkAnswer('q1', 'a', 'Correct! <5cm/hr loss indicates clay soils that retain water.')">Check Answer</button>
+                        <div id="feedback-q1" class="feedback"></div>
+                    </div>
+                    <div class="quiz-question"><p>2. What is the recommended pond depth for fish farming?</p>
+                        <div class="quiz-option"><input type="radio" name="q2" value="a" id="q2a"><label for="q2a">a) 0.3-0.5m (too shallow)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q2" value="b" id="q2b"><label for="q2b">b) 0.8-1.2m (optimal)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q2" value="c" id="q2c"><label for="q2c">c) 2-3m (unnecessarily deep)</label></div>
+                        <button onclick="checkAnswer('q2', 'b', 'Correct! 0.8-1.2m provides oxygen at depth while allowing management.')">Check Answer</button>
+                        <div id="feedback-q2" class="feedback"></div>
+                    </div>
+                    <div class="quiz-question"><p>3. Which sealing method offers the best long-term durability?</p>
+                        <div class="quiz-option"><input type="radio" name="q3" value="a" id="q3a"><label for="q3a">a) Puddled clay (needs re-sealing every 5-10 years)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q3" value="b" id="q3b"><label for="q3b">b) Plastic liner (15-20 year lifespan)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q3" value="c" id="q3c"><label for="q3c">c) Concrete (permanent, 30+ years)</label></div>
+                        <button onclick="checkAnswer('q3', 'c', 'Correct! Concrete offers permanent durability with minimal maintenance.')">Check Answer</button>
+                        <div id="feedback-q3" class="feedback"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="project-section"><h2>🚀 Real-World Project: Design Your Pond</h2>
+                    <div class="project-item"><h4>Part 1: Site Survey & Evaluation</h4><p>Visit your proposed pond site. Assess: water source reliability, soil type, elevation, flood risk. Conduct soil permeability test (dig hole, measure water loss). Document findings: soil type, water source quality, potential challenges.</p></div>
+                    <div class="project-item"><h4>Part 2: Pond Design Plan</h4><p>Draw site map showing: pond location, water inlet location, outlet location, aeration position. Calculate required volume for 1,000 fish (typically 200-300 m³). Design dimensions: length × width × depth. Mark boundary with stakes.</p></div>
+                    <div class="project-item"><h4>Part 3: Cost Analysis for Sealing Methods</h4><p>Get quotes for all 3 sealing options: clay layer, plastic liner, concrete. Calculate total costs including materials, labor, equipment rental. Compare: initial cost, longevity, maintenance. Choose best option for your budget.</p></div>
+                    <div class="project-item"><h4>Part 4: Water Supply Design</h4><p>Plan water supply system: source type (spring, well, rainwater), delivery method (gravity, pump), inlet pipe size & screening. Calculate daily water needs (replacement for evaporation + seepage). Design outlet/drain system for harvest.</p></div>
+                    <div class="project-item"><h4>Part 5: Aeration System Selection</h4><p>Compare: wind-powered paddle wheel ($200-300), solar pump ($300-600), electric pump ($100-200). Calculate operating costs & reliability. Choose based on available resources. Plan positioning in pond for optimal oxygen distribution.</p></div>
+                    <div class="project-item"><h4>Part 6: Construction Timeline & Labor</h4><p>Create project timeline: site prep (1 week), excavation (2 weeks), sealing (2 weeks), water filling (1 week), water quality stabilization (2 weeks). Identify equipment needed: excavator, pump, tools. Calculate labor hours & costs.</p></div>
+                    <div class="project-item"><h4>Part 7: Water Quality Testing Plan</h4><p>Plan testing schedule: daily pH/oxygen (first month), weekly temperature/ammonia (first 3 months), monthly (ongoing). Identify testing location: extension office, private lab, or DIY kit purchase. Budget for testing supplies ($50-100).</p></div>
+                    <div class="project-item"><h4>Part 8: Startup Budget & Profitability</h4><p>Total construction cost: $___. Monthly operating cost: ___. Break-even timeline (after cost recovery). Revenue projection (1,000 fish × 1kg × $3 = $3,000). Net profit year 1: ___.</p></div>
+                </div>
+            </div>
+
+            <div class="next-module"><p>Ready to continue? Move to Module 3: Feed Management & Nutrition</p><a href="fishing-fish-farming-module-3.html">→ Next Module</a></div>
+        </div>
+    </div>
+    <script>
+        function checkAnswer(q, a, f) { const s = document.querySelector(`input[name="${q}"]:checked`); const e = document.getElementById(`feedback-${q}`); if (!s) { alert('Select answer'); return; } e.className = 'feedback show ' + (s.value === a ? 'correct' : 'incorrect'); e.textContent = (s.value === a ? '✓ ' : '✗ Incorrect. ') + f; updateProgress(); }
+        function updateProgress() { const c = document.querySelectorAll('input[type="radio"]:checked').length; const t = document.querySelectorAll('input[type="radio"]').length / 3; const p = (c / t) * 100; document.getElementById('progressFill').style.width = p + '%'; localStorage.setItem('fishing2', p); }
+        window.addEventListener('load', () => { const s = localStorage.getItem('fishing2'); if (s) document.getElementById('progressFill').style.width = s + '%'; });
+    </script>
+</body>
+</html>

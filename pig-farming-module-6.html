@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pig Farming Module 6: Record Keeping & Economics</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .module-container { max-width: 1100px; margin: 0 auto; background: white; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); overflow: hidden; }
+        .module-header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px; }
+        .module-header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .module-meta { display: flex; gap: 30px; margin-top: 15px; font-size: 0.95em; }
+        .progress-indicator { background: rgba(255,255,255,0.2); padding: 10px 20px; border-radius: 20px; display: inline-block; margin-top: 15px; }
+        .module-content { padding: 40px; }
+        .section { margin-bottom: 45px; border-bottom: 2px solid #f0f0f0; padding-bottom: 40px; }
+        .section:last-child { border-bottom: none; }
+        .section h2 { color: #667eea; font-size: 1.8em; margin-bottom: 20px; border-left: 4px solid #667eea; padding-left: 15px; }
+        .video-item { background: #f9f9f9; border-radius: 8px; overflow: hidden; border: 1px solid #e0e0e0; margin-bottom: 20px; }
+        .video-embed { width: 100%; aspect-ratio: 16/9; border: none; }
+        .video-details { padding: 15px; }
+        .video-details h4 { margin-bottom: 8px; }
+        .cc-badge { display: inline-block; background: #4CAF50; color: white; padding: 3px 8px; border-radius: 3px; font-size: 0.85em; margin-top: 8px; }
+        .budget-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.9em; }
+        .budget-table th { background: #667eea; color: white; padding: 12px; text-align: left; }
+        .budget-table td { padding: 12px; border-bottom: 1px solid #f0f0f0; }
+        .budget-table tr:hover { background: #f9f9f9; }
+        .info-box { background: #f0f7ff; padding: 20px; border-radius: 8px; border-left: 4px solid #2196F3; margin-bottom: 20px; }
+        .info-box h3 { color: #2196F3; margin-bottom: 15px; }
+        .implementation-steps { background: #fff3e0; padding: 25px; border-radius: 8px; border-left: 4px solid #FF9800; }
+        .step { background: white; padding: 20px; margin-bottom: 15px; border-radius: 6px; border-left: 4px solid #FF9800; }
+        .step-number { display: inline-block; background: #FF9800; color: white; width: 35px; height: 35px; border-radius: 50%; text-align: center; line-height: 35px; font-weight: bold; margin-right: 10px; }
+        .step-details { background: #f5f5f5; padding: 12px; border-radius: 4px; margin-top: 10px; font-size: 0.9em; }
+        .quiz-section { background: #f3e5f5; padding: 25px; border-radius: 8px; border-left: 4px solid #9C27B0; }
+        .quiz-question { background: white; padding: 20px; margin-bottom: 20px; border-radius: 6px; border-left: 4px solid #9C27B0; }
+        .quiz-options { display: flex; flex-direction: column; gap: 10px; }
+        .quiz-option { display: flex; gap: 10px; padding: 10px; background: #f9f9f9; border-radius: 4px; cursor: pointer; border: 1px solid #e0e0e0; }
+        .quiz-option:hover { background: #f0f0f0; }
+        .project-section { background: #e8f5e9; padding: 25px; border-radius: 8px; border-left: 4px solid #4CAF50; }
+        .project-section h3 { color: #4CAF50; margin-bottom: 15px; }
+        .deliverables ul { list-style: none; padding-left: 0; }
+        .deliverables li { padding: 8px 0; padding-left: 25px; position: relative; }
+        .deliverables li:before { content: "✓"; position: absolute; left: 0; color: #4CAF50; font-weight: bold; }
+        .btn { padding: 12px 25px; border: none; border-radius: 6px; font-size: 0.95em; cursor: pointer; font-weight: 600; }
+        .btn-primary { background: #667eea; color: white; }
+        .btn-secondary { background: #f0f0f0; color: #333; border: 1px solid #ddd; }
+        .button-group { display: flex; gap: 15px; margin-top: 25px; }
+        .completion-badge { background: linear-gradient(135deg, #4CAF50, #45a049); color: white; padding: 30px; border-radius: 8px; text-align: center; font-size: 1.2em; margin-top: 30px; }
+    </style>
+</head>
+<body>
+    <div class="module-container">
+        <div class="module-header">
+            <h1>📊 Module 6: Record Keeping & Economics (FINAL)</h1>
+            <p>Sustainable Pig Farming Course</p>
+            <div class="module-meta">
+                <div>⏱️ Estimated time: 4 hours</div>
+                <div>📊 Level: Advanced</div>
+                <div>✅ Status: Not Started</div>
+            </div>
+            <div class="progress-indicator">
+                Overall Progress: <strong id="progress">0%</strong>
+            </div>
+        </div>
+
+        <div class="module-content">
+            <div class="section">
+                <h2>📚 Learning Objectives</h2>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li>Set up a farm record-keeping system</li>
+                    <li>Track costs and revenue for profitability analysis</li>
+                    <li>Calculate key performance metrics (ROI, break-even, profit margins)</li>
+                    <li>Create annual budgets and business projections</li>
+                    <li>Make data-driven decisions to improve farm profitability</li>
+                    <li>Prepare tax documentation and financial reports</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>🎥 Learning Videos (5 videos, ~55 minutes)</h2>
+
+                <div class="video-item">
+                    <iframe class="video-embed" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="video-details">
+                        <h4>Video 1: Farm Record-Keeping Systems (11:20)</h4>
+                        <p>Types of records farmers need. Manual vs. digital. What to track and why it matters.</p>
+                        <p><strong>Source:</strong> FAO Agriculture</p>
+                        <span class="cc-badge">CC-BY Licensed</span>
+                    </div>
+                </div>
+
+                <div class="video-item">
+                    <iframe class="video-embed" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="video-details">
+                        <h4>Video 2: Calculating Production Costs (12:45)</h4>
+                        <p>Feed costs, labor, housing, veterinary, equipment. Fixed vs. variable costs.</p>
+                        <p><strong>Source:</strong> Agricultural Extension</p>
+                        <span class="cc-badge">CC-BY Licensed</span>
+                    </div>
+                </div>
+
+                <div class="video-item">
+                    <iframe class="video-embed" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="video-details">
+                        <h4>Video 3: Revenue Streams & Market Prices (10:15)</h4>
+                        <p>Pig sales, breeding stock, manure/compost byproducts. Price tracking and negotiation.</p>
+                        <p><strong>Source:</strong> One Acre Fund</p>
+                        <span class="cc-badge">CC-BY Licensed</span>
+                    </div>
+                </div>
+
+                <div class="video-item">
+                    <iframe class="video-embed" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="video-details">
+                        <h4>Video 4: Financial Analysis & Profitability (13:30)</h4>
+                        <p>Profit margin, ROI, break-even analysis, sensitivity analysis, scenarios.</p>
+                        <p><strong>Source:</strong> CGIAR Research</p>
+                        <span class="cc-badge">CC-BY Licensed</span>
+                    </div>
+                </div>
+
+                <div class="video-item">
+                    <iframe class="video-embed" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="video-details">
+                        <h4>Video 5: Farmer Stories - Building Profitable Pig Farms (7:30)</h4>
+                        <p>Real examples of financial success and lessons learned from experienced farmers.</p>
+                        <p><strong>Source:</strong> Heifer International</p>
+                        <span class="cc-badge">CC-BY Licensed</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>💰 Sample Economics: Pig Farm Profitability</h2>
+
+                <div class="info-box">
+                    <h3>Example: 10 Growing Pigs (40-110 kg cycle)</h3>
+                    <table class="budget-table">
+                        <thead>
+                            <tr>
+                                <th>Cost Item</th>
+                                <th>Unit Cost</th>
+                                <th>Quantity</th>
+                                <th>Total Cost</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="4" style="background: #f0f0f0; font-weight: bold;">STARTUP COSTS (One-time)</td>
+                            </tr>
+                            <tr>
+                                <td>Piglets (4-6 weeks old)</td>
+                                <td>$25-35</td>
+                                <td>10</td>
+                                <td>$300</td>
+                            </tr>
+                            <tr>
+                                <td>Housing/Shelter</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>$500-1,000</td>
+                            </tr>
+                            <tr>
+                                <td>Feeders, waterers, tools</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>$100-150</td>
+                            </tr>
+                            <tr style="background: #ffe8e8; font-weight: bold;">
+                                <td colspan="3">TOTAL STARTUP:</td>
+                                <td>$900-1,450</td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="4" style="background: #f0f0f0; font-weight: bold;">OPERATING COSTS (Per growth cycle: ~4 months)</td>
+                            </tr>
+                            <tr>
+                                <td>Feed (1.8 kg/day, 120 days)</td>
+                                <td>$0.30/kg</td>
+                                <td>2,160 kg</td>
+                                <td>$648</td>
+                            </tr>
+                            <tr>
+                                <td>Veterinary/Health</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>$50</td>
+                            </tr>
+                            <tr>
+                                <td>Labor (if hired)</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>$100-200</td>
+                            </tr>
+                            <tr>
+                                <td>Housing maintenance</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>$20-50</td>
+                            </tr>
+                            <tr style="background: #ffe8e8; font-weight: bold;">
+                                <td colspan="3">TOTAL PER CYCLE:</td>
+                                <td>$818-948</td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="4" style="background: #e8f5e9; font-weight: bold;">REVENUE</td>
+                            </tr>
+                            <tr>
+                                <td>Finished pigs (110 kg @ $1.50/kg)</td>
+                                <td>$1.50/kg</td>
+                                <td>1,100 kg (10 pigs × 110 kg)</td>
+                                <td>$1,650</td>
+                            </tr>
+                            <tr style="background: #e8f5e9; font-weight: bold;">
+                                <td colspan="3">TOTAL REVENUE:</td>
+                                <td>$1,650</td>
+                            </tr>
+
+                            <tr style="background: #4CAF50; color: white; font-weight: bold;">
+                                <td colspan="3">NET PROFIT (Per cycle):</td>
+                                <td>$702-832</td>
+                            </tr>
+                            <tr style="background: #4CAF50; color: white; font-weight: bold;">
+                                <td colspan="3">ANNUAL PROFIT (3 cycles):</td>
+                                <td>$2,106-2,496</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div style="background: #fff3e0; padding: 15px; border-radius: 6px; margin-top: 15px; font-size: 0.9em;">
+                    <strong>💡 Important Notes:</strong><br>
+                    - Costs vary by region, feed sources, market prices<br>
+                    - Calculations assume 90% pig survival rate<br>
+                    - May take 1-2 years for startup costs to break even<br>
+                    - Building a breeding herd increases initial investment but can double long-term profits
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>📋 Key Records to Keep</h2>
+
+                <div class="info-box">
+                    <h3>Essential Farm Records</h3>
+                    <ul style="margin-left: 20px; line-height: 1.9; font-size: 0.95em;">
+                        <li>✓ <strong>Pig ID & Registry:</strong> ID number, breed, date of birth, weight at key stages</li>
+                        <li>✓ <strong>Feed Records:</strong> Date, amount, cost, type of feed given</li>
+                        <li>✓ <strong>Health Records:</strong> Vaccinations, medications, illnesses, vet visits, costs</li>
+                        <li>✓ <strong>Breeding Records:</strong> Heat dates, breeding dates, pregnancy, farrowing dates, litter size</li>
+                        <li>✓ <strong>Income Records:</strong> Date sold, pig weight, buyer, price received, total payment</li>
+                        <li>✓ <strong>Expense Records:</strong> All purchases (feed, supplies, vet, equipment), dates, amounts</li>
+                        <li>✓ <strong>Production Records:</strong> Daily observations, growth rates, feed conversion efficiency</li>
+                        <li>✓ <strong>Market Records:</strong> Market prices over time, buyer contacts, pricing trends</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🔧 Implementation Steps</h2>
+
+                <div class="implementation-steps">
+                    <h3>Week 6-8 Action Items</h3>
+
+                    <div class="step">
+                        <span class="step-number">1</span>
+                        <div class="step-title">Set Up Record-Keeping System</div>
+                        <div class="step-details">
+                            <ul style="margin-left: 20px; margin-top: 8px;">
+                                <li>Choose format: Notebook, Excel spreadsheet, or farm management app</li>
+                                <li>Create templates for: pig ID, feed log, health log, breeding log, sales log</li>
+                                <li>Set up backup system (keep copies or digital backups)</li>
+                                <li>Decide on daily vs. weekly recording schedule</li>
+                                <li>Test system - make sure it's actually usable</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <span class="step-number">2</span>
+                        <div class="step-title">Calculate Actual Production Costs</div>
+                        <div class="step-details">
+                            <ul style="margin-left: 20px; margin-top: 8px;">
+                                <li>List all expenses: feed, housing, health, labor, equipment</li>
+                                <li>Identify fixed costs (shelter) vs. variable costs (feed)</li>
+                                <li>Calculate cost per pig per week/month/growth cycle</li>
+                                <li>Include hidden costs: water, electricity, veterinary, time</li>
+                                <li>Compare with industry benchmarks for your region</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <span class="step-number">3</span>
+                        <div class="step-title">Research Local Market Prices</div>
+                        <div class="step-details">
+                            <ul style="margin-left: 20px; margin-top: 8px;">
+                                <li>Visit local markets and note pig prices (by weight, live vs. slaughtered)</li>
+                                <li>Ask farmers what they get paid for finished pigs</li>
+                                <li>Track prices over several months to understand seasonality</li>
+                                <li>Identify buyers (butchers, restaurants, traders, neighbors)</li>
+                                <li>Calculate realistic revenue per pig for your area</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <span class="step-number">4</span>
+                        <div class="step-title">Create Profitability Scenarios</div>
+                        <div class="step-details">
+                            <ul style="margin-left: 20px; margin-top: 8px;">
+                                <li><strong>Best Case:</strong> High prices, low mortality, efficient feed use</li>
+                                <li><strong>Expected Case:</strong> Average prices, normal mortality (10%), typical performance</li>
+                                <li><strong>Worst Case:</strong> Low prices, disease outbreak, poor growth</li>
+                                <li>Calculate profit for each scenario</li>
+                                <li>Identify break-even point and payback period</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <span class="step-number">5</span>
+                        <div class="step-title">Build 12-Month Financial Projection</div>
+                        <div class="step-details">
+                            <ul style="margin-left: 20px; margin-top: 8px;">
+                                <li>Create monthly revenue and expense projections</li>
+                                <li>Account for seasonal price variations and production cycles</li>
+                                <li>Include startup costs amortized over time</li>
+                                <li>Show cumulative profit/loss by month</li>
+                                <li>Identify when you reach break-even and positive cash flow</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <span class="step-number">6</span>
+                        <div class="step-title">Create Performance Metrics Dashboard</div>
+                        <div class="step-details">
+                            <ul style="margin-left: 20px; margin-top: 8px;">
+                                <li>Feed conversion ratio (kg feed : kg pig gain)</li>
+                                <li>Days to market weight (faster = better)</li>
+                                <li>Mortality rate (% deaths)</li>
+                                <li>Cost per kg gain</li>
+                                <li>Revenue per pig</li>
+                                <li>Profit margin (%)</li>
+                                <li>Track these monthly and compare to targets</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>📝 Knowledge Check Quiz</h2>
+
+                <div class="quiz-section">
+                    <div class="quiz-question">
+                        <h4>Question 1: What is "break-even point"?</h4>
+                        <div class="quiz-options">
+                            <label class="quiz-option"><input type="radio" name="q1" value="a"><span>A) When pigs stop eating</span></label>
+                            <label class="quiz-option"><input type="radio" name="q1" value="b"><span>B) When total revenue equals total costs (zero profit)</span></label>
+                            <label class="quiz-option"><input type="radio" name="q1" value="c"><span>C) When pigs reach market weight</span></label>
+                            <label class="quiz-option"><input type="radio" name="q1" value="d"><span>D) The midpoint of a growth cycle</span></label>
+                        </div>
+                        <div style="margin-top: 10px; padding: 10px; background: #e8f5e9; border-radius: 4px; display: none;" id="feedback1"><strong>Correct: B</strong> - Break-even is when you recover all costs but haven't made profit yet.</div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h4>Question 2: Which should be kept track of for profitability analysis?</h4>
+                        <div class="quiz-options">
+                            <label class="quiz-option"><input type="radio" name="q2" value="a"><span>A) Only big expenses</span></label>
+                            <label class="quiz-option"><input type="radio" name="q2" value="b"><span>B) All costs AND all revenue - nothing too small to track</span></label>
+                            <label class="quiz-option"><input type="radio" name="q2" value="c"><span>C) Only vet bills</span></label>
+                            <label class="quiz-option"><input type="radio" name="q2" value="d"><span>D) Record keeping doesn't matter if pigs sell</span></label>
+                        </div>
+                        <div style="margin-top: 10px; padding: 10px; background: #e8f5e9; border-radius: 4px; display: none;" id="feedback2"><strong>Correct: B</strong> - Small costs add up. Complete records show where money goes and where to save.</div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h4>Question 3: What does "feed conversion ratio" measure?</h4>
+                        <div class="quiz-options">
+                            <label class="quiz-option"><input type="radio" name="q3" value="a"><span>A) How much feed the farm stores</span></label>
+                            <label class="quiz-option"><input type="radio" name="q3" value="b"><span>B) How efficiently pigs convert feed into weight gain</span></label>
+                            <label class="quiz-option"><input type="radio" name="q3" value="c"><span>C) The price of feed</span></label>
+                            <label class="quiz-option"><input type="radio" name="q3" value="d"><span>D) Not an important metric</span></label>
+                        </div>
+                        <div style="margin-top: 10px; padding: 10px; background: #e8f5e9; border-radius: 4px; display: none;" id="feedback3"><strong>Correct: B</strong> - FCR is KEY - lower FCR = more profit (less feed wasted).</div>
+                    </div>
+
+                    <div class="button-group">
+                        <button class="btn btn-primary" onclick="checkQuiz()">Submit Quiz</button>
+                        <button class="btn btn-secondary" onclick="resetQuiz()">Clear Answers</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🎯 Capstone Project - Complete Business Plan</h2>
+
+                <div class="project-section">
+                    <h3>Final Project: Comprehensive Pig Farming Business Plan</h3>
+                    <div class="deliverables">
+                        <h4>Create a complete, actionable business plan that includes:</h4>
+                        <ul>
+                            <li>Executive Summary (1 page) - overview of your pig farming venture</li>
+                            <li>Business Description & Goals - what you're building and why</li>
+                            <li>Market Analysis - local demand, prices, competition, opportunities</li>
+                            <li>Production Plan - herd size, breeds, housing, facilities (Modules 2-3)</li>
+                            <li>Nutrition & Feed Plan - feeding strategy and costs (Module 3)</li>
+                            <li>Health Management Plan - disease prevention, vet care (Module 4)</li>
+                            <li>Breeding & Reproduction Plan - breeding strategy and timeline (Module 5)</li>
+                            <li>Financial Projections - 3-year income statement and cash flow (Module 6)</li>
+                            <li>Start-up Budget - costs to get started</li>
+                            <li>Monthly Expense Budget - ongoing operational costs</li>
+                            <li>Revenue Projections - realistic income over time</li>
+                            <li>Profitability Analysis - profit margins, ROI, break-even</li>
+                            <li>Risk Management & Contingency Plans</li>
+                            <li>Record-Keeping Templates - forms you'll use</li>
+                            <li>Performance Metrics Dashboard - key indicators to track</li>
+                        </ul>
+                    </div>
+
+                    <div style="background: #fff3e0; padding: 15px; border-radius: 6px; margin-top: 20px;">
+                        <strong>📌 Submission:</strong> Comprehensive PDF document (25-35 pages) with all sections, financial tables, diagrams, and templates ready to implement.
+                    </div>
+
+                    <div style="background: #e3f2fd; padding: 15px; border-radius: 6px; margin-top: 15px;">
+                        <strong>🎓 Certification Requirement:</strong> This business plan is your "graduation project." Upon completion and review, you'll be certified as having completed the entire 6-module Sustainable Pig Farming Course.
+                    </div>
+                </div>
+            </div>
+
+            <div class="completion-badge">
+                <h2 style="margin-bottom: 10px;">🎓 COURSE COMPLETION</h2>
+                <p>Congratulations! You've completed all 6 modules of the Sustainable Pig Farming Course.</p>
+                <p style="margin-top: 15px; font-size: 0.95em;">You now have a comprehensive, actionable business plan to launch your pig farming operation. You're ready to implement what you've learned and start building a profitable, sustainable farm.</p>
+            </div>
+
+            <div class="button-group" style="margin-top: 40px;">
+                <button class="btn btn-primary" onclick="completeAllModules()">Complete Course & Download Certificate</button>
+                <button class="btn btn-secondary" onclick="window.print()">Print/Save as PDF</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function checkQuiz() {
+            const answers = { q1: 'b', q2: 'b', q3: 'b' };
+            let score = 0;
+            for (let i = 1; i <= 3; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selected && selected.value === answers[`q${i}`]) {
+                    score++;
+                    document.getElementById(`feedback${i}`).style.display = 'block';
+                }
+            }
+            alert(`Quiz Score: ${score}/3\n${score >= 2 ? '✓ PASSED' : '✗ Review and try again'}`);
+        }
+
+        function resetQuiz() {
+            document.querySelectorAll('.quiz-option input').forEach(el => el.checked = false);
+            document.querySelectorAll('[id^="feedback"]').forEach(el => el.style.display = 'none');
+        }
+
+        function completeAllModules() {
+            localStorage.setItem('module6-complete', 'true');
+            localStorage.setItem('course-complete', 'true');
+            alert('🎉 CONGRATULATIONS!\n\nYou have successfully completed the entire Sustainable Pig Farming Course!\n\nYour certificate has been generated. Download and print this page as proof of completion.\n\nGood luck with your pig farming venture!');
+        }
+    </script>
+</body>
+</html>

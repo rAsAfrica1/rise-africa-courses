@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fishing & Fish Farming - Module 1: Introduction & Basics</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background: #f9f9f9; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .header { background: linear-gradient(135deg, #1a4d7a 0%, #2980b9 100%); color: white; padding: 30px; border-radius: 10px; margin-bottom: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .header p { font-size: 1.2em; opacity: 0.9; }
+        .content { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .section { margin-bottom: 40px; }
+        .section h2 { color: #1a4d7a; font-size: 1.8em; margin-bottom: 20px; border-bottom: 3px solid #2980b9; padding-bottom: 10px; }
+        .learning-objectives { background: #e3f2fd; padding: 20px; border-left: 5px solid #2980b9; margin-bottom: 20px; border-radius: 5px; }
+        .learning-objectives ul { list-style-position: inside; }
+        .learning-objectives li { margin-bottom: 8px; }
+        .video-container { background: #f5f5f5; padding: 15px; margin-bottom: 15px; border-radius: 5px; border-left: 4px solid #2980b9; }
+        .video-container h3 { color: #1a4d7a; margin-bottom: 10px; }
+        iframe { width: 100%; height: 400px; border-radius: 5px; border: none; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th { background: #1a4d7a; color: white; padding: 15px; text-align: left; }
+        td { padding: 12px; border-bottom: 1px solid #ddd; }
+        tr:hover { background: #f5f5f5; }
+        .implementation-step { background: #fafafa; padding: 15px; margin-bottom: 15px; border-radius: 5px; border-left: 4px solid #2980b9; }
+        .implementation-step h3 { color: #1a4d7a; margin-bottom: 8px; }
+        .quiz-section { background: #fff3e0; padding: 20px; border-radius: 5px; border: 2px solid #2980b9; }
+        .quiz-section h3 { color: #1a4d7a; margin-bottom: 20px; }
+        .quiz-question { margin-bottom: 20px; background: white; padding: 15px; border-radius: 5px; }
+        .quiz-question p { font-weight: bold; margin-bottom: 10px; }
+        .quiz-option { margin-left: 20px; margin-bottom: 8px; }
+        .quiz-option input[type="radio"] { margin-right: 8px; }
+        .feedback { margin-top: 10px; padding: 10px; border-radius: 5px; display: none; }
+        .feedback.show { display: block; }
+        .feedback.correct { background: #c8e6c9; color: #1a4d7a; border-left: 4px solid #2980b9; }
+        .feedback.incorrect { background: #ffcdd2; color: #c62828; border-left: 4px solid #c62828; }
+        .project-section { background: #e1f5fe; padding: 20px; border-radius: 5px; border: 2px solid #2980b9; }
+        .project-section h2 { color: #1a4d7a; }
+        .project-item { background: white; padding: 15px; margin: 15px 0; border-radius: 5px; border-left: 4px solid #2980b9; }
+        .project-item h4 { color: #1a4d7a; margin-bottom: 8px; }
+        .progress-bar { background: #e0e0e0; height: 10px; border-radius: 5px; overflow: hidden; margin-bottom: 20px; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, #1a4d7a, #2980b9); width: 0%; transition: width 0.3s; }
+        .next-module { margin-top: 30px; padding: 20px; background: #e3f2fd; border-radius: 5px; text-align: center; }
+        .next-module a { display: inline-block; background: #1a4d7a; color: white; padding: 12px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background 0.3s; }
+        .next-module a:hover { background: #2980b9; }
+        @media (max-width: 768px) { .header h1 { font-size: 1.8em; } iframe { height: 300px; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎣 Fishing & Fish Farming</h1>
+            <p>Module 1: Introduction & Basics</p>
+        </div>
+
+        <div class="content">
+            <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+            <div class="section">
+                <div class="learning-objectives">
+                    <h2>📚 Learning Objectives</h2>
+                    <ul>
+                        <li>Understand different fish farming systems and choose the right one for your location</li>
+                        <li>Learn about fish species suitable for African climates and markets</li>
+                        <li>Calculate startup costs and revenue potential for fish farming</li>
+                        <li>Understand water quality requirements for successful fish production</li>
+                        <li>Learn basic fish biology and growth cycles</li>
+                        <li>Evaluate market demand and pricing for farmed fish in your region</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🎥 Learning Videos</h2>
+                <div class="video-container"><h3>1. Fish Farming Systems: Ponds, Cages, Tanks & Raceways</h3><iframe src="https://www.youtube.com/embed/SH8KIbSEHTs?rel=0" allowfullscreen></iframe></div>
+                <div class="video-container"><h3>2. Best Fish Species for African Farms: Tilapia, Catfish & Carp</h3><iframe src="https://www.youtube.com/embed/wNBv-rNW8yE?rel=0" allowfullscreen></iframe></div>
+                <div class="video-container"><h3>3. Water Quality Management: pH, Oxygen, Temperature</h3><iframe src="https://www.youtube.com/embed/YzZ_RYFEVf4?rel=0" allowfullscreen></iframe></div>
+                <div class="video-container"><h3>4. Fish Breeding Basics: How Fish Reproduce in Farms</h3><iframe src="https://www.youtube.com/embed/QMlGKHKJKCE?rel=0" allowfullscreen></iframe></div>
+                <div class="video-container"><h3>5. From Fingerlings to Market Fish: Growth Timeline & Economics</h3><iframe src="https://www.youtube.com/embed/h5DJB5qg6Qs?rel=0" allowfullscreen></iframe></div>
+            </div>
+
+            <div class="section">
+                <h2>📊 Fish Species Comparison for African Markets</h2>
+                <table><thead><tr><th>Fish Species</th><th>Growth Time</th><th>Market Price/kg</th><th>Feed Cost</th><th>Profitability</th></tr></thead><tbody>
+                        <tr><td>Tilapia</td><td>5-7 months</td><td>$2-4</td><td>40-50%</td><td>High (fast growth)</td></tr>
+                        <tr><td>Catfish</td><td>4-6 months</td><td>$3-6</td><td>35-45%</td><td>Very High</td></tr>
+                        <tr><td>Carp</td><td>8-12 months</td><td>$1.50-3</td><td>35-40%</td><td>Good</td></tr>
+                        <tr><td>Trout</td><td>12-18 months</td><td>$6-10</td><td>45-55%</td><td>High (premium)</td></tr>
+                    </tbody></table>
+            </div>
+
+            <div class="section">
+                <h2>📋 6 Implementation Steps</h2>
+                <div class="implementation-step"><h3>Step 1: Choose Your Fish Farming System</h3><p>Pond ($500-2,000): Best for most farmers, low cost, easy management. Cage ($1,000-5,000): In rivers/lakes, no land needed. Tank ($300-1,000): Small scale, urban friendly. Research water availability and climate suitability for your system choice.</p></div>
+                <div class="implementation-step"><h3>Step 2: Select Fish Species for Your Market</h3><p>Tilapia: Fast growth (5-7 mo), hardy, good price ($2-4/kg). Catfish: Quick turnaround (4-6 mo), premium price ($3-6/kg). Research local demand - interview fish traders and restaurants. Buy fingerlings from reputable hatcheries only ($0.05-0.20 each).</p></div>
+                <div class="implementation-step"><h3>Step 3: Prepare Water Source & Test Quality</h3><p>Pond: Need 1,000-2,000 m³ water (rainfall + spring). Test pH (6.5-8.0), dissolved oxygen (5+ mg/L), ammonia (0 ppm). Poor quality = fish death. Invest in simple testing kit ($20-50) or use extension office services.</p></div>
+                <div class="implementation-step"><h3>Step 4: Calculate Startup & Operating Costs</h3><p>Pond system (0.25 hectare): Land prep $200, construction $300, fingerlings (1,000) $150, feed supply $100 = $750 first year. Annual feed cost $400-600. Revenue at 50% survival = 500 fish × 1kg × $3 = $1,500. Profit: $600-800 year 1.</p></div>
+                <div class="implementation-step"><h3>Step 5: Source Quality Fingerlings & Feed</h3><p>Never buy from unknown sources. Partner with certified hatcheries. Budget: fingerlings $0.10-0.20 each, quality feed $0.40-0.60/kg. Storage: Keep feed dry, use within 3 months. Store fingerlings in cool water until release.</p></div>
+                <div class="implementation-step"><h3>Step 6: Plan Production Schedule & Marketing</h3><p>Timeline: Month 1 pond prep, Month 2 fingerling release, Months 3-7 feeding/management, Month 7-8 harvest. Before harvest, secure buyer (fish trader, restaurant, market). Pre-sell if possible to guarantee price and reduce risk.</p></div>
+            </div>
+
+            <div class="section">
+                <div class="quiz-section"><h3>🎯 Module 1 Quiz</h3>
+                    <div class="quiz-question"><p>1. What is the fastest-growing premium fish species for African farms?</p>
+                        <div class="quiz-option"><input type="radio" name="q1" value="a" id="q1a"><label for="q1a">a) Catfish (4-6 months, $3-6/kg)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q1" value="b" id="q1b"><label for="q1b">b) Tilapia (5-7 months, $2-4/kg)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q1" value="c" id="q1c"><label for="q1c">c) Trout (12-18 months, $6-10/kg)</label></div>
+                        <button onclick="checkAnswer('q1', 'a', 'Correct! Catfish combines fast growth with premium pricing, best ROI.')">Check Answer</button>
+                        <div id="feedback-q1" class="feedback"></div>
+                    </div>
+                    <div class="quiz-question"><p>2. What is the minimum dissolved oxygen level for healthy fish?</p>
+                        <div class="quiz-option"><input type="radio" name="q2" value="a" id="q2a"><label for="q2a">a) 1-2 mg/L (fish can survive)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q2" value="b" id="q2b"><label for="q2b">b) 5+ mg/L (healthy growth)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q2" value="c" id="q2c"><label for="q2c">c) 15+ mg/L (unnecessary, wastes money)</label></div>
+                        <button onclick="checkAnswer('q2', 'b', 'Correct! 5+ mg/L oxygen is essential for fish health.')">Check Answer</button>
+                        <div id="feedback-q2" class="feedback"></div>
+                    </div>
+                    <div class="quiz-question"><p>3. What is realistic profit from a small pond (1,000 fingerlings) in year 1?</p>
+                        <div class="quiz-option"><input type="radio" name="q3" value="a" id="q3a"><label for="q3a">a) $100-200 (conservative, high mortality)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q3" value="b" id="q3b"><label for="q3b">b) $600-800 (realistic, 50% survival)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q3" value="c" id="q3c"><label for="q3c">c) $5,000+ (unrealistic without experience)</label></div>
+                        <button onclick="checkAnswer('q3', 'b', 'Correct! 50% survival × $3/kg market price = $600-800 profit.')">Check Answer</button>
+                        <div id="feedback-q3" class="feedback"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="project-section"><h2>🚀 Real-World Project: Fish Farm Business Plan</h2>
+                    <div class="project-item"><h4>Part 1: Site Assessment</h4><p>Evaluate your water source: rainfall amount, spring/well access, seasonal reliability. Calculate pond size needed for 1,000-5,000 fish. Sketch pond design.</p></div>
+                    <div class="project-item"><h4>Part 2: Species & Market Selection</h4><p>Research 3 fish species suitable for your region. Interview 5 traders/restaurants: which species, price/kg, annual demand? Select the most profitable option.</p></div>
+                    <div class="project-item"><h4>Part 3: Cost Analysis</h4><p>Budget all costs: land prep, construction, fingerlings, feed, equipment. Year 1 total: ___. Year 2+ annual: ___. Break-even calculation.</p></div>
+                    <div class="project-item"><h4>Part 4: Water Quality Testing Plan</h4><p>Where will you test: extension office, private lab, or DIY kit? Testing schedule: Monthly? Quarterly? Document baseline water quality values.</p></div>
+                    <div class="project-item"><h4>Part 5: Feed Sourcing Strategy</h4><p>Find 3 feed suppliers. Compare: price/kg, quality, availability. Calculate annual feed budget for 2,000 kg fish production.</p></div>
+                    <div class="project-item"><h4>Part 6: Production Schedule</h4><p>Create 12-month calendar: Month 1-2 construction, Month 2-3 stocking, Month 3-7 feeding, Month 7-8 harvest. Include all management tasks.</p></div>
+                    <div class="project-item"><h4>Part 7: Marketing & Sales Plan</h4><p>Who will buy your fish? Pre-sell if possible. Projected revenue: ___ kg × $___/kg = ___. How will you transport/store?</p></div>
+                    <div class="project-item"><h4>Part 8: 3-Year Financial Projection</h4><p>Year 1: Startup costs + low profit. Year 2: Reduced mortality, higher profit. Year 3: Optimization, scale-up. Calculate cumulative profit.</p></div>
+                </div>
+            </div>
+
+            <div class="next-module"><p>Ready to continue? Move to Module 2: Pond Construction & System Setup</p><a href="fishing-fish-farming-module-2.html">→ Next Module</a></div>
+        </div>
+    </div>
+    <script>
+        function checkAnswer(q, a, f) { const s = document.querySelector(`input[name="${q}"]:checked`); const e = document.getElementById(`feedback-${q}`); if (!s) { alert('Select answer'); return; } e.className = 'feedback show ' + (s.value === a ? 'correct' : 'incorrect'); e.textContent = (s.value === a ? '✓ ' : '✗ Incorrect. ') + f; updateProgress(); }
+        function updateProgress() { const c = document.querySelectorAll('input[type="radio"]:checked').length; const t = document.querySelectorAll('input[type="radio"]').length / 3; const p = (c / t) * 100; document.getElementById('progressFill').style.width = p + '%'; localStorage.setItem('fishing1', p); }
+        window.addEventListener('load', () => { const s = localStorage.getItem('fishing1'); if (s) document.getElementById('progressFill').style.width = s + '%'; });
+    </script>
+</body>
+</html>

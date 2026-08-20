@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rabbit Farming - Module 1: Introduction & Basics</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background: #f9f9f9; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .header { background: linear-gradient(135deg, #8b4513 0%, #cd853f 100%); color: white; padding: 30px; border-radius: 10px; margin-bottom: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .content { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .section { margin-bottom: 40px; }
+        .section h2 { color: #8b4513; font-size: 1.8em; margin-bottom: 20px; border-bottom: 3px solid #cd853f; padding-bottom: 10px; }
+        .learning-objectives { background: #ffeaa7; padding: 20px; border-left: 5px solid #cd853f; margin-bottom: 20px; border-radius: 5px; }
+        .learning-objectives li { margin-bottom: 8px; }
+        .video-container { background: #f5f5f5; padding: 15px; margin-bottom: 15px; border-radius: 5px; border-left: 4px solid #cd853f; }
+        .video-container h3 { color: #8b4513; margin-bottom: 10px; }
+        iframe { width: 100%; height: 400px; border-radius: 5px; border: none; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th { background: #8b4513; color: white; padding: 15px; text-align: left; }
+        td { padding: 12px; border-bottom: 1px solid #ddd; }
+        tr:hover { background: #f5f5f5; }
+        .implementation-step { background: #fafafa; padding: 15px; margin-bottom: 15px; border-radius: 5px; border-left: 4px solid #cd853f; }
+        .implementation-step h3 { color: #8b4513; margin-bottom: 8px; }
+        .quiz-section { background: #fff3e0; padding: 20px; border-radius: 5px; border: 2px solid #cd853f; }
+        .quiz-section h3 { color: #8b4513; margin-bottom: 20px; }
+        .quiz-question { margin-bottom: 20px; background: white; padding: 15px; border-radius: 5px; }
+        .quiz-option { margin-left: 20px; margin-bottom: 8px; }
+        .feedback { margin-top: 10px; padding: 10px; border-radius: 5px; display: none; }
+        .feedback.show { display: block; }
+        .feedback.correct { background: #c8e6c9; color: #8b4513; border-left: 4px solid #cd853f; }
+        .feedback.incorrect { background: #ffcdd2; color: #c62828; }
+        .project-section { background: #ffeaa7; padding: 20px; border-radius: 5px; border: 2px solid #cd853f; }
+        .project-item { background: white; padding: 15px; margin: 15px 0; border-radius: 5px; border-left: 4px solid #cd853f; }
+        .project-item h4 { color: #8b4513; margin-bottom: 8px; }
+        .progress-bar { background: #e0e0e0; height: 10px; border-radius: 5px; overflow: hidden; margin-bottom: 20px; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, #8b4513, #cd853f); width: 0%; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🐰 Rabbit Farming</h1>
+            <p>Module 1: Introduction & Basics</p>
+        </div>
+        <div class="content">
+            <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+            <div class="section">
+                <div class="learning-objectives">
+                    <h2>📚 Learning Objectives</h2>
+                    <ul>
+                        <li>Understand rabbit breeds for African meat production and market value</li>
+                        <li>Learn housing requirements, feed needs, and health management</li>
+                        <li>Calculate startup costs and profitability for small rabbit operations</li>
+                        <li>Understand rabbit reproduction and growth cycles</li>
+                        <li>Learn about processing, marketing, and value-added opportunities (skins, manure)</li>
+                        <li>Evaluate market demand and pricing in your region</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="section">
+                <h2>🎥 Learning Videos</h2>
+                <div class="video-container"><h3>1. Rabbit Farming Basics: Best Breeds for African Markets</h3><iframe src="https://www.youtube.com/embed/KdLjVR6FOHM?rel=0" allowfullscreen></iframe></div>
+                <div class="video-container"><h3>2. Rabbit Housing: Building Simple, Functional Cages</h3><iframe src="https://www.youtube.com/embed/TlhZxrPHKNI?rel=0" allowfullscreen></iframe></div>
+                <div class="video-container"><h3>3. Rabbit Nutrition: Feed, Water, Supplements</h3><iframe src="https://www.youtube.com/embed/45DgCDg-6Uc?rel=0" allowfullscreen></iframe></div>
+                <div class="video-container"><h3>4. Rabbit Breeding: Reproduction Cycles & Genetics</h3><iframe src="https://www.youtube.com/embed/eVz8xAQfUgU?rel=0" allowfullscreen></iframe></div>
+                <div class="video-container"><h3>5. From Breeding to Slaughter: Complete Production Timeline</h3><iframe src="https://www.youtube.com/embed/oDGNk6nfVhY?rel=0" allowfullscreen></iframe></div>
+            </div>
+            <div class="section">
+                <h2>📊 Rabbit Breeds Comparison</h2>
+                <table><thead><tr><th>Breed</th><th>Adult Weight</th><th>Growth to Slaughter</th><th>Market Price/kg</th><th>Temperament</th></tr></thead><tbody>
+                    <tr><td>New Zealand White</td><td>4-5 kg</td><td>8-10 weeks</td><td>$4-7</td><td>Calm, good mothers</td></tr>
+                    <tr><td>Californian</td><td>4-5 kg</td><td>8-10 weeks</td><td>$4-7</td><td>Calm, efficient</td></tr>
+                    <tr><td>Flemish Giant</td><td>6-7 kg</td><td>12-14 weeks</td><td>$3-5</td><td>Slow growth, needs space</td></tr>
+                    <tr><td>Mixed Local</td><td>3-4 kg</td><td>10-12 weeks</td><td>$3-5</td><td>Hardier, cheaper</td></tr>
+                </tbody></table>
+            </div>
+            <div class="section">
+                <h2>📋 6 Implementation Steps</h2>
+                <div class="implementation-step"><h3>Step 1: Choose Rabbit Breed</h3><p>New Zealand White or Californian: BEST for meat production. Fast growth (8-10 weeks), good feed conversion, docile. Cost: $15-30 per rabbit. Start with 1 buck, 2-3 does.</p></div>
+                <div class="implementation-step"><h3>Step 2: Build Simple Housing</h3><p>Cages: $100-300 for 3-4 animals. Each 60cm×60cm×45cm. Metal frame, wire mesh, solid floor. Roofed shelter for protection. Location: shaded, good ventilation, predator-proof.</p></div>
+                <div class="implementation-step"><h3>Step 3: Source Quality Feed</h3><p>Rabbits eat: hay/grass (free), vegetables, commercial pellets ($0.30-0.50/kg). Daily cost: $0.30-0.50 per rabbit. Water: constant access (1-2 liters/rabbit/day). Total monthly: $30-50 for 3 rabbits.</p></div>
+                <div class="implementation-step"><h3>Step 4: Establish Breeding Schedule</h3><p>Does breed year-round. Gestation: 31 days. Litter size: 8-10. Weaning: 4 weeks. Production cycle: Every 5-6 weeks one doe produces 8-10 marketable rabbits. From 3 does: 20-30 rabbits/month!</p></div>
+                <div class="implementation-step"><h3>Step 5: Learn Health & Breeding Management</h3><p>Prevent: VRFD (viral), snuffles (bacterial), external parasites. Keep detailed records: breeding dates, litter size, weight gain, mortality. This data increases profitability and reputation.</p></div>
+                <div class="implementation-step"><h3>Step 6: Calculate Profitability & Scale</h3><p>Initial: 1 buck + 3 does + cages = $200-400. Monthly production: 20-30 rabbits. Revenue: 25 rabbits × 4kg × $5/kg = $500/month. Feed cost: $150. PROFIT: $350/month! Reinvest to expand.</p></div>
+            </div>
+            <div class="section">
+                <div class="quiz-section"><h3>🎯 Module 1 Quiz</h3>
+                    <div class="quiz-question"><p>1. What is the BEST rabbit breed for quick meat production?</p>
+                        <div class="quiz-option"><input type="radio" name="q1" value="a"><label>a) New Zealand White (8-10 weeks, 4-5kg, fast)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q1" value="b"><label>b) Flemish Giant (12-14 weeks, 6-7kg, slower)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q1" value="c"><label>c) Local mixed (10-12 weeks, variable quality)</label></div>
+                        <button onclick="checkAnswer('q1', 'a', 'Correct! New Zealand White = fast growth, consistent quality, best ROI.')">Check Answer</button>
+                        <div id="feedback-q1" class="feedback"></div>
+                    </div>
+                    <div class="quiz-question"><p>2. How many rabbits can you produce monthly from 3 breeding does?</p>
+                        <div class="quiz-option"><input type="radio" name="q2" value="a"><label>a) 5-10 rabbits (too low)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q2" value="b"><label>b) 20-30 rabbits (31-day cycle × 3 does × 8-10 per litter)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q2" value="c"><label>c) 100+ rabbits (unrealistic without scaling)</label></div>
+                        <button onclick="checkAnswer('q2', 'b', 'Correct! Rabbits reproduce continuously - 3 does = 20-30 market rabbits monthly!')">Check Answer</button>
+                        <div id="feedback-q2" class="feedback"></div>
+                    </div>
+                    <div class="quiz-question"><p>3. What is realistic monthly profit from 3 breeding rabbits?</p>
+                        <div class="quiz-option"><input type="radio" name="q3" value="a"><label>a) $100-150 (too low)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q3" value="b"><label>b) $350+ (25 rabbits × 4kg × $5/kg - $150 feed cost)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q3" value="c"><label>c) $5,000+ (unrealistic without 50+ animals)</label></div>
+                        <button onclick="checkAnswer('q3', 'b', 'Correct! $350+/month profit = $4,200+/year from 3 animals!')">Check Answer</button>
+                        <div id="feedback-q3" class="feedback"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="project-section"><h2>🚀 Real-World Project: Rabbit Farm Plan</h2>
+                    <div class="project-item"><h4>Part 1: Market Research</h4><p>Survey 5 butchers/restaurants: interested in rabbit meat? Price/kg? Annual volume? Dried skins valuable?</p></div>
+                    <div class="project-item"><h4>Part 2: Housing Design</h4><p>Sketch your rabbit hutch system. Cost per unit? Space for 3 + expansion capacity? Ventilation, drainage, predator protection?</p></div>
+                    <div class="project-item"><h4>Part 3: Startup Budget</h3><p>Calculate: animals ($50-100), cages ($200-300), feeders/drinkers ($30-50), initial feed/hay ($50). Total: $330-500. When do you break-even?</p></div>
+                    <div class="project-item"><h4>Part 4: Breeding Schedule</h4><p>Create 12-month calendar. When will you breed first does? Track litter dates, weaning, slaughter dates. Plan sales volume month-by-month.</p></div>
+                    <div class="project-item"><h4>Part 5: Feed & Nutrition</h4><p>Research pellet suppliers. Cost per kg? Hay sources free/cheap? Supplement vegetables available? Monthly feed budget: ___</p></div>
+                    <div class="project-item"><h4>Part 6: Processing & Marketing</h4><p>How will you slaughter/process (DIY or hire butcher)? Storage: refrigeration? Distribution: direct, restaurants, market? Packaging?</p></div>
+                    <div class="project-item"><h4>Part 7: Health & Records</h4><p>Create record-keeping system: breeding dates, litter info, mortality, weights, health issues. How will you prevent disease?</p></div>
+                    <div class="project-item"><h4>Part 8: Scaling Plan</h4><p>Year 1: 3 does. Year 2: ___ does? Year 3: ___? Space/feed/labor requirements? Profitability at each level?</p></div>
+                </div>
+            </div>
+            <div class="next-module"><p>Ready to continue? Move to Module 2: Housing & Facilities</p><a href="rabbit-farming-module-2.html">→ Next Module</a></div>
+        </div>
+    </div>
+    <script>
+        function checkAnswer(q, a, f) { const s = document.querySelector(`input[name="${q}"]:checked`); const e = document.getElementById(`feedback-${q}`); if (!s) { alert('Select answer'); return; } e.className = 'feedback show ' + (s.value === a ? 'correct' : 'incorrect'); e.textContent = (s.value === a ? '✓ ' : '✗ Incorrect. ') + f; }
+    </script>
+</body>
+</html>

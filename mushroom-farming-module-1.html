@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mushroom Farming - Module 1: Introduction & Basics</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background: #f9f9f9; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .header { background: linear-gradient(135deg, #6b4423 0%, #9d6d37 100%); color: white; padding: 30px; border-radius: 10px; margin-bottom: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .content { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .section { margin-bottom: 40px; }
+        .section h2 { color: #6b4423; font-size: 1.8em; margin-bottom: 20px; border-bottom: 3px solid #9d6d37; padding-bottom: 10px; }
+        .learning-objectives { background: #faf3e0; padding: 20px; border-left: 5px solid #9d6d37; margin-bottom: 20px; border-radius: 5px; }
+        .learning-objectives li { margin-bottom: 8px; }
+        .video-container { background: #f5f5f5; padding: 15px; margin-bottom: 15px; border-radius: 5px; border-left: 4px solid #9d6d37; }
+        .video-container h3 { color: #6b4423; margin-bottom: 10px; }
+        iframe { width: 100%; height: 400px; border-radius: 5px; border: none; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th { background: #6b4423; color: white; padding: 15px; text-align: left; }
+        td { padding: 12px; border-bottom: 1px solid #ddd; }
+        tr:hover { background: #f5f5f5; }
+        .implementation-step { background: #fafafa; padding: 15px; margin-bottom: 15px; border-radius: 5px; border-left: 4px solid #9d6d37; }
+        .implementation-step h3 { color: #6b4423; margin-bottom: 8px; }
+        .quiz-section { background: #fff3e0; padding: 20px; border-radius: 5px; border: 2px solid #9d6d37; }
+        .quiz-section h3 { color: #6b4423; margin-bottom: 20px; }
+        .quiz-question { margin-bottom: 20px; background: white; padding: 15px; border-radius: 5px; }
+        .quiz-option { margin-left: 20px; margin-bottom: 8px; }
+        .quiz-option input { margin-right: 8px; }
+        .feedback { margin-top: 10px; padding: 10px; border-radius: 5px; display: none; }
+        .feedback.show { display: block; }
+        .feedback.correct { background: #c8e6c9; color: #6b4423; border-left: 4px solid #9d6d37; }
+        .feedback.incorrect { background: #ffcdd2; color: #c62828; border-left: 4px solid #c62828; }
+        .project-section { background: #faf3e0; padding: 20px; border-radius: 5px; border: 2px solid #9d6d37; }
+        .project-item { background: white; padding: 15px; margin: 15px 0; border-radius: 5px; border-left: 4px solid #9d6d37; }
+        .project-item h4 { color: #6b4423; margin-bottom: 8px; }
+        .progress-bar { background: #e0e0e0; height: 10px; border-radius: 5px; overflow: hidden; margin-bottom: 20px; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, #6b4423, #9d6d37); width: 0%; transition: width 0.3s; }
+        .next-module { margin-top: 30px; padding: 20px; background: #faf3e0; border-radius: 5px; text-align: center; }
+        .next-module a { display: inline-block; background: #6b4423; color: white; padding: 12px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; }
+        .next-module a:hover { background: #9d6d37; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🍄 Mushroom Farming</h1>
+            <p>Module 1: Introduction & Basics</p>
+        </div>
+        <div class="content">
+            <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+            <div class="section">
+                <div class="learning-objectives">
+                    <h2>📚 Learning Objectives</h2>
+                    <ul>
+                        <li>Understand major mushroom species for African markets and their profitability</li>
+                        <li>Learn cultivation methods: bag farming, bed farming, log farming</li>
+                        <li>Calculate startup costs and ROI for small-scale mushroom farming</li>
+                        <li>Understand substrate preparation and contamination prevention</li>
+                        <li>Learn growth cycles and production timelines</li>
+                        <li>Evaluate market opportunities and pricing for fresh/dried mushrooms</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="section">
+                <h2>🎥 Learning Videos</h2>
+                <div class="video-container"><h3>1. Oyster Mushroom Farming: Fastest ROI for Beginners</h3><iframe src="https://www.youtube.com/embed/1nFz_-qMK0w?rel=0" allowfullscreen></iframe></div>
+                <div class="video-container"><h3>2. Substrate Preparation: Straw, Sawdust & Compost</h3><iframe src="https://www.youtube.com/embed/HUWe2u8p8kw?rel=0" allowfullscreen></iframe></div>
+                <div class="video-container"><h3>3. Mushroom Spawning & Inoculation Technique</h3><iframe src="https://www.youtube.com/embed/aT7OBe50GhY?rel=0" allowfullscreen></iframe></div>
+                <div class="video-container"><h3>4. Creating Ideal Growing Conditions: Humidity, Temperature, Light</h3><iframe src="https://www.youtube.com/embed/kLVEz7HLh0M?rel=0" allowfullscreen></iframe></div>
+                <div class="video-container"><h3>5. From Spawn to Harvest: Complete 6-Week Growing Cycle</h3><iframe src="https://www.youtube.com/embed/D_c0sMvOXH0?rel=0" allowfullscreen></iframe></div>
+            </div>
+            <div class="section">
+                <h2>📊 Mushroom Species Comparison</h2>
+                <table><thead><tr><th>Species</th><th>Growth Time</th><th>Yield/kg Substrate</th><th>Market Price/kg</th><th>Difficulty</th></tr></thead><tbody>
+                    <tr><td>Oyster (Pleurotus)</td><td>4-6 weeks</td><td>0.3-0.5 kg</td><td>$3-6</td><td>Easy (best for beginners)</td></tr>
+                    <tr><td>Button (Agaricus)</td><td>8-12 weeks</td><td>0.2-0.3 kg</td><td>$4-7</td><td>Moderate (needs control)</td></tr>
+                    <tr><td>Shiitake</td><td>12-18 months</td><td>0.15-0.25 kg</td><td>$6-12</td><td>Hard (long timeline, log-based)</td></tr>
+                    <tr><td>Lion's Mane</td><td>6-8 weeks</td><td>0.25-0.4 kg</td><td>$8-15</td><td>Moderate (premium market)</td></tr>
+                </tbody></table>
+            </div>
+            <div class="section">
+                <h2>📋 6 Implementation Steps</h2>
+                <div class="implementation-step"><h3>Step 1: Choose Your Mushroom Species</h3><p>Oyster mushrooms: BEST for beginners. Fast (4-6 weeks), easy, hardy, forgiving. Great for learning. Yield: 0.3-0.5 kg per kg substrate. Market price: $3-6/kg. Start here!</p></div>
+                <div class="implementation-step"><h3>Step 2: Prepare Growing Space</h3><p>Oyster mushrooms need: dark/shaded, humid (70-90%), warm (20-25°C). Options: basement, shade house, room corner. Cost: $200-500 to set up basic space with shelving, spray bottle, thermometer.</p></div>
+                <div class="implementation-step"><h3>Step 3: Source Substrate & Spawn</h3><p>Substrate: straw ($0.50/kg), sawdust ($0.25/kg), compost. Spawn (mushroom seed): $2-5/kg. For 10 bags: 5 kg substrate + 0.5 kg spawn = $5-8 total. Buy from reliable mushroom suppliers only.</p></div>
+                <div class="implementation-step"><h3>Step 4: Prepare & Inoculate Substrate</h3><p>Process: Sterilize substrate (boil 1-2 hours), cool to room temperature, mix with spawn (1 part spawn : 10 parts substrate), fill bags, incubate 2-3 weeks in dark warm place. Cost: $20-40 for fuel and materials for 10 bags.</p></div>
+                <div class="implementation-step"><h3>Step 5: Manage Fruiting Conditions</h3><p>Once colonized: cut X-slit in bags, move to humid fruiting area, spray 2-3x daily with water, maintain 20-25°C. Mushrooms appear 5-7 days after slitting. Harvest by twisting at base. Cost: water spray bottle ($2), minimal ongoing.</p></div>
+                <div class="implementation-step"><h3>Step 6: Calculate Profitability & Scale</h3><p>10 bags initial investment: $60-80. Each bag produces: 3-5 kg fresh mushrooms over 2-3 flushes (harvests). Revenue: 4 kg × $4/kg × 3 cycles = $48/bag/cycle. Annual from 10 bags: $480-1,440 profit potential!</p></div>
+            </div>
+            <div class="section">
+                <div class="quiz-section"><h3>🎯 Module 1 Quiz</h3>
+                    <div class="quiz-question"><p>1. What is the BEST mushroom species for beginners?</p>
+                        <div class="quiz-option"><input type="radio" name="q1" value="a"><label>a) Oyster (4-6 weeks, easy, hardy)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q1" value="b"><label>b) Shiitake (12-18 months, difficult)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q1" value="c"><label>c) Button (8-12 weeks, needs precise control)</label></div>
+                        <button onclick="checkAnswer('q1', 'a', 'Correct! Oyster is fastest, easiest, and most forgiving for learning.')">Check Answer</button>
+                        <div id="feedback-q1" class="feedback"></div>
+                    </div>
+                    <div class="quiz-question"><p>2. How long does oyster mushroom cultivation take from spawn to harvest?</p>
+                        <div class="quiz-option"><input type="radio" name="q2" value="a"><label>a) 2-3 weeks (too fast, unrealistic)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q2" value="b"><label>b) 4-6 weeks (2-3 weeks colonizing + 1-2 weeks fruiting)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q2" value="c"><label>c) 12+ weeks (unrealistic for oyster)</label></div>
+                        <button onclick="checkAnswer('q2', 'b', 'Correct! 4-6 weeks total: inoculation → colonization → fruiting → harvest.')">Check Answer</button>
+                        <div id="feedback-q2" class="feedback"></div>
+                    </div>
+                    <div class="quiz-question"><p>3. What is realistic annual profit from 10 oyster mushroom bags?</p>
+                        <div class="quiz-option"><input type="radio" name="q3" value="a"><label>a) $100-200 (too low)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q3" value="b"><label>b) $480-1,440 (4kg × $4 × 3 cycles per bag × 10 bags)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q3" value="c"><label>c) $10,000+ (unrealistic without scaling to hundreds of bags)</label></div>
+                        <button onclick="checkAnswer('q3', 'b', 'Correct! Multiple harvests make mushroom farming highly profitable small-scale!')">Check Answer</button>
+                        <div id="feedback-q3" class="feedback"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="project-section"><h2>🚀 Real-World Project: Mushroom Farm Start-Up Plan</h2>
+                    <div class="project-item"><h4>Part 1: Species Selection & Market Research</h4><p>Choose oyster mushroom species. Survey 5 restaurants/markets: interested in fresh mushrooms? Price willing to pay? Annual volume needed?</p></div>
+                    <div class="project-item"><h4>Part 2: Space Assessment</h4><p>Identify growing space: basement, shade house, room corner. Document: size (m²), temperature range, humidity potential. Cost to upgrade with shelving, spray system?</p></div>
+                    <div class="project-item"><h4>Part 3: Startup Budget</h4><p>Calculate: shelving $50-100, spawn source $20-30, substrate materials $15-25, equipment $20-40, first bags (10) supplies $30-50. Total: $135-245. Break-even timeline?</p></div>
+                    <div class="project-item"><h4>Part 4: Substrate Preparation Plan</h4><p>Detail your process: straw sourcing, sterilization method (boiling on stove?), cooling, inoculation technique. How will you maintain sterility? What precautions?</p></div>
+                    <div class="project-item"><h4>Part 5: Growing Space Management</h4><p>Create daily schedule: watering frequency (2-3x daily), humidity monitoring, temperature checks, ventilation. How will you spray consistently? Drip system or hand-spray?</p></div>
+                    <div class="project-item"><h4>Part 6: Harvest & Post-Harvest Plan</h4><p>How will you harvest? Storage: refrigeration available? How will you market (direct sales, wholesale, dried mushrooms)? Packaging cost?</p></div>
+                    <div class="project-item"><h4>Part 7: Scaling Strategy</h4><p>Year 1: 10 bags test. Year 2: scale to ___ bags? Year 3: ___ bags? Cost and space for each level? Profitability projections?</p></div>
+                    <div class="project-item"><h4>Part 8: Risk Management</h4><p>What could go wrong: contamination, temperature failure, market collapse, disease? For each risk: probability, impact, prevention strategy.</p></div>
+                </div>
+            </div>
+            <div class="next-module"><p>Ready to continue? Move to Module 2: Substrate Preparation & Sterilization</p><a href="mushroom-farming-module-2.html">→ Next Module</a></div>
+        </div>
+    </div>
+    <script>
+        function checkAnswer(q, a, f) { const s = document.querySelector(`input[name="${q}"]:checked`); const e = document.getElementById(`feedback-${q}`); if (!s) { alert('Select answer'); return; } e.className = 'feedback show ' + (s.value === a ? 'correct' : 'incorrect'); e.textContent = (s.value === a ? '✓ ' : '✗ Incorrect. ') + f; }
+        window.addEventListener('load', () => { const s = localStorage.getItem('mush1'); if (s) document.getElementById('progressFill').style.width = s + '%'; });
+    </script>
+</body>
+</html>

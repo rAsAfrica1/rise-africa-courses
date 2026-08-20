@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mushroom Farming - Module 2: Substrate Preparation & Spawn Production</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background: #f9f9f9; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .header { background: linear-gradient(135deg, #6b4423 0%, #9d6d37 100%); color: white; padding: 30px; border-radius: 10px; margin-bottom: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .header p { font-size: 1.2em; opacity: 0.9; }
+        .content { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .section { margin-bottom: 40px; }
+        .section h2 { color: #6b4423; font-size: 1.8em; margin-bottom: 20px; border-bottom: 3px solid #9d6d37; padding-bottom: 10px; }
+        .learning-objectives { background: #f5e6d3; padding: 20px; border-left: 5px solid #9d6d37; margin-bottom: 20px; border-radius: 5px; }
+        .learning-objectives ul { list-style-position: inside; }
+        .learning-objectives li { margin-bottom: 8px; }
+        .video-container { background: #f9f9f9; padding: 15px; margin-bottom: 15px; border-radius: 5px; border-left: 4px solid #9d6d37; }
+        .video-container h3 { color: #6b4423; margin-bottom: 10px; }
+        iframe { width: 100%; height: 400px; border-radius: 5px; border: none; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th { background: #6b4423; color: white; padding: 15px; text-align: left; }
+        td { padding: 12px; border-bottom: 1px solid #ddd; }
+        tr:hover { background: #f9f9f9; }
+        .implementation-step { background: #fafafa; padding: 15px; margin-bottom: 15px; border-radius: 5px; border-left: 4px solid #9d6d37; }
+        .implementation-step h3 { color: #6b4423; margin-bottom: 8px; }
+        .quiz-section { background: #fff9e6; padding: 20px; border-radius: 5px; border: 2px solid #9d6d37; }
+        .quiz-section h3 { color: #6b4423; margin-bottom: 20px; }
+        .quiz-question { margin-bottom: 20px; background: white; padding: 15px; border-radius: 5px; }
+        .quiz-question p { font-weight: bold; margin-bottom: 10px; }
+        .quiz-option { margin-left: 20px; margin-bottom: 8px; }
+        .quiz-option input[type="radio"] { margin-right: 8px; }
+        .feedback { margin-top: 10px; padding: 10px; border-radius: 5px; display: none; }
+        .feedback.show { display: block; }
+        .feedback.correct { background: #d4edda; color: #155724; border-left: 4px solid #28a745; }
+        .feedback.incorrect { background: #f8d7da; color: #721c24; border-left: 4px solid #f5c6cb; }
+        .project-section { background: #e8f5e9; padding: 20px; border-radius: 5px; border: 2px solid #9d6d37; }
+        .project-section h2 { color: #6b4423; }
+        .project-item { background: white; padding: 15px; margin: 15px 0; border-radius: 5px; border-left: 4px solid #9d6d37; }
+        .project-item h4 { color: #6b4423; margin-bottom: 8px; }
+        .progress-bar { background: #e0e0e0; height: 10px; border-radius: 5px; overflow: hidden; margin-bottom: 20px; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, #6b4423, #9d6d37); width: 0%; transition: width 0.3s; }
+        .next-module { margin-top: 30px; padding: 20px; background: #f5e6d3; border-radius: 5px; text-align: center; }
+        .next-module a { display: inline-block; background: #6b4423; color: white; padding: 12px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background 0.3s; }
+        .next-module a:hover { background: #9d6d37; }
+        @media (max-width: 768px) { .header h1 { font-size: 1.8em; } iframe { height: 300px; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🍄 Mushroom Farming</h1>
+            <p>Module 2: Substrate Preparation & Spawn Production</p>
+        </div>
+
+        <div class="content">
+            <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+            <div class="section">
+                <div class="learning-objectives">
+                    <h2>📚 Learning Objectives</h2>
+                    <ul>
+                        <li>Master substrate preparation: materials, mixing ratios, sterilization</li>
+                        <li>Understand spawn production and quality standards</li>
+                        <li>Learn sterilization methods: boiling, steaming, pressure cooking</li>
+                        <li>Calculate substrate costs and yield projections</li>
+                        <li>Avoid contamination and maintain sterile conditions</li>
+                        <li>Source reliable spawn from certified producers</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🎥 Learning Videos</h2>
+                <div class="video-container"><h3>1. Substrate Materials: Straw, Sawdust, Compost</h3><iframe src="https://www.youtube.com/embed/fJx9fXZhfPI?rel=0" allowfullscreen></iframe></div>
+                <div class="video-container"><h3>2. Substrate Sterilization: Boiling & Steaming Methods</h3><iframe src="https://www.youtube.com/embed/U8K6sLNl6QQ?rel=0" allowfullscreen></iframe></div>
+                <div class="video-container"><h3>3. Spawn Production: Growing Mushroom Mycelium</h3><iframe src="https://www.youtube.com/embed/ggFoGvQDUKc?rel=0" allowfullscreen></iframe></div>
+                <div class="video-container"><h3>4. Mixing Substrate & Spawn: Inoculation Process</h3><iframe src="https://www.youtube.com/embed/MvhV8Q_4kAI?rel=0" allowfullscreen></iframe></div>
+                <div class="video-container"><h3>5. Contamination Prevention & Quality Control</h3><iframe src="https://www.youtube.com/embed/0bTH1cKOpz8?rel=0" allowfullscreen></iframe></div>
+            </div>
+
+            <div class="section">
+                <h2>📊 Substrate Options & Economics</h2>
+                <table><thead><tr><th>Substrate</th><th>Cost/kg</th><th>Shelf Life</th><th>Yield</th><th>Best For</th></tr></thead><tbody>
+                        <tr><td>Straw-based</td><td>$0.10-0.20</td><td>Long shelf-life</td><td>High (2-3 flushes)</td><td>Oyster mushrooms</td></tr>
+                        <tr><td>Hardwood sawdust</td><td>$0.15-0.30</td><td>Medium</td><td>Very High</td><td>Shiitake, oyster</td></tr>
+                        <tr><td>Coffee grounds+straw</td><td>$0.05-0.10</td><td>Short (use fast)</td><td>High</td><td>Budget-friendly</td></tr>
+                        <tr><td>Compost-based</td><td>$0.20-0.40</td><td>Must use fresh</td><td>Very High</td><td>Button mushrooms</td></tr>
+                    </tbody></table>
+            </div>
+
+            <div class="section">
+                <h2>📋 6 Implementation Steps</h2>
+                <div class="implementation-step"><h3>Step 1: Choose Your Substrate & Gather Materials</h3><p>Oyster mushrooms: straw ($0.05-0.10/kg) + coffee grounds (free). Shiitake: hardwood sawdust ($0.15-0.30/kg). Button: compost ($0.20-0.40/kg). For 100 kg substrate blocks: 100kg base material ($5-30 cost), water, spawn 5-10% by weight (5-10kg spawn at $2-5/kg = $10-50).</p></div>
+                <div class="implementation-step"><h3>Step 2: Prepare Substrate Mix</h3><p>Recipe example: 70% straw, 25% sawdust, 5% lime (balances pH). Mix in large tub or pile, breaking up clumps. Wet mixture to 65-75% moisture (squeeze test: few drops between fingers). Aim for uniform, lump-free mix. Bad mixing = uneven colonization = lower yield.</p></div>
+                <div class="implementation-step"><h3>Step 3: Sterilize Substrate (Kill Competitors)</h3><p>Option A - Boiling: Fill large pot, bring to rolling boil 1-2 hours. Option B - Steaming: 1-1.5 hours over boiling water. Option C - Pressure cooker (bags): 15 PSI × 2.5 hours (most effective). Cost: minimal (firewood/electricity $1-2). Sterilization = prevent contaminant fungi/bacteria competing with mushroom mycelium.</p></div>
+                <div class="implementation-step"><h3>Step 4: Cool & Pack Substrate</h3><p>After sterilization, let cool to 25-30°C (touchable but still warm). Pack into bags (1-2 kg per bag for oyster) or containers while still warm. Zip bags but leave small opening for air. Work in cleanest area possible. Rushed/dirty packing = high contamination rates.</p></div>
+                <div class="implementation-step"><h3>Step 5: Inoculate with Quality Spawn</h3><p>Spawn = mycelium growing on grain/sawdust. Mix spawn into bags (5-10% by weight): for 1kg substrate, add 50-100g spawn. Use sterile technique: clean hands/tools with alcohol. Break up spawn gently when mixing. Good spawn = white, clean smell, no green/black mold. Bad spawn = wasted substrate + empty results.</p></div>
+                <div class="implementation-step"><h3>Step 6: Incubate for Colonization</h3><p>Store bags at 20-25°C (room temperature), dark area. Oyster: colonization 7-14 days (bags turn white). Shiitake: 30-60 days. During colonization: no watering needed, minimal monitoring. After colonization complete = ready to fruit. Timeline: Week 1-2 (colonization), Week 3+ (fruiting begins) = mushrooms ready to harvest.</p></div>
+            </div>
+
+            <div class="section">
+                <div class="quiz-section"><h3>🎯 Module 2 Quiz</h3>
+                    <div class="quiz-question"><p>1. What moisture level is ideal for mushroom substrate?</p>
+                        <div class="quiz-option"><input type="radio" name="q1" value="a" id="q1a"><label for="q1a">a) 40-50% (too dry)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q1" value="b" id="q1b"><label for="q1b">b) 65-75% (optimal)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q1" value="c" id="q1c"><label for="q1c">c) 90%+ (too wet)</label></div>
+                        <button onclick="checkAnswer('q1', 'b', 'Correct! 65-75% moisture allows mycelium growth without anaerobic conditions.')">Check Answer</button>
+                        <div id="feedback-q1" class="feedback"></div>
+                    </div>
+                    <div class="quiz-question"><p>2. Why is substrate sterilization essential?</p>
+                        <div class="quiz-option"><input type="radio" name="q2" value="a" id="q2a"><label for="q2a">a) Makes mushrooms bigger (cosmetic only)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q2" value="b" id="q2b"><label for="q2b">b) Kills competitor fungi & bacteria that outcompete mushroom mycelium</label></div>
+                        <div class="quiz-option"><input type="radio" name="q2" value="c" id="q2c"><label for="q2c">c) Reduces labor (easier farming)</label></div>
+                        <button onclick="checkAnswer('q2', 'b', 'Correct! Sterilization removes competitors. No sterilization = 50%+ contamination rates.')">Check Answer</button>
+                        <div id="feedback-q2" class="feedback"></div>
+                    </div>
+                    <div class="quiz-question"><p>3. What spawn ratio is recommended for inoculation?</p>
+                        <div class="quiz-option"><input type="radio" name="q3" value="a" id="q3a"><label for="q3a">a) 1-2% spawn (too little, slow colonization)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q3" value="b" id="q3b"><label for="q3b">b) 5-10% spawn (optimal, fast colonization)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q3" value="c" id="q3c"><label for="q3c">c) 30%+ spawn (wastes money, no benefit)</label></div>
+                        <button onclick="checkAnswer('q3', 'b', 'Correct! 5-10% spawn ratio provides fast colonization in 7-14 days.')">Check Answer</button>
+                        <div id="feedback-q3" class="feedback"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="project-section"><h2>🚀 Real-World Project: Substrate Preparation Plan</h2>
+                    <div class="project-item"><h4>Part 1: Substrate Material Sourcing</h4><p>Identify suppliers in your area: straw (farmer), sawdust (lumber mill, furniture maker), coffee grounds (local cafe), compost (composting center). Negotiate pricing and delivery. Plan: 100kg substrate blocks need ___ kg materials, total cost ___.</p></div>
+                    <div class="project-item"><h4>Part 2: Recipe Development & Testing</h4><p>Mix test batches (5-10 kg): Recipe 1 (70% straw + 30% sawdust), Recipe 2 (80% straw + 20% coffee + 5% lime). Document: materials, costs, mixing time, inoculation results, colonization speed, yield. Identify best recipe for your mushroom type & budget.</p></div>
+                    <div class="project-item"><h4>Part 3: Sterilization Method Setup</h3><p>Select method based on available equipment: boiling (large pot), steaming (pressure cooker), oven (if temperature-controlled). Calculate: energy cost per batch, time per batch, capacity (kg/day sterilized). Test with 10kg batch, record colonization rates.</p></div>
+                    <div class="project-item"><h4>Part 4: Contamination Prevention Protocol</h4><p>Document: workspace cleaning procedure, hand hygiene (before inoculation), tool disinfection (alcohol wipes), work area isolation. Track: contamination rate % on test batches. Goal: <10% contamination rate (>90% success).</p></div>
+                    <div class="project-item"><h4>Part 5: Spawn Quality Assessment</h4><p>Find reliable spawn source: supplier recommendation (cost/kg), quality indicators (white color, clean smell, no mold), minimum order (kg), delivery time. Budget spawn costs: for 100kg substrate need 5-10kg spawn = ___. Test spawn quality on 5 bags.</p></div>
+                    <div class="project-item"><h4>Part 6: Colonization Monitoring System</h4><p>Create tracking chart: bag ID, substrate type, spawn supplier, inoculation date, colonization start date, 100% colonization date, contamination observed. Average colonization time: ___. Success rate: ___%. Adjust procedures if <90% success.</p></div>
+                    <div class="project-item"><h4>Part 7: Cost Analysis per Block</h4><p>Track costs: substrate materials ($), spawn ($), sterilization energy ($), labor (hours × $/hr), packaging ($). Total cost per 1kg block: ___. Expected yield: 3-4 flushes × 0.3kg mushrooms/flush = 0.9-1.2kg fresh mushrooms. Revenue: 1kg × $5-10/kg = $5-10. Profit per block: ___.</p></div>
+                    <div class="project-item"><h4>Part 8: Scaling Production Plan</h4><p>Weekly production goal: ___ blocks/week. Monthly: ___ blocks/month. Equipment needed: sterilization capacity (kg/day), drying space, storage (temperature, humidity). Labor: hours/day needed. Plan: when can you move to 500+ blocks/month production?</p></div>
+                </div>
+            </div>
+
+            <div class="next-module"><p>Ready to continue? Move to Module 3: Growing Conditions & Fruiting</p><a href="mushroom-farming-module-3.html">→ Next Module</a></div>
+        </div>
+    </div>
+    <script>
+        function checkAnswer(q, a, f) { const s = document.querySelector(`input[name="${q}"]:checked`); const e = document.getElementById(`feedback-${q}`); if (!s) { alert('Select answer'); return; } e.className = 'feedback show ' + (s.value === a ? 'correct' : 'incorrect'); e.textContent = (s.value === a ? '✓ ' : '✗ Incorrect. ') + f; updateProgress(); }
+        function updateProgress() { const c = document.querySelectorAll('input[type="radio"]:checked').length; const t = document.querySelectorAll('input[type="radio"]').length / 3; const p = (c / t) * 100; document.getElementById('progressFill').style.width = p + '%'; localStorage.setItem('mushroom2', p); }
+        window.addEventListener('load', () => { const s = localStorage.getItem('mushroom2'); if (s) document.getElementById('progressFill').style.width = s + '%'; });
+    </script>
+</body>
+</html>

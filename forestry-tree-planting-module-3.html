@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forestry & Tree Planting - Module 3: Soil Health & Nutrition</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background: #f9f9f9; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .header { background: linear-gradient(135deg, #2d5016 0%, #4a7c2f 100%); color: white; padding: 30px; border-radius: 10px; margin-bottom: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .header p { font-size: 1.2em; opacity: 0.9; }
+        .content { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .section { margin-bottom: 40px; }
+        .section h2 { color: #2d5016; font-size: 1.8em; margin-bottom: 20px; border-bottom: 3px solid #4a7c2f; padding-bottom: 10px; }
+        .learning-objectives { background: #e8f5e9; padding: 20px; border-left: 5px solid #4a7c2f; margin-bottom: 20px; border-radius: 5px; }
+        .learning-objectives ul { list-style-position: inside; }
+        .learning-objectives li { margin-bottom: 8px; }
+        .video-container { background: #f5f5f5; padding: 15px; margin-bottom: 15px; border-radius: 5px; border-left: 4px solid #4a7c2f; }
+        .video-container h3 { color: #2d5016; margin-bottom: 10px; }
+        iframe { width: 100%; height: 400px; border-radius: 5px; border: none; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th { background: #2d5016; color: white; padding: 15px; text-align: left; }
+        td { padding: 12px; border-bottom: 1px solid #ddd; }
+        tr:hover { background: #f5f5f5; }
+        .implementation-step { background: #fafafa; padding: 15px; margin-bottom: 15px; border-radius: 5px; border-left: 4px solid #4a7c2f; }
+        .implementation-step h3 { color: #2d5016; margin-bottom: 8px; }
+        .implementation-step p { line-height: 1.8; }
+        .quiz-section { background: #fff3e0; padding: 20px; border-radius: 5px; border: 2px solid #4a7c2f; }
+        .quiz-section h3 { color: #2d5016; margin-bottom: 20px; }
+        .quiz-question { margin-bottom: 20px; background: white; padding: 15px; border-radius: 5px; }
+        .quiz-question p { font-weight: bold; margin-bottom: 10px; }
+        .quiz-option { margin-left: 20px; margin-bottom: 8px; }
+        .quiz-option input[type="radio"] { margin-right: 8px; }
+        .feedback { margin-top: 10px; padding: 10px; border-radius: 5px; display: none; }
+        .feedback.show { display: block; }
+        .feedback.correct { background: #c8e6c9; color: #2d5016; border-left: 4px solid #4a7c2f; }
+        .feedback.incorrect { background: #ffcdd2; color: #c62828; border-left: 4px solid #c62828; }
+        .project-section { background: #f1f8e9; padding: 20px; border-radius: 5px; border: 2px solid #4a7c2f; }
+        .project-section h2 { color: #2d5016; }
+        .project-item { background: white; padding: 15px; margin: 15px 0; border-radius: 5px; border-left: 4px solid #4a7c2f; }
+        .project-item h4 { color: #2d5016; margin-bottom: 8px; }
+        .progress-bar { background: #e0e0e0; height: 10px; border-radius: 5px; overflow: hidden; margin-bottom: 20px; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, #2d5016, #4a7c2f); width: 0%; transition: width 0.3s; }
+        .next-module { margin-top: 30px; padding: 20px; background: #e8f5e9; border-radius: 5px; text-align: center; }
+        .next-module a { display: inline-block; background: #2d5016; color: white; padding: 12px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background 0.3s; }
+        .next-module a:hover { background: #4a7c2f; }
+        @media (max-width: 768px) { .header h1 { font-size: 1.8em; } iframe { height: 300px; } table { font-size: 0.9em; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌱 Forestry & Tree Planting</h1>
+            <p>Module 3: Soil Health & Nutrition</p>
+        </div>
+
+        <div class="content">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+
+            <div class="section">
+                <div class="learning-objectives">
+                    <h2>📚 Learning Objectives</h2>
+                    <ul>
+                        <li>Understand soil properties and their importance for tree growth</li>
+                        <li>Assess your soil type, pH, and fertility status</li>
+                        <li>Prepare soil before planting using organic matter and amendments</li>
+                        <li>Provide ongoing nutrition through fertilization and composting</li>
+                        <li>Manage soil to prevent erosion and maintain long-term productivity</li>
+                        <li>Calculate soil improvement costs and monitor results</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🎥 Learning Videos</h2>
+
+                <div class="video-container">
+                    <h3>1. Understanding Soil Types & Properties for Trees</h3>
+                    <iframe src="https://www.youtube.com/embed/WM8Hh_kA8SY?rel=0" allowfullscreen></iframe>
+                </div>
+
+                <div class="video-container">
+                    <h3>2. Soil Testing & Interpreting Results for African Soils</h3>
+                    <iframe src="https://www.youtube.com/embed/Bg51WlPBzuE?rel=0" allowfullscreen></iframe>
+                </div>
+
+                <div class="video-container">
+                    <h3>3. Soil Preparation: Adding Organic Matter & Compost</h3>
+                    <iframe src="https://www.youtube.com/embed/ZCJlAtkIdKE?rel=0" allowfullscreen></iframe>
+                </div>
+
+                <div class="video-container">
+                    <h3>4. Tree Nutrition: NPK Requirements by Species</h3>
+                    <iframe src="https://www.youtube.com/embed/4qvD-HqxPcs?rel=0" allowfullscreen></iframe>
+                </div>
+
+                <div class="video-container">
+                    <h3>5. Sustainable Fertilization & Soil Conservation</h3>
+                    <iframe src="https://www.youtube.com/embed/ksKzZVVRNz4?rel=0" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>📊 African Soil Types & Tree Suitability</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Soil Type</th>
+                            <th>pH Range</th>
+                            <th>Best Trees</th>
+                            <th>Improvement Needed</th>
+                            <th>Cost/Hectare</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Sandy/Light</td>
+                            <td>5.5-7.0</td>
+                            <td>Acacia, Teak, Pine</td>
+                            <td>High compost/manure for water retention</td>
+                            <td>$200-400</td>
+                        </tr>
+                        <tr>
+                            <td>Clay/Heavy</td>
+                            <td>6.0-8.0</td>
+                            <td>Mahogany, Mango, Grafted orchard</td>
+                            <td>Drainage improvement, organic matter</td>
+                            <td>$300-600</td>
+                        </tr>
+                        <tr>
+                            <td>Laterite (Iron-rich)</td>
+                            <td>4.5-6.0</td>
+                            <td>Teak, Acacia, fast-growing timber</td>
+                            <td>Organic matter + lime for pH adjustment</td>
+                            <td>$400-700</td>
+                        </tr>
+                        <tr>
+                            <td>Alluvial (River valley)</td>
+                            <td>6.5-7.5</td>
+                            <td>Mango, Coconut, Moringa</td>
+                            <td>Drainage if flooded; minimal amendment</td>
+                            <td>$100-200</td>
+                        </tr>
+                        <tr>
+                            <td>Volcanic (Fertile)</td>
+                            <td>5.5-7.0</td>
+                            <td>All trees thrive - minimal improvement</td>
+                            <td>Minimal; just maintain organic matter</td>
+                            <td>$50-100</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h2>📋 6 Implementation Steps</h2>
+
+                <div class="implementation-step">
+                    <h3>Step 1: Get Your Soil Tested</h3>
+                    <p><strong>Why test:</strong> Soil tests reveal pH, NPK levels, organic matter, and micronutrient status. Cost: $20-50 per test (3-5 locations across your land recommended). Local agricultural extension offices often provide testing for free or $10-20.</p>
+                    <p><strong>Action:</strong> Collect soil samples from 5 locations (diagonal pattern), dig 15-20 cm deep, mix samples, send to extension office or private lab. Get results within 1-2 weeks.</p>
+                </div>
+
+                <div class="implementation-step">
+                    <h3>Step 2: Interpret Results & Plan Amendments</h3>
+                    <p><strong>Key numbers to understand:</strong> pH (ideal 5.5-7.5 for most trees), nitrogen (0-20 mg/kg range), phosphorus (10-30 mg/kg range), potassium (100-300 mg/kg range). If below ranges: add organic matter (compost, manure) and/or specific fertilizers.</p>
+                    <p><strong>Action:</strong> Compare your test results to the table above for your soil type. Create amendment plan: X tons of compost, Y kg of NPK fertilizer per hectare.</p>
+                </div>
+
+                <div class="implementation-step">
+                    <h3>Step 3: Prepare Planting Holes with Quality Soil Mix</h3>
+                    <p><strong>Per-tree preparation:</strong> Dig holes 3-4 times the root ball size (e.g., 60 cm diameter for 20 cm root ball). Mix excavated soil 50:50 with compost/aged manure. Fill hole halfway with amended soil before planting. Cost: $2-5 per hole (compost + labor).</p>
+                    <p><strong>Action:</strong> For 1,000 trees, budget $2,000-5,000 for compost. Start sourcing compost 1-2 months before planting.</p>
+                </div>
+
+                <div class="implementation-step">
+                    <h3>Step 4: Establish Mulching System</h3>
+                    <p><strong>Mulch benefits:</strong> Retains moisture (30-50% more water available), moderates temperature, prevents weeds, adds organic matter as it breaks down. Cost: $0.50-1.50 per tree (dried leaves, grass clippings, wood chips). Application: 10-15 cm layer around base, 30 cm from trunk.</p>
+                    <p><strong>Action:</strong> Collect organic mulch (farm waste, grass clippings) or purchase wood chips. Mulch trees immediately after planting and annually refresh.</p>
+                </div>
+
+                <div class="implementation-step">
+                    <h3>Step 5: Implement Fertilization Schedule</h3>
+                    <p><strong>Year 1-2 (Establishment):</strong> High nitrogen: NPK 10-10-10 or 16-7-7, 100-200 g per tree every 3 months. Year 3+ (Production): Lower nitrogen: NPK 6-12-12 or 5-10-10, 200-400 g per tree twice yearly. Alternative: Compost alone (50 kg per tree, once yearly) is sustainable and cost-effective for long-term.</p>
+                    <p><strong>Action:</strong> Plan fertilizer budget: $50-150/hectare annually for chemical fertilizer OR $500-1,000/hectare for compost production. Many smallholders combine both for balance.</p>
+                </div>
+
+                <div class="implementation-step">
+                    <h3>Step 6: Monitor & Maintain Soil Health Long-term</h3>
+                    <p><strong>Annual checks:</strong> Visual inspection (tree growth rate, leaf color), soil testing every 2-3 years ($20-50), organic matter addition (mulch + compost annually). Common warning signs: yellowing leaves (nitrogen deficiency), poor growth (phosphorus issue), brown leaf edges (potassium deficiency).</p>
+                    <p><strong>Action:</strong> Create maintenance calendar: monthly visual checks, quarterly organic matter application, annual budget for fertilizer/compost. Plan tree soil test after 3-5 years to verify results.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="quiz-section">
+                    <h3>🎯 Module 3 Quiz</h3>
+
+                    <div class="quiz-question">
+                        <p>1. What is the recommended approach for poor/degraded soil before planting trees?</p>
+                        <div class="quiz-option">
+                            <input type="radio" name="q1" value="a" id="q1a">
+                            <label for="q1a">a) Plant directly; trees will improve soil over time</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q1" value="b" id="q1b">
+                            <label for="q1b">b) Get soil test, amend with compost/fertilizer based on results, then plant</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q1" value="c" id="q1c">
+                            <label for="q1c">c) Use expensive imported soil replacement</label>
+                        </div>
+                        <button onclick="checkAnswer('q1', 'b', 'Correct! Soil testing and targeted amendments ($200-400/hectare) ensure success and prevent years of poor growth.')">Check Answer</button>
+                        <div id="feedback-q1" class="feedback"></div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p>2. What is the primary benefit of mulching around newly planted trees?</p>
+                        <div class="quiz-option">
+                            <input type="radio" name="q2" value="a" id="q2a">
+                            <label for="q2a">a) Aesthetic improvement only</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q2" value="b" id="q2b">
+                            <label for="q2b">b) Retains soil moisture (30-50% more water), prevents weeds, adds organic matter</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q2" value="c" id="q2c">
+                            <label for="q2c">c) Attracts beneficial insects (trees don't need mulch itself)</label>
+                        </div>
+                        <button onclick="checkAnswer('q2', 'b', 'Correct! Mulch is essential for tree survival, especially in dry seasons. Creates 30-50% better moisture retention.')">Check Answer</button>
+                        <div id="feedback-q2" class="feedback"></div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p>3. For long-term soil health in tree plantations, which is most sustainable?</p>
+                        <div class="quiz-option">
+                            <input type="radio" name="q3" value="a" id="q3a">
+                            <label for="q3a">a) Rely exclusively on chemical fertilizers every year</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q3" value="b" id="q3b">
+                            <label for="q3b">b) Build compost production system + annual mulching (chemical fertilizer only if deficiencies appear)</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q3" value="c" id="q3c">
+                            <label for="q3c">c) Soil management is unnecessary after year 2</label>
+                        </div>
+                        <button onclick="checkAnswer('q3', 'b', 'Correct! Organic-based systems ($500-1,000/hectare compost) + selective chemical use is most cost-effective and sustainable long-term.')">Check Answer</button>
+                        <div id="feedback-q3" class="feedback"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="project-section">
+                    <h2>🚀 Real-World Project: Soil Analysis & Improvement Plan</h2>
+
+                    <div class="project-item">
+                        <h4>Part 1: Soil Sampling & Testing</h4>
+                        <p>Plan soil testing for your planting land: identify 5 sampling locations, collect soil samples (15-20 cm deep), send for testing. Document test results: pH, NPK, organic matter %. Compare to target ranges for your soil type.</p>
+                    </div>
+
+                    <div class="project-item">
+                        <h4>Part 2: Soil Type Identification</h4>
+                        <p>Classify your soil: sandy, clay, laterite, alluvial, volcanic? Determine texture by simple test (wet handful should form soft ball if clay present). Document which tree species are best suited for your soil type.</p>
+                    </div>
+
+                    <div class="project-item">
+                        <h4>Part 3: Amendment Calculation</h4>
+                        <p>Based on test results, calculate amendments needed: X tons of compost per hectare, Y kg of specific fertilizer (nitrogen/phosphorus/potassium). Calculate cost: compost $20-50/ton, fertilizer $0.50-1.50/kg.</p>
+                    </div>
+
+                    <div class="project-item">
+                        <h4>Part 4: Compost Production Plan</h4>
+                        <p>Design a compost-making system for your farm: source organic materials (crop residues, manure, leaves), build composting area (1-5 m³), create composting schedule (3-4 months to ready). Calculate annual compost production needed.</p>
+                    </div>
+
+                    <div class="project-item">
+                        <h4>Part 5: Mulching Strategy</h4>
+                        <p>Plan mulching system: identify mulch sources (farm waste, grass clippings, wood chips), calculate quantity (10-15 cm around each tree), estimate cost ($0.50-1.50/tree). Create application schedule (initial + annual refreshing).</p>
+                    </div>
+
+                    <div class="project-item">
+                        <h4>Part 6: Fertilizer Budget</h4>
+                        <p>Create 5-year fertilization budget: Year 1-2 (establishment with NPK), Year 3-5 (production schedule). Compare two strategies: chemical fertilizer only vs. compost + selective chemical. Which is more cost-effective?</p>
+                    </div>
+
+                    <div class="project-item">
+                        <h4>Part 7: Soil Monitoring System</h4>
+                        <p>Design monitoring plan: monthly visual inspections (leaf color, growth rate), quarterly soil checks (moisture), annual budget. Create forms/templates for recording observations. When to retest soil? (Recommend every 2-3 years.)</p>
+                    </div>
+
+                    <div class="project-item">
+                        <h4>Part 8: Total Soil Preparation Budget</h4>
+                        <p>Comprehensive budget for 1 hectare: soil testing ($50), amendments ($200-400), mulch ($500-1,000), initial fertilizer ($100-200), compost production setup ($100-300), labor ($200-400). Total first-year cost: $1,150-2,350/hectare. ROI timeline?</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="next-module">
+                <p>Ready to continue? Move to Module 4: Health & Disease Management</p>
+                <a href="forestry-tree-planting-module-4.html">→ Next Module</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswer(questionId, correctAnswer, feedback) {
+            const selected = document.querySelector(`input[name="${questionId}"]:checked`);
+            const feedbackEl = document.getElementById(`feedback-${questionId}`);
+
+            if (!selected) {
+                alert('Please select an answer');
+                return;
+            }
+
+            if (selected.value === correctAnswer) {
+                feedbackEl.className = 'feedback show correct';
+                feedbackEl.textContent = '✓ ' + feedback;
+            } else {
+                feedbackEl.className = 'feedback show incorrect';
+                feedbackEl.textContent = '✗ Incorrect. ' + feedback;
+            }
+            updateProgress();
+        }
+
+        function updateProgress() {
+            const answered = document.querySelectorAll('input[type="radio"]:checked').length;
+            const total = document.querySelectorAll('input[type="radio"]').length / 3;
+            const progress = (answered / total) * 100;
+            document.getElementById('progressFill').style.width = progress + '%';
+            localStorage.setItem('module3Progress', progress);
+        }
+
+        window.addEventListener('load', () => {
+            const saved = localStorage.getItem('module3Progress');
+            if (saved) document.getElementById('progressFill').style.width = saved + '%';
+        });
+    </script>
+</body>
+</html>

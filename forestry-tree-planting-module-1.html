@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forestry Module 1: Introduction & Basics</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background: linear-gradient(135deg, #2d5016 0%, #4a7c2f 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 900px; margin: 0 auto; background: white; border-radius: 10px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); overflow: hidden; }
+        .header { background: linear-gradient(135deg, #2d5016 0%, #4a7c2f 100%); color: white; padding: 40px 30px; text-align: center; }
+        .header h1 { font-size: 2.2em; margin-bottom: 10px; }
+        .header p { font-size: 1.1em; opacity: 0.95; }
+        .content { padding: 30px; }
+        .section { margin-bottom: 40px; padding-bottom: 30px; border-bottom: 2px solid #f0f0f0; }
+        .section:last-of-type { border-bottom: none; }
+        h2 { color: #2d5016; font-size: 1.8em; margin-bottom: 20px; border-left: 5px solid #4a7c2f; padding-left: 15px; }
+        h3 { color: #4a7c2f; font-size: 1.3em; margin-top: 20px; margin-bottom: 15px; }
+        .video-container { background: #f9f9f9; border: 2px solid #e0e0e0; border-radius: 8px; padding: 15px; margin-bottom: 25px; }
+        iframe { width: 100%; height: 400px; border: none; border-radius: 6px; display: block; }
+        .video-title { color: #2d5016; font-weight: bold; margin-bottom: 10px; font-size: 1.1em; }
+        .table-container { overflow-x: auto; margin: 20px 0; }
+        table { width: 100%; border-collapse: collapse; background: white; }
+        th, td { padding: 15px; text-align: left; border: 1px solid #ddd; }
+        th { background: #4a7c2f; color: white; font-weight: bold; }
+        tr:nth-child(even) { background: #f9f9f9; }
+        tr:hover { background: #f0f7e8; }
+        .implementation-step { background: #f0f7e8; border-left: 4px solid #4a7c2f; padding: 20px; margin: 20px 0; border-radius: 4px; }
+        .step-number { color: #2d5016; font-weight: bold; font-size: 1.1em; }
+        .step-title { color: #333; font-weight: bold; font-size: 1.05em; margin: 10px 0; }
+        .step-content { color: #555; font-size: 0.95em; line-height: 1.6; }
+        .quiz-section { background: #e8f4f8; padding: 25px; border-radius: 8px; margin: 30px 0; }
+        .quiz-title { color: #2d5016; font-size: 1.5em; margin-bottom: 20px; font-weight: bold; }
+        .quiz-question { background: white; padding: 20px; margin: 15px 0; border-radius: 6px; border-left: 4px solid #4a7c2f; }
+        .quiz-question-text { font-weight: bold; color: #333; margin-bottom: 15px; font-size: 1.05em; }
+        .quiz-option { margin: 10px 0; }
+        .quiz-option label { cursor: pointer; display: block; padding: 10px; border-radius: 4px; transition: background 0.2s; }
+        .quiz-option label:hover { background: #f0f0f0; }
+        .quiz-option input[type="radio"] { margin-right: 10px; }
+        .feedback { margin-top: 15px; padding: 15px; border-radius: 4px; display: none; }
+        .feedback.correct { background: #d4edda; border: 1px solid #c3e6cb; color: #155724; display: block; }
+        .feedback.incorrect { background: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; display: block; }
+        button { background: linear-gradient(135deg, #2d5016 0%, #4a7c2f 100%); color: white; padding: 12px 30px; border: none; border-radius: 6px; font-size: 1.1em; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; margin-top: 15px; }
+        button:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        .project-section { background: #e8f4f8; padding: 25px; border-radius: 8px; margin: 30px 0; border: 2px solid #4a7c2f; }
+        .project-title { color: #2d5016; font-size: 1.5em; margin-bottom: 15px; font-weight: bold; }
+        .deliverable { background: white; padding: 15px; margin: 10px 0; border-radius: 4px; border-left: 3px solid #4a7c2f; }
+        .progress-bar { background: #f0f0f0; border-radius: 10px; height: 25px; margin: 20px 0; overflow: hidden; }
+        .progress-fill { background: linear-gradient(90deg, #2d5016 0%, #4a7c2f 100%); height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 0.9em; transition: width 0.3s ease; }
+        .learning-objectives { background: #fffacd; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #4a7c2f; }
+        .learning-objectives h3 { color: #2d5016; margin-top: 0; }
+        .learning-objectives ul { list-style: none; padding: 0; }
+        .learning-objectives li { padding: 8px 0; border-bottom: 1px solid #d0d0d0; }
+        .learning-objectives li:last-child { border-bottom: none; }
+        .learning-objectives li:before { content: "✓ "; color: #2d5016; font-weight: bold; margin-right: 8px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌳 Module 1: Introduction & Basics</h1>
+            <p>Forestry & Tree Planting Course - Rise Africa Skills</p>
+        </div>
+        <div class="content">
+            <div class="learning-objectives">
+                <h3>📚 Learning Objectives</h3>
+                <ul>
+                    <li>Understand forestry and agroforestry systems</li>
+                    <li>Learn tree species suitable for African climates</li>
+                    <li>Understand benefits of tree planting (economic, environmental)</li>
+                    <li>Assess your local environment for tree planting</li>
+                    <li>Plan a tree planting project for your land</li>
+                    <li>Calculate potential income from forestry</li>
+                </ul>
+            </div>
+            <div>
+                <p style="font-weight: bold; color: #2d5016;">Your Progress</p>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill" style="width: 0%">0%</div>
+                </div>
+            </div>
+            <div class="section">
+                <h2>🎥 Learning Videos</h2>
+                <p>Watch these 5 videos about forestry, tree species, and agroforestry systems.</p>
+                <div class="video-container">
+                    <div class="video-title">Video 1: Introduction to Forestry & Agroforestry</div>
+                    <iframe src="https://www.youtube.com/embed/FgPLpJm5wqI" allowfullscreen></iframe>
+                </div>
+                <div class="video-container">
+                    <div class="video-title">Video 2: Tree Species for African Climates</div>
+                    <iframe src="https://www.youtube.com/embed/Kg9hC01AEqg" allowfullscreen></iframe>
+                </div>
+                <div class="video-container">
+                    <div class="video-title">Video 3: Benefits of Tree Planting & Carbon Credits</div>
+                    <iframe src="https://www.youtube.com/embed/BpvKxJjBMVs" allowfullscreen></iframe>
+                </div>
+                <div class="video-container">
+                    <div class="video-title">Video 4: Assessing Your Land for Tree Planting</div>
+                    <iframe src="https://www.youtube.com/embed/6Yp5iHuLBWY" allowfullscreen></iframe>
+                </div>
+                <div class="video-container">
+                    <div class="video-title">Video 5: Starting Your First Forest or Agroforestry System</div>
+                    <iframe src="https://www.youtube.com/embed/RZaC0k56nWE" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="section">
+                <h2>📊 Tree Species for African Regions</h2>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Species</th>
+                                <th>Region</th>
+                                <th>Growth Rate</th>
+                                <th>Income Source</th>
+                                <th>Maturity</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Teak</td>
+                                <td>West/Central Africa</td>
+                                <td>Medium (0.5m/year)</td>
+                                <td>Timber ($500-1000/tree)</td>
+                                <td>25-40 years</td>
+                            </tr>
+                            <tr>
+                                <td>Mahogany</td>
+                                <td>Tropical Africa</td>
+                                <td>Medium (0.4m/year)</td>
+                                <td>Premium timber ($800-1500/tree)</td>
+                                <td>30-50 years</td>
+                            </tr>
+                            <tr>
+                                <td>Pine (Various)</td>
+                                <td>East/Southern Africa</td>
+                                <td>Fast (0.8m/year)</td>
+                                <td>Timber, pulp ($200-400/tree)</td>
+                                <td>15-25 years</td>
+                            </tr>
+                            <tr>
+                                <td>Mango</td>
+                                <td>All tropical regions</td>
+                                <td>Medium (0.5m/year)</td>
+                                <td>Fruit ($50-100/year)</td>
+                                <td>5-7 years fruit</td>
+                            </tr>
+                            <tr>
+                                <td>Acacia (Firewood)</td>
+                                <td>Arid/Semi-arid</td>
+                                <td>Slow (0.3m/year)</td>
+                                <td>Firewood/Charcoal ($10-20/bundle)</td>
+                                <td>8-12 years</td>
+                            </tr>
+                            <tr>
+                                <td>Moringa</td>
+                                <td>All regions</td>
+                                <td>Fast (0.6m/year)</td>
+                                <td>Leaves/Seeds ($30-50/harvest)</td>
+                                <td>1-2 years</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="section">
+                <h2>📋 6 Implementation Steps</h2>
+                <div class="implementation-step">
+                    <div class="step-number">Step 1: Research Tree Species for Your Region</div>
+                    <div class="step-title">Identify what grows well in your climate</div>
+                    <div class="step-content">
+                        Contact your local forestry department or agricultural extension office. Ask: Which tree species are suited to your climate? Which grow fast? Which produce valuable timber or fruit? Visit nearby forests or plantations to see what thrives. Talk to existing tree farmers about their experiences. Create a list of 5-10 species suitable for your area with expected growth rates and income potential.
+                    </div>
+                </div>
+                <div class="implementation-step">
+                    <div class="step-number">Step 2: Assess Your Land</div>
+                    <div class="step-title">Evaluate soil, water, slope for tree suitability</div>
+                    <div class="step-content">
+                        Walk your land and note: elevation, slope, soil type, rainfall patterns, existing vegetation, water sources (streams, wells), and sunlight exposure. Dig a soil pit to check soil depth and quality. Some trees need deep soil, others thrive in shallow soil. Map areas suitable for different trees. Consider which areas are currently productive (agricultural) vs. degraded/marginal land where trees could add value.
+                    </div>
+                </div>
+                <div class="implementation-step">
+                    <div class="step-number">Step 3: Plan Your Agroforestry System</div>
+                    <div class="step-title">Design integration with existing farm activities</div>
+                    <div class="step-content">
+                        Decide: Pure forestry (all trees) or agroforestry (trees + crops/animals)? Agroforestry provides faster income while trees grow. Design layout: where to plant trees, spacing between trees, which crops to grow underneath. Trees provide shade for coffee/cocoa, nitrogen-fixing trees improve soil for vegetables. Plan which trees go where based on your assessment. Sketch your design on paper showing tree positions and spacing.
+                    </div>
+                </div>
+                <div class="implementation-step">
+                    <div class="step-number">Step 4: Source Quality Seedlings</div>
+                    <div class="step-title">Find reliable suppliers for healthy young trees</div>
+                    <div class="step-content">
+                        Research tree nurseries in your region. Visit nurseries to inspect seedlings - look for healthy, disease-free, well-formed trees. Check for nursery certifications. Ask about species availability, when they'll have what you want, and prices. If starting from seed, source seeds from healthy parent trees. Calculate total seedlings needed (spacing 3-5m apart = 400-1300 trees/hectare depending on species). Establish relationship with reliable nurseries for future purchases.
+                    </div>
+                </div>
+                <div class="implementation-step">
+                    <div class="step-number">Step 5: Prepare Your Planting Site</div>
+                    <div class="step-title">Clear land, prepare planting holes, gather materials</div>
+                    <div class="step-content">
+                        Clear and level your planting area (remove competing vegetation, rocks). Prepare individual planting holes: 30-60cm deep depending on species. Mix topsoil with compost or manure. Gather materials: mulch (grass, leaves), stakes for support, watering cans or drip irrigation. If possible, create firebreaks and access paths for future management. Plan for water availability - will you irrigate or rely on rainfall? Have everything ready before seedlings arrive.
+                    </div>
+                </div>
+                <div class="implementation-step">
+                    <div class="step-number">Step 6: Develop a Management & Financial Plan</div>
+                    <div class="step-title">Plan for 10-40 year horizon with ongoing investment</div>
+                    <div class="step-content">
+                        Create timeline: planting → early growth → maintenance → thinning → harvest. Budget for seedlings, labor, tools, inputs (fertilizer, pest management). Plan maintenance activities: weeding (years 1-3), pruning, thinning (removing weak trees). Calculate: total investment, time to first returns (fruit trees: 3-5 years, timber: 15-40 years), and projected harvest value. Consider carbon credit programs that pay for trees. Decide: will this be your main income or supplementary?
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="quiz-section">
+                    <div class="quiz-title">🎯 Module Quiz</div>
+                    <p>Test your understanding of forestry basics:</p>
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">1. What is agroforestry?</div>
+                        <div class="quiz-option">
+                            <label>
+                                <input type="radio" name="q1" value="a"> Growing only trees in a forest
+                            </label>
+                        </div>
+                        <div class="quiz-option">
+                            <label>
+                                <input type="radio" name="q1" value="b"> Integrating trees with crops and/or livestock for multiple income streams
+                            </label>
+                        </div>
+                        <div class="quiz-option">
+                            <label>
+                                <input type="radio" name="q1" value="c"> Using agricultural machinery in forests
+                            </label>
+                        </div>
+                        <button onclick="checkAnswer('q1', 'b', 'Correct! Agroforestry combines trees with crops/livestock to diversify income while improving soil and providing environmental benefits.')">Check Answer</button>
+                        <div class="feedback" id="q1-feedback"></div>
+                    </div>
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">2. How long does it typically take for timber trees to mature for harvest?</div>
+                        <div class="quiz-option">
+                            <label>
+                                <input type="radio" name="q2" value="a"> 3-5 years
+                            </label>
+                        </div>
+                        <div class="quiz-option">
+                            <label>
+                                <input type="radio" name="q2" value="b"> 10-15 years
+                            </label>
+                        </div>
+                        <div class="quiz-option">
+                            <label>
+                                <input type="radio" name="q2" value="c"> 15-50 years depending on species
+                            </label>
+                        </div>
+                        <button onclick="checkAnswer('q2', 'c', 'Correct! Fast-growing timber trees (pine) mature in 15-25 years, while hardwoods (teak, mahogany) take 25-50 years but fetch higher prices.')">Check Answer</button>
+                        <div class="feedback" id="q2-feedback"></div>
+                    </div>
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">3. What is the main benefit of planting nitrogen-fixing trees in agroforestry?</div>
+                        <div class="quiz-option">
+                            <label>
+                                <input type="radio" name="q3" value="a"> They grow very tall
+                            </label>
+                        </div>
+                        <div class="quiz-option">
+                            <label>
+                                <input type="radio" name="q3" value="b"> They improve soil fertility naturally, reducing need for fertilizer
+                            </label>
+                        </div>
+                        <div class="quiz-option">
+                            <label>
+                                <input type="radio" name="q3" value="c"> They produce more fruit than other trees
+                            </label>
+                        </div>
+                        <button onclick="checkAnswer('q3', 'b', 'Correct! Nitrogen-fixing trees (acacias, legumes) enrich soil, allowing better crop growth underneath and reducing fertilizer costs.')">Check Answer</button>
+                        <div class="feedback" id="q3-feedback"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="project-section">
+                    <div class="project-title">🚀 Real-World Project: Tree Planting Plan</div>
+                    <p style="margin-bottom: 20px;">Create a comprehensive tree planting plan for your property.</p>
+                    <div class="deliverable">
+                        <strong>Part 1: Land Assessment</strong>
+                        <p>Document your land: size (hectares), elevation, slope, soil type, rainfall, existing vegetation, water sources. Include a simple map showing where different areas of your land are located. Note which areas are currently productive vs. degraded.</p>
+                    </div>
+                    <div class="deliverable">
+                        <strong>Part 2: Tree Species Selection</strong>
+                        <p>Based on your climate and goals, select 3-5 tree species to plant. For each: species name, why selected, expected growth rate, income potential, time to maturity, spacing requirements. Explain why each species suits your land.</p>
+                    </div>
+                    <div class="deliverable">
+                        <strong>Part 3: Agroforestry Design</strong>
+                        <p>Create a simple layout/diagram of your planting plan. Show: tree positions, spacing between trees, where you'll plant secondary crops (if agroforestry), water points, access paths. Include scale (e.g., 1cm = 10m).</p>
+                    </div>
+                    <div class="deliverable">
+                        <strong>Part 4: Seedling Sourcing</strong>
+                        <p>Identify 2-3 tree nurseries in your area. For each: name, location, contact, species available, prices, delivery options. Calculate total seedlings needed for your plan (based on spacing). List total budget for seedlings.</p>
+                    </div>
+                    <div class="deliverable">
+                        <strong>Part 5: Site Preparation Plan</strong>
+                        <p>Detail your preparation activities: land clearing (labor days needed), hole preparation (size, depth, number), materials needed (compost, mulch, stakes), labor requirements. Create timeline: when you'll do each activity, how many workers needed, estimated cost.</p>
+                    </div>
+                    <div class="deliverable">
+                        <strong>Part 6: Cost-Benefit Analysis</strong>
+                        <p>Calculate startup costs (seedlings, labor, materials, tools). Estimate income timeline: when you'll start getting returns (years 1-5 for fruit/firewood, year 15+ for timber). Project 20-year income. Calculate break-even point.</p>
+                    </div>
+                    <div class="deliverable">
+                        <strong>Part 7: Management Schedule</strong>
+                        <p>Create a 10-year maintenance schedule: years 1-3 (weeding, watering), years 4-10 (thinning, pruning), harvest timeline. For each year, list what you'll do, when, why, and expected labor/cost.</p>
+                    </div>
+                    <div class="deliverable">
+                        <strong>Part 8: Long-Term Business Strategy</strong>
+                        <p>Explain how forestry/agroforestry fits into your overall farm business plan. How will tree income complement your current activities? How does this diversify your income and reduce risk? What's your 20-year vision for your land?</p>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 30px; padding: 20px; background: #f0f0f0; border-radius: 8px; text-align: center;">
+                <p style="color: #2d5016; font-weight: bold; margin-bottom: 10px;">Module 1 Complete!</p>
+                <p>You've learned the fundamentals of forestry and agroforestry. Ready for Module 2: Nursery & Propagation?</p>
+                <button onclick="alert('Great work! Move on to Module 2 when ready.')">Next Module</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function checkAnswer(questionId, correctAnswer, feedback) {
+            const selected = document.querySelector(`input[name="${questionId}"]:checked`);
+            const feedbackDiv = document.getElementById(`${questionId}-feedback`);
+            if (!selected) {
+                alert('Please select an answer first!');
+                return;
+            }
+            if (selected.value === correctAnswer) {
+                feedbackDiv.className = 'feedback correct';
+                feedbackDiv.textContent = '✓ ' + feedback;
+                updateProgress();
+            } else {
+                feedbackDiv.className = 'feedback incorrect';
+                feedbackDiv.textContent = '✗ Incorrect. ' + feedback;
+            }
+        }
+        function updateProgress() {
+            const totalQuestions = 3;
+            const answered = document.querySelectorAll('.feedback.correct').length;
+            const percent = Math.round((answered / totalQuestions) * 100);
+            document.getElementById('progressFill').style.width = percent + '%';
+            document.getElementById('progressFill').textContent = percent + '%';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ostrich Farming - Module 1: Introduction & Basics</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background: #f9f9f9; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .header { background: linear-gradient(135deg, #8B4513 0%, #D2B48C 100%); color: white; padding: 30px; border-radius: 10px; margin-bottom: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .header p { font-size: 1.2em; opacity: 0.9; }
+        .content { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .section { margin-bottom: 40px; }
+        .section h2 { color: #8B4513; font-size: 1.8em; margin-bottom: 20px; border-bottom: 3px solid #D2B48C; padding-bottom: 10px; }
+        .learning-objectives { background: #FFF8DC; padding: 20px; border-left: 5px solid #D2B48C; margin-bottom: 20px; border-radius: 5px; }
+        .learning-objectives ul { list-style-position: inside; }
+        .learning-objectives li { margin-bottom: 8px; }
+        .video-container { background: #f5f5f5; padding: 15px; margin-bottom: 15px; border-radius: 5px; border-left: 4px solid #D2B48C; }
+        .video-container h3 { color: #8B4513; margin-bottom: 10px; }
+        iframe { width: 100%; height: 400px; border-radius: 5px; border: none; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th { background: #8B4513; color: white; padding: 15px; text-align: left; }
+        td { padding: 12px; border-bottom: 1px solid #ddd; }
+        tr:hover { background: #f5f5f5; }
+        .implementation-step { background: #fafafa; padding: 15px; margin-bottom: 15px; border-radius: 5px; border-left: 4px solid #D2B48C; }
+        .implementation-step h3 { color: #8B4513; margin-bottom: 8px; }
+        .quiz-section { background: #FFF8DC; padding: 20px; border-radius: 5px; border: 2px solid #D2B48C; }
+        .quiz-section h3 { color: #8B4513; margin-bottom: 20px; }
+        .quiz-question { margin-bottom: 20px; background: white; padding: 15px; border-radius: 5px; }
+        .quiz-question p { font-weight: bold; margin-bottom: 10px; }
+        .quiz-option { margin-left: 20px; margin-bottom: 8px; }
+        .quiz-option input[type="radio"] { margin-right: 8px; }
+        .feedback { margin-top: 10px; padding: 10px; border-radius: 5px; display: none; }
+        .feedback.show { display: block; }
+        .feedback.correct { background: #c8e6c9; color: #1a4d7a; border-left: 4px solid #D2B48C; }
+        .feedback.incorrect { background: #ffcdd2; color: #c62828; border-left: 4px solid #c62828; }
+        .project-section { background: #FFF8DC; padding: 20px; border-radius: 5px; border: 2px solid #D2B48C; }
+        .project-section h2 { color: #8B4513; }
+        .project-item { background: white; padding: 15px; margin: 15px 0; border-radius: 5px; border-left: 4px solid #D2B48C; }
+        .project-item h4 { color: #8B4513; margin-bottom: 8px; }
+        .progress-bar { background: #e0e0e0; height: 10px; border-radius: 5px; overflow: hidden; margin-bottom: 20px; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, #8B4513, #D2B48C); width: 0%; transition: width 0.3s; }
+        .next-module { margin-top: 30px; padding: 20px; background: #FFF8DC; border-radius: 5px; text-align: center; }
+        .next-module a { display: inline-block; background: #8B4513; color: white; padding: 12px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background 0.3s; }
+        .next-module a:hover { background: #D2B48C; }
+        @media (max-width: 768px) { .header h1 { font-size: 1.8em; } iframe { height: 300px; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🐦 Ostrich Farming</h1>
+            <p>Module 1: Introduction & Basics</p>
+        </div>
+
+        <div class="content">
+            <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+            <div class="section">
+                <div class="learning-objectives">
+                    <h2>📚 Learning Objectives</h2>
+                    <ul>
+                        <li>Understand ostrich biology and farm system requirements</li>
+                        <li>Learn about ostrich products (meat, skin, feathers, eggs) and market demand</li>
+                        <li>Calculate startup costs and profitability projections for ostrich farming</li>
+                        <li>Understand housing, land, and infrastructure needs for ostrich operations</li>
+                        <li>Learn about breeding programs and flock management basics</li>
+                        <li>Evaluate capital requirements and ROI for commercial ostrich farming</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🎥 Learning Videos</h2>
+                <div class="video-container"><h3>1. Ostrich Farming Basics: Getting Started with Ostriches</h3><iframe src="https://www.youtube.com/embed/2_7AbjZF7Do?rel=0" allowfullscreen></iframe></div>
+                <div class="video-container"><h3>2. Ostrich Products: Meat, Leather, Feathers & Eggs</h3><iframe src="https://www.youtube.com/embed/t8MvG-KCpEo?rel=0" allowfullscreen></iframe></div>
+                <div class="video-container"><h3>3. Ostrich Housing & Land Requirements: Building the Right Setup</h3><iframe src="https://www.youtube.com/embed/5K-oZmyHH5E?rel=0" allowfullscreen></iframe></div>
+                <div class="video-container"><h3>4. Ostrich Breeding & Flock Management: Maximizing Production</h3><iframe src="https://www.youtube.com/embed/Y8RJqTfPDKc?rel=0" allowfullscreen></iframe></div>
+                <div class="video-container"><h3>5. Ostrich Economics: Profitability & Market Analysis</h3><iframe src="https://www.youtube.com/embed/WLQTjm9K0sE?rel=0" allowfullscreen></iframe></div>
+            </div>
+
+            <div class="section">
+                <h2>📊 Ostrich Products Market Comparison - African Markets</h2>
+                <table><thead><tr><th>Product</th><th>Market Price</th><th>Annual Per Bird</th><th>Demand Level</th><th>Profitability</th></tr></thead><tbody>
+                        <tr><td>Prime Meat (25-35 kg)</td><td>$8-12/kg</td><td>$200-350/year</td><td>High (restaurants, hotels)</td><td>Very High</td></tr>
+                        <tr><td>Leather Skins</td><td>$50-100/skin</td><td>$50-100/year</td><td>High (fashion, luxury)</td><td>Very High</td></tr>
+                        <tr><td>Feathers</td><td>$2-5/kg</td><td>$10-30/year</td><td>Medium (crafts, bedding)</td><td>Moderate</td></tr>
+                        <tr><td>Eggs</td><td>$5-10/egg</td><td>$30-80/year</td><td>Medium (specialty markets)</td><td>Moderate</td></tr>
+                    </tbody></table>
+            </div>
+
+            <div class="section">
+                <h2>📋 6 Implementation Steps</h2>
+                <div class="implementation-step"><h3>Step 1: Assess Your Capital & Land Resources</h3><p>Ostrich farming requires significant upfront investment. Minimum startup: 5 birds ($5,000-8,000), 2-3 hectares land ($2,000-5,000), housing/fencing ($3,000-6,000), equipment ($1,000). Total first year: $11,000-19,000. Ensure you have access to capital, flat land, and reliable water source. Start small (5-10 birds) to learn management before scaling.</p></div>
+                <div class="implementation-step"><h3>Step 2: Secure Land & Build Housing Infrastructure</h3><p>Ostriches need 0.5 hectares per bird minimum. Housing: strong fencing (1.8m tall), shelter for shade/rain, nesting areas for breeders, separate pens for chicks. Invest in quality fencing ($2-3/meter) - ostriches are powerful and will break weak barriers. Ensure drainage and protection from predators (lions, hyenas, wild dogs). Water: 20-30 liters/day per bird.</p></div>
+                <div class="implementation-step"><h3>Step 3: Source Quality Breeding Birds</h3><p>Purchase from established farms or reputable breeders only. Inspect birds for health (clear eyes, clean vents, strong legs). Best age: 2-3 years for production. Breeding pair $3,000-5,000 each. Required ratio: 1 male per 2-3 females for stable flock. Build 5-10 bird flock before attempting breeding. Quarantine new birds 30 days before mixing with flock.</p></div>
+                <div class="implementation-step"><h3>Step 4: Develop a Feed & Nutrition Strategy</h3><p>Ostriches eat grains (maize, sorghum), legumes (lucerne, beans), vegetables. Daily cost: $0.50-0.80/bird. Commercial pellet feed available but expensive. Mix homemade rations: 60% grain + 30% forage + 10% protein supplement. Provide fresh water always. Chicks require high-protein diet (24-28%) for first 6 months. Budget: $150-200/bird/year for feed.</p></div>
+                <div class="implementation-step"><h3>Step 5: Plan for Breeding, Incubation & Chick Management</h3><p>Breeding season: Oct-May (cooler months). Eggs hatch in 42 days. Incubation: 1-2 chicks per breeding bird annually (realistic). Alternative: buy chicks ($50-100 each) rather than breeding. Chick mortality: 10-20% normal. Brooding: temperature 35°C week 1, decrease to 25°C by week 8. Small incubator costs $500-1,000. Consider outsourcing incubation initially.</p></div>
+                <div class="implementation-step"><h3>Step 6: Establish Market Channels & Value-Add Planning</h3><p>Meat: restaurants, hotels, specialty butchers (premium customers). Leather: tanneries, fashion designers, luxury goods. Start with meat sales (easiest entry). Process/butcher on-farm or use licensed facility. Price premium meat at $10-12/kg to high-end restaurants. Build relationships before harvest. Consider value-add: cured meats, leather crafts, feather products for additional revenue streams.</p></div>
+            </div>
+
+            <div class="section">
+                <div class="quiz-section"><h3>🎯 Module 1 Quiz</h3>
+                    <div class="quiz-question"><p>1. What is the typical annual meat yield from one mature ostrich?</p>
+                        <div class="quiz-option"><input type="radio" name="q1" value="a" id="q1a"><label for="q1a">a) 25-35 kg at $8-12/kg = $200-350 revenue</label></div>
+                        <div class="quiz-option"><input type="radio" name="q1" value="b" id="q1b"><label for="q1b">b) 100+ kg annually</label></div>
+                        <div class="quiz-option"><input type="radio" name="q1" value="c" id="q1c"><label for="q1c">c) Unpredictable, varies wildly</label></div>
+                        <button onclick="checkAnswer('q1', 'a', 'Correct! One mature ostrich yields 25-35 kg prime meat annually.')">Check Answer</button>
+                        <div id="feedback-q1" class="feedback"></div>
+                    </div>
+                    <div class="quiz-question"><p>2. What minimum land area is needed per ostrich?</p>
+                        <div class="quiz-option"><input type="radio" name="q2" value="a" id="q2a"><label for="q2a">a) 0.1 hectares (intensive confinement)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q2" value="b" id="q2b"><label for="q2b">b) 0.5 hectares per bird minimum</label></div>
+                        <div class="quiz-option"><input type="radio" name="q2" value="c" id="q2c"><label for="q2c">c) 2+ hectares (excessive)</label></div>
+                        <button onclick="checkAnswer('q2', 'b', 'Correct! Ostriches need 0.5 hectares minimum for healthy behavior.')">Check Answer</button>
+                        <div id="feedback-q2" class="feedback"></div>
+                    </div>
+                    <div class="quiz-question"><p>3. Realistic first-year startup cost for 5 ostriches with infrastructure?</p>
+                        <div class="quiz-option"><input type="radio" name="q3" value="a" id="q3a"><label for="q3a">a) $2,000-3,000 (insufficient)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q3" value="b" id="q3b"><label for="q3b">b) $11,000-19,000 (realistic budget)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q3" value="c" id="q3c"><label for="q3c">c) $50,000+ (excessive)</label></div>
+                        <button onclick="checkAnswer('q3', 'b', 'Correct! Quality infrastructure & birds require $11-19k initial investment.')">Check Answer</button>
+                        <div id="feedback-q3" class="feedback"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="project-section"><h2>🚀 Real-World Project: Ostrich Farm Feasibility Study</h2>
+                    <div class="project-item"><h4>Part 1: Market Research & Demand Assessment</h4><p>Research demand for ostrich products in your region: meat, leather, eggs, feathers. Interview 10 potential buyers (restaurants, leather craftsmen, traders). What prices do they pay? Annual volume needed? Identify if market exists before investing in birds.</p></div>
+                    <div class="project-item"><h4>Part 2: Land & Infrastructure Planning</h4><p>Identify 2-3 potential farm sites with 2-3+ hectares. Assess: soil quality, water availability (permanent source), proximity to market, security, accessibility. Sketch housing design: fencing height, shelters, nesting pens, water systems. Calculate construction cost locally.</p></div>
+                    <div class="project-item"><h4>Part 3: Capital Requirements & Financing</h4><p>Create detailed budget: land acquisition, housing/fencing, initial birds (5-10), equipment, first 12 months feed. Total cost: ___. Identify funding sources: own savings, bank loan, investor partnership. Create repayment plan based on projected revenue.</p></div>
+                    <div class="project-item"><h4>Part 4: Production Projections & Economics</h4><p>Model Year 1-3 production: 5 birds → assume 3-5 meat birds harvestable Year 1 → revenue ___. Year 2: flock breeding → 8-10 birds → harvest ___. Year 3: full production. Calculate annual profit/loss each year including feed costs ($150-200/bird).</p></div>
+                    <div class="project-item"><h4>Part 5: Risk Assessment & Mitigation</h4><p>Identify risks: disease outbreak, predators, market price drops, drought. Mitigation strategies: biosecurity, fencing/guards, diversified buyers, water storage. Insurance: available? Cost? Create contingency plan for 20% revenue shortfall.</p></div>
+                    <div class="project-item"><h4>Part 6: Value-Add Opportunities</h4><p>Beyond raw meat/leather, identify value-add: cured meats, leather goods, feather crafts, fertilizer (manure), tourism (farm visits). Research 2-3 value-add options. Cost to implement? Revenue potential? Prioritize highest-margin opportunity.</p></div>
+                    <div class="project-item"><h4>Part 7: Sourcing & Supplier Strategy</h4><p>Find 3 reputable ostrich breeders willing to sell breeding stock. Get quotes for 5-10 birds. Assess quality/health records. Negotiate price, payment terms, quarantine period, return policy. Secure commitment before finalizing finance plan.</p></div>
+                    <div class="project-item"><h4>Part 8: Implementation Timeline & Go/No-Go Decision</h4><p>Create 24-month implementation plan: months 1-3 site prep, months 3-4 housing build, months 4-5 bird procurement, months 5-24 production. Decision checkpoint: complete feasibility study. Go forward only if market demand proven AND capital secured.</p></div>
+                </div>
+            </div>
+
+            <div class="next-module"><p>Ready to continue? Move to Module 2: Housing, Land Preparation & Infrastructure</p><a href="ostrich-farming-module-2.html">→ Next Module</a></div>
+        </div>
+    </div>
+    <script>
+        function checkAnswer(q, a, f) { const s = document.querySelector(`input[name="${q}"]:checked`); const e = document.getElementById(`feedback-${q}`); if (!s) { alert('Select answer'); return; } e.className = 'feedback show ' + (s.value === a ? 'correct' : 'incorrect'); e.textContent = (s.value === a ? '✓ ' : '✗ Incorrect. ') + f; updateProgress(); }
+        function updateProgress() { const c = document.querySelectorAll('input[type="radio"]:checked').length; const t = document.querySelectorAll('input[type="radio"]').length / 3; const p = (c / t) * 100; document.getElementById('progressFill').style.width = p + '%'; localStorage.setItem('ostrich1', p); }
+        window.addEventListener('load', () => { const s = localStorage.getItem('ostrich1'); if (s) document.getElementById('progressFill').style.width = s + '%'; });
+    </script>
+</body>
+</html>

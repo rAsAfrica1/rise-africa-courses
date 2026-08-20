@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pig Farming Module 3: Feed & Nutrition</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; color: #333; }
+        .module-container { max-width: 1100px; margin: 0 auto; background: white; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); overflow: hidden; }
+        .module-header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px; }
+        .module-header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .module-meta { display: flex; gap: 30px; margin-top: 15px; font-size: 0.95em; }
+        .progress-indicator { background: rgba(255,255,255,0.2); padding: 10px 20px; border-radius: 20px; display: inline-block; margin-top: 15px; }
+        .module-content { padding: 40px; }
+        .section { margin-bottom: 45px; border-bottom: 2px solid #f0f0f0; padding-bottom: 40px; }
+        .section:last-child { border-bottom: none; }
+        .section h2 { color: #667eea; font-size: 1.8em; margin-bottom: 20px; border-left: 4px solid #667eea; padding-left: 15px; }
+        .video-item { background: #f9f9f9; border-radius: 8px; overflow: hidden; border: 1px solid #e0e0e0; margin-bottom: 20px; }
+        .video-embed { width: 100%; aspect-ratio: 16/9; border: none; }
+        .video-details { padding: 15px; }
+        .video-details h4 { margin-bottom: 8px; }
+        .cc-badge { display: inline-block; background: #4CAF50; color: white; padding: 3px 8px; border-radius: 3px; font-size: 0.85em; margin-top: 8px; }
+        .nutrition-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+        .nutrition-table th { background: #667eea; color: white; padding: 12px; text-align: left; }
+        .nutrition-table td { padding: 12px; border-bottom: 1px solid #f0f0f0; }
+        .nutrition-table tr:hover { background: #f9f9f9; }
+        .info-box { background: #f0f7ff; padding: 20px; border-radius: 8px; border-left: 4px solid #2196F3; margin-bottom: 20px; }
+        .info-box h3 { color: #2196F3; margin-bottom: 15px; }
+        .implementation-steps { background: #fff3e0; padding: 25px; border-radius: 8px; border-left: 4px solid #FF9800; }
+        .step { background: white; padding: 20px; margin-bottom: 15px; border-radius: 6px; border-left: 4px solid #FF9800; }
+        .step-number { display: inline-block; background: #FF9800; color: white; width: 35px; height: 35px; border-radius: 50%; text-align: center; line-height: 35px; font-weight: bold; margin-right: 10px; }
+        .step-title { font-weight: bold; color: #333; }
+        .step-details { background: #f5f5f5; padding: 12px; border-radius: 4px; margin-top: 10px; font-size: 0.9em; }
+        .quiz-section { background: #f3e5f5; padding: 25px; border-radius: 8px; border-left: 4px solid #9C27B0; }
+        .quiz-question { background: white; padding: 20px; margin-bottom: 20px; border-radius: 6px; border-left: 4px solid #9C27B0; }
+        .quiz-options { display: flex; flex-direction: column; gap: 10px; }
+        .quiz-option { display: flex; gap: 10px; padding: 10px; background: #f9f9f9; border-radius: 4px; cursor: pointer; border: 1px solid #e0e0e0; }
+        .quiz-option:hover { background: #f0f0f0; }
+        .project-section { background: #e8f5e9; padding: 25px; border-radius: 8px; border-left: 4px solid #4CAF50; }
+        .project-section h3 { color: #4CAF50; margin-bottom: 15px; }
+        .deliverables ul { list-style: none; padding-left: 0; }
+        .deliverables li { padding: 8px 0; padding-left: 25px; position: relative; }
+        .deliverables li:before { content: "✓"; position: absolute; left: 0; color: #4CAF50; font-weight: bold; }
+        .btn { padding: 12px 25px; border: none; border-radius: 6px; font-size: 0.95em; cursor: pointer; transition: all 0.3s ease; font-weight: 600; }
+        .btn-primary { background: #667eea; color: white; }
+        .btn-secondary { background: #f0f0f0; color: #333; border: 1px solid #ddd; }
+        .button-group { display: flex; gap: 15px; margin-top: 25px; }
+    </style>
+</head>
+<body>
+    <div class="module-container">
+        <div class="module-header">
+            <h1>🌾 Module 3: Feed & Nutrition Planning</h1>
+            <p>Sustainable Pig Farming Course</p>
+            <div class="module-meta">
+                <div>⏱️ Estimated time: 3 hours</div>
+                <div>📊 Level: Intermediate</div>
+                <div>✅ Status: Not Started</div>
+            </div>
+            <div class="progress-indicator">
+                Overall Progress: <strong id="progress">0%</strong>
+            </div>
+        </div>
+
+        <div class="module-content">
+            <div class="section">
+                <h2>📚 Learning Objectives</h2>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li>Understand pig nutritional requirements by growth stage</li>
+                    <li>Calculate feed needs and costs for your herd</li>
+                    <li>Identify local, affordable feed sources</li>
+                    <li>Create balanced rations using local ingredients</li>
+                    <li>Implement effective feeding management systems</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>🎥 Learning Videos (5 videos, ~48 minutes)</h2>
+
+                <div class="video-item">
+                    <iframe class="video-embed" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="video-details">
+                        <h4>Video 1: Pig Nutrition Basics (9:30)</h4>
+                        <p>Understanding protein, energy, minerals, and vitamins. Nutritional requirements at different life stages.</p>
+                        <p><strong>Source:</strong> CGIAR Research</p>
+                        <span class="cc-badge">CC-BY Licensed</span>
+                    </div>
+                </div>
+
+                <div class="video-item">
+                    <iframe class="video-embed" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="video-details">
+                        <h4>Video 2: Local Feed Sources for African Farms (11:45)</h4>
+                        <p>How to use grains, vegetables, legumes, food waste, and forages as pig feed. Cost-saving strategies.</p>
+                        <p><strong>Source:</strong> One Acre Fund</p>
+                        <span class="cc-badge">CC-BY Licensed</span>
+                    </div>
+                </div>
+
+                <div class="video-item">
+                    <iframe class="video-embed" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="video-details">
+                        <h4>Video 3: Creating Balanced Feed Rations (10:20)</h4>
+                        <p>How to mix feeds to meet nutritional requirements. Simple ratio calculations using local ingredients.</p>
+                        <p><strong>Source:</strong> FAO Agriculture</p>
+                        <span class="cc-badge">CC-BY Licensed</span>
+                    </div>
+                </div>
+
+                <div class="video-item">
+                    <iframe class="video-embed" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="video-details">
+                        <h4>Video 4: Feed Cost Calculations & Budgeting (8:15)</h4>
+                        <p>How to calculate feed costs, compare different feeding programs, and optimize for profit.</p>
+                        <p><strong>Source:</strong> Agricultural Extension</p>
+                        <span class="cc-badge">CC-BY Licensed</span>
+                    </div>
+                </div>
+
+                <div class="video-item">
+                    <iframe class="video-embed" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="video-details">
+                        <h4>Video 5: Farmer Stories - Feed Management Success (8:30)</h4>
+                        <p>Real examples of African farmers optimizing pig feed for profit, reducing costs, and improving growth.</p>
+                        <p><strong>Source:</strong> Heifer International</p>
+                        <span class="cc-badge">CC-BY Licensed</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🍽️ Pig Nutrition Requirements</h2>
+
+                <div class="info-box">
+                    <h3>Typical Daily Feed Consumption & Costs</h3>
+                    <table class="nutrition-table">
+                        <thead>
+                            <tr>
+                                <th>Life Stage</th>
+                                <th>Weight (kg)</th>
+                                <th>Daily Feed (kg)</th>
+                                <th>Protein Need (%)</th>
+                                <th>Est. Cost/Month</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Piglets (weaned)</td>
+                                <td>5-10</td>
+                                <td>0.3-0.5</td>
+                                <td>18-20%</td>
+                                <td>$8-15</td>
+                            </tr>
+                            <tr>
+                                <td>Growers</td>
+                                <td>25-60</td>
+                                <td>1.5-2.0</td>
+                                <td>15-18%</td>
+                                <td>$20-35</td>
+                            </tr>
+                            <tr>
+                                <td>Finishers</td>
+                                <td>60-110</td>
+                                <td>2.0-2.5</td>
+                                <td>12-16%</td>
+                                <td>$25-40</td>
+                            </tr>
+                            <tr>
+                                <td>Breeding Sows</td>
+                                <td>150-200</td>
+                                <td>2.0-3.0</td>
+                                <td>13-16%</td>
+                                <td>$30-50</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 style="color: #667eea; margin-top: 20px; margin-bottom: 15px;">Common Local Feed Ingredients & Their Value</h3>
+
+                <div class="info-box">
+                    <h3>Energy Sources</h3>
+                    <ul style="margin-left: 20px; line-height: 1.8; font-size: 0.95em;">
+                        <li><strong>Grains:</strong> Maize, sorghum, millet (60-75% of diet) - Good energy source, relatively affordable</li>
+                        <li><strong>Root crops:</strong> Cassava, sweet potato (30-40% of diet) - Lower protein, good energy, often waste products available</li>
+                        <li><strong>Legumes:</strong> Beans, peas, groundnuts (protein + energy) - 15-25% protein, helps balance diet</li>
+                    </ul>
+                </div>
+
+                <div class="info-box">
+                    <h3>Protein Sources</h3>
+                    <ul style="margin-left: 20px; line-height: 1.8; font-size: 0.95em;">
+                        <li><strong>Legumes:</strong> Soybeans, groundnut cake (35-50% protein) - Premium but essential for young pigs</li>
+                        <li><strong>Fishmeal or insect protein:</strong> (60-70% protein) - Excellent if available, may be expensive</li>
+                        <li><strong>Food scraps:</strong> Vegetable waste, brewery waste, restaurant refuse - Free protein source if cleaned properly</li>
+                        <li><strong>Green forage:</strong> Alfalfa, improved pasture (10-15% protein) - Fresh or dried, excellent supplement</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🔧 Implementation Steps</h2>
+
+                <div class="implementation-steps">
+                    <h3>Week 3-4 Action Items</h3>
+
+                    <div class="step">
+                        <span class="step-number">1</span>
+                        <div class="step-title">Research Local Feed Availability & Pricing</div>
+                        <div class="step-details">
+                            <ul style="margin-left: 20px; margin-top: 8px;">
+                                <li>Identify 5-10 local feed sources: grain mills, legume suppliers, vegetable markets, food processors</li>
+                                <li>Get current pricing for: maize, cassava, soybeans, legumes, commercial feed</li>
+                                <li>Ask about seasonal price variations and availability</li>
+                                <li>Identify free/waste feed sources: brewery waste, market scraps, kitchen refuse</li>
+                                <li>Create price comparison table</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <span class="step-number">2</span>
+                        <div class="step-title">Calculate Feed Requirements for Your Herd</div>
+                        <div class="step-details">
+                            <ul style="margin-left: 20px; margin-top: 8px;">
+                                <li>Decide your stocking plan: e.g., 2 breeding sows + 20 grower pigs</li>
+                                <li>Use table above to calculate total daily feed needed (kg)</li>
+                                <li>Calculate monthly feed needs: daily feed × 30 days</li>
+                                <li>Document in spreadsheet with production cycle timeline</li>
+                                <li>Example: 20 grower pigs × 1.8 kg/day = 36 kg/day = 1,080 kg/month</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <span class="step-number">3</span>
+                        <div class="step-title">Create 3 Alternative Feeding Programs</div>
+                        <div class="step-details">
+                            <ul style="margin-left: 20px; margin-top: 8px;">
+                                <li><strong>Program A:</strong> 100% commercial feed (most expensive, fastest growth)</li>
+                                <li><strong>Program B:</strong> Mix of local grains + protein (moderate cost and growth)</li>
+                                <li><strong>Program C:</strong> Mostly local feed + waste products (cheapest, slower growth)</li>
+                                <li>Calculate monthly feed cost for each program</li>
+                                <li>Estimate growth rates and profitability for each option</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <span class="step-number">4</span>
+                        <div class="step-title">Develop Your Feed Ration Recipes</div>
+                        <div class="step-details">
+                            <ul style="margin-left: 20px; margin-top: 8px;">
+                                <li>Choose one feeding program from step 3</li>
+                                <li>For each life stage (piglets, growers, finishers), create a recipe</li>
+                                <li>Example grower pig ration: 60% maize + 20% cassava + 15% legumes + 5% supplement = 100%</li>
+                                <li>Verify protein content meets requirements (see table above)</li>
+                                <li>Test recipe with experienced farmers - ask if they've used similar combinations</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <span class="step-number">5</span>
+                        <div class="step-title">Set Up Feeding System & Schedules</div>
+                        <div class="step-details">
+                            <ul style="margin-left: 20px; margin-top: 8px;">
+                                <li>Decide on feeding frequency: Once daily (morning) vs twice daily (morning + evening)</li>
+                                <li>Feeding pigs by weight group: separate piglets, growers, finishers for right nutrition</li>
+                                <li>Plan feeding infrastructure: troughs, feeders, water systems</li>
+                                <li>Create daily feeding schedule and portion sizes</li>
+                                <li>Plan feed storage: keep dry, protected from pests and rain</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <span class="step-number">6</span>
+                        <div class="step-title">Create 12-Month Feed Budget & Supplier Contracts</div>
+                        <div class="step-details">
+                            <ul style="margin-left: 20px; margin-top: 8px;">
+                                <li>Project monthly feed costs for your entire herd over 12 months</li>
+                                <li>Account for seasonal price changes and production cycles</li>
+                                <li>Identify suppliers and negotiate pricing/agreements</li>
+                                <li>Create backup plans for feed shortage or price spikes</li>
+                                <li>Plan for contingencies: drought, crop failure, market disruptions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>📝 Knowledge Check Quiz</h2>
+
+                <div class="quiz-section">
+                    <div class="quiz-question">
+                        <h4>Question 1: What is the typical daily feed requirement for a 50 kg grower pig?</h4>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q1" value="a">
+                                <span>A) 0.5 kg</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q1" value="b">
+                                <span>B) 1.5-2.0 kg</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q1" value="c">
+                                <span>C) 5.0 kg</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q1" value="d">
+                                <span>D) 10 kg</span>
+                            </label>
+                        </div>
+                        <div style="margin-top: 10px; padding: 10px; background: #e8f5e9; border-radius: 4px; display: none;" id="feedback1">
+                            <strong>Correct Answer: B</strong> - Grower pigs need 1.5-2.0 kg daily, which is about 3% of body weight.
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h4>Question 2: Which ingredient should NOT be more than 40% of a grower pig's diet?</h4>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q2" value="a">
+                                <span>A) Maize (energy source)</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q2" value="b">
+                                <span>B) Cassava (low protein, can cause digestive issues if too much)</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q2" value="c">
+                                <span>C) Legumes (high protein)</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q2" value="d">
+                                <span>D) All can be unlimited</span>
+                            </label>
+                        </div>
+                        <div style="margin-top: 10px; padding: 10px; background: #e8f5e9; border-radius: 4px; display: none;" id="feedback2">
+                            <strong>Correct Answer: B</strong> - Cassava is low in protein and can cause digestive upset if over-used.
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h4>Question 3: What is the primary advantage of using local feed sources?</h4>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q3" value="a">
+                                <span>A) Lower cost and greater sustainability</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q3" value="b">
+                                <span>B) They're always more nutritious</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q3" value="c">
+                                <span>C) Pigs prefer local feed</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q3" value="d">
+                                <span>D) No advantages</span>
+                            </label>
+                        </div>
+                        <div style="margin-top: 10px; padding: 10px; background: #e8f5e9; border-radius: 4px; display: none;" id="feedback3">
+                            <strong>Correct Answer: A</strong> - Local feeds reduce costs and support circular farming systems.
+                        </div>
+                    </div>
+
+                    <div class="button-group">
+                        <button class="btn btn-primary" onclick="checkQuiz()">Submit Quiz</button>
+                        <button class="btn btn-secondary" onclick="resetQuiz()">Clear Answers</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🎯 Real-World Project</h2>
+
+                <div class="project-section">
+                    <h3>Project: Complete Feeding Program Design</h3>
+                    <div class="deliverables">
+                        <h4>Create a detailed feeding program document:</h4>
+                        <ul>
+                            <li>Feed availability research summary</li>
+                            <li>Herd production plan with timeline</li>
+                            <li>3 alternative feeding program analyses</li>
+                            <li>Ration recipes for each life stage</li>
+                            <li>Monthly feed cost projections (12 months)</li>
+                            <li>Feed storage and handling plan</li>
+                            <li>Supplier contact information and pricing agreements</li>
+                            <li>Contingency plans for price spikes or shortage</li>
+                            <li>Feeding schedule and daily portions</li>
+                            <li>Feed efficiency calculation (kg feed per kg gain)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section" style="background: #f5f5f5; padding: 20px; border-radius: 8px; border-left: 4px solid #667eea;">
+                <h3 style="color: #667eea; margin-bottom: 10px;">📖 Next Up: Module 4</h3>
+                <p><strong>Health & Disease Management</strong></p>
+                <p style="color: #666; margin-top: 10px;">Learn to recognize common pig diseases, implement preventive health practices, and create a veterinary care plan.</p>
+            </div>
+
+            <div class="button-group" style="margin-top: 40px;">
+                <button class="btn btn-primary" onclick="localStorage.setItem('module3-complete', 'true'); alert('✓ Module 3 complete!')">Mark Module as Complete</button>
+                <button class="btn btn-secondary" onclick="window.print()">Print/Save as PDF</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function checkQuiz() {
+            const answers = { q1: 'b', q2: 'b', q3: 'a' };
+            let score = 0;
+            for (let i = 1; i <= 3; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selected && selected.value === answers[`q${i}`]) {
+                    score++;
+                    document.getElementById(`feedback${i}`).style.display = 'block';
+                }
+            }
+            alert(`Quiz Score: ${score}/3\n${score >= 2 ? '✓ PASSED' : '✗ Review and try again'}`);
+        }
+        function resetQuiz() {
+            document.querySelectorAll('.quiz-option input').forEach(el => el.checked = false);
+            document.querySelectorAll('[id^="feedback"]').forEach(el => el.style.display = 'none');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fishing & Fish Farming - Module 4: Health & Disease Management</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background: #f9f9f9; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .header { background: linear-gradient(135deg, #1a4d7a 0%, #2980b9 100%); color: white; padding: 30px; border-radius: 10px; margin-bottom: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .header p { font-size: 1.2em; opacity: 0.9; }
+        .content { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .section { margin-bottom: 40px; }
+        .section h2 { color: #1a4d7a; font-size: 1.8em; margin-bottom: 20px; border-bottom: 3px solid #2980b9; padding-bottom: 10px; }
+        .learning-objectives { background: #e3f2fd; padding: 20px; border-left: 5px solid #2980b9; margin-bottom: 20px; border-radius: 5px; }
+        .learning-objectives ul { list-style-position: inside; }
+        .learning-objectives li { margin-bottom: 8px; }
+        .video-container { background: #f5f5f5; padding: 15px; margin-bottom: 15px; border-radius: 5px; border-left: 4px solid #2980b9; }
+        .video-container h3 { color: #1a4d7a; margin-bottom: 10px; }
+        iframe { width: 100%; height: 400px; border-radius: 5px; border: none; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th { background: #1a4d7a; color: white; padding: 15px; text-align: left; }
+        td { padding: 12px; border-bottom: 1px solid #ddd; }
+        tr:hover { background: #f5f5f5; }
+        .implementation-step { background: #fafafa; padding: 15px; margin-bottom: 15px; border-radius: 5px; border-left: 4px solid #2980b9; }
+        .implementation-step h3 { color: #1a4d7a; margin-bottom: 8px; }
+        .quiz-section { background: #fff3e0; padding: 20px; border-radius: 5px; border: 2px solid #2980b9; }
+        .quiz-section h3 { color: #1a4d7a; margin-bottom: 20px; }
+        .quiz-question { margin-bottom: 20px; background: white; padding: 15px; border-radius: 5px; }
+        .quiz-question p { font-weight: bold; margin-bottom: 10px; }
+        .quiz-option { margin-left: 20px; margin-bottom: 8px; }
+        .quiz-option input[type="radio"] { margin-right: 8px; }
+        .feedback { margin-top: 10px; padding: 10px; border-radius: 5px; display: none; }
+        .feedback.show { display: block; }
+        .feedback.correct { background: #c8e6c9; color: #1a4d7a; border-left: 4px solid #2980b9; }
+        .feedback.incorrect { background: #ffcdd2; color: #c62828; border-left: 4px solid #c62828; }
+        .project-section { background: #e1f5fe; padding: 20px; border-radius: 5px; border: 2px solid #2980b9; }
+        .project-section h2 { color: #1a4d7a; }
+        .project-item { background: white; padding: 15px; margin: 15px 0; border-radius: 5px; border-left: 4px solid #2980b9; }
+        .project-item h4 { color: #1a4d7a; margin-bottom: 8px; }
+        .progress-bar { background: #e0e0e0; height: 10px; border-radius: 5px; overflow: hidden; margin-bottom: 20px; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, #1a4d7a, #2980b9); width: 0%; transition: width 0.3s; }
+        .next-module { margin-top: 30px; padding: 20px; background: #e3f2fd; border-radius: 5px; text-align: center; }
+        .next-module a { display: inline-block; background: #1a4d7a; color: white; padding: 12px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background 0.3s; }
+        .next-module a:hover { background: #2980b9; }
+        @media (max-width: 768px) { .header h1 { font-size: 1.8em; } iframe { height: 300px; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎣 Fishing & Fish Farming</h1>
+            <p>Module 4: Health & Disease Management</p>
+        </div>
+
+        <div class="content">
+            <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+            <div class="section">
+                <div class="learning-objectives">
+                    <h2>📚 Learning Objectives</h2>
+                    <ul>
+                        <li>Recognize common fish diseases and health problems</li>
+                        <li>Understand prevention strategies and biosecurity measures</li>
+                        <li>Learn treatment options for common diseases</li>
+                        <li>Master water quality monitoring as disease prevention</li>
+                        <li>Develop health records and monitoring systems</li>
+                        <li>Know when to consult veterinary professionals</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🎥 Learning Videos</h2>
+                <div class="video-container"><h3>1. Common Fish Diseases: Recognition & Prevention</h3><iframe src="https://www.youtube.com/embed/0LQ-fUBN72A?rel=0" allowfullscreen></iframe></div>
+                <div class="video-container"><h3>2. Parasites in Fish Farms: Detection & Treatment</h3><iframe src="https://www.youtube.com/embed/rFjVGvhQwUQ?rel=0" allowfullscreen></iframe></div>
+                <div class="video-container"><h3>3. Water Quality & Disease Prevention</h3><iframe src="https://www.youtube.com/embed/bQ6r8E9IUWY?rel=0" allowfullscreen></iframe></div>
+                <div class="video-container"><h3>4. Biosecurity: Keeping Your Fish Healthy</h3><iframe src="https://www.youtube.com/embed/9W7kVHH0bXo?rel=0" allowfullscreen></iframe></div>
+                <div class="video-container"><h3>5. Fish Health Records & Monitoring Systems</h3><iframe src="https://www.youtube.com/embed/YHf6X5p3Wao?rel=0" allowfullscreen></iframe></div>
+            </div>
+
+            <div class="section">
+                <h2>📊 Common Fish Diseases & Treatment</h2>
+                <table><thead><tr><th>Disease</th><th>Cause</th><th>Symptoms</th><th>Prevention</th><th>Treatment</th></tr></thead><tbody>
+                        <tr><td>Ich (White Spot)</td><td>Parasite</td><td>White spots on body</td><td>Temperature control</td><td>Salt bath, isolate</td></tr>
+                        <tr><td>Fin Rot</td><td>Bacteria</td><td>Ragged/eroded fins</td><td>Water quality</td><td>Antibacterial treatment</td></tr>
+                        <tr><td>Gill Disease</td><td>Parasites/Fungi</td><td>Rapid breathing</td><td>Water testing</td><td>Antifungal, aerate</td></tr>
+                        <tr><td>Ulcers/Sores</td><td>Bacteria</td><td>Open wounds</td><td>Reduce stress</td><td>Isolate, treat water</td></tr>
+                    </tbody></table>
+            </div>
+
+            <div class="section">
+                <h2>📋 6 Implementation Steps</h2>
+                <div class="implementation-step"><h3>Step 1: Establish Biosecurity Protocols</h3><p>Never share nets, equipment, or hands between ponds without disinfecting. Source fingerlings only from certified, disease-free hatcheries. Quarantine new fish for 2-3 weeks before adding to main pond. Train all staff on hygiene: wash hands/equipment before handling fish.</p></div>
+                <div class="implementation-step"><h3>Step 2: Monitor Water Quality Daily</h3><p>Poor water = fish stress = disease. Test daily: pH (6.5-8.0), dissolved oxygen (5+ mg/L), temperature (optimal 24-28°C for tilapia). High ammonia (>0.5 ppm) = water change needed. Use aerators/paddles 24/7 to maintain oxygen. Poor water quality causes 80% of fish disease.</p></div>
+                <div class="implementation-step"><h3>Step 3: Learn Disease Recognition</h3><p>Watch for: white spots (ich), ragged fins (fin rot), rapid gasping (gill disease), open sores (ulcers), behavioral changes (lethargic, unusual swimming). Sample 10-20 fish weekly: observe closely, take photos. Early detection = easier/cheaper treatment. Keep disease journal with dates, symptoms, actions taken.</p></div>
+                <div class="implementation-step"><h3>Step 4: Implement Prevention First</h3><p>Vaccination: Some diseases preventable via fingerling vaccination (cost $0.05-0.20 per fish). Probiotics: Add beneficial bacteria to water monthly ($10-20/month). Good nutrition: Proper feed reduces immune stress. Stress reduction: Avoid overcrowding, maintain stable water conditions. Healthy fish resist disease naturally.</p></div>
+                <div class="implementation-step"><h3>Step 5: Treat Disease Early & Isolate Sick Fish</h3><p>If disease detected: remove sick fish to separate tank immediately. Treat water: salt bath for parasites ($1-2 cost), antibacterial treatments for bacteria ($5-10). Follow dosage carefully - improper treatment wastes money and increases drug resistance. Most treatments work within 3-7 days.</p></div>
+                <div class="implementation-step"><h3>Step 6: Keep Detailed Health Records</h3><p>Track: date, fish sampled, health observations, water quality readings, actions taken, treatment costs. Identify patterns: does disease spike in wet season? after certain fingerling batches? Adjust management based on data. Share records with veterinarian for professional guidance if needed.</p></div>
+            </div>
+
+            <div class="section">
+                <div class="quiz-section"><h3>🎯 Module 4 Quiz</h3>
+                    <div class="quiz-question"><p>1. What is the most common cause of fish disease in poorly managed farms?</p>
+                        <div class="quiz-option"><input type="radio" name="q1" value="a" id="q1a"><label for="q1a">a) Poor water quality (ammonia, low oxygen)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q1" value="b" id="q1b"><label for="q1b">b) Overcrowded stocking density</label></div>
+                        <div class="quiz-option"><input type="radio" name="q1" value="c" id="q1c"><label for="q1c">c) Genetic weakness in fish</label></div>
+                        <button onclick="checkAnswer('q1', 'a', 'Correct! Poor water quality causes 80% of disease. Prevention = good water management.')">Check Answer</button>
+                        <div id="feedback-q1" class="feedback"></div>
+                    </div>
+                    <div class="quiz-question"><p>2. What should you do if you suspect Ich (white spots) in your pond?</p>
+                        <div class="quiz-option"><input type="radio" name="q2" value="a" id="q2a"><label for="q2a">a) Kill all infected fish (too contagious)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q2" value="b" id="q2b"><label for="q2b">b) Isolate sick fish, treat with salt bath, raise temperature</label></div>
+                        <div class="quiz-option"><input type="radio" name="q2" value="c" id="q2c"><label for="q2c">c) Ignore it, fish develop immunity</label></div>
+                        <button onclick="checkAnswer('q2', 'b', 'Correct! Early isolation and salt treatment cures Ich. Most fish recover.')">Check Answer</button>
+                        <div id="feedback-q2" class="feedback"></div>
+                    </div>
+                    <div class="quiz-question"><p>3. How long should you quarantine new fingerlings before adding to main pond?</p>
+                        <div class="quiz-option"><input type="radio" name="q3" value="a" id="q3a"><label for="q3a">a) 1-2 days (minimal)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q3" value="b" id="q3b"><label for="q3b">b) 2-3 weeks (sufficient for observation)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q3" value="c" id="q3c"><label for="q3c">c) 2-3 months (excessive)</label></div>
+                        <button onclick="checkAnswer('q3', 'b', 'Correct! 2-3 weeks quarantine detects hidden disease before main pond exposure.')">Check Answer</button>
+                        <div id="feedback-q3" class="feedback"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="project-section"><h2>🚀 Real-World Project: Health Management Plan</h2>
+                    <div class="project-item"><h4>Part 1: Biosecurity Protocol</h4><p>Document your biosecurity practices: equipment disinfection procedure, fingerling sourcing requirements, visitor protocols, staff hygiene practices. Create simple signs for pond perimeter. Train all helpers on these practices. Cost to implement: ___.</p></div>
+                    <div class="project-item"><h4>Part 2: Water Quality Monitoring Schedule</h4><p>Create daily testing checklist: pH, dissolved oxygen, temperature, ammonia, nitrite. Identify testing tools: extension office (free, weekly), DIY kit ($50-100), private lab ($5-10/test). Create data collection form. Set alerts: when to take action (e.g., if O2 < 3mg/L, run aerator 24/7).</p></div>
+                    <div class="project-item"><h4>Part 3: Disease Recognition Training</h4><p>Take photos of common fish diseases. Learn: Ich, fin rot, gill disease, ulcers symptoms. Create visual reference sheet for your farm. Practice: examine 20-30 fish weekly, describe observations, note any changes. Develop "early warning" indicators of problems.</p></div>
+                    <div class="project-item"><h4>Part 4: Prevention Investment</h4><p>Research: vaccination costs ($0.05-0.20/fish), probiotic supplements ($10-20/month), good feed premium (vs. cheap feed), stress reduction (proper density: ___ fish/m³). Calculate annual prevention cost. Compare: prevention cost vs. disease treatment cost (typically 10x cheaper).</p></div>
+                    <div class="project-item"><h4>Part 5: Treatment Readiness</h4><p>Set up treatment station: separate tank (500L), aeration system, salt for salt baths, basic antibacterial treatments. Identify local fish health professional (vet, extension, experienced farmer). Create treatment decision tree: what to do if Ich vs. fin rot vs. gills disease.</p></div>
+                    <div class="project-item"><h4>Part 6: Health Records System</h4><p>Create spreadsheet or notebook: date, observations, water test results, actions taken, treatments & costs, outcomes. Review monthly: identify patterns, trends, improvements needed. Use data to refine management practices.</p></div>
+                    <div class="project-item"><h4>Part 7: Staff Training Plan</h4><p>Create training checklist for all staff: biosecurity protocols, daily monitoring tasks, disease recognition, emergency procedures. Schedule: monthly training updates, quarterly disease reviews. Document training completion.</p></div>
+                    <div class="project-item"><h4>Part 8: Emergency Response Protocol</h4><p>What if: fish mortality spikes? Disease outbreak? Water contamination? Create action plan: immediate steps, when to isolate, when to seek professional help, communication with relevant authorities if needed.</p></div>
+                </div>
+            </div>
+
+            <div class="next-module"><p>Ready to continue? Move to Module 5: Growth Monitoring & Harvest Planning</p><a href="fishing-fish-farming-module-5.html">→ Next Module</a></div>
+        </div>
+    </div>
+    <script>
+        function checkAnswer(q, a, f) { const s = document.querySelector(`input[name="${q}"]:checked`); const e = document.getElementById(`feedback-${q}`); if (!s) { alert('Select answer'); return; } e.className = 'feedback show ' + (s.value === a ? 'correct' : 'incorrect'); e.textContent = (s.value === a ? '✓ ' : '✗ Incorrect. ') + f; updateProgress(); }
+        function updateProgress() { const c = document.querySelectorAll('input[type="radio"]:checked').length; const t = document.querySelectorAll('input[type="radio"]').length / 3; const p = (c / t) * 100; document.getElementById('progressFill').style.width = p + '%'; localStorage.setItem('fishing4', p); }
+        window.addEventListener('load', () => { const s = localStorage.getItem('fishing4'); if (s) document.getElementById('progressFill').style.width = s + '%'; });
+    </script>
+</body>
+</html>

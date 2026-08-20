@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poultry Farming Module 2: Housing & Equipment Design</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #8b0000 0%, #a52a2a 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #8b0000 0%, #a52a2a 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .section:last-of-type {
+            border-bottom: none;
+        }
+
+        h2 {
+            color: #8b0000;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            border-left: 5px solid #a52a2a;
+            padding-left: 15px;
+        }
+
+        h3 {
+            color: #a52a2a;
+            font-size: 1.3em;
+            margin-top: 20px;
+            margin-bottom: 15px;
+        }
+
+        .video-container {
+            background: #f9f9f9;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 25px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            border-radius: 6px;
+            display: block;
+        }
+
+        .video-title {
+            color: #8b0000;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background: #a52a2a;
+            color: white;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        tr:hover {
+            background: #fff3cd;
+        }
+
+        .implementation-step {
+            background: #fff3cd;
+            border-left: 4px solid #a52a2a;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .step-number {
+            color: #8b0000;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .step-title {
+            color: #333;
+            font-weight: bold;
+            font-size: 1.05em;
+            margin: 10px 0;
+        }
+
+        .step-content {
+            color: #555;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .quiz-section {
+            background: #e8f4f8;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+        .quiz-title {
+            color: #8b0000;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .quiz-question {
+            background: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 6px;
+            border-left: 4px solid #a52a2a;
+        }
+
+        .quiz-question-text {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.05em;
+        }
+
+        .quiz-option {
+            margin: 10px 0;
+        }
+
+        .quiz-option label {
+            cursor: pointer;
+            display: block;
+            padding: 10px;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        .quiz-option label:hover {
+            background: #f0f0f0;
+        }
+
+        .quiz-option input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .feedback {
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: 4px;
+            display: none;
+        }
+
+        .feedback.correct {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            display: block;
+        }
+
+        .feedback.incorrect {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+            display: block;
+        }
+
+        button {
+            background: linear-gradient(135deg, #8b0000 0%, #a52a2a 100%);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-top: 15px;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .project-section {
+            background: #e8f4f8;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 30px 0;
+            border: 2px solid #a52a2a;
+        }
+
+        .project-title {
+            color: #8b0000;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .deliverable {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border-left: 3px solid #a52a2a;
+        }
+
+        .progress-bar {
+            background: #f0f0f0;
+            border-radius: 10px;
+            height: 25px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            background: linear-gradient(90deg, #8b0000 0%, #a52a2a 100%);
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.9em;
+            transition: width 0.3s ease;
+        }
+
+        .checklist {
+            list-style: none;
+        }
+
+        .checklist li {
+            padding: 10px;
+            margin: 5px 0;
+            background: #f9f9f9;
+            border-radius: 4px;
+            border-left: 3px solid #a52a2a;
+        }
+
+        .checklist input[type="checkbox"] {
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .learning-objectives {
+            background: #e8f4f8;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #a52a2a;
+        }
+
+        .learning-objectives h3 {
+            color: #8b0000;
+            margin-top: 0;
+        }
+
+        .learning-objectives ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .learning-objectives li {
+            padding: 8px 0;
+            border-bottom: 1px solid #d0d0d0;
+        }
+
+        .learning-objectives li:last-child {
+            border-bottom: none;
+        }
+
+        .learning-objectives li:before {
+            content: "✓ ";
+            color: #8b0000;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.6em;
+            }
+
+            iframe {
+                height: 250px;
+            }
+
+            table {
+                font-size: 0.9em;
+            }
+
+            th, td {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏠 Module 2: Housing & Equipment Design</h1>
+            <p>Sustainable Poultry Farming Course - Rise Africa Skills</p>
+        </div>
+
+        <div class="content">
+            <!-- Learning Objectives -->
+            <div class="learning-objectives">
+                <h3>📚 Learning Objectives</h3>
+                <ul>
+                    <li>Understand housing requirements for different poultry types</li>
+                    <li>Design cost-effective, sustainable poultry housing</li>
+                    <li>Calculate space requirements by bird size</li>
+                    <li>Identify essential equipment and materials</li>
+                    <li>Plan for climate-appropriate housing (tropical, arid, temperate)</li>
+                    <li>Estimate construction costs for your region</li>
+                </ul>
+            </div>
+
+            <!-- Progress Bar -->
+            <div>
+                <p style="font-weight: bold; color: #8b0000;">Your Progress</p>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill" style="width: 0%">0%</div>
+                </div>
+            </div>
+
+            <!-- Videos Section -->
+            <div class="section">
+                <h2>🎥 Learning Videos</h2>
+                <p>Watch these 5 videos to understand poultry housing design. Pause frequently, take notes, and rewatch as needed.</p>
+
+                <div class="video-container">
+                    <div class="video-title">Video 1: Basic Poultry Housing Requirements</div>
+                    <iframe src="https://www.youtube.com/embed/h3-pOQdxr6s" allowfullscreen></iframe>
+                </div>
+
+                <div class="video-container">
+                    <div class="video-title">Video 2: Building Low-Cost Chicken Coops</div>
+                    <iframe src="https://www.youtube.com/embed/wLjSqLU7TJY" allowfullscreen></iframe>
+                </div>
+
+                <div class="video-container">
+                    <div class="video-title">Video 3: Housing for Different Climate Zones</div>
+                    <iframe src="https://www.youtube.com/embed/Hh0KCVoqkMc" allowfullscreen></iframe>
+                </div>
+
+                <div class="video-container">
+                    <div class="video-title">Video 4: Poultry Equipment & Infrastructure</div>
+                    <iframe src="https://www.youtube.com/embed/WC5HJrcNZ-8" allowfullscreen></iframe>
+                </div>
+
+                <div class="video-container">
+                    <div class="video-title">Video 5: Sustainable Housing Materials & Methods</div>
+                    <iframe src="https://www.youtube.com/embed/W7KhCvXzjWQ" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <!-- Housing Requirements Table -->
+            <div class="section">
+                <h2>📋 Poultry Housing Requirements</h2>
+                <p>Different bird types need different amounts of space and housing specifications:</p>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Poultry Type</th>
+                                <th>Floor Space (per bird)</th>
+                                <th>Roost Space</th>
+                                <th>Nesting Boxes</th>
+                                <th>Recommended Housing Style</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Broiler Chickens</strong></td>
+                                <td>0.5-0.7 m²</td>
+                                <td>15 cm per bird</td>
+                                <td>1 box per 4-5 birds</td>
+                                <td>Deep litter system or cage</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Layers (Hens)</strong></td>
+                                <td>0.7-1.0 m²</td>
+                                <td>20-25 cm per bird</td>
+                                <td>1 box per 2-3 birds</td>
+                                <td>Battery cage or aviary system</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Turkeys</strong></td>
+                                <td>1.5-2.0 m²</td>
+                                <td>40 cm per bird</td>
+                                <td>1 box per 3-4 birds</td>
+                                <td>Shed with roosting bars</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ducks</strong></td>
+                                <td>1.0-1.5 m²</td>
+                                <td>25-30 cm per bird</td>
+                                <td>1 box per 2-3 birds</td>
+                                <td>Elevated coop with water access</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Geese</strong></td>
+                                <td>2.0-2.5 m²</td>
+                                <td>40-50 cm per bird</td>
+                                <td>1 box per 2-3 birds</td>
+                                <td>Shed with pasture access</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Guinea Fowl</strong></td>
+                                <td>0.7-0.9 m²</td>
+                                <td>20 cm per bird</td>
+                                <td>1 box per 3 birds</td>
+                                <td>Shed with elevated roosting</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Housing Specifications -->
+            <div class="section">
+                <h2>🏗️ Housing Specifications</h2>
+
+                <h3>Essential Housing Features:</h3>
+                <table style="width: 100%; border-collapse: collapse;">
+                    <tr>
+                        <td style="padding: 15px; border: 1px solid #ddd; width: 30%; font-weight: bold; background: #f9f9f9;">Feature</td>
+                        <td style="padding: 15px; border: 1px solid #ddd; font-weight: bold; background: #f9f9f9;">Requirement</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 15px; border: 1px solid #ddd;"><strong>Ventilation</strong></td>
+                        <td style="padding: 15px; border: 1px solid #ddd;">30-50% of wall area for air circulation; prevents heat, ammonia, moisture</td>
+                    </tr>
+                    <tr style="background: #f9f9f9;">
+                        <td style="padding: 15px; border: 1px solid #ddd;"><strong>Lighting</strong></td>
+                        <td style="padding: 15px; border: 1px solid #ddd;">Natural: 1 window per 30 m²; Artificial: 10-15 lux minimum for 14-16 hours/day</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 15px; border: 1px solid #ddd;"><strong>Flooring</strong></td>
+                        <td style="padding: 15px; border: 1px solid #ddd;">10-15 cm litter depth (wood shavings, straw); elevated for waterfowl</td>
+                    </tr>
+                    <tr style="background: #f9f9f9;">
+                        <td style="padding: 15px; border: 1px solid #ddd;"><strong>Temperature Control</strong></td>
+                        <td style="padding: 15px; border: 1px solid #ddd;">Chicks: 32-35°C; Adults: 18-24°C; adequate insulation/ventilation</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 15px; border: 1px solid #ddd;"><strong>Perches/Roosting Bars</strong></td>
+                        <td style="padding: 15px; border: 1px solid #ddd;">Height: 60-100 cm; 5-8 cm diameter poles; spaced 25-30 cm apart</td>
+                    </tr>
+                    <tr style="background: #f9f9f9;">
+                        <td style="padding: 15px; border: 1px solid #ddd;"><strong>Nesting Boxes</strong></td>
+                        <td style="padding: 15px; border: 1px solid #ddd;">25×30×40 cm (H×W×D); dark, quiet, private; lined with soft material</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 15px; border: 1px solid #ddd;"><strong>Water Systems</strong></td>
+                        <td style="padding: 15px; border: 1px solid #ddd;">Automatic drinkers or manual troughs; 1 meter of drinking space per 100 birds</td>
+                    </tr>
+                    <tr style="background: #f9f9f9;">
+                        <td style="padding: 15px; border: 1px solid #ddd;"><strong>Feeding Systems</strong></td>
+                        <td style="padding: 15px; border: 1px solid #ddd;">4-5 cm feeder space per bird; feeders 10-15 cm above litter; protected from waste</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 15px; border: 1px solid #ddd;"><strong>Drainage</strong></td>
+                        <td style="padding: 15px; border: 1px solid #ddd;">Sloped flooring (1:100); gutters; proper waste management system</td>
+                    </tr>
+                    <tr style="background: #f9f9f9;">
+                        <td style="padding: 15px; border: 1px solid #ddd;"><strong>Fencing/Security</strong></td>
+                        <td style="padding: 15px; border: 1px solid #ddd;">1.5-2.0 m height; buried 30 cm to prevent predator entry; lockable gates</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Implementation Steps -->
+            <div class="section">
+                <h2>⚙️ Implementation Steps</h2>
+
+                <div class="implementation-step">
+                    <div class="step-number">STEP 1: Assess Your Space & Climate</div>
+                    <div class="step-title">Evaluate location, size, and environmental conditions</div>
+                    <div class="step-content">
+                        <strong>What to do:</strong>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Measure your available land/building space</li>
+                            <li>Document your climate zone (tropical, temperate, arid, highland)</li>
+                            <li>Identify prevailing winds and sun exposure</li>
+                            <li>Check drainage and water availability</li>
+                            <li>Note proximity to neighbors and water sources</li>
+                        </ul>
+                        <p style="margin-top: 15px;"><strong>Expected output:</strong> Site assessment document with dimensions, climate data, photos</p>
+                        <p><strong>Time needed:</strong> 2-3 hours</p>
+                    </div>
+                </div>
+
+                <div class="implementation-step">
+                    <div class="step-number">STEP 2: Determine Housing Type & Design</div>
+                    <div class="step-title">Select appropriate housing system for your birds and climate</div>
+                    <div class="step-content">
+                        <strong>What to do:</strong>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Decide on housing type (deep litter, battery cage, aviary, free-range, etc.)</li>
+                            <li>Sketch your housing design on paper</li>
+                            <li>Calculate total floor space needed (bird count × space requirement)</li>
+                            <li>Plan ventilation and lighting arrangements</li>
+                            <li>Research traditional/local building methods that work in your area</li>
+                        </ul>
+                        <p style="margin-top: 15px;"><strong>Expected output:</strong> Detailed housing design sketch with measurements</p>
+                        <p><strong>Time needed:</strong> 3-4 hours</p>
+                    </div>
+                </div>
+
+                <div class="implementation-step">
+                    <div class="step-number">STEP 3: Calculate Space Requirements</div>
+                    <div class="step-title">Determine exact dimensions based on flock size</div>
+                    <div class="step-content">
+                        <strong>What to do:</strong>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Multiply expected bird count by space per bird requirement</li>
+                            <li>Calculate roost/perch space needed</li>
+                            <li>Determine nesting box quantity</li>
+                            <li>Plan feeder and water system dimensions</li>
+                            <li>Document all calculations with formulas</li>
+                        </ul>
+                        <p style="margin-top: 15px;"><strong>Expected output:</strong> Space calculations spreadsheet with all dimensions</p>
+                        <p><strong>Time needed:</strong> 1-2 hours</p>
+                    </div>
+                </div>
+
+                <div class="implementation-step">
+                    <div class="step-number">STEP 4: List Building Materials & Equipment</div>
+                    <div class="step-title">Identify all materials needed for construction</div>
+                    <div class="step-content">
+                        <strong>What to do:</strong>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>List structural materials (poles, wood, metal frame, etc.)</li>
+                            <li>Identify roofing materials with insulation properties</li>
+                            <li>Plan fencing materials and hardware</li>
+                            <li>List equipment needed (feeders, drinkers, perches, nesting boxes)</li>
+                            <li>Include bedding materials (wood shavings, straw, sand)</li>
+                            <li>Note ventilation components and lighting fixtures</li>
+                        </ul>
+                        <p style="margin-top: 15px;"><strong>Expected output:</strong> Complete materials list with quantities and local suppliers</p>
+                        <p><strong>Time needed:</strong> 2-3 hours</p>
+                    </div>
+                </div>
+
+                <div class="implementation-step">
+                    <div class="step-number">STEP 5: Obtain Cost Quotes & Develop Budget</div>
+                    <div class="step-title">Research prices and create construction budget</div>
+                    <div class="step-content">
+                        <strong>What to do:</strong>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Visit local hardware stores and suppliers</li>
+                            <li>Get price quotes for all materials</li>
+                            <li>Calculate labor costs (hire builders or DIY)</li>
+                            <li>Add 10-15% contingency for unexpected costs</li>
+                            <li>Create detailed construction budget breakdown</li>
+                            <li>Calculate cost per bird for comparison</li>
+                        </ul>
+                        <p style="margin-top: 15px;"><strong>Expected output:</strong> Detailed budget sheet with material costs, labor, and total investment</p>
+                        <p><strong>Time needed:</strong> 3-4 hours</p>
+                    </div>
+                </div>
+
+                <div class="implementation-step">
+                    <div class="step-number">STEP 6: Plan Implementation Timeline</div>
+                    <div class="step-title">Create construction and setup schedule</div>
+                    <div class="step-content">
+                        <strong>What to do:</strong>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Create month-by-month construction timeline</li>
+                            <li>Identify optimal construction season (weather considerations)</li>
+                            <li>Plan material procurement schedule</li>
+                            <li>Schedule labor if hiring workers</li>
+                            <li>Plan equipment installation and testing before birds arrive</li>
+                            <li>Build in buffer time for delays</li>
+                        </ul>
+                        <p style="margin-top: 15px;"><strong>Expected output:</strong> 12-month implementation timeline with key milestones</p>
+                        <p><strong>Time needed:</strong> 2-3 hours</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Knowledge Check Quiz -->
+            <div class="section">
+                <div class="quiz-section">
+                    <div class="quiz-title">✓ Knowledge Check Quiz</div>
+                    <p>Answer these 3 questions to verify your understanding. You need 2/3 (66%) to pass. You can retake the quiz as many times as needed.</p>
+
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">Question 1: How much floor space does a broiler chicken need?</div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q1" value="a"> (A) 0.3-0.4 m²</label>
+                        </div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q1" value="b"> (B) 0.5-0.7 m²</label>
+                        </div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q1" value="c"> (C) 1.0-1.5 m²</label>
+                        </div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q1" value="d"> (D) 2.0+ m²</label>
+                        </div>
+                        <div class="feedback" id="q1-feedback"></div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">Question 2: What percentage of wall area should be ventilation in poultry housing?</div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q2" value="a"> (A) 10-15%</label>
+                        </div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q2" value="b"> (B) 20-25%</label>
+                        </div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q2" value="c"> (C) 30-50%</label>
+                        </div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q2" value="d"> (D) 60%+</label>
+                        </div>
+                        <div class="feedback" id="q2-feedback"></div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">Question 3: How many nesting boxes should you have for 50 laying hens?</div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q3" value="a"> (A) 10-15 boxes</label>
+                        </div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q3" value="b"> (B) 15-20 boxes</label>
+                        </div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q3" value="c"> (C) 20-25 boxes</label>
+                        </div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q3" value="d"> (D) 30+ boxes</label>
+                        </div>
+                        <div class="feedback" id="q3-feedback"></div>
+                    </div>
+
+                    <button onclick="submitQuiz()">Submit Quiz</button>
+                    <div id="quiz-result" style="margin-top: 20px; font-weight: bold; font-size: 1.1em;"></div>
+                </div>
+            </div>
+
+            <!-- Real-World Project -->
+            <div class="section">
+                <div class="project-section">
+                    <div class="project-title">🎯 Real-World Project: Housing Design & Budget Plan</div>
+                    <p>Create a complete poultry housing design plan for your actual farm operation.</p>
+
+                    <h3>Project Deliverables (Submit as PDF or Word):</h3>
+
+                    <div class="deliverable">
+                        <strong>1. Site Assessment Report</strong>
+                        <p>1 page including: land dimensions, climate zone, photos of proposed location, drainage analysis</p>
+                    </div>
+
+                    <div class="deliverable">
+                        <strong>2. Housing Design Sketch</strong>
+                        <p>Scale drawing with dimensions showing: floor plan, side elevation, ventilation placement, roof design</p>
+                    </div>
+
+                    <div class="deliverable">
+                        <strong>3. Space Calculation Document</strong>
+                        <p>Mathematical calculations for: total floor space, roost space, nesting boxes, feeder/drinker requirements</p>
+                    </div>
+
+                    <div class="deliverable">
+                        <strong>4. Materials & Equipment List</strong>
+                        <p>Comprehensive list with quantities: structural materials, roofing, fencing, equipment, bedding supplies</p>
+                    </div>
+
+                    <div class="deliverable">
+                        <strong>5. Construction Budget</strong>
+                        <p>Detailed breakdown: materials costs, labor costs, equipment, contingency (10-15%), total investment, cost per bird</p>
+                    </div>
+
+                    <div class="deliverable">
+                        <strong>6. 12-Month Implementation Timeline</strong>
+                        <p>Month-by-month schedule: material procurement, construction phases, equipment installation, occupancy date</p>
+                    </div>
+
+                    <div class="deliverable">
+                        <strong>7. Climate Adaptation Plan</strong>
+                        <p>How your design addresses: seasonal temperature changes, rainfall, wind, seasonal income/expense variations</p>
+                    </div>
+
+                    <div class="deliverable">
+                        <strong>8. Photos & Documentation</strong>
+                        <p>Photos of site, reference images, local building examples, sketches of design details</p>
+                    </div>
+
+                    <p style="margin-top: 20px;"><strong>Total length:</strong> 8-12 pages with photos</p>
+                    <p><strong>Grading criteria:</strong></p>
+                    <ul style="margin-left: 20px;">
+                        <li><strong>Completeness (20%):</strong> All 8 deliverables included</li>
+                        <li><strong>Realism (20%):</strong> Design is feasible in your context with available resources</li>
+                        <li><strong>Accuracy (20%):</strong> Calculations are correct, costs reflect actual local prices</li>
+                        <li><strong>Clarity (20%):</strong> Well-organized, easy to follow, photos are clear</li>
+                        <li><strong>Detail (20%):</strong> Thorough research, specific to your location</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Success Criteria -->
+            <div class="section">
+                <h2>✅ Module Success Criteria</h2>
+                <ul class="checklist">
+                    <li><input type="checkbox"> Watched all 5 videos about poultry housing</li>
+                    <li><input type="checkbox"> Completed all 6 implementation steps on your property</li>
+                    <li><input type="checkbox"> Scored 2/3 (66%) or higher on knowledge check quiz</li>
+                    <li><input type="checkbox"> Submitted all 8 project deliverables</li>
+                    <li><input type="checkbox"> Housing design is appropriate for your bird type and climate</li>
+                    <li><input type="checkbox"> Budget is realistic and detailed</li>
+                    <li><input type="checkbox"> Timeline is practical and accounts for seasonal factors</li>
+                </ul>
+            </div>
+
+            <!-- Next Steps -->
+            <div class="section" style="background: #e8f4f8; padding: 20px; border-radius: 8px;">
+                <h2 style="margin-top: 0;">🚀 Ready for the Next Module?</h2>
+                <p>Once you've completed this module and submitted your housing design project, you're ready for:</p>
+                <p style="font-size: 1.1em; font-weight: bold; color: #8b0000;">📖 Module 3: Feed & Nutrition Planning</p>
+                <p>You'll learn to create balanced feeding programs using local, affordable ingredients.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function submitQuiz() {
+            let score = 0;
+            const answers = {
+                q1: 'b',
+                q2: 'c',
+                q3: 'a'
+            };
+
+            const feedback = {
+                q1: {
+                    correct: 'Correct! Broiler chickens need 0.5-0.7 m² of floor space to prevent overcrowding and disease.',
+                    incorrect: 'Incorrect. Broiler chickens need 0.5-0.7 m² of floor space. Too much or too little space affects their growth and health.'
+                },
+                q2: {
+                    correct: 'Correct! 30-50% of wall area should be ventilation to maintain good air circulation and prevent ammonia buildup.',
+                    incorrect: 'Incorrect. Ventilation should cover 30-50% of wall area. Proper ventilation is essential for bird health.'
+                },
+                q3: {
+                    correct: 'Correct! With 1 nesting box per 2-3 laying hens, 50 hens need 17-25 boxes. 10-15 is insufficient.',
+                    incorrect: 'Incorrect. For 50 laying hens, use 1 box per 2-3 birds, so you need 17-25 boxes. Too few boxes causes egg damage and conflict.'
+                }
+            };
+
+            for (let i = 1; i <= 3; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                const feedbackDiv = document.getElementById(`q${i}-feedback`);
+
+                if (!selected) {
+                    feedbackDiv.textContent = 'Please select an answer.';
+                    feedbackDiv.className = 'feedback incorrect';
+                    feedbackDiv.style.display = 'block';
+                } else {
+                    const isCorrect = selected.value === answers[`q${i}`];
+                    if (isCorrect) {
+                        score++;
+                        feedbackDiv.textContent = feedback[`q${i}`].correct;
+                        feedbackDiv.className = 'feedback correct';
+                    } else {
+                        feedbackDiv.textContent = feedback[`q${i}`].incorrect;
+                        feedbackDiv.className = 'feedback incorrect';
+                    }
+                    feedbackDiv.style.display = 'block';
+                }
+            }
+
+            const resultDiv = document.getElementById('quiz-result');
+            const percentage = Math.round((score / 3) * 100);
+            resultDiv.textContent = `Score: ${score}/3 (${percentage}%) - ${percentage >= 66 ? '✓ PASS' : '✗ Please review and try again'}`;
+            resultDiv.style.color = percentage >= 66 ? '#155724' : '#721c24';
+
+            localStorage.setItem('module2-quiz-score', score);
+            updateProgress();
+        }
+
+        function updateProgress() {
+            let completed = 0;
+            if (localStorage.getItem('module2-quiz-score')) completed++;
+
+            const progressPercent = (completed / 7) * 100;
+            document.getElementById('progressFill').style.width = progressPercent + '%';
+            document.getElementById('progressFill').textContent = Math.round(progressPercent) + '%';
+
+            localStorage.setItem('module2-progress', progressPercent);
+        }
+
+        window.addEventListener('load', updateProgress);
+    </script>
+</body>
+</html>

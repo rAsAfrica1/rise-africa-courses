@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ostrich Farming - Module 5: Processing, Products & Market Preparation</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background: #f9f9f9; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .header { background: linear-gradient(135deg, #8B4513 0%, #D2B48C 100%); color: white; padding: 30px; border-radius: 10px; margin-bottom: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .header p { font-size: 1.2em; opacity: 0.9; }
+        .content { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .section { margin-bottom: 40px; }
+        .section h2 { color: #8B4513; font-size: 1.8em; margin-bottom: 20px; border-bottom: 3px solid #D2B48C; padding-bottom: 10px; }
+        .learning-objectives { background: #FFF8DC; padding: 20px; border-left: 5px solid #D2B48C; margin-bottom: 20px; border-radius: 5px; }
+        .learning-objectives ul { list-style-position: inside; }
+        .learning-objectives li { margin-bottom: 8px; }
+        .video-container { background: #f5f5f5; padding: 15px; margin-bottom: 15px; border-radius: 5px; border-left: 4px solid #D2B48C; }
+        .video-container h3 { color: #8B4513; margin-bottom: 10px; }
+        iframe { width: 100%; height: 400px; border-radius: 5px; border: none; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th { background: #8B4513; color: white; padding: 15px; text-align: left; }
+        td { padding: 12px; border-bottom: 1px solid #ddd; }
+        tr:hover { background: #f5f5f5; }
+        .implementation-step { background: #fafafa; padding: 15px; margin-bottom: 15px; border-radius: 5px; border-left: 4px solid #D2B48C; }
+        .implementation-step h3 { color: #8B4513; margin-bottom: 8px; }
+        .quiz-section { background: #FFF8DC; padding: 20px; border-radius: 5px; border: 2px solid #D2B48C; }
+        .quiz-section h3 { color: #8B4513; margin-bottom: 20px; }
+        .quiz-question { margin-bottom: 20px; background: white; padding: 15px; border-radius: 5px; }
+        .quiz-question p { font-weight: bold; margin-bottom: 10px; }
+        .quiz-option { margin-left: 20px; margin-bottom: 8px; }
+        .quiz-option input[type="radio"] { margin-right: 8px; }
+        .feedback { margin-top: 10px; padding: 10px; border-radius: 5px; display: none; }
+        .feedback.show { display: block; }
+        .feedback.correct { background: #c8e6c9; color: #1a4d7a; border-left: 4px solid #D2B48C; }
+        .feedback.incorrect { background: #ffcdd2; color: #c62828; border-left: 4px solid #c62828; }
+        .project-section { background: #FFF8DC; padding: 20px; border-radius: 5px; border: 2px solid #D2B48C; }
+        .project-section h2 { color: #8B4513; }
+        .project-item { background: white; padding: 15px; margin: 15px 0; border-radius: 5px; border-left: 4px solid #D2B48C; }
+        .project-item h4 { color: #8B4513; margin-bottom: 8px; }
+        .progress-bar { background: #e0e0e0; height: 10px; border-radius: 5px; overflow: hidden; margin-bottom: 20px; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, #8B4513, #D2B48C); width: 0%; transition: width 0.3s; }
+        .next-module { margin-top: 30px; padding: 20px; background: #FFF8DC; border-radius: 5px; text-align: center; }
+        .next-module a { display: inline-block; background: #8B4513; color: white; padding: 12px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background 0.3s; }
+        .next-module a:hover { background: #D2B48C; }
+        @media (max-width: 768px) { .header h1 { font-size: 1.8em; } iframe { height: 300px; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🐦 Ostrich Farming</h1>
+            <p>Module 5: Processing, Products & Market Preparation</p>
+        </div>
+
+        <div class="content">
+            <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+            <div class="section">
+                <div class="learning-objectives">
+                    <h2>📚 Learning Objectives</h2>
+                    <ul>
+                        <li>Understand ostrich slaughter and butchering processes</li>
+                        <li>Learn meat quality standards and proper handling</li>
+                        <li>Develop leather tanning and leather product processes</li>
+                        <li>Maximize value from byproducts (feathers, bones, organs)</li>
+                        <li>Meet food safety and hygiene regulations</li>
+                        <li>Market products to high-end buyers and restaurants</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🎥 Learning Videos</h2>
+                <div class="video-container"><h3>1. Ostrich Slaughter & Butchering: Humane Methods & Meat Quality</h3><iframe src="https://www.youtube.com/embed/wNBv-rNW8yE?rel=0" allowfullscreen></iframe></div>
+                <div class="video-container"><h3>2. Meat Processing & Cuts: Steaks, Ground Meat, Specialty Cuts</h3><iframe src="https://www.youtube.com/embed/bT1dGZCyzyI?rel=0" allowfullscreen></iframe></div>
+                <div class="video-container"><h3>3. Leather Preparation & Basic Tanning for Ostrich Skins</h3><iframe src="https://www.youtube.com/embed/kh2wP8qvxFU?rel=0" allowfullscreen></iframe></div>
+                <div class="video-container"><h3>4. Value-Adding: Jerky, Sausage, Cured Meats</h3><iframe src="https://www.youtube.com/embed/uJPz9CsFH3M?rel=0" allowfullscreen></iframe></div>
+                <div class="video-container"><h3>5. Marketing to High-End Markets: Premium Restaurant Positioning</h3><iframe src="https://www.youtube.com/embed/Oqw8w5t-5-Y?rel=0" allowfullscreen></iframe></div>
+            </div>
+
+            <div class="section">
+                <h2>📊 Ostrich Product Value Comparison - Revenue per Bird</h2>
+                <table><thead><tr><th>Product Stream</th><th>Output per Bird</th><th>Market Price</th><th>Revenue/Bird</th><th>Processing Complexity</th></tr></thead><tbody>
+                        <tr><td>Whole Meat (raw butcher)</td><td>25-35 kg</td><td>$8-12/kg</td><td>$200-350</td><td>Low (basic butchering)</td></tr>
+                        <tr><td>Premium Meat (restaurants)</td><td>25-35 kg</td><td>$15-25/kg</td><td>$375-875</td><td>Medium (quality cuts, delivery)</td></tr>
+                        <tr><td>Leather/Skin</td><td>1 skin (2-3 sq.m)</td><td>$50-100/skin OR $20-50/sq.m</td><td>$40-150</td><td>High (tanning labor)</td></tr>
+                        <tr><td>Feathers</td><td>2-3 kg/bird</td><td>$2-5/kg</td><td>$6-15</td><td>Low (cleaning, sorting)</td></tr>
+                        <tr><td>Bones/Organs (if used)</td><td>Variable</td><td>$1-3 each OR $0.50/kg</td><td>$10-20</td><td>Low (by-product)</td></tr>
+                        <tr><td><strong>TOTAL POTENTIAL VALUE</strong></td><td></td><td></td><td><strong>$630-1,410</strong></td><td><strong>Medium-High</strong></td></tr>
+                    </tbody></table>
+            </div>
+
+            <div class="section">
+                <h2>📋 6 Implementation Steps</h2>
+                <div class="implementation-step"><h3>Step 1: Plan Slaughter & Butchering Operation</h3><p>Options: 1) On-farm slaughter (requires training, hygiene setup), 2) Licensed abattoir (ensures food safety, adds cost $20-50/bird), 3) Mobile butcher (brings facility to farm). Humane slaughter: must comply with regulations (electric stunning, mechanical, or religious methods). Budget: if using licensed facility, include $2,000-5,000 initial setup, then $20-50/bird ongoing. Clean facility, sanitized tools, proper cooling/storage essential for meat quality.</p></div>
+                <div class="implementation-step"><h3>Step 2: Establish Meat Quality Standards & Traceability</h3><p>Meat quality starts pre-slaughter: low stress handling (stress damages meat quality), proper fasting (24 hours before slaughter reduces contamination). Post-slaughter: rapid chilling (within 2 hours to 4°C), clean storage, proper labeling with date/ID. Document: which bird, slaughter date, destination buyer. Traceability important for premium markets - buyers want to know farm origin, feed type, etc.</p></div>
+                <div class="implementation-step"><h3>Step 3: Develop Meat Cutting & Packaging Strategy</h3><p>Products: steaks (filet, sirloin, $15-25/kg premium), ground meat ($8-12/kg), specialty cuts (neck, ribs). Packaging: vacuum seal (extends shelf life), proper labeling (name, date, weight, farm info). Equipment: butcher knife set $50-100, vacuum sealer $100-200, freezer storage. Sell whole carcass ($8-12/kg) to butchers, OR retail prepared cuts ($15-25/kg) directly to restaurants/consumer. Higher margin on prepared cuts but requires licensing/food safety certification.</p></div>
+                <div class="implementation-step"><h3>Step 4: Explore Leather Value-Add Opportunities</h3><p>Ostrich leather: premium product, highly valued for fashion/luxury goods. Skin area: 2-3 sq.m per bird. Options: 1) Sell raw skin to tannery ($20-30/skin), 2) Basic tanning on-farm (complex, labor-intensive), 3) Outsource tanning ($30-50/skin), 4) Make finished leather goods (bags, shoes - complex). For small operation: sell to tannery (simplest), let them handle value-add. Research local tanneries, get quotes. Leather value: $50-150/skin fully processed.</p></div>
+                <div class="implementation-step"><h3>Step 5: Plan Marketing & Customer Relationship Strategy</h3><p>Premium markets: high-end restaurants, specialty butchers, leather goods makers. Approach: direct sales calls, samples, pricing negotiation. Value proposition: "Farm-raised, grass-fed, premium lean meat from certified farm." Build relationships before harvest - pre-sell if possible. Logistics: can you deliver regularly? Buyers want consistency. Contract: negotiate prices, volumes, delivery schedule. Alternative: direct-to-consumer farmers market (lower volume but higher margin).</p></div>
+                <div class="implementation-step"><h3>Step 6: Establish Record-Keeping & Financial Tracking for Processing</h3><p>Track per bird: slaughter date, carcass weight, meat yield %, leather condition, byproduct value. Calculate: total revenue per bird = meat + leather + feathers + bones. Compare to production cost (feed + labor + processing) = net profit/bird. Example: revenue $400 - cost $250 = $150 profit/bird. Over 12-month cycle on 10-bird harvest = $1,500 total profit. Benchmark against target, adjust marketing/pricing if needed. Annual review: identify highest-margin products, focus marketing there.</p></div>
+            </div>
+
+            <div class="section">
+                <div class="quiz-section"><h3>🎯 Module 5 Quiz</h3>
+                    <div class="quiz-question"><p>1. What is the meat yield from one mature ostrich?</p>
+                        <div class="quiz-option"><input type="radio" name="q1" value="a" id="q1a"><label for="q1a">a) 50-60 kg (too high)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q1" value="b" id="q1b"><label for="q1b">b) 25-35 kg (realistic yield)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q1" value="c" id="q1c"><label for="q1c">c) 10-15 kg (too low)</label></div>
+                        <button onclick="checkAnswer('q1', 'b', 'Correct! 25-35 kg is realistic meat yield from one mature ostrich.')">Check Answer</button>
+                        <div id="feedback-q1" class="feedback"></div>
+                    </div>
+                    <div class="quiz-question"><p>2. What is the premium market price for ostrich meat?</p>
+                        <div class="quiz-option"><input type="radio" name="q2" value="a" id="q2a"><label for="q2a">a) $2-4/kg (bulk commodity price)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q2" value="b" id="q2b"><label for="q2b">b) $15-25/kg (restaurant-quality premium cuts)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q2" value="c" id="q2c"><label for="q2c">c) $40+/kg (unrealistic)</label></div>
+                        <button onclick="checkAnswer('q2', 'b', 'Correct! Premium quality ostrich meat reaches $15-25/kg to restaurants.')">Check Answer</button>
+                        <div id="feedback-q2" class="feedback"></div>
+                    </div>
+                    <div class="quiz-question"><p>3. What is the typical value of ostrich leather per skin?</p>
+                        <div class="quiz-option"><input type="radio" name="q3" value="a" id="q3a"><label for="q3a">a) $5-10 (too low)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q3" value="b" id="q3b"><label for="q3b">b) $50-150 (realistic for tanned leather)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q3" value="c" id="q3c"><label for="q3c">c) $500+/skin (overvalued)</label></div>
+                        <button onclick="checkAnswer('q3', 'b', 'Correct! Processed ostrich leather skins value $50-150 depending on quality.')">Check Answer</button>
+                        <div id="feedback-q3" class="feedback"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="project-section"><h2>🚀 Real-World Project: Processing & Marketing Business Plan</h2>
+                    <div class="project-item"><h4>Part 1: Slaughter & Processing Method Selection</h4><p>Evaluate options: on-farm slaughter, mobile butcher, licensed abattoir. Get quotes from each. Calculate total cost per bird (30 birds/year): ___. Which option is most economical? Factor in food safety regulations - which method ensures compliance?</p></div>
+                    <div class="project-item"><h4>Part 2: Meat Product Planning & Packaging Design</h4><p>Decide product mix: whole carcass %, steaks %, ground meat %, specialty products. Design packaging: labels with farm name, cut type, date, weight. Calculate per-unit costs: vacuum seal cost $0.50, label $0.10, packaging materials $0.20 = $0.80/package. At 30 kg meat/bird = 60 packages, cost = $48/bird packaging (significant margin impact).</p></div>
+                    <div class="project-item"><h4>Part 3: Leather Processing & Value-Add Strategy</h4><p>Research tanneries in region: can they handle ostrich skins? Pricing? Timeline (how long for tanning)? Alternative: DIY basic tanning (requires chemicals, knowledge). Decision: outsource or internalize? If outsource: cost per skin? Revenue when sold? Leather profit potential: ___ per bird.</p></div>
+                    <div class="project-item"><h4>Part 4: Market Identification & Buyer Outreach</h4><p>Identify 10-15 potential buyers: high-end restaurants, specialty butchers, hotels, export companies, leather goods makers. Create buyer list with contact info, preferences, volume needs, prices they pay. Plan outreach: will you visit in person, phone, email? Create sample/demo strategy.</p></div>
+                    <div class="project-item"><h4>Part 5: Pricing Strategy & Financial Projections</h4><p>Calculate full revenue per bird: meat (kg × $/kg) + leather ($__) + feathers ($__) + bones ($__) = total ___. Calculate full cost per bird: production ($150-200) + processing ($30-50) + packaging ($10-20) = total ___. Net profit/bird: ___. Annual profit on 30-bird harvest: $___. Does this meet your income goals?</p></div>
+                    <div class="project-item"><h4>Part 6: Food Safety & Licensing Requirements</h4><p>Research regulations in your country/region: do you need food safety certification? If selling meat retail/restaurant, what licenses needed? Cost to obtain? Timeline? Compliance requirements: facility standards, record-keeping, labeling. Create compliance checklist before launching.</p></div>
+                    <div class="project-item"><h4>Part 7: Marketing Materials & Brand Development</h4><p>Create: brand name (farm name-based?), logo, tagline, packaging design. Create marketing materials: business card, price list, product descriptions, farm story. Photo: quality images of your products (professional if possible). Social media strategy: how will you reach customers? Online ordering? Delivery logistics?</p></div>
+                    <div class="project-item"><h4>Part 8: Launch Plan & First Harvest Timeline</h4><p>Create 12-month timeline: when do birds reach market age? When will you slaughter first batch? Schedule: marketing outreach (2-3 months before harvest), secure buyers (1-2 months prior), arrange processing, deliver products. Post-first harvest: collect customer feedback, adjust pricing/products based on sales, plan continuous supply chain.</p></div>
+                </div>
+            </div>
+
+            <div class="next-module"><p>Ready to continue? Move to Module 6: Business Economics & Scale-Up Strategy (CAPSTONE)</p><a href="ostrich-farming-module-6.html">→ Next Module</a></div>
+        </div>
+    </div>
+    <script>
+        function checkAnswer(q, a, f) { const s = document.querySelector(`input[name="${q}"]:checked`); const e = document.getElementById(`feedback-${q}`); if (!s) { alert('Select answer'); return; } e.className = 'feedback show ' + (s.value === a ? 'correct' : 'incorrect'); e.textContent = (s.value === a ? '✓ ' : '✗ Incorrect. ') + f; updateProgress(); }
+        function updateProgress() { const c = document.querySelectorAll('input[type="radio"]:checked').length; const t = document.querySelectorAll('input[type="radio"]').length / 3; const p = (c / t) * 100; document.getElementById('progressFill').style.width = p + '%'; localStorage.setItem('ostrich5', p); }
+        window.addEventListener('load', () => { const s = localStorage.getItem('ostrich5'); if (s) document.getElementById('progressFill').style.width = s + '%'; });
+    </script>
+</body>
+</html>

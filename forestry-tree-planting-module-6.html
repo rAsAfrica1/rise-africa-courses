@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forestry & Tree Planting - Module 6: Economics & Business Planning (CAPSTONE)</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sass-serif; line-height: 1.6; color: #333; background: #f9f9f9; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .header { background: linear-gradient(135deg, #2d5016 0%, #4a7c2f 100%); color: white; padding: 30px; border-radius: 10px; margin-bottom: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .header p { font-size: 1.2em; opacity: 0.9; }
+        .content { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .section { margin-bottom: 40px; }
+        .section h2 { color: #2d5016; font-size: 1.8em; margin-bottom: 20px; border-bottom: 3px solid #4a7c2f; padding-bottom: 10px; }
+        .learning-objectives { background: #e8f5e9; padding: 20px; border-left: 5px solid #4a7c2f; margin-bottom: 20px; border-radius: 5px; }
+        .learning-objectives ul { list-style-position: inside; }
+        .learning-objectives li { margin-bottom: 8px; }
+        .video-container { background: #f5f5f5; padding: 15px; margin-bottom: 15px; border-radius: 5px; border-left: 4px solid #4a7c2f; }
+        .video-container h3 { color: #2d5016; margin-bottom: 10px; }
+        iframe { width: 100%; height: 400px; border-radius: 5px; border: none; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+        th { background: #2d5016; color: white; padding: 12px; text-align: left; }
+        td { padding: 10px; border-bottom: 1px solid #ddd; }
+        tr:hover { background: #f5f5f5; }
+        .implementation-step { background: #fafafa; padding: 15px; margin-bottom: 15px; border-radius: 5px; border-left: 4px solid #4a7c2f; }
+        .implementation-step h3 { color: #2d5016; margin-bottom: 8px; }
+        .implementation-step p { line-height: 1.8; font-size: 0.95em; }
+        .quiz-section { background: #fff3e0; padding: 20px; border-radius: 5px; border: 2px solid #4a7c2f; }
+        .quiz-section h3 { color: #2d5016; margin-bottom: 20px; }
+        .quiz-question { margin-bottom: 20px; background: white; padding: 15px; border-radius: 5px; }
+        .quiz-question p { font-weight: bold; margin-bottom: 10px; }
+        .quiz-option { margin-left: 20px; margin-bottom: 8px; }
+        .quiz-option input[type="radio"] { margin-right: 8px; }
+        .feedback { margin-top: 10px; padding: 10px; border-radius: 5px; display: none; }
+        .feedback.show { display: block; }
+        .feedback.correct { background: #c8e6c9; color: #2d5016; border-left: 4px solid #4a7c2f; }
+        .feedback.incorrect { background: #ffcdd2; color: #c62828; border-left: 4px solid #c62828; }
+        .project-section { background: #f1f8e9; padding: 20px; border-radius: 5px; border: 2px solid #4a7c2f; }
+        .project-section h2 { color: #2d5016; }
+        .project-item { background: white; padding: 15px; margin: 15px 0; border-radius: 5px; border-left: 4px solid #4a7c2f; }
+        .project-item h4 { color: #2d5016; margin-bottom: 8px; font-size: 0.95em; }
+        .project-item p { font-size: 0.9em; }
+        .progress-bar { background: #e0e0e0; height: 10px; border-radius: 5px; overflow: hidden; margin-bottom: 20px; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, #2d5016, #4a7c2f); width: 0%; transition: width 0.3s; }
+        .completion { margin-top: 30px; padding: 20px; background: #c8e6c9; border-radius: 5px; text-align: center; border: 2px solid #2d5016; }
+        .completion h3 { color: #2d5016; font-size: 1.5em; }
+        .completion p { margin-top: 10px; color: #2d5016; }
+        @media (max-width: 768px) { .header h1 { font-size: 1.8em; } iframe { height: 300px; } table { font-size: 0.85em; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌱 Forestry & Tree Planting</h1>
+            <p>Module 6: Economics & Business Planning (CAPSTONE)</p>
+        </div>
+
+        <div class="content">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+
+            <div class="section">
+                <div class="learning-objectives">
+                    <h2>📚 Learning Objectives</h2>
+                    <ul>
+                        <li>Calculate complete forestry business costs and revenues over 30+ years</li>
+                        <li>Understand financial metrics: NPV, IRR, ROI, break-even timeline</li>
+                        <li>Compare profitability of different species and management approaches</li>
+                        <li>Develop multi-stream income strategy (timber + agroforestry products)</li>
+                        <li>Create 30-year business plan with cash flow projections</li>
+                        <li>Understand financing options and investment requirements</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🎥 Learning Videos</h2>
+
+                <div class="video-container">
+                    <h3>1. Forestry Economics: Cost-Benefit Analysis</h3>
+                    <iframe src="https://www.youtube.com/embed/jqL9lLGbDnw?rel=0" allowfullscreen></iframe>
+                </div>
+
+                <div class="video-container">
+                    <h3>2. Financial Planning for Tree Plantations</h3>
+                    <iframe src="https://www.youtube.com/embed/VzKKmQfqyQY?rel=0" allowfullscreen></iframe>
+                </div>
+
+                <div class="video-container">
+                    <h3>3. Agroforestry Business: Multiple Products, Multiple Income Streams</h3>
+                    <iframe src="https://www.youtube.com/embed/a_dHFgBfBGo?rel=0" allowfullscreen></iframe>
+                </div>
+
+                <div class="video-container">
+                    <h3>4. Forest Certification & Premium Markets</h3>
+                    <iframe src="https://www.youtube.com/embed/hx6QA8u90PE?rel=0" allowfullscreen></iframe>
+                </div>
+
+                <div class="video-container">
+                    <h3>5. Financing Tree Planting: Grants, Loans & Payment for Ecosystem Services</h3>
+                    <iframe src="https://www.youtube.com/embed/MNNpDFNvwGo?rel=0" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>📊 Forestry Business Model Comparison (1 Hectare)</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Model</th>
+                            <th>Initial Cost</th>
+                            <th>Annual Maintenance</th>
+                            <th>Revenue Start</th>
+                            <th>Total 30yr Revenue</th>
+                            <th>Net Profit</th>
+                            <th>ROI</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Teak Monoculture</td>
+                            <td>$1,500</td>
+                            <td>$200-300/yr</td>
+                            <td>Year 25 (harvest)</td>
+                            <td>$30,000-50,000</td>
+                            <td>$22,000-35,000</td>
+                            <td>400-800%</td>
+                        </tr>
+                        <tr>
+                            <td>Pine + Fruit Trees</td>
+                            <td>$2,000</td>
+                            <td>$300-400/yr</td>
+                            <td>Year 5 (fruit), Year 15 (pine)</td>
+                            <td>$40,000-70,000</td>
+                            <td>$28,000-50,000</td>
+                            <td>500-1,000%</td>
+                        </tr>
+                        <tr>
+                            <td>Agroforestry (Mixed)</td>
+                            <td>$2,500</td>
+                            <td>$400-500/yr</td>
+                            <td>Year 1-2 (food crops), Year 5+ (tree products)</td>
+                            <td>$50,000-90,000</td>
+                            <td>$35,000-65,000</td>
+                            <td>700-1,400%</td>
+                        </tr>
+                        <tr>
+                            <td>Fruit Tree Plantation</td>
+                            <td>$3,000</td>
+                            <td>$500-700/yr</td>
+                            <td>Year 5-7 (continuous annual harvest)</td>
+                            <td>$60,000-120,000</td>
+                            <td>$45,000-90,000</td>
+                            <td>800-1,600%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h2>📋 6 Implementation Steps</h2>
+
+                <div class="implementation-step">
+                    <h3>Step 1: Calculate Your Startup Costs</h3>
+                    <p><strong>Typical costs per hectare (1ha = ~150-250 trees depending on spacing):</strong><br>
+                    Land preparation: $200-400<br>
+                    Seedlings/seeds: $500-1,500<br>
+                    Soil amendment (compost): $300-600<br>
+                    Planting labor: $200-400<br>
+                    Initial maintenance (year 1): $200-400<br>
+                    <strong>TOTAL Year 1: $1,500-3,300</strong></p>
+                    <p><strong>Action:</strong> Detail your costs for your exact location, species, scale. Get local prices for land prep, seedlings, labor.</p>
+                </div>
+
+                <div class="implementation-step">
+                    <h3>Step 2: Project Annual Costs (Years 1-30)</h3>
+                    <p><strong>Year 1-3 (Establishment): $200-400/hectare/year</strong> - watering, weeding, fertilizer, replanting failed trees<br>
+                    <strong>Year 4-10 (Growth): $150-300/hectare/year</strong> - maintenance, pruning, thinning, monitoring<br>
+                    <strong>Year 11-24 (Production): $100-200/hectare/year</strong> - minimal maintenance, selective harvests (agroforestry)<br>
+                    <strong>Year 25+ (Harvest): $500-2,000/hectare</strong> - harvesting labor, transport, processing</p>
+                    <p><strong>Action:</strong> Create spreadsheet: columns for each year 1-30, rows for each cost category. Sum annual costs to estimate total 30-year investment.</p>
+                </div>
+
+                <div class="implementation-step">
+                    <h3>Step 3: Project Revenue by Species & Model</h3>
+                    <p><strong>Example (1 hectare, 250 trees, Teak):</strong> Year 25 harvest: 250 trees × 1 m³/tree × $2,000/m³ = $500,000 gross. Minus harvesting/transport costs ($50,000) = $450,000 net. Compare to total investment ($30,000 over 25 years) = 1,400% ROI, 15% annual return compounded.<br>
+                    <strong>Agroforestry model (mixed income streams):</strong> Year 5-10 fruit/food crops ($1,000-5,000/yr), Year 15+ timber + continued fruit ($10,000-20,000/yr).</p>
+                    <p><strong>Action:</strong> Model your specific scenario. Use conservative yield estimates. Calculate best case vs. worst case (weather loss, market collapse, etc.).</p>
+                </div>
+
+                <div class="implementation-step">
+                    <h3>Step 4: Calculate NPV & Break-Even Timeline</h3>
+                    <p><strong>Net Present Value (NPV):</strong> Future money is worth less today (time value of money). Use 10-15% discount rate for forestry. Example: $500,000 harvest in year 25 @ 12% discount = worth $48,000 today. Minus $30,000 investment = NPV $18,000 positive (good investment).<br>
+                    <strong>Break-even timeline:</strong> When does profit = 0? Pure timber (25-30 years). Agroforestry (5-10 years from first income).</p>
+                    <p><strong>Action:</strong> Use spreadsheet NPV function or simple calculation. Understand your break-even point. For long timber rotations, tree planting is a heritage asset - expect 15-30 year timeline before major revenue.</p>
+                </div>
+
+                <div class="implementation-step">
+                    <h3>Step 5: Develop Multi-Stream Income Strategy</h3>
+                    <p><strong>Pure timber = feast/famine (harvest once every 25-30 years).<br>
+                    Better model = diversify:</strong> Fruit trees (income years 5-50+), timber/construction wood (income year 15-30), fuelwood from thinnings (income year 5+), honey (beehives in forest), NTFPs (honey, mushrooms, herbs), carbon credits (growing trees = CO₂ storage = $5-20/ton/year potential).</p>
+                    <p><strong>Action:</strong> Design agroforestry plan for your hectare: X% timber trees, Y% fruit trees, Z% space for food crops/understory. Model revenue each year from different streams. Diversification reduces risk AND increases total income.</p>
+                </div>
+
+                <div class="implementation-step">
+                    <h3>Step 6: Create 30-Year Business Plan & Secure Financing</h3>
+                    <p><strong>Business plan should include:</strong> Executive summary (one-page overview), your costs/revenue projections (spreadsheet), risk analysis (what could go wrong?), management plan (how will you execute?), expected profitability and timeline.<br>
+                    <strong>Financing options:</strong> Personal savings, bank loans (if NPV positive), government grants (many countries fund tree planting), carbon finance (sell CO₂ credits), impact investors (ESG funds support forestry).</p>
+                    <p><strong>Action:</strong> Write your business plan. Investigate 2-3 financing options. Many countries have free extension services - get official review of your plan before investing heavily.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="quiz-section">
+                    <h3>🎯 Module 6 Quiz</h3>
+
+                    <div class="quiz-question">
+                        <p>1. For a Teak plantation (25-year rotation), what is a realistic return on investment?</p>
+                        <div class="quiz-option">
+                            <input type="radio" name="q1" value="a" id="q1a">
+                            <label for="q1a">a) 50-100% total (less than annual stock market returns)</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q1" value="b" id="q1b">
+                            <label for="q1b">b) 500-1,400% total (equal to 8-15% annual compounded return)</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q1" value="c" id="q1c">
+                            <label for="q1c">c) Teak doesn't provide financial return, only environmental benefit</label>
+                        </div>
+                        <button onclick="checkAnswer('q1', 'b', 'Correct! Tree planting is a solid long-term investment: $30,000 investment → $450,000+ harvest = strong returns. Time horizon is key.')">Check Answer</button>
+                        <div id="feedback-q1" class="feedback"></div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p>2. Why is agroforestry (mixed trees/crops) often more profitable than pure timber?</p>
+                        <div class="quiz-option">
+                            <input type="radio" name="q2" value="a" id="q2a">
+                            <label for="q2a">a) Lower per-hectare yields don't justify the complexity</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q2" value="b" id="q2b">
+                            <label for="q2b">b) Multiple income streams start earlier (year 1-5), reduce wait time to profitability, provide resilience vs. market risk</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q2" value="c" id="q2c">
+                            <label for="q2c">c) Trees don't actually improve when mixed with food crops</label>
+                        </div>
+                        <button onclick="checkAnswer('q2', 'b', 'Correct! Agroforestry: immediate food/cash crops (year 1-5), trees maturing in background (year 15-30). Total 30-year profit often 2-3x higher than pure timber.')">Check Answer</button>
+                        <div id="feedback-q2" class="feedback"></div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p>3. What is the approximate break-even timeline for a tree planting business?</p>
+                        <div class="quiz-option">
+                            <input type="radio" name="q3" value="a" id="q3a">
+                            <label for="q3a">a) 3-5 years (like annual crops)</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q3" value="b" id="q3b">
+                            <label for="q3b">b) Pure timber: 25-30 years; Agroforestry: 5-10 years from first income</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q3" value="c" id="q3c">
+                            <label for="q3c">c) Tree planting never breaks even financially</label>
+                        </div>
+                        <button onclick="checkAnswer('q3', 'b', 'Correct! Understand this timeline before investing. Tree planting is generational wealth-building, not quick-return business. Agroforestry shortens wait through early income streams.')">Check Answer</button>
+                        <div id="feedback-q3" class="feedback"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="project-section">
+                    <h2>🚀 CAPSTONE PROJECT: Complete Forestry Business Plan (8 Parts)</h2>
+
+                    <div class="project-item">
+                        <h4>Part 1: Executive Summary</h4>
+                        <p>1-2 page overview: Your vision (how many hectares, which species, target markets), key financials (investment, timeline to profit, expected revenue), why forestry/agroforestry makes sense for your land and situation.</p>
+                    </div>
+
+                    <div class="project-item">
+                        <h4>Part 2: Detailed Cost Analysis</h4>
+                        <p>Spreadsheet: All costs year-by-year for 30 years. Categories: land prep, seedlings, soil amendment, labor (planting/maintenance/harvesting), tools, fertilizer, pest management, monitoring, transport. Total cost investment.</p>
+                    </div>
+
+                    <div class="project-item">
+                        <h4>Part 3: Revenue Projections</h4>
+                        <p>Spreadsheet: Year-by-year income from all sources. Example: fruit crops (year 5-30, $2,000/yr), timber harvest (year 25, $450,000), fuelwood from thinning (year 8-20, $500/yr). Total projected revenue across all streams.</p>
+                    </div>
+
+                    <div class="project-item">
+                        <h4>Part 4: Financial Analysis</h4>
+                        <p>Calculate: Total investment vs. total return, NPV using 12% discount rate, break-even timeline, annual ROI %, sensitivity analysis (what if yield is 20% lower? What if prices drop?). Compare your model to benchmarks.</p>
+                    </div>
+
+                    <div class="project-item">
+                        <h4>Part 5: 30-Year Management Plan</h4>
+                        <p>Detailed actions: Years 1-5 (establishment, soil building, early care), Years 6-15 (growth phase, thinning, pruning), Years 16-25 (production, selective harvesting if agroforestry), Year 25+ (final timber harvest, replanting or new cycle).</p>
+                    </div>
+
+                    <div class="project-item">
+                        <h4>Part 6: Risk Analysis & Mitigation</h4>
+                        <p>Identify risks (drought, disease, market collapse, labor shortage, theft, climate change). For each: probability, impact, mitigation strategy. Example: Drought risk → mitigation = water harvesting system. Market risk → mitigation = diversify buyers/processors.</p>
+                    </div>
+
+                    <div class="project-item">
+                        <h4>Part 7: Financing Strategy</h4>
+                        <p>How will you fund this? Personal savings + bank loan? Government grant + impact investors? Carbon finance? Detail each funding source, terms, timeline. Calculate cost of capital (if borrowing). Show how funding covers initial investment.</p>
+                    </div>
+
+                    <div class="project-item">
+                        <h4>Part 8: Implementation Timeline & Next Steps</h4>
+                        <p>Your action plan: What happens first (site selection, soil testing, financing application, seedling sourcing)? Specific dates/milestones for next 12 months. Who will implement (yourself, hiring labor)? When do you start planting? Commitment to your forest.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="completion">
+                <h3>🎉 Congratulations!</h3>
+                <p><strong>You've completed the Forestry & Tree Planting Course!</strong></p>
+                <p>You now understand tree species selection, nursery establishment, soil management, health protection, growth optimization, and complete financial planning. You have the knowledge to start a profitable, sustainable forestry or agroforestry business.</p>
+                <p style="margin-top: 15px; font-weight: bold; color: #2d5016;">Your capstone project IS your business plan. Use it as your roadmap to transform your land into a thriving forest enterprise. 🌾</p>
+            </div>
+
+            <div style="margin-top: 30px; padding: 20px; background: #e8f5e9; border-radius: 5px; text-align: center;">
+                <p><strong>Next Steps:</strong> Show your business plan to your local agricultural extension office for feedback. Investigate financing options. Start with 0.5-1 hectare to learn, then scale.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswer(questionId, correctAnswer, feedback) {
+            const selected = document.querySelector(`input[name="${questionId}"]:checked`);
+            const feedbackEl = document.getElementById(`feedback-${questionId}`);
+
+            if (!selected) {
+                alert('Please select an answer');
+                return;
+            }
+
+            if (selected.value === correctAnswer) {
+                feedbackEl.className = 'feedback show correct';
+                feedbackEl.textContent = '✓ ' + feedback;
+            } else {
+                feedbackEl.className = 'feedback show incorrect';
+                feedbackEl.textContent = '✗ Incorrect. ' + feedback;
+            }
+            updateProgress();
+        }
+
+        function updateProgress() {
+            const answered = document.querySelectorAll('input[type="radio"]:checked').length;
+            const total = document.querySelectorAll('input[type="radio"]').length / 3;
+            const progress = (answered / total) * 100;
+            document.getElementById('progressFill').style.width = progress + '%';
+            localStorage.setItem('module6Progress', progress);
+        }
+
+        window.addEventListener('load', () => {
+            const saved = localStorage.getItem('module6Progress');
+            if (saved) document.getElementById('progressFill').style.width = saved + '%';
+        });
+    </script>
+</body>
+</html>

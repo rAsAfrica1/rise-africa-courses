@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grafting & Budding Orchard - Module 4</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background: #f9f9f9; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .header { background: linear-gradient(135deg, #2d5016 0%, #6aa84f 100%); color: white; padding: 30px; border-radius: 10px; margin-bottom: 30px; }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .header p { font-size: 1.2em; opacity: 0.9; }
+        .content { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .section { margin-bottom: 40px; }
+        .section h2 { color: #2d5016; font-size: 1.8em; margin-bottom: 20px; border-bottom: 3px solid #6aa84f; padding-bottom: 10px; }
+        .learning-objectives { background: #e2f0d9; padding: 20px; border-left: 5px solid #6aa84f; margin-bottom: 20px; border-radius: 5px; }
+        .learning-objectives ul { list-style-position: inside; }
+        .learning-objectives li { margin-bottom: 8px; }
+        .video-container { background: #f9f9f9; padding: 15px; margin-bottom: 15px; border-radius: 5px; border-left: 4px solid #6aa84f; }
+        .video-container h3 { color: #2d5016; margin-bottom: 10px; font-size: 0.95em; }
+        iframe { width: 100%; height: 400px; border-radius: 5px; border: none; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th { background: #2d5016; color: white; padding: 12px; }
+        td { padding: 10px; border-bottom: 1px solid #ddd; }
+        .implementation-step { background: #fafafa; padding: 15px; margin-bottom: 15px; border-radius: 5px; border-left: 4px solid #6aa84f; }
+        .implementation-step h3 { color: #2d5016; margin-bottom: 8px; font-size: 1em; }
+        .quiz-section { background: #fff9e6; padding: 20px; border-radius: 5px; border: 2px solid #6aa84f; }
+        .quiz-question { margin-bottom: 20px; background: white; padding: 15px; border-radius: 5px; }
+        .quiz-option { margin-left: 20px; margin-bottom: 8px; }
+        .feedback { margin-top: 10px; padding: 10px; border-radius: 5px; display: none; }
+        .feedback.show { display: block; }
+        .feedback.correct { background: #d4edda; color: #155724; border-left: 4px solid #28a745; }
+        .feedback.incorrect { background: #f8d7da; color: #721c24; border-left: 4px solid #f5c6cb; }
+        .project-section { background: #e8f5e9; padding: 20px; border-radius: 5px; border: 2px solid #6aa84f; }
+        .project-item { background: white; padding: 12px; margin: 10px 0; border-radius: 5px; border-left: 4px solid #6aa84f; }
+        .progress-bar { background: #e0e0e0; height: 10px; border-radius: 5px; overflow: hidden; margin-bottom: 20px; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, #2d5016, #6aa84f); width: 0%; }
+        .next-module { margin-top: 30px; padding: 20px; background: #e2f0d9; border-radius: 5px; text-align: center; }
+        .next-module a { display: inline-block; background: #2d5016; color: white; padding: 12px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; }
+        .next-module a:hover { background: #6aa84f; }
+        .completion-badge { margin-top: 30px; padding: 20px; background: #d4edda; border-radius: 5px; text-align: center; }
+        @media (max-width: 768px) { .header h1 { font-size: 1.8em; } iframe { height: 300px; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌳 Grafting & Budding Orchard</h1>
+            <p>Module 4: Complete Orchard Development</p>
+        </div>
+        <div class="content">
+            <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+            <div class="section">
+                <div class="learning-objectives">
+                    <h2>📚 Learning Objectives</h2>
+                    <ul>
+                        <li>Master grafting and budding techniques for fruit trees</li>
+                        <li>Select compatible rootstocks and scion varieties</li>
+                        <li>Understand seasonal timing and success factors</li>
+                        <li>Plan commercial orchard operations</li>
+                        <li>Calculate profitability of grafted vs. seed-grown trees</li>
+                        <li>Scale production for regional market supply</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="section">
+                <h2>🎥 Learning Videos</h2>
+                <div class="video-container"><h3>1. Grafting Fundamentals & Techniques</h3><iframe src="https://www.youtube.com/embed/fW6zFKpOEZo?rel=0" allowfullscreen></iframe></div>
+                <div class="video-container"><h3>2. Budding Methods & Success Rates</h3><iframe src="https://www.youtube.com/embed/YMHQhNEZ7zI?rel=0" allowfullscreen></iframe></div>
+                <div class="video-container"><h3>3. Rootstock Selection & Management</h3><iframe src="https://www.youtube.com/embed/CJVsvGlbVnM?rel=0" allowfullscreen></iframe></div>
+                <div class="video-container"><h3>4. Post-Graft Care & Nursery Management</h3><iframe src="https://www.youtube.com/embed/Cg8K1vj8Dx0?rel=0" allowfullscreen></iframe></div>
+                <div class="video-container"><h3>5. Commercial Orchard Economics & Scaling</h3><iframe src="https://www.youtube.com/embed/7d7F8Xv0eLQ?rel=0" allowfullscreen></iframe></div>
+            </div>
+            <div class="section">
+                <h2>📊 Grafting Success Metrics</h2>
+                <table><thead><tr><th>Method</th><th>Success Rate</th><th>Timeline</th><th>Cost</th></tr></thead><tbody>
+                        <tr><td>Cleft Graft</td><td>70-80%</td><td>1-2 years to production</td><td>$0.50-1.00/tree</td></tr>
+                        <tr><td>Budding (chip)</td><td>75-85%</td><td>8-12 months</td><td>$0.30-0.60</td></tr>
+                        <tr><td>Side graft</td><td>80-90%</td><td>6-8 months</td><td>$0.60-1.20</td></tr>
+                        <tr><td>Whip graft</td><td>85-95%</td><td>1-2 years</td><td>$1.00-2.00</td></tr>
+                    </tbody></table>
+            </div>
+            <div class="section">
+                <h2>📋 6 Implementation Steps</h2>
+                <div class="implementation-step"><h3>Step 1: Select Grafting Method</h3><p>Choose: cleft (high success, longer cycle), budding (faster, consistent quality), side graft (medium complexity), whip graft (premium results). Match to your resources: time, budget, expertise level. Budget: $0.30-2.00 per graft for materials & labor.</p></div>
+                <div class="implementation-step"><h3>Step 2: Prepare Rootstocks</h3><p>Source quality rootstocks: nursery-grown or raise your own. Species: mango (local/hybrid), citrus (compatible types), avocado, macadamia. Prepare: lift dormancy if needed, harden off, graft at right growth stage. Timing critical: success depends on growth vigor.</p></div>
+                <div class="implementation-step"><h3>Step 3: Select & Collect Scion Wood</h3><p>Choose healthy, disease-free donor trees with desired traits (yield, size, taste, disease resistance). Collect: correct growth stage (semi-hardwood, not too tender). Storage: keep cool, moist until grafting (24-48 hours max). Quality scion = higher success rates.</p></div>
+                <div class="implementation-step"><h3>Step 4: Perform Grafting/Budding</h3><p>Technique: clean cuts, proper alignment, secure binding (tape/raffia). Sterilize tools (alcohol, 10% bleach). Work cleanly to prevent contamination. After graft: protect from water/direct sun for 2-3 weeks. Monitor: remove dead buds, watch for healing signs.</p></div>
+                <div class="implementation-step"><h3>Step 5: Care During Establishment</h3><p>Water: keep rootstock moist but not waterlogged. Nutrients: balanced fertilizer monthly. Prune: remove competing shoots below graft, support scion if needed. Timeline: budding shows leaves in 1-3 weeks, full establishment 3-6 months. Success indicator: scion growth.</p></div>
+                <div class="implementation-step"><h3>Step 6: Grow Out & Market</h3><p>Nursery: grow grafted trees 1-2 years before sale (size/quality improves value). Field: plant out & establish (3-5 years to commercial production). Revenue: grafted trees $5-20 each (premium over $0.50-1.00 cost). Profitability: at 80% success, 1,000 grafts = $8,000-16,000 revenue minus $500-2,000 cost = 75%+ margin.</p></div>
+            </div>
+            <div class="section">
+                <div class="quiz-section"><h3>🎯 Module 4 Quiz</h3>
+                    <div class="quiz-question"><p>1. What success rate is typical for grafting?</p>
+                        <div class="quiz-option"><input type="radio" name="q1" value="a" id="q1a"><label for="q1a">a) 50-60% (poor)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q1" value="b" id="q1b"><label for="q1b">b) 70-85% (typical with proper technique)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q1" value="c" id="q1c"><label for="q1c">c) 100% (unrealistic)</label></div>
+                        <button onclick="checkAnswer('q1', 'b', 'Correct! 70-85% success is realistic with proper technique and conditions.')">Check Answer</button>
+                        <div id="feedback-q1" class="feedback"></div>
+                    </div>
+                    <div class="quiz-question"><p>2. How long from grafting to saleable tree?</p>
+                        <div class="quiz-option"><input type="radio" name="q2" value="a" id="q2a"><label for="q2a">a) 1-2 months (too fast)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q2" value="b" id="q2b"><label for="q2b">b) 1-2 years in nursery (standard)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q2" value="c" id="q2c"><label for="q2c">c) 10+ years (unnecessary wait)</label></div>
+                        <button onclick="checkAnswer('q2', 'b', 'Correct! 1-2 years in nursery develops tree quality & value.')">Check Answer</button>
+                        <div id="feedback-q2" class="feedback"></div>
+                    </div>
+                    <div class="quiz-question"><p>3. What profit margin on grafted trees?</p>
+                        <div class="quiz-option"><input type="radio" name="q3" value="a" id="q3a"><label for="q3a">a) 20-30% (modest)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q3" value="b" id="q3b"><label for="q3b">b) 75%+ (excellent)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q3" value="c" id="q3c"><label for="q3c">c) Negative (not profitable)</label></div>
+                        <button onclick="checkAnswer('q3', 'b', 'Correct! Grafted trees at $10-15 with $1.00-2.00 cost = 75%+ margin.')">Check Answer</button>
+                        <div id="feedback-q3" class="feedback"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="project-section"><h2>🚀 Real-World Project: Grafting Operation</h2>
+                    <div class="project-item"><h4>Part 1: Method Selection</h4><p>Research grafting methods. Assess your resources. Choose best-fit method. Plan: materials, tools, labor timeline.</p></div>
+                    <div class="project-item"><h4>Part 2: Rootstock & Scion Sourcing</h4><p>Identify suppliers. Negotiate prices. Calculate: cost per graft, total budget for 500-1,000 grafts. Timeline: when can you start?</p></div>
+                    <div class="project-item"><h4>Part 3: Trial Run</h4><p>Start small: 50-100 grafts. Track: success rate %, cost per successful tree, timeline to saleable size. Learn from failures. Refine technique.</p></div>
+                    <div class="project-item"><h4>Part 4: Scale Plan</h4><p>Based on trial results, scale to 500+ grafts/season. Equipment: workspace, tools, materials storage. Labor: hours/day needed, cost per graft.</p></div>
+                    <div class="project-item"><h4>Part 5: Market Research</h4><p>Identify buyers: farmers wanting improved varieties, nurseries, agricultural projects. Price research: what do buyers pay for grafted trees? Demand estimate: market size (_____ trees/year).</p></div>
+                    <div class="project-item"><h4>Part 6: Financial Model</h4><p>Cost per tree: materials + labor. Revenue per tree: $___. Success rate: __%. Profitability: at 80% success, profit per tree = $___. Annual target: _____ trees × profit = $_____ income.</p></div>
+                    <div class="project-item"><h4>Part 7: Quality Standards</h4><p>Define: tree size, graft health, root development standards at sale. Implement quality checks before selling. Build reputation for quality = premium prices & repeat customers.</p></div>
+                    <div class="project-item"><h4>Part 8: Growth Plan</h4><p>Year 1: prove viability with trial. Year 2: scale to 500 grafts. Year 3: 2,000 grafts/season. Facility needs? Labor needs? Market capacity? Timeline to $10k+ annual income from grafting?</p></div>
+                </div>
+            </div>
+            <div class='next-module'><p>Ready to continue? Move to Module 5</p><a href='grafting-budding-orchard-module-5.html'>→ Next Module</a></div>
+        </div>
+    </div>
+    <script>
+        function checkAnswer(q, a, f) { const s = document.querySelector(`input[name="${q}"]:checked`); const e = document.getElementById(`feedback-${q}`); if (!s) { alert('Select answer'); return; } e.className = 'feedback show ' + (s.value === a ? 'correct' : 'incorrect'); e.textContent = (s.value === a ? '✓ ' : '✗ Incorrect. ') + f; updateProgress(); }
+        function updateProgress() { const c = document.querySelectorAll('input[type="radio"]:checked').length; const t = document.querySelectorAll('input[type="radio"]').length / 3; const p = (c / t) * 100; document.getElementById('progressFill').style.width = p + '%'; localStorage.setItem('grafting', p); }
+        window.addEventListener('load', () => { const s = localStorage.getItem('grafting'); if (s) document.getElementById('progressFill').style.width = s + '%'; });
+    </script>
+</body>
+</html>

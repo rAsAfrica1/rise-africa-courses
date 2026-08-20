@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ostrich Farming - Module 2: Housing, Land Preparation & Infrastructure</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background: #f9f9f9; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .header { background: linear-gradient(135deg, #8B4513 0%, #D2B48C 100%); color: white; padding: 30px; border-radius: 10px; margin-bottom: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .header p { font-size: 1.2em; opacity: 0.9; }
+        .content { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .section { margin-bottom: 40px; }
+        .section h2 { color: #8B4513; font-size: 1.8em; margin-bottom: 20px; border-bottom: 3px solid #D2B48C; padding-bottom: 10px; }
+        .learning-objectives { background: #FFF8DC; padding: 20px; border-left: 5px solid #D2B48C; margin-bottom: 20px; border-radius: 5px; }
+        .learning-objectives ul { list-style-position: inside; }
+        .learning-objectives li { margin-bottom: 8px; }
+        .video-container { background: #f5f5f5; padding: 15px; margin-bottom: 15px; border-radius: 5px; border-left: 4px solid #D2B48C; }
+        .video-container h3 { color: #8B4513; margin-bottom: 10px; }
+        iframe { width: 100%; height: 400px; border-radius: 5px; border: none; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th { background: #8B4513; color: white; padding: 15px; text-align: left; }
+        td { padding: 12px; border-bottom: 1px solid #ddd; }
+        tr:hover { background: #f5f5f5; }
+        .implementation-step { background: #fafafa; padding: 15px; margin-bottom: 15px; border-radius: 5px; border-left: 4px solid #D2B48C; }
+        .implementation-step h3 { color: #8B4513; margin-bottom: 8px; }
+        .quiz-section { background: #FFF8DC; padding: 20px; border-radius: 5px; border: 2px solid #D2B48C; }
+        .quiz-section h3 { color: #8B4513; margin-bottom: 20px; }
+        .quiz-question { margin-bottom: 20px; background: white; padding: 15px; border-radius: 5px; }
+        .quiz-question p { font-weight: bold; margin-bottom: 10px; }
+        .quiz-option { margin-left: 20px; margin-bottom: 8px; }
+        .quiz-option input[type="radio"] { margin-right: 8px; }
+        .feedback { margin-top: 10px; padding: 10px; border-radius: 5px; display: none; }
+        .feedback.show { display: block; }
+        .feedback.correct { background: #c8e6c9; color: #1a4d7a; border-left: 4px solid #D2B48C; }
+        .feedback.incorrect { background: #ffcdd2; color: #c62828; border-left: 4px solid #c62828; }
+        .project-section { background: #FFF8DC; padding: 20px; border-radius: 5px; border: 2px solid #D2B48C; }
+        .project-section h2 { color: #8B4513; }
+        .project-item { background: white; padding: 15px; margin: 15px 0; border-radius: 5px; border-left: 4px solid #D2B48C; }
+        .project-item h4 { color: #8B4513; margin-bottom: 8px; }
+        .progress-bar { background: #e0e0e0; height: 10px; border-radius: 5px; overflow: hidden; margin-bottom: 20px; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, #8B4513, #D2B48C); width: 0%; transition: width 0.3s; }
+        .next-module { margin-top: 30px; padding: 20px; background: #FFF8DC; border-radius: 5px; text-align: center; }
+        .next-module a { display: inline-block; background: #8B4513; color: white; padding: 12px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background 0.3s; }
+        .next-module a:hover { background: #D2B48C; }
+        @media (max-width: 768px) { .header h1 { font-size: 1.8em; } iframe { height: 300px; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🐦 Ostrich Farming</h1>
+            <p>Module 2: Housing, Land Preparation & Infrastructure</p>
+        </div>
+
+        <div class="content">
+            <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+            <div class="section">
+                <div class="learning-objectives">
+                    <h2>📚 Learning Objectives</h2>
+                    <ul>
+                        <li>Design appropriate housing and shelter systems for ostriches</li>
+                        <li>Learn fencing requirements and predator protection strategies</li>
+                        <li>Prepare land for safe ostrich operations</li>
+                        <li>Install water and drainage systems for ostrich farms</li>
+                        <li>Plan infrastructure for breeding, chick rearing, and storage</li>
+                        <li>Calculate construction costs and material requirements</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🎥 Learning Videos</h2>
+                <div class="video-container"><h3>1. Building Ostrich Enclosures: Fencing, Gates & Shelters</h3><iframe src="https://www.youtube.com/embed/PvGPfqX0q4w?rel=0" allowfullscreen></iframe></div>
+                <div class="video-container"><h3>2. Predator-Proofing Your Ostrich Farm: Protection Strategies</h3><iframe src="https://www.youtube.com/embed/9kGT3_YYEyo?rel=0" allowfullscreen></iframe></div>
+                <div class="video-container"><h3>3. Water Systems for Ostriches: Troughs, Pumps & Drainage</h3><iframe src="https://www.youtube.com/embed/KwvN5DiPKh0?rel=0" allowfullscreen></iframe></div>
+                <div class="video-container"><h3>4. Shelter Design: Shade Structures, Breeding Pens & Chick Housing</h3><iframe src="https://www.youtube.com/embed/7SxHECr5pNc?rel=0" allowfullscreen></iframe></div>
+                <div class="video-container"><h3>5. Land Preparation: Leveling, Drainage & Pasture Management</h3><iframe src="https://www.youtube.com/embed/8NKTcNM5_Zg?rel=0" allowfullscreen></iframe></div>
+            </div>
+
+            <div class="section">
+                <h2>📊 Infrastructure Cost Breakdown - 2-3 Hectare Farm (10 Birds)</h2>
+                <table><thead><tr><th>Infrastructure Item</th><th>Quantity</th><th>Unit Cost</th><th>Total Cost</th><th>Lifespan</th></tr></thead><tbody>
+                        <tr><td>Fencing (1.8m tall, predator-proof)</td><td>1,000m</td><td>$2-3/m</td><td>$2,000-3,000</td><td>10 years</td></tr>
+                        <tr><td>Shelter/Shade Structure</td><td>2 units</td><td>$800-1,200</td><td>$1,600-2,400</td><td>8-10 years</td></tr>
+                        <tr><td>Breeding Pens (construction)</td><td>5 pens</td><td>$200-300</td><td>$1,000-1,500</td><td>8 years</td></tr>
+                        <tr><td>Chick Brooding House</td><td>1 unit</td><td>$500-800</td><td>$500-800</td><td>8 years</td></tr>
+                        <tr><td>Water System (pump, tanks, troughs)</td><td>1 system</td><td>$400-600</td><td>$400-600</td><td>5-10 years</td></tr>
+                        <tr><td>Land Leveling & Drainage</td><td>2-3 ha</td><td>$500-800</td><td>$500-800</td><td>Permanent</td></tr>
+                        <tr><td><strong>TOTAL INFRASTRUCTURE</strong></td><td></td><td></td><td><strong>$6,000-9,100</strong></td><td></td></tr>
+                    </tbody></table>
+            </div>
+
+            <div class="section">
+                <h2>📋 6 Implementation Steps</h2>
+                <div class="implementation-step"><h3>Step 1: Select & Prepare Your Land</h3><p>Choose firm, well-drained land. Avoid low-lying areas prone to flooding. Level terrain preferred (less erosion, easier construction). Test soil drainage: dig 30cm hole, fill with water - should drain in 24 hours. Clear vegetation, remove rocks/debris. Mark boundaries and internal pen areas with pegs. Ideal: 2-3 hectares minimum provides room for expansion without overcrowding.</p></div>
+                <div class="implementation-step"><h3>Step 2: Build Predator-Proof Perimeter Fencing</h3><p>Ostrich predators: lions, hyenas, jackals, wild dogs. Fence height: minimum 1.8m (ostriches 2.2m but don't jump normally). Material: heavy gauge wire (2.5mm+) or wooden posts with wire. Base: bury 30cm underground to prevent digging. Spacing: posts every 2-3m. Cost: $2-3/meter total. Inspect weekly for damage. Install multiple gates (tractor access, bird movement, emergency). Double-gate system recommended for biosecurity.</p></div>
+                <div class="implementation-step"><h3>Step 3: Install Water System</h3><p>Daily requirement: 25-30 liters per bird (250-300L for 10 birds). Options: 1) Borehole + pump + tanks, 2) Rainwater collection, 3) Gravity from elevated tank. Troughs: 1 per 5 birds minimum, elevated to prevent contamination. Automatic drinkers available but not essential. Backup storage tank (1,000L) for dry season. Maintain water quality (test for contaminants). Cost: $400-600 for basic system.</p></div>
+                <div class="implementation-step"><h3>Step 4: Construct Shelter & Shade Structures</h3><p>Ostriches need shade in hot climates - can suffer heat stress. Shelter: 20m² per 5 birds, open-sided for ventilation. Roof: corrugated iron or thatch. Concrete or compacted earth floor. Include roosting/sleeping area. Separate chick brooding house: temperature controlled (35°C initial, decrease gradually). Breeding pens: 10m² each, solid walls for privacy. Allow 0.5m² covered shelter per bird minimum.</p></div>
+                <div class="implementation-step"><h3>Step 5: Design Internal Pen Layout & Movement System</h3><p>Separate pens: 1) Adult males 2) Adult females 3) Breeding pairs 4) Young birds 5) Chick raising. Each pen minimum 0.5 hectare (1-2 birds/hectare for grazing). Connecting gates allow moving birds between areas. Run area should be grassy/vegetated. Internal fencing: less heavy than perimeter. Plan drainage flows away from water sources. Consider ease of catching birds for handling/veterinary care.</p></div>
+                <div class="implementation-step"><h3>Step 6: Establish Feed Storage & Preparation Area</h3><p>Secure, rat-proof storage: minimum 2 tons capacity. Elevated off ground, ventilated, covered from rain. Storage area adjacent to pens for ease of feeding. Feed preparation: mixing area for grain/supplement blending. Equipment: scales for measuring, buckets, wheelbarrow. Organize: grains separated, supplements separate, water source nearby. Biosecurity: cleaning area for equipment, hand washing station before entering pens.</p></div>
+            </div>
+
+            <div class="section">
+                <div class="quiz-section"><h3>🎯 Module 2 Quiz</h3>
+                    <div class="quiz-question"><p>1. What is the minimum height for ostrich perimeter fencing?</p>
+                        <div class="quiz-option"><input type="radio" name="q1" value="a" id="q1a"><label for="q1a">a) 1.2 meters (standard livestock)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q1" value="b" id="q1b"><label for="q1b">b) 1.8 meters (predator-proof height)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q1" value="c" id="q1c"><label for="q1c">c) 2.5 meters (excessive cost)</label></div>
+                        <button onclick="checkAnswer('q1', 'b', 'Correct! 1.8m minimum protects from predators and contains ostriches.')">Check Answer</button>
+                        <div id="feedback-q1" class="feedback"></div>
+                    </div>
+                    <div class="quiz-question"><p>2. Daily water requirement for 10 ostriches?</p>
+                        <div class="quiz-option"><input type="radio" name="q2" value="a" id="q2a"><label for="q2a">a) 50-100 liters daily</label></div>
+                        <div class="quiz-option"><input type="radio" name="q2" value="b" id="q2b"><label for="q2b">b) 250-300 liters daily (25-30L per bird)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q2" value="c" id="q2c"><label for="q2c">c) 500+ liters daily (wasteful)</label></div>
+                        <button onclick="checkAnswer('q2', 'b', 'Correct! Ostriches need 25-30L per bird daily for health and production.')">Check Answer</button>
+                        <div id="feedback-q2" class="feedback"></div>
+                    </div>
+                    <div class="quiz-question"><p>3. Estimated infrastructure cost for 2-3 hectare farm?</p>
+                        <div class="quiz-option"><input type="radio" name="q3" value="a" id="q3a"><label for="q3a">a) $2,000-3,000 (under-budgeted)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q3" value="b" id="q3b"><label for="q3b">b) $6,000-9,100 (realistic for quality infrastructure)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q3" value="c" id="q3c"><label for="q3c">c) $15,000+ (excessive)</label></div>
+                        <button onclick="checkAnswer('q3', 'b', 'Correct! Quality fencing, shelter, water system = $6-9k for 2-3ha.')">Check Answer</button>
+                        <div id="feedback-q3" class="feedback"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="project-section"><h2>🚀 Real-World Project: Farm Infrastructure Design</h2>
+                    <div class="project-item"><h4>Part 1: Site Assessment & Mapping</h4><p>Visit/sketch your proposed farm location. Map dimensions, boundaries, slope/drainage. Identify water sources (borehole, stream, rainwater). Mark areas suitable for: perimeter fencing, shelter, breeding pens, chick house. Show pedestrian/vehicle access routes.</p></div>
+                    <div class="project-item"><h4>Part 2: Fencing Plan & Material Sourcing</h4><p>Calculate perimeter fence length. Get quotes for: fencing material ($2-3/m), posts, gates, labor. Choose material: wire, wood, combination. Total fencing budget: ___. Source 3-5 local suppliers. Negotiate bulk pricing. Plan installation timeline (4-6 weeks).</p></div>
+                    <div class="project-item"><h4>Part 3: Shelter & Structure Design</h4><p>Design shelter layout using measurements from Part 1. Calculate area needed: shelter (20m²/5 birds), breeding pens (10m² each), chick house (15m²), feed storage. Choose materials: timber, metal, thatch. Cost per structure? Total building cost: ___. Get architectural sketches or hire local carpenter.</p></div>
+                    <div class="project-item"><h4>Part 4: Water System Design & Implementation</h4><p>Assess water source: borehole depth (cost to drill), alternative collection. Calculate storage needed (1,000L emergency tank minimum). Design distribution: pump type, tank location, trough placement. Installation plan: contractor quotes? DIY options? Timeline: ___ weeks. Total water system cost: ___.</p></div>
+                    <div class="project-item"><h4>Part 5: Internal Pen Layout & Biosecurity</h3><p>Divide farm into 5 separate pen areas (design on paper). Calculate size of each. Plan internal fencing (less heavy than perimeter). Show movement routes between pens. Design hand-washing/equipment cleaning area. Biosecurity gate at main entrance.</p></div>
+                    <div class="project-item"><h4>Part 6: Feed & Supply Storage Plan</h4><p>Design storage structure: size needed (2+ tons capacity), elevated design, ventilation, pest-proofing. Calculate construction cost. Plan adjacent preparation area. Equipment list: scales, buckets, mixing tools. Storage layout diagram.</p></div>
+                    <div class="project-item"><h4>Part 7: Total Infrastructure Budget & Phasing</h4><p>Consolidate all costs: fencing, shelter, water, storage. Total: ___. If over budget, phase construction: Phase 1 (perimeter + basic shelter) = $___. Phase 2 (advanced structures) = ___. Phase 3 (additions). Timeline: when can each phase complete?</p></div>
+                    <div class="project-item"><h4>Part 8: Build Supervision & Quality Control Plan</h4><p>Who will oversee construction? Local contractor? Family labor? Create supervision checklist: material quality, construction timeline, safety standards. Plan inspection points: after fencing complete, shelter roof on, water system tested. Budget for contingencies (10-15% cost overrun buffer).</p></div>
+                </div>
+            </div>
+
+            <div class="next-module"><p>Ready to continue? Move to Module 3: Breeding, Genetics & Flock Management</p><a href="ostrich-farming-module-3.html">→ Next Module</a></div>
+        </div>
+    </div>
+    <script>
+        function checkAnswer(q, a, f) { const s = document.querySelector(`input[name="${q}"]:checked`); const e = document.getElementById(`feedback-${q}`); if (!s) { alert('Select answer'); return; } e.className = 'feedback show ' + (s.value === a ? 'correct' : 'incorrect'); e.textContent = (s.value === a ? '✓ ' : '✗ Incorrect. ') + f; updateProgress(); }
+        function updateProgress() { const c = document.querySelectorAll('input[type="radio"]:checked').length; const t = document.querySelectorAll('input[type="radio"]').length / 3; const p = (c / t) * 100; document.getElementById('progressFill').style.width = p + '%'; localStorage.setItem('ostrich2', p); }
+        window.addEventListener('load', () => { const s = localStorage.getItem('ostrich2'); if (s) document.getElementById('progressFill').style.width = s + '%'; });
+    </script>
+</body>
+</html>

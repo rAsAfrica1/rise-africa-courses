@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mushroom Farming - Module 6: Business Economics & Scaling (CAPSTONE)</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background: #f9f9f9; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .header { background: linear-gradient(135deg, #6b4423 0%, #9d6d37 100%); color: white; padding: 30px; border-radius: 10px; margin-bottom: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .header p { font-size: 1.2em; opacity: 0.9; }
+        .content { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .section { margin-bottom: 40px; }
+        .section h2 { color: #6b4423; font-size: 1.8em; margin-bottom: 20px; border-bottom: 3px solid #9d6d37; padding-bottom: 10px; }
+        .learning-objectives { background: #f5e6d3; padding: 20px; border-left: 5px solid #9d6d37; margin-bottom: 20px; border-radius: 5px; }
+        .learning-objectives ul { list-style-position: inside; }
+        .learning-objectives li { margin-bottom: 8px; }
+        .video-container { background: #f9f9f9; padding: 15px; margin-bottom: 15px; border-radius: 5px; border-left: 4px solid #9d6d37; }
+        .video-container h3 { color: #6b4423; margin-bottom: 10px; }
+        iframe { width: 100%; height: 400px; border-radius: 5px; border: none; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th { background: #6b4423; color: white; padding: 15px; text-align: left; }
+        td { padding: 12px; border-bottom: 1px solid #ddd; }
+        tr:hover { background: #f9f9f9; }
+        .implementation-step { background: #fafafa; padding: 15px; margin-bottom: 15px; border-radius: 5px; border-left: 4px solid #9d6d37; }
+        .implementation-step h3 { color: #6b4423; margin-bottom: 8px; }
+        .quiz-section { background: #fff9e6; padding: 20px; border-radius: 5px; border: 2px solid #9d6d37; }
+        .quiz-section h3 { color: #6b4423; margin-bottom: 20px; }
+        .quiz-question { margin-bottom: 20px; background: white; padding: 15px; border-radius: 5px; }
+        .quiz-question p { font-weight: bold; margin-bottom: 10px; }
+        .quiz-option { margin-left: 20px; margin-bottom: 8px; }
+        .quiz-option input[type="radio"] { margin-right: 8px; }
+        .feedback { margin-top: 10px; padding: 10px; border-radius: 5px; display: none; }
+        .feedback.show { display: block; }
+        .feedback.correct { background: #d4edda; color: #155724; border-left: 4px solid #28a745; }
+        .feedback.incorrect { background: #f8d7da; color: #721c24; border-left: 4px solid #f5c6cb; }
+        .project-section { background: #e8f5e9; padding: 20px; border-radius: 5px; border: 2px solid #9d6d37; }
+        .project-section h2 { color: #6b4423; }
+        .project-item { background: white; padding: 15px; margin: 15px 0; border-radius: 5px; border-left: 4px solid #9d6d37; }
+        .project-item h4 { color: #6b4423; margin-bottom: 8px; }
+        .progress-bar { background: #e0e0e0; height: 10px; border-radius: 5px; overflow: hidden; margin-bottom: 20px; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, #6b4423, #9d6d37); width: 0%; transition: width 0.3s; }
+        .completion-badge { margin-top: 30px; padding: 20px; background: #d4edda; border-radius: 5px; text-align: center; }
+        .completion-badge h3 { color: #6b4423; }
+        @media (max-width: 768px) { .header h1 { font-size: 1.8em; } iframe { height: 300px; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🍄 Mushroom Farming</h1>
+            <p>Module 6: Business Economics & Scaling (CAPSTONE)</p>
+        </div>
+
+        <div class="content">
+            <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+            <div class="section">
+                <div class="learning-objectives">
+                    <h2>📚 Learning Objectives</h2>
+                    <ul>
+                        <li>Build comprehensive 5-year financial projections</li>
+                        <li>Plan scaling from hobbyist to commercial operation</li>
+                        <li>Calculate ROI and break-even timelines</li>
+                        <li>Develop financing strategies and funding options</li>
+                        <li>Implement quality management systems at scale</li>
+                        <li>Plan sustainable growth and market expansion</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🎥 Learning Videos</h2>
+                <div class="video-container"><h3>1. Mushroom Farm Business Planning: From Backyard to Commercial</h3><iframe src="https://www.youtube.com/embed/5Xg_qHZQQYo?rel=0" allowfullscreen></iframe></div>
+                <div class="video-container"><h3>2. Financial Modeling: Building Profitable Projections</h3><iframe src="https://www.youtube.com/embed/ZKWQkxPn6xE?rel=0" allowfullscreen></iframe></div>
+                <div class="video-container"><h3>3. Scaling Production: Labor, Equipment, Facility Expansion</h3><iframe src="https://www.youtube.com/embed/fXW8QkYKC2I?rel=0" allowfullscreen></iframe></div>
+                <div class="video-container"><h3>4. Diversification: Value-Added Products & Varieties</h3><iframe src="https://www.youtube.com/embed/R5vfMGKq3OY?rel=0" allowfullscreen></iframe></div>
+                <div class="video-container"><h3>5. Sustainable Growth: Building a Legacy Farm Business</h3><iframe src="https://www.youtube.com/embed/kM8rCHw_1Rg?rel=0" allowfullscreen></iframe></div>
+            </div>
+
+            <div class="section">
+                <h2>📊 Scaling Projections: Hobbyist to Commercial</h2>
+                <table><thead><tr><th>Scale</th><th>Bags/Month</th><th>Revenue/Month</th><th>Profit/Month</th><th>Full-Time?</th></tr></thead><tbody>
+                        <tr><td>Hobby (Start)</td><td>50-100</td><td>$300-600</td><td>$150-300</td><td>No (10 hrs/wk)</td></tr>
+                        <tr><td>Part-Time</td><td>200-300</td><td>$1,200-1,800</td><td>$600-900</td><td>No (20-30 hrs/wk)</td></tr>
+                        <tr><td>Small Commercial</td><td>500-1,000</td><td>$3,000-6,000</td><td>$1,500-3,000</td><td>Yes (full-time)</td></tr>
+                        <tr><td>Medium Commercial</td><td>1,500-3,000</td><td>$9,000-18,000</td><td>$4,500-9,000</td><td>Yes + employees</td></tr>
+                    </tbody></table>
+            </div>
+
+            <div class="section">
+                <h2>📋 6 Implementation Steps</h2>
+                <div class="implementation-step"><h3>Step 1: Set Clear Business Goals</h3><p>Year 1: break-even or modest profit, validate market demand, build customer base. Year 2: 50% revenue growth, establish 5-10 regular customers. Year 3: 100% growth, invest in facility expansion. Year 5: full-time income ($30-50k/year), potentially hire 1-2 employees. Written 5-year plan = accountability tool.</p></div>
+                <div class="implementation-step"><h3>Step 2: Build Detailed Cost Projections</h3><p>Fixed costs: rent/facility ($200-500/month), equipment amortization ($50-100/month). Variable costs per bag: spawn ($0.50), substrate ($0.30), energy ($0.15), packaging ($0.30) = $1.25/bag. Revenue per bag: $6-12 (depends on sales channel). Profit per bag: $3-10 (80%+ margin if efficient).</p></div>
+                <div class="implementation-step"><h3>Step 3: Plan Facility Expansion</h3><p>Year 1: 1 small fruiting room (4 shelves, 100 bags capacity), 1 sterilization area. Investment: $500-1,000. Year 2: add second fruiting room (double capacity to 200 bags/batch). Year 3: dedicated commercial facility (500-1,000 bag capacity). Cost-benefit: each doubling of capacity requires ~50% facility investment but produces 100% revenue increase.</p></div>
+                <div class="implementation-step"><h3>Step 4: Develop Quality Management System</h3><p>Standardize: substrate recipes, inoculation procedures, fruiting conditions, grading standards. Document: daily logs (temperature, humidity, contamination), monthly yields, sales data. Measure: contamination rate (target <5%), yield per bag (target >0.8kg), customer satisfaction (target >90%). Continuous improvement: identify bottlenecks quarterly.</p></div>
+                <div class="implementation-step"><h3>Step 5: Plan Diversification Strategy</h3><p>Year 1: single species (oyster, highest profit margin). Year 2: add shiitake (premium price, longer cycle). Year 3: add lion's mane, button mushrooms (market differentiation). Value-added: dried mushrooms ($15-20/kg, 10x shelf life), mushroom powder ($25-40/kg), pickled mushrooms ($10-15/jar). Diversification = revenue stability + customer retention.</p></div>
+                <div class="implementation-step"><h3>Step 6: Build Sustainable Business Model</h3><p>Financial sustainability: profit margin >50%, reinvest 30% of profits for growth. Environmental: compost spent substrate, recycle water, minimize waste. Social: employ local workers, share knowledge with farming community, build reputation as reliable supplier. 10-year vision: established, trusted farm brand supplying multiple sales channels.</p></div>
+            </div>
+
+            <div class="section">
+                <div class="quiz-section"><h3>🎯 Module 6 Quiz</h3>
+                    <div class="quiz-question"><p>1. What monthly production achieves full-time income in mushroom farming?</p>
+                        <div class="quiz-option"><input type="radio" name="q1" value="a" id="q1a"><label for="q1a">a) 50-100 bags (hobby only)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q1" value="b" id="q1b"><label for="q1b">b) 200-300 bags (part-time)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q1" value="c" id="q1c"><label for="q1c">c) 500+ bags (full-time)</label></div>
+                        <button onclick="checkAnswer('q1', 'c', 'Correct! 500+ bags/month = $1,500-3,000 profit = viable full-time income.')">Check Answer</button>
+                        <div id="feedback-q1" class="feedback"></div>
+                    </div>
+                    <div class="quiz-question"><p>2. What profit margin is typical for mushroom farming?</p>
+                        <div class="quiz-option"><input type="radio" name="q2" value="a" id="q2a"><label for="q2a">a) 10-20% (low, commodity)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q2" value="b" id="q2b"><label for="q2b">b) 50-80% (high, specialty crop)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q2" value="c" id="q2c"><label for="q2c">c) >90% (unrealistic)</label></div>
+                        <button onclick="checkAnswer('q2', 'b', 'Correct! 50-80% margins make mushrooms a highly profitable specialty crop.')">Check Answer</button>
+                        <div id="feedback-q2" class="feedback"></div>
+                    </div>
+                    <div class="quiz-question"><p>3. What is a realistic 5-year financial goal for a mushroom farm?</p>
+                        <div class="quiz-option"><input type="radio" name="q3" value="a" id="q3a"><label for="q3a">a) $1,000/month profit (modest)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q3" value="b" id="q3b"><label for="q3b">b) $5,000-10,000/month profit (strong)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q3" value="c" id="q3c"><label for="q3c">c) $50,000+/month (unrealistic)</label></div>
+                        <button onclick="checkAnswer('q3', 'b', 'Correct! Well-scaled farm achieves $5-10k/month profit sustainably.')">Check Answer</button>
+                        <div id="feedback-q3" class="feedback"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="project-section"><h2>🚀 CAPSTONE PROJECT: Your 5-Year Mushroom Farming Business Plan</h2>
+                    <div class="project-item"><h4>Part 1: Vision & Goals</h4><p>Write your 5-year vision: What does success look like? Full-time income? Regional brand? Export quality? Document: Year 1 goals, Year 3 milestone, Year 5 vision. Include: production volume, revenue target, team size, market coverage.</p></div>
+                    <div class="project-item"><h4>Part 2: Market Analysis & Opportunity</h4><p>Research: local mushroom market size, competitor analysis, growth trends, customer preferences. Identify: your competitive advantage, differentiation strategy, target market segments. Estimate: market share potential (what % of local market can you capture?).</p></div>
+                    <div class="project-item"><h4>Part 3: 5-Year Production & Revenue Projection</h4><p>Year 1: 100 bags/month → 90kg yield × $7/kg blended = $630/month revenue ($7,560/yr). Costs $2,000/yr = $5,560 profit. Year 2: 250 bags/month → $1,750/month = $21,000/yr profit. Year 3: 500 bags → $3,500/month = $42,000/yr profit. Year 5: 1,000 bags = $7,000/month profit.</p></div>
+                    <div class="project-item"><h4>Part 4: Financial Projections & Cash Flow</h4><p>Create detailed spreadsheet: monthly revenue, costs (by category), cash flow, cumulative profit. Identify: break-even month (typically month 6-12), when equipment pays back, profitability inflection point. Conservative scenario (50% lower sales), base case, optimistic scenario (20% higher). Decision-maker information: which scenario most likely?</p></div>
+                    <div class="project-item"><h4>Part 5: Facility & Equipment Plan</h4><p>Year 1: rent existing space ($200-500/month) + DIY setup. Equipment: shelves ($200), fans ($50), misters ($30), cooler ($200). Total: ~$500 startup. Year 2: expand space ($300/month more rent or build lean-to $500), add dehumidifier ($200). Year 3: commercial facility ($1,000+/month) with professional setup.</p></div>
+                    <div class="project-item"><h4>Part 6: Sales & Marketing Strategy</h4><p>Sales channels: Year 1 farmers market (direct) + 1-2 restaurants (wholesale). Year 2 add online orders + expand to 5 restaurants. Year 3: supermarket placement + wholesale distributor. Marketing: Year 1 ($100 for business cards/social media), Year 2 ($300 for branding/samples), Year 3 ($500+ for advertising as volume allows).</p></div>
+                    <div class="project-item"><h4>Part 7: Risk Analysis & Mitigation</h4><p>Major risks: contamination spikes (mitigation: strict protocols, backup spawn), market saturation (mitigation: product differentiation, build brand loyalty), labor bottleneck (mitigation: process documentation, hire/train staff). Contingency fund: save 20% of year 1 profits for emergencies.</p></div>
+                    <div class="project-item"><h4>Part 8: Implementation Timeline & Milestones</h4><p>Month 1-2: setup facility, first batch (50 bags). Month 3-4: first harvest, establish 2 restaurant accounts. Month 6: farmers market debut. Month 12: Year 1 review, plan expansion. Year 2: double production, add new varieties. Year 3: commercial facility, hire help. Measurable milestones track progress.</p></div>
+                </div>
+            </div>
+
+            <div class="completion-badge">
+                <h3>✅ Course Complete: Mushroom Farming Mastery</h3>
+                <p>You've learned the complete mushroom farming cycle: from substrate to scaling to profitability. You're now equipped to launch a high-margin specialty crop business. 🍄</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        function checkAnswer(q, a, f) { const s = document.querySelector(`input[name="${q}"]:checked`); const e = document.getElementById(`feedback-${q}`); if (!s) { alert('Select answer'); return; } e.className = 'feedback show ' + (s.value === a ? 'correct' : 'incorrect'); e.textContent = (s.value === a ? '✓ ' : '✗ Incorrect. ') + f; updateProgress(); }
+        function updateProgress() { const c = document.querySelectorAll('input[type="radio"]:checked').length; const t = document.querySelectorAll('input[type="radio"]').length / 3; const p = (c / t) * 100; document.getElementById('progressFill').style.width = p + '%'; localStorage.setItem('mushroom6', p); }
+        window.addEventListener('load', () => { const s = localStorage.getItem('mushroom6'); if (s) document.getElementById('progressFill').style.width = s + '%'; });
+    </script>
+</body>
+</html>

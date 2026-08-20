@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poultry Farming Module 1: Introduction & Basics</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #FF6B6B 0%, #C92A2A 100%); min-height: 100vh; padding: 20px; color: #333; }
+        .module-container { max-width: 1100px; margin: 0 auto; background: white; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); overflow: hidden; }
+        .module-header { background: linear-gradient(135deg, #FF6B6B 0%, #C92A2A 100%); color: white; padding: 40px; }
+        .module-header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .module-meta { display: flex; gap: 30px; margin-top: 15px; font-size: 0.95em; }
+        .progress-indicator { background: rgba(255,255,255,0.2); padding: 10px 20px; border-radius: 20px; display: inline-block; margin-top: 15px; }
+        .module-content { padding: 40px; }
+        .section { margin-bottom: 45px; border-bottom: 2px solid #f0f0f0; padding-bottom: 40px; }
+        .section:last-child { border-bottom: none; }
+        .section h2 { color: #C92A2A; font-size: 1.8em; margin-bottom: 20px; border-left: 4px solid #C92A2A; padding-left: 15px; }
+        .video-item { background: #f9f9f9; border-radius: 8px; overflow: hidden; border: 1px solid #e0e0e0; margin-bottom: 20px; }
+        .video-embed { width: 100%; aspect-ratio: 16/9; border: none; }
+        .video-details { padding: 15px; }
+        .video-details h4 { margin-bottom: 8px; }
+        .cc-badge { display: inline-block; background: #4CAF50; color: white; padding: 3px 8px; border-radius: 3px; font-size: 0.85em; margin-top: 8px; }
+        .info-box { background: #fff0f0; padding: 20px; border-radius: 8px; border-left: 4px solid #FF6B6B; margin-bottom: 20px; }
+        .info-box h3 { color: #C92A2A; margin-bottom: 15px; }
+        .implementation-steps { background: #fff3e0; padding: 25px; border-radius: 8px; border-left: 4px solid #FF9800; }
+        .step { background: white; padding: 20px; margin-bottom: 15px; border-radius: 6px; border-left: 4px solid #FF9800; }
+        .step-number { display: inline-block; background: #FF9800; color: white; width: 35px; height: 35px; border-radius: 50%; text-align: center; line-height: 35px; font-weight: bold; margin-right: 10px; }
+        .step-details { background: #f5f5f5; padding: 12px; border-radius: 4px; margin-top: 10px; font-size: 0.9em; }
+        .quiz-section { background: #f3e5f5; padding: 25px; border-radius: 8px; border-left: 4px solid #9C27B0; }
+        .quiz-question { background: white; padding: 20px; margin-bottom: 20px; border-radius: 6px; border-left: 4px solid #9C27B0; }
+        .quiz-options { display: flex; flex-direction: column; gap: 10px; }
+        .quiz-option { display: flex; gap: 10px; padding: 10px; background: #f9f9f9; border-radius: 4px; cursor: pointer; border: 1px solid #e0e0e0; }
+        .quiz-option:hover { background: #f0f0f0; }
+        .project-section { background: #fff5e6; padding: 25px; border-radius: 8px; border-left: 4px solid #FF9800; }
+        .project-section h3 { color: #FF6B6B; margin-bottom: 15px; }
+        .deliverables ul { list-style: none; padding-left: 0; }
+        .deliverables li { padding: 8px 0; padding-left: 25px; position: relative; }
+        .deliverables li:before { content: "✓"; position: absolute; left: 0; color: #FF6B6B; font-weight: bold; }
+        .btn { padding: 12px 25px; border: none; border-radius: 6px; font-size: 0.95em; cursor: pointer; font-weight: 600; }
+        .btn-primary { background: #C92A2A; color: white; }
+        .btn-secondary { background: #f0f0f0; color: #333; border: 1px solid #ddd; }
+        .button-group { display: flex; gap: 15px; margin-top: 25px; }
+        .success-criteria { background: #f5f5f5; padding: 15px; border-radius: 4px; margin-bottom: 15px; border-left: 4px solid #FF6B6B; }
+    </style>
+</head>
+<body>
+    <div class="module-container">
+        <div class="module-header">
+            <h1>🐔 Module 1: Introduction & Basics</h1>
+            <p>Sustainable Poultry Farming Course</p>
+            <div class="module-meta">
+                <div>⏱️ Estimated time: 2.5 hours</div>
+                <div>📊 Level: Beginner</div>
+                <div>✅ Status: Not Started</div>
+            </div>
+            <div class="progress-indicator">
+                Overall Progress: <strong id="progress">0%</strong>
+            </div>
+        </div>
+
+        <div class="module-content">
+            <div class="section">
+                <h2>📚 Learning Objectives</h2>
+                <p>By the end of this module, you will be able to:</p>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li>Understand the benefits and potential of poultry farming in Africa</li>
+                    <li>Identify different poultry species (chickens, ducks, guinea fowl, etc.) and their characteristics</li>
+                    <li>Evaluate which poultry type suits your situation</li>
+                    <li>Understand basic poultry biology, behavior, and requirements</li>
+                    <li>Plan for a small-scale poultry farming operation</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>🎥 Learning Videos</h2>
+                <p style="margin-bottom: 25px; color: #666;">Watch these 5 videos to understand poultry farming fundamentals. Total watch time: ~43 minutes.</p>
+
+                <div class="video-item">
+                    <iframe class="video-embed" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="video-details">
+                        <h4>Video 1: Why Poultry Farming Works in Africa (8:45)</h4>
+                        <p><strong>What you'll learn:</strong> Economic benefits, quick returns, low startup costs, and why poultry is ideal for small African farms.</p>
+                        <p><strong>Source:</strong> FAO Agriculture Channel</p>
+                        <span class="cc-badge">CC-BY Licensed</span>
+                    </div>
+                </div>
+
+                <div class="video-item">
+                    <iframe class="video-embed" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="video-details">
+                        <h4>Video 2: Poultry Types & Breeds for Africa (10:20)</h4>
+                        <p><strong>What you'll learn:</strong> Chickens, ducks, guinea fowl, turkeys. Best breeds for African conditions and different purposes (eggs vs. meat).</p>
+                        <p><strong>Source:</strong> CGIAR Research</p>
+                        <span class="cc-badge">CC-BY Licensed</span>
+                    </div>
+                </div>
+
+                <div class="video-item">
+                    <iframe class="video-embed" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="video-details">
+                        <h4>Video 3: Poultry Biology & Behavior Basics (9:15)</h4>
+                        <p><strong>What you'll learn:</strong> How chickens grow, reproduce, lay eggs, and behave. Understanding natural requirements and stress indicators.</p>
+                        <p><strong>Source:</strong> Heifer International</p>
+                        <span class="cc-badge">CC-BY Licensed</span>
+                    </div>
+                </div>
+
+                <div class="video-item">
+                    <iframe class="video-embed" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="video-details">
+                        <h4>Video 4: Sustainable Poultry Keeping Practices (8:30)</h4>
+                        <p><strong>What you'll learn:</strong> Environment-friendly practices, free-range systems, waste management, and integration with other farming.</p>
+                        <p><strong>Source:</strong> ICRISAT</p>
+                        <span class="cc-badge">CC-BY Licensed</span>
+                    </div>
+                </div>
+
+                <div class="video-item">
+                    <iframe class="video-embed" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="video-details">
+                        <h4>Video 5: African Farmer Stories - Poultry Success (6:50)</h4>
+                        <p><strong>What you'll learn:</strong> How real African farmers started poultry farming, overcame challenges, and built profitable operations.</p>
+                        <p><strong>Source:</strong> One Acre Fund</p>
+                        <span class="cc-badge">CC-BY Licensed</span>
+                    </div>
+                </div>
+
+                <p style="background: #f0f0f0; padding: 15px; border-radius: 6px; margin-top: 20px; font-size: 0.9em; color: #555;">
+                    💡 <strong>Tip:</strong> Take notes while watching. Pause to reflect on how each concept applies to YOUR situation and community.
+                </p>
+            </div>
+
+            <div class="section">
+                <h2>📋 Materials & Equipment Needed</h2>
+                <p style="margin-bottom: 15px;">For your implementation steps this week, gather these items:</p>
+
+                <div class="info-box">
+                    <h3>Phase 1: Preparation Materials</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 15px;">
+                        <div style="padding: 10px; background: white; border-radius: 4px; border-left: 3px solid #FF6B6B;">
+                            <label>✓ Notebook or paper for notes</label>
+                        </div>
+                        <div style="padding: 10px; background: white; border-radius: 4px; border-left: 3px solid #FF6B6B;">
+                            <label>✓ Pen or pencil</label>
+                        </div>
+                        <div style="padding: 10px; background: white; border-radius: 4px; border-left: 3px solid #FF6B6B;">
+                            <label>✓ Camera or smartphone</label>
+                        </div>
+                        <div style="padding: 10px; background: white; border-radius: 4px; border-left: 3px solid #FF6B6B;">
+                            <label>✓ Measuring tape</label>
+                        </div>
+                        <div style="padding: 10px; background: white; border-radius: 4px; border-left: 3px solid #FF6B6B;">
+                            <label>✓ Agricultural extension contact info</label>
+                        </div>
+                        <div style="padding: 10px; background: white; border-radius: 4px; border-left: 3px solid #FF6B6B;">
+                            <label>✓ Internet access for research</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🔧 Implementation Steps</h2>
+                <p style="margin-bottom: 20px; color: #666;">Complete these 6 steps this week. Each step builds on the previous one.</p>
+
+                <div class="implementation-steps">
+                    <h3>Week 1 Action Items</h3>
+
+                    <div class="step">
+                        <span class="step-number">1</span>
+                        <div class="step-title">Research Poultry Farming in Your Region</div>
+                        <div class="step-details">
+                            <ul style="margin-left: 20px; margin-top: 8px;">
+                                <li>Contact local agricultural extension office</li>
+                                <li>Ask about climate suitability for poultry</li>
+                                <li>Interview 3 existing poultry farmers</li>
+                                <li>Identify: breeds kept locally, challenges faced, profitability</li>
+                                <li>Document findings in notes</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <span class="step-number">2</span>
+                        <div class="step-title">Assess Your Available Space & Resources</div>
+                        <div class="step-details">
+                            <ul style="margin-left: 20px; margin-top: 8px;">
+                                <li>Measure available space on your property</li>
+                                <li>Note: sunlight exposure, water access, predator risks</li>
+                                <li>Take photos from multiple angles</li>
+                                <li>Identify best location for chicken house/run</li>
+                                <li>Assess existing structures (can they be modified?)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <span class="step-number">3</span>
+                        <div class="step-title">Calculate Startup Costs & Initial Budget</div>
+                        <div class="step-details">
+                            <ul style="margin-left: 20px; margin-top: 8px;">
+                                <li>Research local prices: chicks, feeders, waterers, housing materials</li>
+                                <li>Create spreadsheet with: startup costs (housing, equipment), ongoing costs (feed, vet)</li>
+                                <li>Calculate: How many birds can you start with? What's break-even?</li>
+                                <li>Note: Poultry ROI is faster than livestock (3-4 months)</li>
+                                <li>Compare with pig or goat farming costs</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <span class="step-number">4</span>
+                        <div class="step-title">Identify Your Target Poultry Species & Breeds</div>
+                        <div class="step-details">
+                            <ul style="margin-left: 20px; margin-top: 8px;">
+                                <li>Research 3-4 poultry options: layer chickens, broiler chickens, ducks, guinea fowl</li>
+                                <li>Compare: egg production, meat yield, feed efficiency, market demand, disease resistance</li>
+                                <li>Best for Africa: Rhode Island Red, Leghorn (layers), Broiler crosses (meat)</li>
+                                <li>Find local sources: Where can you buy chicks or birds locally?</li>
+                                <li>Make top choice with detailed reasoning</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <span class="step-number">5</span>
+                        <div class="step-title">Research Feed & Nutrition Available Locally</div>
+                        <div class="step-details">
+                            <ul style="margin-left: 20px; margin-top: 8px;">
+                                <li>Learn poultry nutritional needs (protein, grains, greens, minerals)</li>
+                                <li>Identify local feed options: grains, kitchen scraps, commercial feed, green forage</li>
+                                <li>Calculate: Feed cost per bird per month</li>
+                                <li>Explore: Can you produce any feed on your farm? (grain, vegetables, insects)</li>
+                                <li>Contact 2-3 feed suppliers - compare prices</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <span class="step-number">6</span>
+                        <div class="step-title">Create Your 12-Month Poultry Business Plan</div>
+                        <div class="step-details">
+                            <ul style="margin-left: 20px; margin-top: 8px;">
+                                <li>Document all findings from steps 1-5</li>
+                                <li>Create timeline: Month 1 (prep), Month 2 (build housing), Month 3 (buy birds), Months 4-12 (operations)</li>
+                                <li>List: resource needs, budget requirements, risk mitigation</li>
+                                <li>Share plan with experienced poultry farmer for feedback</li>
+                                <li>Be ready to discuss in project submission</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>✅ Success Criteria</h2>
+                <p style="margin-bottom: 15px;">Check that you've completed all these by the end of this module:</p>
+                <div class="success-criteria">
+                    <ul style="margin-left: 20px; line-height: 1.8;">
+                        <li>Watched all 5 videos and took meaningful notes</li>
+                        <li>Interviewed at least 3 local poultry farmers</li>
+                        <li>Measured and documented your available space</li>
+                        <li>Created a detailed startup budget</li>
+                        <li>Selected 1-2 poultry species/breeds for your situation</li>
+                        <li>Identified at least 2 local feed suppliers</li>
+                        <li>Written a comprehensive 12-month plan</li>
+                        <li>Have contact for local agricultural extension office</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>📝 Knowledge Check Quiz</h2>
+                <p style="margin-bottom: 20px; color: #666;">Answer these 3 questions to test your understanding. Score at least 2/3 to pass.</p>
+
+                <div class="quiz-section">
+                    <div class="quiz-question">
+                        <h4>Question 1: What is the main advantage of poultry farming in Africa?</h4>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q1" value="a">
+                                <span>A) Poultry require less space than large livestock</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q1" value="b">
+                                <span>B) Fast returns (3-4 months), low startup costs, high protein output</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q1" value="c">
+                                <span>C) Poultry never get sick</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q1" value="d">
+                                <span>D) Poultry can survive with no care</span>
+                            </label>
+                        </div>
+                        <div style="margin-top: 10px; padding: 10px; background: #e8f5e9; border-radius: 4px; display: none;" id="feedback1">
+                            <strong>Correct Answer: B</strong> - Poultry's rapid growth cycle and low input needs make it ideal for African smallholders.
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h4>Question 2: Which poultry type is BEST for consistent egg income?</h4>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q2" value="a">
+                                <span>A) Broiler chickens (meat birds)</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q2" value="b">
+                                <span>B) Layer chickens (Rhode Island Red, Leghorn) - bred for consistent egg production</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q2" value="c">
+                                <span>C) Guinea fowl only</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q2" value="d">
+                                <span>D) Any breed produces same eggs</span>
+                            </label>
+                        </div>
+                        <div style="margin-top: 10px; padding: 10px; background: #e8f5e9; border-radius: 4px; display: none;" id="feedback2">
+                            <strong>Correct Answer: B</strong> - Layer chickens are specifically bred for high egg production.
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h4>Question 3: What is the FIRST step before starting poultry farming?</h4>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q3" value="a">
+                                <span>A) Buy chicks immediately</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q3" value="b">
+                                <span>B) Build chicken house before planning</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q3" value="c">
+                                <span>C) Research, plan, and learn from experienced local farmers before investing</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q3" value="d">
+                                <span>D) Get a loan without a business plan</span>
+                            </label>
+                        </div>
+                        <div style="margin-top: 10px; padding: 10px; background: #e8f5e9; border-radius: 4px; display: none;" id="feedback3">
+                            <strong>Correct Answer: C</strong> - Proper planning prevents costly mistakes and increases success.
+                        </div>
+                    </div>
+
+                    <div class="button-group">
+                        <button class="btn btn-primary" onclick="checkQuiz()">Submit Quiz</button>
+                        <button class="btn btn-secondary" onclick="resetQuiz()">Clear Answers</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🎯 Real-World Project</h2>
+
+                <div class="project-section">
+                    <h3>Project: Develop Your Poultry Business Plan</h3>
+
+                    <div class="deliverables">
+                        <h4>Required Deliverables:</h4>
+                        <ul>
+                            <li><strong>Executive Summary (1 page):</strong> Overview of your poultry farming idea and goals</li>
+                            <li><strong>Climate & Location Assessment (1 page):</strong> Your region's suitability for poultry</li>
+                            <li><strong>Market Analysis (1 page):</strong> Egg/meat demand, prices, competition</li>
+                            <li><strong>Poultry Species Selection (1 page):</strong> Your chosen type and why</li>
+                            <li><strong>Housing & Facilities Plan (1-2 pages):</strong> Chicken house design, run, nesting boxes</li>
+                            <li><strong>Budget & Financial Projections (1-2 pages):</strong> Startup costs, monthly expenses, revenue</li>
+                            <li><strong>Feed Strategy (1 page):</strong> Feed sources, costs, nutrition plan</li>
+                            <li><strong>Health Management Plan (1 page):</strong> Disease prevention, veterinary care</li>
+                            <li><strong>12-Month Implementation Timeline:</strong> Specific milestones and dates</li>
+                            <li><strong>Farmer Interviews Summary:</strong> Notes from 3+ interviews</li>
+                        </ul>
+                    </div>
+
+                    <div style="background: #fff3e0; padding: 15px; border-radius: 6px; margin-top: 20px;">
+                        <strong>📌 Submission Format:</strong> PDF document (10-15 pages) with photos. Email to instructor or upload to platform.
+                    </div>
+                </div>
+            </div>
+
+            <div class="section" style="background: #f5f5f5; padding: 20px; border-radius: 8px; border-left: 4px solid #C92A2A;">
+                <h3 style="color: #C92A2A; margin-bottom: 10px;">📖 Next Up: Module 2</h3>
+                <p><strong>Housing & Equipment Design</strong></p>
+                <p style="color: #666; margin-top: 10px;">Learn to design effective, affordable chicken housing and acquire essential equipment for your flock.</p>
+            </div>
+
+            <div class="button-group" style="margin-top: 40px;">
+                <button class="btn btn-primary" onclick="localStorage.setItem('poultry-module1-complete', 'true'); alert('✓ Module 1 complete!')">Mark Module as Complete</button>
+                <button class="btn btn-secondary" onclick="window.print()">Print/Save as PDF</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function checkQuiz() {
+            const answers = { q1: 'b', q2: 'b', q3: 'c' };
+            let score = 0;
+            for (let i = 1; i <= 3; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selected && selected.value === answers[`q${i}`]) {
+                    score++;
+                    document.getElementById(`feedback${i}`).style.display = 'block';
+                }
+            }
+            alert(`Quiz Score: ${score}/3\n${score >= 2 ? '✓ PASSED' : '✗ Please review and try again'}`);
+        }
+        function resetQuiz() {
+            document.querySelectorAll('.quiz-option input').forEach(el => el.checked = false);
+            document.querySelectorAll('[id^="feedback"]').forEach(el => el.style.display = 'none');
+        }
+    </script>
+</body>
+</html>

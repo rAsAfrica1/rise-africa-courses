@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poultry Farming Module 6: Record Keeping & Economics (CAPSTONE)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #8b0000 0%, #a52a2a 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #8b0000 0%, #a52a2a 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.3);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .section:last-of-type {
+            border-bottom: none;
+        }
+
+        h2 {
+            color: #8b0000;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            border-left: 5px solid #a52a2a;
+            padding-left: 15px;
+        }
+
+        h3 {
+            color: #a52a2a;
+            font-size: 1.3em;
+            margin-top: 20px;
+            margin-bottom: 15px;
+        }
+
+        .video-container {
+            background: #f9f9f9;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 25px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            border-radius: 6px;
+            display: block;
+        }
+
+        .video-title {
+            color: #8b0000;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background: #a52a2a;
+            color: white;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        tr:hover {
+            background: #fff3cd;
+        }
+
+        .implementation-step {
+            background: #fff3cd;
+            border-left: 4px solid #a52a2a;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .step-number {
+            color: #8b0000;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .step-title {
+            color: #333;
+            font-weight: bold;
+            font-size: 1.05em;
+            margin: 10px 0;
+        }
+
+        .step-content {
+            color: #555;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .quiz-section {
+            background: #e8f4f8;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+        .quiz-title {
+            color: #8b0000;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .quiz-question {
+            background: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 6px;
+            border-left: 4px solid #a52a2a;
+        }
+
+        .quiz-question-text {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.05em;
+        }
+
+        .quiz-option {
+            margin: 10px 0;
+        }
+
+        .quiz-option label {
+            cursor: pointer;
+            display: block;
+            padding: 10px;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        .quiz-option label:hover {
+            background: #f0f0f0;
+        }
+
+        .quiz-option input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .feedback {
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: 4px;
+            display: none;
+        }
+
+        .feedback.correct {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            display: block;
+        }
+
+        .feedback.incorrect {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+            display: block;
+        }
+
+        button {
+            background: linear-gradient(135deg, #8b0000 0%, #a52a2a 100%);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-top: 15px;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .project-section {
+            background: #e8f4f8;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 30px 0;
+            border: 3px solid #a52a2a;
+        }
+
+        .project-title {
+            color: #8b0000;
+            font-size: 1.6em;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .deliverable {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border-left: 3px solid #a52a2a;
+        }
+
+        .progress-bar {
+            background: #f0f0f0;
+            border-radius: 10px;
+            height: 25px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            background: linear-gradient(90deg, #8b0000 0%, #a52a2a 100%);
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.9em;
+            transition: width 0.3s ease;
+        }
+
+        .checklist {
+            list-style: none;
+        }
+
+        .checklist li {
+            padding: 10px;
+            margin: 5px 0;
+            background: #f9f9f9;
+            border-radius: 4px;
+            border-left: 3px solid #a52a2a;
+        }
+
+        .checklist input[type="checkbox"] {
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .learning-objectives {
+            background: #e8f4f8;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #a52a2a;
+        }
+
+        .learning-objectives h3 {
+            color: #8b0000;
+            margin-top: 0;
+        }
+
+        .learning-objectives ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .learning-objectives li {
+            padding: 8px 0;
+            border-bottom: 1px solid #d0d0d0;
+        }
+
+        .learning-objectives li:last-child {
+            border-bottom: none;
+        }
+
+        .learning-objectives li:before {
+            content: "✓ ";
+            color: #8b0000;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .alert-box {
+            background: #e8f4f8;
+            border: 2px solid #a52a2a;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+        }
+
+        .alert-title {
+            color: #8b0000;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.6em;
+            }
+
+            iframe {
+                height: 250px;
+            }
+
+            table {
+                font-size: 0.9em;
+            }
+
+            th, td {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>💰 Module 6: Record Keeping & Economics</h1>
+            <p>Sustainable Poultry Farming Course - Rise Africa Skills</p>
+            <span class="badge">🏆 CAPSTONE MODULE - Final & Most Comprehensive</span>
+        </div>
+
+        <div class="content">
+            <!-- Learning Objectives -->
+            <div class="learning-objectives">
+                <h3>📚 Learning Objectives</h3>
+                <ul>
+                    <li>Establish farm record-keeping systems that track production and finances</li>
+                    <li>Calculate production costs accurately for your operation</li>
+                    <li>Forecast revenue and project profitability</li>
+                    <li>Use financial data to make informed farm management decisions</li>
+                    <li>Create a comprehensive, implementable poultry farming business plan</li>
+                    <li>Build a sustainable, profitable poultry operation</li>
+                </ul>
+            </div>
+
+            <!-- Progress Bar -->
+            <div>
+                <p style="font-weight: bold; color: #8b0000;">Your Progress</p>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill" style="width: 0%">0%</div>
+                </div>
+            </div>
+
+            <!-- Videos Section -->
+            <div class="section">
+                <h2>🎥 Learning Videos</h2>
+                <p>Watch these 5 videos on farm economics and record-keeping. Take detailed financial notes.</p>
+
+                <div class="video-container">
+                    <div class="video-title">Video 1: Farm Record-Keeping Systems & Benefits</div>
+                    <iframe src="https://www.youtube.com/embed/3VXjlW3Lx14" allowfullscreen></iframe>
+                </div>
+
+                <div class="video-container">
+                    <div class="video-title">Video 2: Calculating Production Costs & Break-Even Analysis</div>
+                    <iframe src="https://www.youtube.com/embed/pRCkdVJIqpI" allowfullscreen></iframe>
+                </div>
+
+                <div class="video-container">
+                    <div class="video-title">Video 3: Pricing Strategy & Market Analysis for Poultry Products</div>
+                    <iframe src="https://www.youtube.com/embed/oXf1qfM7Yao" allowfullscreen></iframe>
+                </div>
+
+                <div class="video-container">
+                    <div class="video-title">Video 4: Financial Projections & Profitability Analysis</div>
+                    <iframe src="https://www.youtube.com/embed/G1vhfv-Kkl8" allowfullscreen></iframe>
+                </div>
+
+                <div class="video-container">
+                    <div class="video-title">Video 5: Creating a Complete Poultry Farming Business Plan</div>
+                    <iframe src="https://www.youtube.com/embed/u_m0TP0P0BE" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <!-- Economics Example -->
+            <div class="section">
+                <h2>📊 Poultry Farming Economics Example</h2>
+                <p>Here's a realistic example of operating a 50-layer chicken farm in an African context:</p>
+
+                <h3>Startup Costs (One-Time Investment):</h3>
+                <div class="table-container">
+                    <table>
+                        <tr>
+                            <td style="font-weight: bold; background: #f9f9f9;">Item</td>
+                            <td style="text-align: right; background: #f9f9f9;">Cost</td>
+                        </tr>
+                        <tr>
+                            <td>Housing & Construction</td>
+                            <td style="text-align: right;">$400-600</td>
+                        </tr>
+                        <tr style="background: #f9f9f9;">
+                            <td>Equipment (feeders, drinkers, nesting boxes, perches)</td>
+                            <td style="text-align: right; background: #f9f9f9;">$150-250</td>
+                        </tr>
+                        <tr>
+                            <td>Initial Birds (50 point-of-lay pullets)</td>
+                            <td style="text-align: right;">$100-150</td>
+                        </tr>
+                        <tr style="background: #f9f9f9;">
+                            <td>Initial Feed Supply (1 month)</td>
+                            <td style="text-align: right; background: #f9f9f9;">$50-75</td>
+                        </tr>
+                        <tr>
+                            <td>Medications & Vaccines</td>
+                            <td style="text-align: right;">$25-40</td>
+                        </tr>
+                        <tr style="background: #f9f9f9;">
+                            <td><strong>TOTAL STARTUP</strong></td>
+                            <td style="text-align: right; background: #f9f9f9;"><strong>$725-1,115</strong></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <h3>Monthly Operating Costs (50 layers):</h3>
+                <div class="table-container">
+                    <table>
+                        <tr>
+                            <td style="font-weight: bold; background: #f9f9f9;">Expense Category</td>
+                            <td style="text-align: right; background: #f9f9f9;">Monthly Cost</td>
+                        </tr>
+                        <tr>
+                            <td>Feed (50 kg/month × $0.40/kg)</td>
+                            <td style="text-align: right;">$200-250</td>
+                        </tr>
+                        <tr style="background: #f9f9f9;">
+                            <td>Veterinary & Medications</td>
+                            <td style="text-align: right; background: #f9f9f9;">$15-25</td>
+                        </tr>
+                        <tr>
+                            <td>Bedding & Litter</td>
+                            <td style="text-align: right;">$10-15</td>
+                        </tr>
+                        <tr style="background: #f9f9f9;">
+                            <td>Labor (if hiring part-time worker)</td>
+                            <td style="text-align: right; background: #f9f9f9;">$30-50</td>
+                        </tr>
+                        <tr>
+                            <td>Repairs & Maintenance</td>
+                            <td style="text-align: right;">$5-10</td>
+                        </tr>
+                        <tr style="background: #f9f9f9;">
+                            <td><strong>TOTAL MONTHLY</strong></td>
+                            <td style="text-align: right; background: #f9f9f9;"><strong>$260-350</strong></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <h3>Expected Monthly Revenue (50 layers):</h3>
+                <div class="table-container">
+                    <table>
+                        <tr>
+                            <td style="font-weight: bold; background: #f9f9f9;">Product</td>
+                            <td style="background: #f9f9f9;">Quantity</td>
+                            <td style="text-align: right; background: #f9f9f9;">Price/Unit</td>
+                            <td style="text-align: right; background: #f9f9f9;">Monthly Revenue</td>
+                        </tr>
+                        <tr>
+                            <td>Eggs sold (60% of daily production)</td>
+                            <td>600-750 eggs/month</td>
+                            <td style="text-align: right;">$0.15-0.25/egg</td>
+                            <td style="text-align: right;">$90-188</td>
+                        </tr>
+                        <tr style="background: #f9f9f9;">
+                            <td>Spent hens (culled annually)</td>
+                            <td style="background: #f9f9f9;">~4 hens/year</td>
+                            <td style="text-align: right; background: #f9f9f9;">$5-10 each</td>
+                            <td style="text-align: right; background: #f9f9f9;">~$1.50/month avg</td>
+                        </tr>
+                        <tr>
+                            <td>Manure (sold as fertilizer)</td>
+                            <td>50-100 kg/month</td>
+                            <td style="text-align: right;">$0.05/kg</td>
+                            <td style="text-align: right;">$2.50-5</td>
+                        </tr>
+                        <tr style="background: #f9f9f9;">
+                            <td><strong>TOTAL MONTHLY REVENUE</strong></td>
+                            <td style="background: #f9f9f9;"></td>
+                            <td style="text-align: right; background: #f9f9f9;"></td>
+                            <td style="text-align: right; background: #f9f9f9;"><strong>$93-195</strong></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="alert-box">
+                    <div class="alert-title">💡 Financial Reality</div>
+                    <p><strong>Monthly Revenue:</strong> $93-195 | <strong>Monthly Costs:</strong> $260-350</p>
+                    <p><strong>Monthly Loss Year 1:</strong> -$75 to -$257 per month</p>
+                    <p><strong>Profit Timeline:</strong> Break-even at 6-10 months; profitability grows as you expand the flock</p>
+                    <p>The key to profitability is: (1) increase flock size to 200-500 birds, (2) maximize production, (3) reduce per-unit costs, (4) sell premium products (specialty eggs, live birds).</p>
+                </div>
+            </div>
+
+            <!-- Key Performance Metrics -->
+            <div class="section">
+                <h2>📈 Key Performance Metrics to Track</h2>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Metric</th>
+                                <th>Formula</th>
+                                <th>Benchmark Target</th>
+                                <th>Why It Matters</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Lay Rate (%)</strong></td>
+                                <td>Eggs produced / (hens × days) × 100</td>
+                                <td>70-90% for layers</td>
+                                <td>Indicates flock health & productivity; low = disease or poor nutrition</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Mortality Rate (%)</strong></td>
+                                <td>Birds died / Total birds × 100</td>
+                                <td>&lt;5% annually for adults</td>
+                                <td>Indicates disease & husbandry success; higher = management issues</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Feed Conversion Ratio</strong></td>
+                                <td>Feed consumed (kg) / Eggs produced (kg)</td>
+                                <td>2-2.5 for layers</td>
+                                <td>Lower = more efficient; critical for profitability</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cost per Egg Produced</strong></td>
+                                <td>Total feed cost / Eggs produced</td>
+                                <td>$0.05-0.10 per egg</td>
+                                <td>Key to pricing strategy; must be below market price</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Revenue per Bird</strong></td>
+                                <td>Total revenue / Number of birds</td>
+                                <td>$15-30 per bird annually</td>
+                                <td>Indicates overall flock productivity & economic success</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Profit Margin (%)</strong></td>
+                                <td>(Revenue - Costs) / Revenue × 100</td>
+                                <td>15-25% sustainable</td>
+                                <td>Measures actual profitability; 20% is healthy goal</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Implementation Steps -->
+            <div class="section">
+                <h2>⚙️ Implementation Steps</h2>
+
+                <div class="implementation-step">
+                    <div class="step-number">STEP 1: Set Up Record-Keeping System</div>
+                    <div class="step-title">Create comprehensive farm record templates</div>
+                    <div class="step-content">
+                        <strong>What to do:</strong>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Create daily log template (eggs collected, feed consumed, birds observed, mortality)</li>
+                            <li>Create weekly summary sheet (production totals, health observations, expenses)</li>
+                            <li>Create monthly financial statement (income & expenses by category)</li>
+                            <li>Create annual summary (production targets vs. actual, profitability, metrics)</li>
+                            <li>Set up filing system (digital or paper)</li>
+                            <li>Train anyone helping with farm management on record-keeping</li>
+                        </ul>
+                        <p style="margin-top: 15px;"><strong>Expected output:</strong> Complete record-keeping system with templates and filing system</p>
+                        <p><strong>Time needed:</strong> 3-4 hours</p>
+                    </div>
+                </div>
+
+                <div class="implementation-step">
+                    <div class="step-number">STEP 2: Calculate Detailed Startup & Operating Costs</div>
+                    <div class="step-title">Research actual costs for your region</div>
+                    <div class="step-content">
+                        <strong>What to do:</strong>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Get actual quotes for housing construction/modification</li>
+                            <li>Research equipment costs (feeders, drinkers, etc.) locally</li>
+                            <li>Get current market prices for:  feed, birds, medications, labor</li>
+                            <li>Document seasonal price variations</li>
+                            <li>Calculate total startup costs based on your flock size</li>
+                            <li>Project monthly operating costs for 12 months</li>
+                        </ul>
+                        <p style="margin-top: 15px;"><strong>Expected output:</strong> Detailed cost spreadsheet for startup and monthly operating expenses</p>
+                        <p><strong>Time needed:</strong> 4-6 hours</p>
+                    </div>
+                </div>
+
+                <div class="implementation-step">
+                    <div class="step-number">STEP 3: Research Market Prices & Demand</div>
+                    <div class="step-title">Understand your market and pricing options</div>
+                    <div class="step-content">
+                        <strong>What to do:</strong>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Survey local market for egg prices (wholesale, retail, premium)</li>
+                            <li>Survey prices for live birds, meat, specialty products</li>
+                            <li>Interview 5+ local egg buyers about demand and volume</li>
+                            <li>Research seasonal price variations</li>
+                            <li>Identify premium market opportunities (organic, local branding)</li>
+                            <li>Document competition and market saturation</li>
+                        </ul>
+                        <p style="margin-top: 15px;"><strong>Expected output:</strong> Market analysis with pricing options and demand forecast</p>
+                        <p><strong>Time needed:</strong> 4-6 hours</p>
+                    </div>
+                </div>
+
+                <div class="implementation-step">
+                    <div class="step-number">STEP 4: Project 12-Month Financial Forecast</div>
+                    <div class="step-title">Create realistic income and expense projections</div>
+                    <div class="step-content">
+                        <strong>What to do:</strong>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Create 12-month spreadsheet with monthly costs and revenues</li>
+                            <li>Calculate month-by-month profitability (profit/loss)</li>
+                            <li>Identify break-even month</li>
+                            <li>Calculate cumulative profitability (when you recover initial investment)</li>
+                            <li>Create three scenarios: conservative, realistic, optimistic</li>
+                            <li>Include contingency for unexpected costs (10-15%)</li>
+                        </ul>
+                        <p style="margin-top: 15px;"><strong>Expected output:</strong> 12-month financial forecast in spreadsheet format</p>
+                        <p><strong>Time needed:</strong> 3-4 hours</p>
+                    </div>
+                </div>
+
+                <div class="implementation-step">
+                    <div class="step-number">STEP 5: Establish Performance Tracking Dashboard</div>
+                    <div class="step-title">Create system to monitor key production metrics</div>
+                    <div class="step-content">
+                        <strong>What to do:</strong>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Create monthly metrics tracking sheet (lay rate, mortality, feed conversion, cost per egg)</li>
+                            <li>Set target benchmarks for each metric</li>
+                            <li>Create simple charts to visualize monthly trends</li>
+                            <li>Establish review schedule (monthly, quarterly, annually)</li>
+                            <li>Plan corrective actions if metrics fall below targets</li>
+                            <li>Use data to make management decisions</li>
+                        </ul>
+                        <p style="margin-top: 15px;"><strong>Expected output:</strong> Performance tracking system with dashboard and review schedule</p>
+                        <p><strong>Time needed:</strong> 2-3 hours</p>
+                    </div>
+                </div>
+
+                <div class="implementation-step">
+                    <div class="step-number">STEP 6: Create Complete Business Plan</div>
+                    <div class="step-title">Synthesize everything into an implementable business plan</div>
+                    <div class="step-content">
+                        <strong>What to do:</strong>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Write executive summary (vision, goals, key numbers)</li>
+                            <li>Compile all modules' content (housing, breeding, health, nutrition)</li>
+                            <li>Integrate financial projections and market analysis</li>
+                            <li>Create implementation timeline (year 1, year 2, year 5 projections)</li>
+                            <li>Include expansion scenarios (how to grow from 50 to 200+ birds)</li>
+                            <li>Write management & contingency plans</li>
+                        </ul>
+                        <p style="margin-top: 15px;"><strong>Expected output:</strong> 30-40 page complete business plan ready for bank loans or implementation</p>
+                        <p><strong>Time needed:</strong> 8-12 hours</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Knowledge Check Quiz -->
+            <div class="section">
+                <div class="quiz-section">
+                    <div class="quiz-title">✓ Knowledge Check Quiz</div>
+                    <p>Answer these 3 questions to verify your understanding. You need 2/3 (66%) to pass.</p>
+
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">Question 1: What is Feed Conversion Ratio (FCR) for layers?</div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q1" value="a"> (A) 1-1.5:1 (feed:eggs)</label>
+                        </div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q1" value="b"> (B) 2-2.5:1 (feed:eggs)</label>
+                        </div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q1" value="c"> (C) 4-5:1 (feed:eggs)</label>
+                        </div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q1" value="d"> (D) No standard measure</label>
+                        </div>
+                        <div class="feedback" id="q1-feedback"></div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">Question 2: What is a healthy annual profit margin for poultry farming?</div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q2" value="a"> (A) 1-5%</label>
+                        </div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q2" value="b"> (B) 10-15%</label>
+                        </div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q2" value="c"> (C) 15-25%</label>
+                        </div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q2" value="d"> (D) 50%+</label>
+                        </div>
+                        <div class="feedback" id="q2-feedback"></div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">Question 3: Why is cost per egg produced a critical metric?</div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q3" value="a"> (A) It determines pricing strategy; must be below market price to profit</label>
+                        </div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q3" value="b"> (B) It shows how healthy the hens are</label>
+                        </div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q3" value="c"> (C) It measures the size of eggs</label>
+                        </div>
+                        <div class="quiz-option">
+                            <label><input type="radio" name="q3" value="d"> (D) It's not really important</label>
+                        </div>
+                        <div class="feedback" id="q3-feedback"></div>
+                    </div>
+
+                    <button onclick="submitQuiz()">Submit Quiz</button>
+                    <div id="quiz-result" style="margin-top: 20px; font-weight: bold; font-size: 1.1em;"></div>
+                </div>
+            </div>
+
+            <!-- CAPSTONE Project -->
+            <div class="section">
+                <div class="project-section">
+                    <div class="project-title">🏆 CAPSTONE PROJECT: Complete Poultry Farming Business Plan</div>
+                    <p style="font-size: 1.1em; font-weight: bold;">This is your final, most important deliverable. This 30-40 page comprehensive business plan integrates everything from all 6 modules and is ready for implementation or bank financing.</p>
+
+                    <h3>Section 1: Executive Summary (2-3 pages)</h3>
+                    <ul style="margin-left: 20px;">
+                        <li>Your farm vision and mission</li>
+                        <li>Business type and flock size</li>
+                        <li>Key financial projections</li>
+                        <li>Investment required and profit timeline</li>
+                    </ul>
+
+                    <h3>Section 2: Market Analysis (3-4 pages)</h3>
+                    <ul style="margin-left: 20px;">
+                        <li>Local market size and demand for poultry products</li>
+                        <li>Pricing analysis (wholesale, retail, premium options)</li>
+                        <li>Competition assessment</li>
+                        <li>Market opportunities and risks</li>
+                    </ul>
+
+                    <h3>Section 3: Production Plan (5-6 pages)</h3>
+                    <ul style="margin-left: 20px;">
+                        <li>Housing design and facilities (from Module 2)</li>
+                        <li>Flock composition and breed selection (from Module 2)</li>
+                        <li>Production systems and management</li>
+                        <li>Quality control measures</li>
+                    </ul>
+
+                    <h3>Section 4: Feeding & Nutrition (3-4 pages)</h3>
+                    <ul style="margin-left: 20px;">
+                        <li>Nutritional requirements by bird type (from Module 3)</li>
+                        <li>Feed formulations and sources</li>
+                        <li>Monthly feed requirements and costs</li>
+                        <li>Feed supplier information</li>
+                    </ul>
+
+                    <h3>Section 5: Health Management (3-4 pages)</h3>
+                    <ul style="margin-left: 20px;">
+                        <li>Disease prevention and biosecurity protocols (from Module 4)</li>
+                        <li>Vaccination schedule and veterinary services</li>
+                        <li>Emergency response procedures</li>
+                        <li>Health monitoring system</li>
+                    </ul>
+
+                    <h3>Section 6: Breeding & Production (2-3 pages)</h3>
+                    <ul style="margin-left: 20px;">
+                        <li>Breeding program and genetics (from Module 5)</li>
+                        <li>Egg production expectations</li>
+                        <li>Chick rearing procedures</li>
+                        <li>Flock replacement schedule</li>
+                    </ul>
+
+                    <h3>Section 7: Financial Projections (6-8 pages)</h3>
+                    <ul style="margin-left: 20px;">
+                        <li>Startup costs breakdown</li>
+                        <li>Monthly operating budget (12-month forecast)</li>
+                        <li>Revenue projections (conservative, realistic, optimistic scenarios)</li>
+                        <li>Break-even analysis</li>
+                        <li>5-year financial projections</li>
+                        <li>Return on investment (ROI) calculations</li>
+                    </ul>
+
+                    <h3>Section 8: Record Keeping & Performance Metrics (3-4 pages)</h3>
+                    <ul style="margin-left: 20px;">
+                        <li>Farm record-keeping system</li>
+                        <li>Key performance metrics and benchmarks</li>
+                        <li>Monitoring and reporting procedures</li>
+                        <li>Sample tracking forms and templates</li>
+                    </ul>
+
+                    <h3>Section 9: Risk Management & Contingency Plan (2-3 pages)</h3>
+                    <ul style="margin-left: 20px;">
+                        <li>Identified risks (disease, market, financial, operational)</li>
+                        <li>Mitigation strategies for each risk</li>
+                        <li>Emergency procedures and backup plans</li>
+                        <li>Insurance and financial reserves</li>
+                    </ul>
+
+                    <h3>Section 10: Implementation Timeline (1-2 pages)</h3>
+                    <ul style="margin-left: 20px;">
+                        <li>Month-by-month implementation schedule</li>
+                        <li>Facility construction/preparation timeline</li>
+                        <li>Bird acquisition and stocking schedule</li>
+                        <li>System setup and staff training</li>
+                        <li>First production cycle timeline</li>
+                    </ul>
+
+                    <h3>Section 11: Growth & Expansion Strategy (2-3 pages)</h3>
+                    <ul style="margin-left: 20px;">
+                        <li>Year 1 baseline (50-100 birds)</li>
+                        <li>Year 2-3 expansion plans (200-300 birds)</li>
+                        <li>Year 5 vision (500+ birds or diversification)</li>
+                        <li>Capital requirements for expansion</li>
+                    </ul>
+
+                    <h3>Appendices (5-10 pages)</h3>
+                    <ul style="margin-left: 20px;">
+                        <li>Detailed financial spreadsheets</li>
+                        <li>Facility design drawings/photos</li>
+                        <li>Feed formulation calculations</li>
+                        <li>Market research data</li>
+                        <li>Record-keeping templates</li>
+                        <li>Veterinary contact information</li>
+                        <li>Equipment and supplier quotes</li>
+                        <li>Research and references</li>
+                    </ul>
+
+                    <p style="margin-top: 20px; font-size: 1.1em;"><strong>Total length: 30-40 pages with supporting documents, photos, charts, and spreadsheets</strong></p>
+
+                    <p style="margin-top: 15px;"><strong>Grading Criteria (100 points total):</strong></p>
+                    <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+                        <tr>
+                            <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold; background: #f9f9f9; width: 40%;">Criterion</td>
+                            <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold; background: #f9f9f9; text-align: center;">Points</td>
+                            <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold; background: #f9f9f9;">Assessment</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px; border: 1px solid #ddd;"><strong>Completeness</strong></td>
+                            <td style="padding: 12px; border: 1px solid #ddd; text-align: center;">20</td>
+                            <td style="padding: 12px; border: 1px solid #ddd;">All 11 sections included; nothing missing; comprehensive appendices</td>
+                        </tr>
+                        <tr style="background: #f9f9f9;">
+                            <td style="padding: 12px; border: 1px solid #ddd;"><strong>Realism</strong></td>
+                            <td style="padding: 12px; border: 1px solid #ddd; text-align: center; background: #f9f9f9;">20</td>
+                            <td style="padding: 12px; border: 1px solid #ddd; background: #f9f9f9;">Plan is actually implementable; costs reflect real local prices; timelines achievable</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px; border: 1px solid #ddd;"><strong>Financial Accuracy</strong></td>
+                            <td style="padding: 12px; border: 1px solid #ddd; text-align: center;">20</td>
+                            <td style="padding: 12px; border: 1px solid #ddd;">All calculations correct; spreadsheets accurate; projections reasonable</td>
+                        </tr>
+                        <tr style="background: #f9f9f9;">
+                            <td style="padding: 12px; border: 1px solid #ddd;"><strong>Technical Accuracy</strong></td>
+                            <td style="padding: 12px; border: 1px solid #ddd; text-align: center; background: #f9f9f9;">15</td>
+                            <td style="padding: 12px; border: 1px solid #ddd; background: #f9f9f9;">Breeding, nutrition, health, housing info correct; reflects best practices</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px; border: 1px solid #ddd;"><strong>Clarity & Organization</strong></td>
+                            <td style="padding: 12px; border: 1px solid #ddd; text-align: center;">15</td>
+                            <td style="padding: 12px; border: 1px solid #ddd;">Well-written, easy to follow; professional formatting; charts & images clear</td>
+                        </tr>
+                        <tr style="background: #f9f9f9;">
+                            <td style="padding: 12px; border: 1px solid #ddd;"><strong>Research & Evidence</strong></td>
+                            <td style="padding: 12px; border: 1px solid #ddd; text-align: center; background: #f9f9f9;">10</td>
+                            <td style="padding: 12px; border: 1px solid #ddd; background: #f9f9f9;">Thorough market research, supplier quotes, documented sources, photos</td>
+                        </tr>
+                    </table>
+
+                    <p style="margin-top: 20px; color: #8b0000; font-weight: bold;">Passing Grade: 70 points (70%) - This business plan is then ready for implementation!</p>
+                </div>
+            </div>
+
+            <!-- Success Criteria -->
+            <div class="section">
+                <h2>✅ Course Completion Criteria</h2>
+                <ul class="checklist">
+                    <li><input type="checkbox"> Watched all 5 videos on farm economics and record-keeping</li>
+                    <li><input type="checkbox"> Completed all 6 implementation steps</li>
+                    <li><input type="checkbox"> Scored 2/3 (66%) or higher on knowledge check quiz</li>
+                    <li><input type="checkbox"> Submitted complete 30-40 page capstone business plan</li>
+                    <li><input type="checkbox"> Business plan includes all 11 required sections</li>
+                    <li><input type="checkbox"> Financial projections are realistic and well-researched</li>
+                    <li><input type="checkbox"> Plan is ready for actual implementation or bank financing</li>
+                </ul>
+            </div>
+
+            <!-- Certificate -->
+            <div class="section" style="background: linear-gradient(135deg, #8b0000 0%, #a52a2a 100%); padding: 30px; border-radius: 8px; color: white; text-align: center;">
+                <h2 style="color: white; border: none; padding: 0; margin: 0;">🏆 COMPLETION CERTIFICATE</h2>
+                <p style="font-size: 1.3em; margin-top: 20px; font-weight: bold;">Upon successful completion of all 6 modules and submission of your capstone business plan, you receive:</p>
+                <p style="font-size: 1.4em; margin-top: 20px; letter-spacing: 2px;">✓ CERTIFICATE OF COMPLETION</p>
+                <p style="margin-top: 15px;"><strong>Sustainable Poultry Farming Course</strong></p>
+                <p>Rise Africa Skills Program</p>
+                <p style="margin-top: 20px;">You have successfully completed:</p>
+                <p>✓ 6 comprehensive modules (25+ hours learning)<br/>✓ 30 video lessons<br/>✓ 36 implementation steps<br/>✓ 6 major projects<br/>✓ 1 complete business plan</p>
+                <p style="margin-top: 20px; font-size: 1.1em;">This certificate proves you have the knowledge and skills to:</p>
+                <p>✓ Start and operate a profitable poultry farm<br/>✓ Manage breeding and production systems<br/>✓ Implement health and safety protocols<br/>✓ Track finances and optimize profitability<br/>✓ Create a sustainable agricultural business</p>
+            </div>
+
+            <!-- What's Next -->
+            <div class="section" style="background: #e8f4f8; padding: 20px; border-radius: 8px;">
+                <h2 style="margin-top: 0;">🚀 What's Next After Course Completion?</h2>
+                <p><strong>You now have three options:</strong></p>
+                <p style="margin-top: 15px;"><strong>Option 1: Start Your Poultry Farm</strong></p>
+                <p>Use your completed business plan to begin operations. Start with 50-100 birds and follow your implementation timeline. Track your progress using the record-keeping system you learned.</p>
+                <p style="margin-top: 15px;"><strong>Option 2: Pursue Bank Financing</strong></p>
+                <p>Use your professional business plan to apply for agricultural loans. Banks recognize comprehensive plans like this one. Your plan demonstrates competence and reduces lending risk.</p>
+                <p style="margin-top: 15px;"><strong>Option 3: Take Advanced Courses</strong></p>
+                <p>Rise Africa Skills offers advanced courses in: Commercial Poultry Production, Integrated Farming Systems, Agribusiness Management, Market Development, and more.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function submitQuiz() {
+            let score = 0;
+            const answers = {
+                q1: 'b',
+                q2: 'c',
+                q3: 'a'
+            };
+
+            const feedback = {
+                q1: {
+                    correct: 'Correct! Feed Conversion Ratio for layers is 2-2.5:1, meaning it takes 2-2.5 kg of feed to produce 1 kg of eggs.',
+                    incorrect: 'Incorrect. FCR for layers is 2-2.5:1. This is critical for profitability - lower FCR = better efficiency.'
+                },
+                q2: {
+                    correct: 'Correct! A healthy profit margin for poultry farming is 15-25% annually. This is sustainable and allows for growth reinvestment.',
+                    incorrect: 'Incorrect. A healthy poultry farm profit margin is 15-25% per year. Lower margins are risky; higher margins are unrealistic.'
+                },
+                q3: {
+                    correct: 'Correct! Cost per egg is critical because it must be below your selling price to generate profit. It also drives your pricing strategy.',
+                    incorrect: 'Incorrect. Cost per egg is essential - it determines if you can profit at market prices and guides your pricing strategy.'
+                }
+            };
+
+            for (let i = 1; i <= 3; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                const feedbackDiv = document.getElementById(`q${i}-feedback`);
+
+                if (!selected) {
+                    feedbackDiv.textContent = 'Please select an answer.';
+                    feedbackDiv.className = 'feedback incorrect';
+                    feedbackDiv.style.display = 'block';
+                } else {
+                    const isCorrect = selected.value === answers[`q${i}`];
+                    if (isCorrect) {
+                        score++;
+                        feedbackDiv.textContent = feedback[`q${i}`].correct;
+                        feedbackDiv.className = 'feedback correct';
+                    } else {
+                        feedbackDiv.textContent = feedback[`q${i}`].incorrect;
+                        feedbackDiv.className = 'feedback incorrect';
+                    }
+                    feedbackDiv.style.display = 'block';
+                }
+            }
+
+            const resultDiv = document.getElementById('quiz-result');
+            const percentage = Math.round((score / 3) * 100);
+            resultDiv.textContent = `Score: ${score}/3 (${percentage}%) - ${percentage >= 66 ? '✓ PASS' : '✗ Please review and try again'}`;
+            resultDiv.style.color = percentage >= 66 ? '#155724' : '#721c24';
+
+            localStorage.setItem('module6-quiz-score', score);
+            updateProgress();
+        }
+
+        function updateProgress() {
+            let completed = 0;
+            if (localStorage.getItem('module6-quiz-score')) completed++;
+
+            const progressPercent = (completed / 7) * 100;
+            document.getElementById('progressFill').style.width = progressPercent + '%';
+            document.getElementById('progressFill').textContent = Math.round(progressPercent) + '%';
+
+            localStorage.setItem('module6-progress', progressPercent);
+        }
+
+        window.addEventListener('load', updateProgress);
+    </script>
+</body>
+</html>

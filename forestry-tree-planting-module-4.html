@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forestry & Tree Planting - Module 4: Health & Disease Management</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background: #f9f9f9; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .header { background: linear-gradient(135deg, #2d5016 0%, #4a7c2f 100%); color: white; padding: 30px; border-radius: 10px; margin-bottom: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .header p { font-size: 1.2em; opacity: 0.9; }
+        .content { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .section { margin-bottom: 40px; }
+        .section h2 { color: #2d5016; font-size: 1.8em; margin-bottom: 20px; border-bottom: 3px solid #4a7c2f; padding-bottom: 10px; }
+        .learning-objectives { background: #e8f5e9; padding: 20px; border-left: 5px solid #4a7c2f; margin-bottom: 20px; border-radius: 5px; }
+        .learning-objectives ul { list-style-position: inside; }
+        .learning-objectives li { margin-bottom: 8px; }
+        .video-container { background: #f5f5f5; padding: 15px; margin-bottom: 15px; border-radius: 5px; border-left: 4px solid #4a7c2f; }
+        .video-container h3 { color: #2d5016; margin-bottom: 10px; }
+        iframe { width: 100%; height: 400px; border-radius: 5px; border: none; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th { background: #2d5016; color: white; padding: 15px; text-align: left; }
+        td { padding: 12px; border-bottom: 1px solid #ddd; }
+        tr:hover { background: #f5f5f5; }
+        .implementation-step { background: #fafafa; padding: 15px; margin-bottom: 15px; border-radius: 5px; border-left: 4px solid #4a7c2f; }
+        .implementation-step h3 { color: #2d5016; margin-bottom: 8px; }
+        .implementation-step p { line-height: 1.8; }
+        .quiz-section { background: #fff3e0; padding: 20px; border-radius: 5px; border: 2px solid #4a7c2f; }
+        .quiz-section h3 { color: #2d5016; margin-bottom: 20px; }
+        .quiz-question { margin-bottom: 20px; background: white; padding: 15px; border-radius: 5px; }
+        .quiz-question p { font-weight: bold; margin-bottom: 10px; }
+        .quiz-option { margin-left: 20px; margin-bottom: 8px; }
+        .quiz-option input[type="radio"] { margin-right: 8px; }
+        .feedback { margin-top: 10px; padding: 10px; border-radius: 5px; display: none; }
+        .feedback.show { display: block; }
+        .feedback.correct { background: #c8e6c9; color: #2d5016; border-left: 4px solid #4a7c2f; }
+        .feedback.incorrect { background: #ffcdd2; color: #c62828; border-left: 4px solid #c62828; }
+        .project-section { background: #f1f8e9; padding: 20px; border-radius: 5px; border: 2px solid #4a7c2f; }
+        .project-section h2 { color: #2d5016; }
+        .project-item { background: white; padding: 15px; margin: 15px 0; border-radius: 5px; border-left: 4px solid #4a7c2f; }
+        .project-item h4 { color: #2d5016; margin-bottom: 8px; }
+        .progress-bar { background: #e0e0e0; height: 10px; border-radius: 5px; overflow: hidden; margin-bottom: 20px; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, #2d5016, #4a7c2f); width: 0%; transition: width 0.3s; }
+        .next-module { margin-top: 30px; padding: 20px; background: #e8f5e9; border-radius: 5px; text-align: center; }
+        .next-module a { display: inline-block; background: #2d5016; color: white; padding: 12px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background 0.3s; }
+        .next-module a:hover { background: #4a7c2f; }
+        @media (max-width: 768px) { .header h1 { font-size: 1.8em; } iframe { height: 300px; } table { font-size: 0.9em; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌱 Forestry & Tree Planting</h1>
+            <p>Module 4: Health & Disease Management</p>
+        </div>
+
+        <div class="content">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+
+            <div class="section">
+                <div class="learning-objectives">
+                    <h2>📚 Learning Objectives</h2>
+                    <ul>
+                        <li>Identify common tree diseases and pests in African plantations</li>
+                        <li>Recognize symptoms and understand disease/pest life cycles</li>
+                        <li>Implement preventive biosecurity measures and cultural practices</li>
+                        <li>Use integrated pest management (low-cost, minimal pesticides)</li>
+                        <li>Respond effectively when problems occur (treatment options)</li>
+                        <li>Calculate disease impact on yield and economics</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🎥 Learning Videos</h2>
+
+                <div class="video-container">
+                    <h3>1. Common Tree Diseases in African Plantations</h3>
+                    <iframe src="https://www.youtube.com/embed/VQ2YVH1IusI?rel=0" allowfullscreen></iframe>
+                </div>
+
+                <div class="video-container">
+                    <h3>2. Pest Management: From Prevention to Treatment</h3>
+                    <iframe src="https://www.youtube.com/embed/qPGvXcPqcsI?rel=0" allowfullscreen></iframe>
+                </div>
+
+                <div class="video-container">
+                    <h3>3. Integrated Pest Management (IPM) for Trees</h3>
+                    <iframe src="https://www.youtube.com/embed/M7Gp15yI8u8?rel=0" allowfullscreen></iframe>
+                </div>
+
+                <div class="video-container">
+                    <h3>4. Organic/Biological Control Methods for Pests</h3>
+                    <iframe src="https://www.youtube.com/embed/XN0gFUXRw0k?rel=0" allowfullscreen></iframe>
+                </div>
+
+                <div class="video-container">
+                    <h3>5. Monitoring & Early Disease Detection</h3>
+                    <iframe src="https://www.youtube.com/embed/m3tPwVq5kVQ?rel=0" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>📊 Common Tree Diseases & Pests in Africa</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Disease/Pest</th>
+                            <th>Affected Species</th>
+                            <th>Symptoms</th>
+                            <th>Prevention</th>
+                            <th>Treatment Cost</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Leaf Spot (Fungal)</td>
+                            <td>Teak, Mahogany, Mango</td>
+                            <td>Brown/black spots on leaves, defoliation</td>
+                            <td>Prune infected branches, improve air flow, remove fallen leaves</td>
+                            <td>Free (cultural)</td>
+                        </tr>
+                        <tr>
+                            <td>Root Rot (Phytophthora)</td>
+                            <td>All species if poorly drained</td>
+                            <td>Wilting, yellow leaves, tree death</td>
+                            <td>Ensure good drainage, avoid waterlogging, proper spacing</td>
+                            <td>Free (prevention)</td>
+                        </tr>
+                        <tr>
+                            <td>Wood Borers</td>
+                            <td>Teak, Timber species</td>
+                            <td>Sawdust in bark, tunnel holes, weakened wood</td>
+                            <td>Regular monitoring, remove infested branches, promote tree vigor</td>
+                            <td>$2-5/tree spray if needed</td>
+                        </tr>
+                        <tr>
+                            <td>Aphids & Scale Insects</td>
+                            <td>Mango, Acacia, many species</td>
+                            <td>Sticky residue, yellowing leaves, poor growth</td>
+                            <td>Strong water spray, encourage natural predators (ladybugs)</td>
+                            <td>Free-$2/tree spray</td>
+                        </tr>
+                        <tr>
+                            <td>Canker (Fungal)</td>
+                            <td>Mahogany, Pine, Grafted trees</td>
+                            <td>Sunken lesions on trunk, bark splitting, branch dieback</td>
+                            <td>Prune 30 cm below lesion, sterilize tools, promote tree vigor</td>
+                            <td>$5-15/tree (pruning labor)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h2>📋 6 Implementation Steps</h2>
+
+                <div class="implementation-step">
+                    <h3>Step 1: Establish Monitoring System</h3>
+                    <p><strong>What to monitor:</strong> Monthly visual inspections of 10-20 random trees (all tree sections: leaves, branches, trunk, roots). Record observations: leaf color, spot patterns, visible insects, branch dieback, any abnormalities. Cost: $0 (time investment). Early detection saves 80% of trees.</p>
+                    <p><strong>Action:</strong> Create monitoring checklist, do first inspection within 1 week, establish monthly schedule.</p>
+                </div>
+
+                <div class="implementation-step">
+                    <h3>Step 2: Implement Biosecurity Practices</h3>
+                    <p><strong>Practices (FREE):</strong> Sterilize pruning tools (wipe with cloth after each cut), remove fallen leaves/branches (harbor diseases), avoid planting in poor-drainage areas, maintain tree spacing (prevents fungal spread), remove infected trees immediately. These simple steps prevent 60-70% of problems.</p>
+                    <p><strong>Action:</strong> Set up tool sterilization routine, create leaf removal schedule, assess drainage in plantation, plan spacing corrections.</p>
+                </div>
+
+                <div class="implementation-step">
+                    <h3>Step 3: Promote Tree Vigor (Best Prevention)</h3>
+                    <p><strong>Healthy trees resist disease:</strong> Proper nutrition, adequate water, good soil drainage, appropriate spacing - vigorous trees fight off pests/diseases naturally. This is the single most cost-effective strategy. Cost: already budgeted in soil/water/nutrition modules.</p>
+                    <p><strong>Action:</strong> Ensure all trees receive proper care per Modules 3-4 guidance. Prioritize vulnerable young trees.</p>
+                </div>
+
+                <div class="implementation-step">
+                    <h3>Step 4: Use Integrated Pest Management (IPM)</h3>
+                    <p><strong>IPM approach (avoids pesticides):</strong> Start with cultural control (pruning, spacing), then biological control (encourage beneficial insects like ladybugs), only use targeted spray as last resort. Pesticide cost: $2-5/tree when absolutely necessary, but 80% of problems solve without pesticides.</p>
+                    <p><strong>Action:</strong> Learn to identify beneficial insects (ladybugs, parasitic wasps). Encourage them by maintaining diverse vegetation around plantation.</p>
+                </div>
+
+                <div class="implementation-step">
+                    <h3>Step 5: Respond Quickly to Detected Problems</h3>
+                    <p><strong>When problem detected:</strong> (1) Confirm diagnosis (consult extension officer if uncertain), (2) Isolate if contagious, (3) Prune affected parts immediately (cut 30-50 cm below visible damage, burn/compost material), (4) Apply treatment if needed (organic spray $2-5, or chemical if severe). Speed is critical - 1-2 weeks delay can spread problem to 10x more trees.</p>
+                    <p><strong>Action:</strong> Have extension officer contact ready, plan for immediate access to basic tools (pruning saw), know safe disposal method for infected material.</p>
+                </div>
+
+                <div class="implementation-step">
+                    <h3>Step 6: Maintain Treatment Records & Economics</h3>
+                    <p><strong>Tracking:</strong> Document all problems, treatments, costs, outcomes. Example: 100 trees with leaf spot ($50 labor to prune) vs. 100 untreated (lose 30% yield = $300 loss). Record shows treatment ROI = 6:1. Year 2: prevention costs decrease as tree health improves.</p>
+                    <p><strong>Action:</strong> Create record sheet: date, problem type, trees affected, treatment cost, outcome. Calculate annual health budget: expect $500-2,000/year for 10-hectare plantation.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="quiz-section">
+                    <h3>🎯 Module 4 Quiz</h3>
+
+                    <div class="quiz-question">
+                        <p>1. What is the single most effective way to prevent tree diseases?</p>
+                        <div class="quiz-option">
+                            <input type="radio" name="q1" value="a" id="q1a">
+                            <label for="q1a">a) Spray pesticides regularly as prevention</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q1" value="b" id="q1b">
+                            <label for="q1b">b) Maintain tree vigor through good nutrition, water, soil, spacing + basic biosecurity</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q1" value="c" id="q1c">
+                            <label for="q1c">c) Accept losses as inevitable</label>
+                        </div>
+                        <button onclick="checkAnswer('q1', 'b', 'Correct! Vigorous, well-cared-for trees resist 80% of pests/diseases naturally. Prevention is 90% cheaper than treatment.')">Check Answer</button>
+                        <div id="feedback-q1" class="feedback"></div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p>2. What does Integrated Pest Management (IPM) prioritize?</p>
+                        <div class="quiz-option">
+                            <input type="radio" name="q2" value="a" id="q2a">
+                            <label for="q2a">a) Immediate pesticide spraying for all problems</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q2" value="b" id="q2b">
+                            <label for="q2b">b) Cultural control → biological control → targeted spray only as last resort</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q2" value="c" id="q2c">
+                            <label for="q2c">c) Accepting all pest damage without intervention</label>
+                        </div>
+                        <button onclick="checkAnswer('q2', 'b', 'Correct! IPM is cost-effective: cultural practices (free), then biological control, then chemical only if essential ($2-5/tree).')">Check Answer</button>
+                        <div id="feedback-q2" class="feedback"></div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p>3. Why is early disease detection critical in tree plantations?</p>
+                        <div class="quiz-option">
+                            <input type="radio" name="q3" value="a" id="q3a">
+                            <label for="q3a">a) It doesn't matter - disease spreads anyway</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q3" value="b" id="q3b">
+                            <label for="q3b">b) Early treatment saves 80% of affected trees; late detection spreads to 10x more trees</label>
+                        </div>
+                        <div class="quiz-option">
+                            <input type="radio" name="q3" value="c" id="q3c">
+                            <label for="q3c">c) Early detection is just good record-keeping</label>
+                        </div>
+                        <button onclick="checkAnswer('q3', 'b', 'Correct! 1-2 weeks delay in response can exponentially increase spread. Monthly monitoring is essential.')">Check Answer</button>
+                        <div id="feedback-q3" class="feedback"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="project-section">
+                    <h2>🚀 Real-World Project: Health Management Plan</h2>
+
+                    <div class="project-item">
+                        <h4>Part 1: Species Health Profile</h4>
+                        <p>For your main planting species, research common diseases/pests: what are the main threats? What regions are most affected? Create 1-page summary with symptoms, seasonal patterns, treatment options.</p>
+                    </div>
+
+                    <div class="project-item">
+                        <h4>Part 2: Monitoring System Design</h4>
+                        <p>Design monthly monitoring protocol: which trees to check (sample size), what to observe (leaves/branches/trunk), how to record findings, frequency of inspection. Create simple checklist form for field use.</p>
+                    </div>
+
+                    <div class="project-item">
+                        <h4>Part 3: Biosecurity Planning</h4>
+                        <p>Create action plan for biosecurity: tool sterilization procedure, fallen leaf/branch removal schedule, spacing assessment, drainage improvements. Cost estimate for implementation (most practices are free).</p>
+                    </div>
+
+                    <div class="project-item">
+                        <h4>Part 4: Pest Identification Guide</h4>
+                        <p>Create illustrated guide for 5 major pests/diseases in your region: symptoms, affected parts, lifecycle, damage potential, treatment options (cultural, biological, chemical). Photos or drawings if possible.</p>
+                    </div>
+
+                    <div class="project-item">
+                        <h4>Part 5: Treatment Response Protocol</h4>
+                        <p>Write standard operating procedure: When problem detected → (1) confirm diagnosis, (2) assess severity, (3) isolate if needed, (4) determine treatment, (5) implement, (6) monitor results. Timeline for each step.</p>
+                    </div>
+
+                    <div class="project-item">
+                        <h4>Part 6: Resource Inventory</h4>
+                        <p>Inventory available resources: pruning tools, storage for chemicals, access to extension officer, spraying equipment, compost for vigor. Identify gaps and plan to fill them ($50-500 budget typical).</p>
+                    </div>
+
+                    <div class="project-item">
+                        <h4>Part 7: Budget for Health Management</h4>
+                        <p>5-year health budget: Year 1 (establishment, learning: $500-1,000), Year 2-5 (ongoing maintenance + prevention: $300-500/year). Calculate ROI: prevent 10-20% yield loss ($1,000-3,000 value) with $500 investment = 2-6:1 return.</p>
+                    </div>
+
+                    <div class="project-item">
+                        <h4>Part 8: Emergency Response Plan</h4>
+                        <p>Create "What to do if major problem detected" flowchart: decision tree for different scenarios (widespread disease, major pest outbreak, tree death). Contact list (extension officer, suppliers, equipment). Storage for emergency supplies.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="next-module">
+                <p>Ready to continue? Move to Module 5: Growth Management & Production Cycles</p>
+                <a href="forestry-tree-planting-module-5.html">→ Next Module</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswer(questionId, correctAnswer, feedback) {
+            const selected = document.querySelector(`input[name="${questionId}"]:checked`);
+            const feedbackEl = document.getElementById(`feedback-${questionId}`);
+
+            if (!selected) {
+                alert('Please select an answer');
+                return;
+            }
+
+            if (selected.value === correctAnswer) {
+                feedbackEl.className = 'feedback show correct';
+                feedbackEl.textContent = '✓ ' + feedback;
+            } else {
+                feedbackEl.className = 'feedback show incorrect';
+                feedbackEl.textContent = '✗ Incorrect. ' + feedback;
+            }
+            updateProgress();
+        }
+
+        function updateProgress() {
+            const answered = document.querySelectorAll('input[type="radio"]:checked').length;
+            const total = document.querySelectorAll('input[type="radio"]').length / 3;
+            const progress = (answered / total) * 100;
+            document.getElementById('progressFill').style.width = progress + '%';
+            localStorage.setItem('module4Progress', progress);
+        }
+
+        window.addEventListener('load', () => {
+            const saved = localStorage.getItem('module4Progress');
+            if (saved) document.getElementById('progressFill').style.width = saved + '%';
+        });
+    </script>
+</body>
+</html>

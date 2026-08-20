@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mushroom Farming - Module 5: Marketing & Sales Channels</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background: #f9f9f9; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .header { background: linear-gradient(135deg, #6b4423 0%, #9d6d37 100%); color: white; padding: 30px; border-radius: 10px; margin-bottom: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .header p { font-size: 1.2em; opacity: 0.9; }
+        .content { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .section { margin-bottom: 40px; }
+        .section h2 { color: #6b4423; font-size: 1.8em; margin-bottom: 20px; border-bottom: 3px solid #9d6d37; padding-bottom: 10px; }
+        .learning-objectives { background: #f5e6d3; padding: 20px; border-left: 5px solid #9d6d37; margin-bottom: 20px; border-radius: 5px; }
+        .learning-objectives ul { list-style-position: inside; }
+        .learning-objectives li { margin-bottom: 8px; }
+        .video-container { background: #f9f9f9; padding: 15px; margin-bottom: 15px; border-radius: 5px; border-left: 4px solid #9d6d37; }
+        .video-container h3 { color: #6b4423; margin-bottom: 10px; }
+        iframe { width: 100%; height: 400px; border-radius: 5px; border: none; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th { background: #6b4423; color: white; padding: 15px; text-align: left; }
+        td { padding: 12px; border-bottom: 1px solid #ddd; }
+        tr:hover { background: #f9f9f9; }
+        .implementation-step { background: #fafafa; padding: 15px; margin-bottom: 15px; border-radius: 5px; border-left: 4px solid #9d6d37; }
+        .implementation-step h3 { color: #6b4423; margin-bottom: 8px; }
+        .quiz-section { background: #fff9e6; padding: 20px; border-radius: 5px; border: 2px solid #9d6d37; }
+        .quiz-section h3 { color: #6b4423; margin-bottom: 20px; }
+        .quiz-question { margin-bottom: 20px; background: white; padding: 15px; border-radius: 5px; }
+        .quiz-question p { font-weight: bold; margin-bottom: 10px; }
+        .quiz-option { margin-left: 20px; margin-bottom: 8px; }
+        .quiz-option input[type="radio"] { margin-right: 8px; }
+        .feedback { margin-top: 10px; padding: 10px; border-radius: 5px; display: none; }
+        .feedback.show { display: block; }
+        .feedback.correct { background: #d4edda; color: #155724; border-left: 4px solid #28a745; }
+        .feedback.incorrect { background: #f8d7da; color: #721c24; border-left: 4px solid #f5c6cb; }
+        .project-section { background: #e8f5e9; padding: 20px; border-radius: 5px; border: 2px solid #9d6d37; }
+        .project-section h2 { color: #6b4423; }
+        .project-item { background: white; padding: 15px; margin: 15px 0; border-radius: 5px; border-left: 4px solid #9d6d37; }
+        .project-item h4 { color: #6b4423; margin-bottom: 8px; }
+        .progress-bar { background: #e0e0e0; height: 10px; border-radius: 5px; overflow: hidden; margin-bottom: 20px; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, #6b4423, #9d6d37); width: 0%; transition: width 0.3s; }
+        .next-module { margin-top: 30px; padding: 20px; background: #f5e6d3; border-radius: 5px; text-align: center; }
+        .next-module a { display: inline-block; background: #6b4423; color: white; padding: 12px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background 0.3s; }
+        .next-module a:hover { background: #9d6d37; }
+        @media (max-width: 768px) { .header h1 { font-size: 1.8em; } iframe { height: 300px; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🍄 Mushroom Farming</h1>
+            <p>Module 5: Marketing & Sales Channels</p>
+        </div>
+
+        <div class="content">
+            <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+            <div class="section">
+                <div class="learning-objectives">
+                    <h2>📚 Learning Objectives</h2>
+                    <ul>
+                        <li>Identify and evaluate different sales channels for mushrooms</li>
+                        <li>Develop pricing strategies that maximize profit</li>
+                        <li>Build relationships with restaurants, retailers, and consumers</li>
+                        <li>Learn effective marketing and brand building</li>
+                        <li>Master customer relationship management for repeat sales</li>
+                        <li>Calculate optimal sales mix for maximum profitability</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🎥 Learning Videos</h2>
+                <div class="video-container"><h3>1. Sales Channels: Farmers Markets, Restaurants, Retail</h3><iframe src="https://www.youtube.com/embed/OBaZg3eKf50?rel=0" allowfullscreen></iframe></div>
+                <div class="video-container"><h3>2. Wholesale vs. Retail: Pricing & Profitability</h3><iframe src="https://www.youtube.com/embed/J-5PvGqDQJI?rel=0" allowfullscreen></iframe></div>
+                <div class="video-container"><h3>3. Building Farm Brand & Marketing Strategy</h3><iframe src="https://www.youtube.com/embed/h5HzVE8vPlQ?rel=0" allowfullscreen></iframe></div>
+                <div class="video-container"><h3>4. Customer Relationship Management for Loyalty</h3><iframe src="https://www.youtube.com/embed/EI_4LXTvYe8?rel=0" allowfullscreen></iframe></div>
+                <div class="video-container"><h3>5. Social Media & Online Sales for Farmers</h3><iframe src="https://www.youtube.com/embed/V6VvFsJFfX4?rel=0" allowfullscreen></iframe></div>
+            </div>
+
+            <div class="section">
+                <h2>📊 Sales Channel Comparison: Revenue & Profitability</h2>
+                <table><thead><tr><th>Channel</th><th>Price/kg</th><th>Waste %</th><th>Labor</th><th>Profit Margin</th></tr></thead><tbody>
+                        <tr><td>Direct Consumers (farmers market)</td><td>$10-15</td><td>10-15%</td><td>High</td><td>60-70%</td></tr>
+                        <tr><td>Restaurants (wholesale)</td><td>$6-8</td><td>5-10%</td><td>Medium</td><td>40-50%</td></tr>
+                        <tr><td>Supermarket/Retailers</td><td>$6-8</td><td>15-20%</td><td>Low</td><td>35-45%</td></tr>
+                        <tr><td>Bulk processor</td><td>$2-4</td><td>0-5%</td><td>Low</td><td>20-30%</td></tr>
+                    </tbody></table>
+            </div>
+
+            <div class="section">
+                <h2>📋 6 Implementation Steps</h2>
+                <div class="implementation-step"><h3>Step 1: Choose Your Primary Sales Channel</h3><p>Direct to consumers: farmers markets, online orders = highest price but highest labor. Wholesale: restaurants, supermarkets = steady volume but lower price. Hybrid: 60% retail + 40% wholesale = balanced risk and revenue. Start with 1 channel, expand after mastering it.</p></div>
+                <div class="implementation-step"><h3>Step 2: Develop Competitive Pricing</h3><p>Research market prices: visit farmers markets, restaurants, supermarkets, get price quotes. Farmers market typical: $10-15/kg. Wholesale: $6-8/kg. Calculate breakeven: $0.30-0.50 production cost = need >$2/kg sale to profit. Retail at $10/kg = 95%+ margin (excellent). Wholesale at $6/kg = 90%+ margin (still good).</p></div>
+                <div class="implementation-step"><h3>Step 3: Build Restaurant Relationships</h3><p>Target: upscale restaurants, farm-to-table establishments, specialty markets. Approach: visit chef, offer free sample, discuss: quantity needs (kg/week), delivery timing, grades preferred, pricing. Build 3-5 restaurant accounts = stable $500-1,000/month revenue. Deliver reliability = loyal customers.</p></div>
+                <div class="implementation-step"><h3>Step 4: Create Strong Brand Identity</h3><p>Name: memorable farm name. Logo: simple, recognizable. Story: why you farm mushrooms, quality commitment, sustainability story. Label design: professional, includes: farm name, harvest date, variety, care instructions. Cost: $100-300 for label design + printing. ROI: premium pricing justifies investment.</p></div>
+                <div class="implementation-step"><h3>Step 5: Leverage Social Media & Direct Sales</h3><p>Facebook: post beautiful mushroom photos, behind-the-scenes content, customer testimonials. WhatsApp: take orders via messaging, simple delivery coordination. Instagram: visual platform ideal for food products. Cost: free (time investment). Result: 10-20 direct customers per month at farmers market prices ($10-15/kg).</p></div>
+                <div class="implementation-step"><h3>Step 6: Build Customer Loyalty</h3><p>Loyalty program: every 5kg purchased = 1 free kg. Repeat customers = 80% of revenue. Communication: email/WhatsApp updates on availability, seasonal specials, new varieties. Quality consistency = customer retention. Average customer lifetime value: $500-1,000 year 1, repeating year 2-3+.</p></div>
+            </div>
+
+            <div class="section">
+                <div class="quiz-section"><h3>🎯 Module 5 Quiz</h3>
+                    <div class="quiz-question"><p>1. Which sales channel offers highest profit margin?</p>
+                        <div class="quiz-option"><input type="radio" name="q1" value="a" id="q1a"><label for="q1a">a) Farmers market direct ($10-15/kg, 60-70% margin)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q1" value="b" id="q1b"><label for="q1b">b) Restaurant wholesale ($6-8/kg, 40-50% margin)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q1" value="c" id="q1c"><label for="q1c">c) Bulk processor ($2-4/kg, 20-30% margin)</label></div>
+                        <button onclick="checkAnswer('q1', 'a', 'Correct! Direct sales bypass middlemen, delivering highest profit margins.')">Check Answer</button>
+                        <div id="feedback-q1" class="feedback"></div>
+                    </div>
+                    <div class="quiz-question"><p>2. Why are restaurant relationships valuable for steady sales?</p>
+                        <div class="quiz-option"><input type="radio" name="q2" value="a" id="q2a"><label for="q2a">a) Highest prices (they pay premium)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q2" value="b" id="q2b"><label for="q2b">b) Predictable volume, repeat orders, minimal waste</label></div>
+                        <div class="quiz-option"><input type="radio" name="q2" value="c" id="q2c"><label for="q2c">c) Easiest to manage (no packaging needed)</label></div>
+                        <button onclick="checkAnswer('q2', 'b', 'Correct! Restaurants provide stable, predictable volume crucial for scaling.')">Check Answer</button>
+                        <div id="feedback-q2" class="feedback"></div>
+                    </div>
+                    <div class="quiz-question"><p>3. What is the estimated lifetime value of a loyal direct customer?</p>
+                        <div class="quiz-option"><input type="radio" name="q3" value="a" id="q3a"><label for="q3a">a) $50-100 (low value)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q3" value="b" id="q3b"><label for="q3b">b) $500-1,000+ per year (high value)</label></div>
+                        <div class="quiz-option"><input type="radio" name="q3" value="c" id="q3c"><label for="q3c">c) Varies too much to estimate</label></div>
+                        <button onclick="checkAnswer('q3', 'b', 'Correct! Loyal direct customers represent significant lifetime value across years.')">Check Answer</button>
+                        <div id="feedback-q3" class="feedback"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="project-section"><h2>🚀 Real-World Project: Marketing & Sales Strategy</h2>
+                    <div class="project-item"><h4>Part 1: Sales Channel Analysis</h4><p>Research 3 sales channels: farmers market (visit 2 markets, observe pricing, competition, foot traffic), 5 restaurant chefs (get menu feedback, price quotes, delivery requirements), 3 supermarkets (interview produce managers). Document findings: realistic pricing, volume capacity, profitability per channel.</p></div>
+                    <div class="project-item"><h4>Part 2: Farm Branding Development</h4><p>Create: farm name (5 options, pick best), logo sketch, brand story (why you farm, quality commitment, sustainability). Design label: include farm name, harvest date, mushroom variety, care instructions, contact info. Get quote for professional printing (500 labels = ___). Launch with first batch.</p></div>
+                    <div class="project-item"><h4>Part 3: Pricing Strategy</h4><p>Calculate production cost per kg: substrate ($), spawn ($), energy ($), labor ($) = total ___/kg. Set prices: Farmers market $___/kg, Restaurants $___/kg, Supermarket $___/kg. Calculate margin for each. Target: minimum 50% margin at all channels.</p></div>
+                    <div class="project-item"><h4>Part 4: Initial Customer Outreach</h4><p>For restaurants: create outreach list of 20 potential customers. Visit 5 chefs with samples. Pitch: reliability, quality, price, delivery flexibility. Goal: secure 2-3 initial accounts for weekly delivery. Document: which restaurants interested, quantities needed, delivery days/times.</p></div>
+                    <div class="project-item"><h4>Part 5: Farmers Market Logistics</h4><p>Research: farmers market booth cost ($10-50/day), setup time (30 min), sales hours (4-6 hrs). Plan: sample menu (varieties to offer, quantities), display setup (cooler, samples, signage), marketing materials. Estimate: revenue per market day = 20kg × $12/kg = $240/day profit potential.</p></div>
+                    <div class="project-item"><h4>Part 6: Social Media Launch</h4><p>Create: Facebook page, Instagram account with farm name. Post initial 10 photos (mushroom varieties, growing process, harvest, farming story). Target audience: health-conscious consumers, restaurant chefs, home cooks. Daily engagement goal: 3-5 posts/week minimum. Track: engagement rate, follower growth, direct message inquiries.</p></div>
+                    <div class="project-item"><h4>Part 7: Customer Relationship System</h4><p>Create: customer database (name, phone, email, preferences, purchase history). Loyalty program: every 5kg = 1 free kg coupon. Communication: monthly email/WhatsApp with availability update. Feedback loop: survey customers every quarter on product quality, variety preferences, price satisfaction.</p></div>
+                    <div class="project-item"><h4>Part 8: Sales Forecast & Growth Plan</h4><p>Year 1: Month 1-2 (50kg/month = $600 revenue), Month 3-12 (200kg/month = $2,400 revenue). Total Year 1 revenue: $16,000. Costs (setup, labor, materials): $8,000. Profit: $8,000 (50% margin, excellent). Year 2 goal: double volume through addition of 2-3 restaurant accounts, weekly farmers market, online orders.</p></div>
+                </div>
+            </div>
+
+            <div class="next-module"><p>Ready to continue? Move to Module 6: Business Economics & Scaling (CAPSTONE)</p><a href="mushroom-farming-module-6.html">→ Next Module</a></div>
+        </div>
+    </div>
+    <script>
+        function checkAnswer(q, a, f) { const s = document.querySelector(`input[name="${q}"]:checked`); const e = document.getElementById(`feedback-${q}`); if (!s) { alert('Select answer'); return; } e.className = 'feedback show ' + (s.value === a ? 'correct' : 'incorrect'); e.textContent = (s.value === a ? '✓ ' : '✗ Incorrect. ') + f; updateProgress(); }
+        function updateProgress() { const c = document.querySelectorAll('input[type="radio"]:checked').length; const t = document.querySelectorAll('input[type="radio"]').length / 3; const p = (c / t) * 100; document.getElementById('progressFill').style.width = p + '%'; localStorage.setItem('mushroom5', p); }
+        window.addEventListener('load', () => { const s = localStorage.getItem('mushroom5'); if (s) document.getElementById('progressFill').style.width = s + '%'; });
+    </script>
+</body>
+</html>
