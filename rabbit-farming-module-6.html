@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rabbit Farming - Module 6: Economics & Business Scaling (CAPSTONE)</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background: #f9f9f9; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .header { background: linear-gradient(135deg, #8b4513 0%, #cd853f 100%); color: white; padding: 30px; border-radius: 10px; margin-bottom: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .header p { font-size: 1.2em; opacity: 0.9; }
+        .content { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .section { margin-bottom: 40px; }
+        .section h2 { color: #8b4513; font-size: 1.8em; margin-bottom: 20px; border-bottom: 3px solid #cd853f; padding-bottom: 10px; }
+        .learning-objectives { background: #ffe4c4; padding: 20px; border-left: 5px solid #cd853f; margin-bottom: 20px; border-radius: 5px; }
+        .learning-objectives ul { list-style-position: inside; }
+        .learning-objectives li { margin-bottom: 8px; }
+        .video-container { background: #f9f9f9; padding: 15px; margin-bottom: 15px; border-radius: 5px; border-left: 4px solid #cd853f; }
+        .video-container h3 { color: #8b4513; margin-bottom: 10px; font-size: 0.95em; }
+        iframe { width: 100%; height: 400px; border-radius: 5px; border: none; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th { background: #8b4513; color: white; padding: 12px; text-align: left; }
+        td { padding: 10px; border-bottom: 1px solid #ddd; }
+        .implementation-step { background: #fafafa; padding: 15px; margin-bottom: 15px; border-radius: 5px; border-left: 4px solid #cd853f; }
+        .implementation-step h3 { color: #8b4513; margin-bottom: 8px; font-size: 1em; }
+        .implementation-step p { font-size: 0.95em; }
+        .quiz-section { background: #fff9e6; padding: 20px; border-radius: 5px; border: 2px solid #cd853f; }
+        .quiz-question { margin-bottom: 20px; background: white; padding: 15px; border-radius: 5px; }
+        .quiz-option { margin-left: 20px; margin-bottom: 8px; }
+        .feedback { margin-top: 10px; padding: 10px; border-radius: 5px; display: none; }
+        .feedback.show { display: block; }
+        .feedback.correct { background: #d4edda; color: #155724; border-left: 4px solid #28a745; }
+        .feedback.incorrect { background: #f8d7da; color: #721c24; border-left: 4px solid #f5c6cb; }
+        .project-section { background: #e8f5e9; padding: 20px; border-radius: 5px; border: 2px solid #cd853f; }
+        .project-item { background: white; padding: 12px; margin: 10px 0; border-radius: 5px; border-left: 4px solid #cd853f; }
+        .project-item h4 { color: #8b4513; margin-bottom: 6px; font-size: 0.95em; }
+        .project-item p { font-size: 0.9em; }
+        .progress-bar { background: #e0e0e0; height: 10px; border-radius: 5px; overflow: hidden; margin-bottom: 20px; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, #8b4513, #cd853f); width: 0%; transition: width 0.3s; }
+        .next-module { margin-top: 30px; padding: 20px; background: #ffe4c4; border-radius: 5px; text-align: center; }
+        .next-module a { display: inline-block; background: #8b4513; color: white; padding: 12px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; }
+        .next-module a:hover { background: #cd853f; }
+        .completion-badge { margin-top: 30px; padding: 20px; background: #d4edda; border-radius: 5px; text-align: center; }
+        @media (max-width: 768px) { .header h1 { font-size: 1.8em; } iframe { height: 300px; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🐰 Rabbit Farming</h1>
+            <p>Module 6: Economics & Business Scaling (CAPSTONE)</p>
+        </div>
+        <div class="content">
+            <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+            <div class="section">
+                <div class="learning-objectives">
+                    <h2>📚 Learning Objectives</h2>
+                    <ul>
+                        <li>Complete technical knowledge for this module's focus area</li>
+                        <li>Practical implementation and troubleshooting skills</li>
+                        <li>Cost optimization and business management</li>
+                        <li>Scaling strategies for production growth</li>
+                        <li>Market understanding and profitability analysis</li>
+                        <li>Long-term sustainability and reinvestment planning</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="section">
+                <h2>🎥 Learning Videos</h2>
+                <div class="video-container"><h3>1. Core Concept Video 1</h3><iframe src="https://www.youtube.com/embed/fW6zFKpOEZo?rel=0" allowfullscreen></iframe></div>
+                <div class="video-container"><h3>2. Practical Implementation Video</h3><iframe src="https://www.youtube.com/embed/YMHQhNEZ7zI?rel=0" allowfullscreen></iframe></div>
+                <div class="video-container"><h3>3. Advanced Techniques Video</h3><iframe src="https://www.youtube.com/embed/CJVsvGlbVnM?rel=0" allowfullscreen></iframe></div>
+                <div class="video-container"><h3>4. Economics & Profitability</h3><iframe src="https://www.youtube.com/embed/Cg8K1vj8Dx0?rel=0" allowfullscreen></iframe></div>
+                <div class="video-container"><h3>5. Scaling & Business Growth</h3><iframe src="https://www.youtube.com/embed/7d7F8Xv0eLQ?rel=0" allowfullscreen></iframe></div>
+            </div>
+            <div class="section">
+                <h2>📊 Key Performance Indicators</h2>
+                <table><thead><tr><th>Metric</th><th>Target</th><th>Good</th><th>Excellent</th></tr></thead><tbody>
+                        <tr><td>Breeding Success</td><td>70%</td><td>80%</td><td>90%+</td></tr>
+                        <tr><td>Litter Survival</td><td>75%</td><td>85%</td><td>95%</td></tr>
+                        <tr><td>Growth Rate</td><td>20-25g/day</td><td>25-30g/day</td><td>30g+/day</td></tr>
+                        <tr><td>Profit Margin</td><td>40%</td><td>50-60%</td><td>70%+</td></tr>
+                    </tbody></table>
+            </div>
+            <div class="section">
+                <h2>📋 6 Implementation Steps</h2>
+                <div class="implementation-step"><h3>Step 1: Understand Fundamentals</h3><p>Master the core concepts for this module. Research your region's best practices. Connect with experienced farmers. Document your baseline: current performance metrics, costs, challenges. This foundation enables effective optimization.</p></div>
+                <div class="implementation-step"><h3>Step 2: Implement Best Practices</h3><p>Apply proven techniques systematically. Start small (one area), master it, then scale. Track results: measure outcomes against targets. Adjust procedures based on actual data. Continuous improvement is key to competitive advantage.</p></div>
+                <div class="implementation-step"><h3>Step 3: Optimize Cost Structure</h3><p>Analyze all costs: materials, labor, feed, equipment. Identify savings opportunities. Calculate ROI for any new investments. Target: reduce costs 10-15% annually through efficiency improvements. Every 5% savings goes directly to profit margin.</p></div>
+                <div class="implementation-step"><h3>Step 4: Track Performance Metrics</h3><p>Monitor: key indicators daily/weekly. Maintain detailed records. Identify trends: improving or declining? What changed? Use data for decision-making. Farmers with best records have highest profitability (clear cause-and-effect).</p></div>
+                <div class="implementation-step"><h3>Step 5: Build Problem-Solving Systems</h3><p>When issues arise: investigate systematically. Don't guess. Keep records of problems and solutions. Share knowledge with other farmers. Build a reputation as problem-solver = higher credibility = better prices and partnerships.</p></div>
+                <div class="implementation-step"><h3>Step 6: Plan Continuous Scaling</h3><p>Year 1: prove viability and profitability. Year 2: achieve 30% growth. Year 3: 50% growth if margins support it. Reinvest profits systematically. Set clear milestones. Track progress monthly. Celebrate successes, learn from setbacks.</p></div>
+            </div>
+            <div class="section">
+                <div class="quiz-section"><h3>🎯 Module 6 Quiz</h3>
+                    <div class="quiz-question"><p>1. What is a realistic goal for this module's focus area?</p>
+                        <div class="quiz-option"><input type="radio" name="q1" value="a" id="q1a"><label for="q1a">a) Quick mastery without practice</label></div>
+                        <div class="quiz-option"><input type="radio" name="q1" value="b" id="q1b"><label for="q1b">b) Gradual improvement through systematic practice</label></div>
+                        <div class="quiz-option"><input type="radio" name="q1" value="c" id="q1c"><label for="q1c">c) Perfection on first try</label></div>
+                        <button onclick="checkAnswer('q1', 'b', 'Correct! Success comes from consistent, systematic practice and improvement.')">Check Answer</button>
+                        <div id="feedback-q1" class="feedback"></div>
+                    </div>
+                    <div class="quiz-question"><p>2. How should you approach new techniques?</p>
+                        <div class="quiz-option"><input type="radio" name="q2" value="a" id="q2a"><label for="q2a">a) Implement farm-wide immediately</label></div>
+                        <div class="quiz-option"><input type="radio" name="q2" value="b" id="q2b"><label for="q2b">b) Test small, measure results, then scale</label></div>
+                        <div class="quiz-option"><input type="radio" name="q2" value="c" id="q2c"><label for="q2c">c) Wait and hope for improvement</label></div>
+                        <button onclick="checkAnswer('q2', 'b', 'Correct! Systematic testing reduces risk and provides proof before full-scale investment.')">Check Answer</button>
+                        <div id="feedback-q2" class="feedback"></div>
+                    </div>
+                    <div class="quiz-question"><p>3. What metric best predicts farm profitability?</p>
+                        <div class="quiz-option"><input type="radio" name="q3" value="a" id="q3a"><label for="q3a">a) Farm size alone</label></div>
+                        <div class="quiz-option"><input type="radio" name="q3" value="b" id="q3b"><label for="q3b">b) Quality of records and cost tracking</label></div>
+                        <div class="quiz-option"><input type="radio" name="q3" value="c" id="q3c"><label for="q3c">c) Years of experience alone</label></div>
+                        <button onclick="checkAnswer('q3', 'b', 'Correct! Farmers with best records consistently out-perform on profit margins.')">Check Answer</button>
+                        <div id="feedback-q3" class="feedback"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="project-section"><h2>🚀 Real-World Project: Module Application Plan</h2>
+                    <div class="project-item"><h4>Part 1: Baseline Assessment</h4><p>Current state: Document your starting point for this module's focus. Metrics: ___. Challenges: ___. Opportunities: ___. Goals: What do you want to achieve in 6 months?</p></div>
+                    <div class="project-item"><h4>Part 2: Research & Planning</h4><p>Identify: best practices, proven techniques, cost-effective solutions. Create action plan: what will you change? Why? Expected benefit? Resource requirements?</p></div>
+                    <div class="project-item"><h4>Part 3: Implementation & Measurement</h4><p>Execute plan systematically. Track results daily/weekly. Measure: actual outcomes vs. expected. Adjust procedures based on data. Document everything for future reference.</p></div>
+                    <div class="project-item"><h4>Part 4: Cost Analysis & ROI</h4><p>Calculate: implementation cost (), expected benefit ( savings or profit), timeframe to break-even (_____ months). Is investment justified? Decision: proceed or modify approach?</p></div>
+                    <div class="project-item"><h4>Part 5: Scaling Strategy</h4><p>If successful at small scale, plan expansion. Resources needed? Timeline? Expected returns? Risk assessment: what could go wrong?</p></div>
+                    <div class="project-item"><h4>Part 6: Knowledge Sharing</h4><p>Document your process: what worked, what didn't, lessons learned. Share with other farmers or mentors. Build professional relationships and reputation.</p></div>
+                    <div class="project-item"><h4>Part 7: Continuous Improvement</h4><p>Monthly review: are results improving? Identify new optimization opportunities. Target: 5-10% performance improvement every quarter through incremental improvements.</p></div>
+                    <div class="project-item"><h4>Part 8: Long-Term Vision</h4><p>Where do you want to be in 5 years? How does this module's mastery contribute? Financial target? Production scale? Market position? Work backward: what steps needed to reach that vision?</p></div>
+                </div>
+            </div>
+            <div class='completion-badge'><h3>✅ Course Complete: Rabbit Farming Mastery</h3><p>You've completed comprehensive rabbit farming training covering all aspects of sustainable, profitable production. 🐰</p></div>
+        </div>
+    </div>
+    <script>
+        function checkAnswer(q, a, f) { const s = document.querySelector(`input[name="${q}"]:checked`); const e = document.getElementById(`feedback-${q}`); if (!s) { alert('Select answer'); return; } e.className = 'feedback show ' + (s.value === a ? 'correct' : 'incorrect'); e.textContent = (s.value === a ? '✓ ' : '✗ Incorrect. ') + f; updateProgress(); }
+        function updateProgress() { const c = document.querySelectorAll('input[type="radio"]:checked').length; const t = document.querySelectorAll('input[type="radio"]').length / 3; const p = (c / t) * 100; document.getElementById('progressFill').style.width = p + '%'; localStorage.setItem('rabbit6', p); }
+        window.addEventListener('load', () => { const s = localStorage.getItem('rabbit6'); if (s) document.getElementById('progressFill').style.width = s + '%'; });
+    </script>
+</body>
+</html>
